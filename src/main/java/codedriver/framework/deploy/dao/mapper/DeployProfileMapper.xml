@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="codedriver.framework.deploy.dao.mapper.DeployProfileMapper">
+
+    <insert id="insertDeployProfileOperationByProfileIdAndOperateIdListAndType">
+        INSERT INTO deploy_profile_operate ( profile_id, operate_id ,type)
+        VALUES
+        <foreach collection="operateIdList" item="operateId" separator=",">
+            (#{profileId},#{operateId},#{type})
+        </foreach>
+    </insert>
+
+    <insert id="insertProfile" parameterType="codedriver.framework.deploy.dto.profile.DeployProfileVo">
+        INSERT INTO deploy_profile
+        (id,
+         name,
+         description,
+         config,
+         fcd,
+         fcu,
+         lcd,
+         lcu)
+        VALUES (#{id},
+                #{name},
+                #{description},
+                #{configStr},
+                NOW(3),
+                #{fcu},
+                NOW(3),
+                #{fcu})
+    </insert>
+
+    <update id="updateProfile" parameterType="codedriver.framework.deploy.dto.profile.DeployProfileVo">
+        UPDATE `deploy_profile`
+        SET `name`        = #{name},
+            `config`      =#{configStr},
+            `description` = #{description},
+            `lcd`         = NOW(3),
+            `lcu`         = #{lcu}
+    </update>
+
+    <select id="searchDeployProfileCount" parameterType="codedriver.framework.deploy.dto.profile.DeployProfileVo"
+            resultType="int">
+        SELECT
+        COUNT(1)
+        <include refid="searchProfile"></include>
+    </select>
+
+    <sql id="searchProfile">
+        FROM
+        `deploy_profile` a
+        <if test="operateId != null">
+            LEFT JOIN deploy_profile_operate apo ON apo.profile_id = a.id
+        </if>
+        <where>
+            <if test="keyword != null and keyword != ''">
+                AND (a.`name` LIKE CONCAT('%',#{keyword}, '%') OR a.`description` LIKE CONCAT('%',#{keyword}, '%'))
+            </if>
+            <if test="operateId != null">
+                and apo.`operate_id` = #{operateId}
+            </if>
+        </where>
+    </sql>
+
+    <select id="searchDeployProfile"
+            resultType="codedriver.framework.deploy.dto.profile.DeployProfileVo">
+        SELECT
+        a.id,
+        a.name,
+        a.description,
+        a.config as configStr,
+        a.fcd,
+        a.fcu,
+        a.lcd,
+        a.lcu
+        <include refid="searchProfile"></include>
+        ORDER BY a.id DESC
+        <if test="needPage == true">
+            LIMIT #{startNum}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="checkProfileIsExists" resultType="int">
+        SELECT count(1)
+        FROM `deploy_profile`
+        WHERE `id` = #{value}
+    </select>
+
+    <select id="getProfileVoById" resultType="codedriver.framework.deploy.dto.profile.DeployProfileVo">
+        SELECT id,
+               name,
+               description,
+               config as configStr,
+               fcd,
+               fcu,
+               lcd,
+               lcu
+        FROM deploy_profile
+        WHERE id = #{value}
+    </select>
+
+    <select id="getProfileVoByOperateId"
+            resultType="codedriver.framework.deploy.dto.profile.DeployProfileOperationVo">
+        SELECT profile_id,
+               operate_id,
+               type
+        FROM deploy_profile_operate
+        WHERE operate_id = #{value}
+    </select>
+
+
+    <select id="getProfileToolListByProfileId"
+            resultType="codedriver.framework.deploy.dto.profile.DeployProfileOperationVo">
+        select profile_id, operate_id, type
+        from deploy_profile_operate
+    </select>
+
+    <select id="getDeployProfileIdList" resultType="java.lang.Long">
+        SELECT id
+        <include refid="searchProfile"></include>
+        ORDER BY a.id DESC
+        <if test="needPage == true">
+            LIMIT #{startNum}, #{pageSize}
+        </if>
+
+    </select>
+
+    <select id="searchProfileListByIdList"
+            resultType="codedriver.framework.deploy.dto.profile.DeployProfileVo">
+        SELECT id,
+        name,
+        description,
+        config as configStr,
+        fcd,
+        fcu,
+        lcd,
+        lcu
+        FROM deploy_profile
+        WHERE id in
+        <foreach collection="idList" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+    </select>
+
+    <delete id="deleteProfileById">
+        DELETE
+        FROM deploy_profile
+        WHERE id = #{value}
+    </delete>
+
+    <delete id="deleteProfileOperateByProfileId">
+        DELETE
+        FROM deploy_profile_operate
+        WHERE profile_id = #{value}
+    </delete>
+</mapper>
+

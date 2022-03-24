@@ -14,7 +14,7 @@ import com.alibaba.fastjson.JSONObject;
  **/
 public class DeployPinelineTemplateNameRepeatException extends ApiRuntimeException {
 
-    private static final long serialVersionUID = -977867274722886183L;
+    private static final long serialVersionUID = -977867274722886123L;
 
     private static final String key = "common.errorMessage.reuse.name";
 

@@ -13,7 +13,7 @@ import codedriver.framework.exception.core.ApiRuntimeException;
  **/
 public class DeployPinelineTemplatePhaseNameRepeatException extends ApiRuntimeException {
 
-    private static final long serialVersionUID = -977867274723885183L;
+    private static final long serialVersionUID = -977867274723885125L;
 
     public DeployPinelineTemplatePhaseNameRepeatException(String name) {
         super("流水线模板阶段名称'" + name + "'已存在");

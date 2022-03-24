@@ -13,7 +13,7 @@ import codedriver.framework.exception.core.ApiRuntimeException;
  **/
 public class DeployPinelineTemplateNotFoundException extends ApiRuntimeException {
 
-    private static final long serialVersionUID = -977868275722986183L;
+    private static final long serialVersionUID = -977868275722986124L;
 
     public DeployPinelineTemplateNotFoundException(Long id){
         super("流水线模板：'" + id + "'不存在");

@@ -32,6 +32,10 @@ public class DeployProfileVo extends BaseEditorVo {
     private String configStr;
     @EntityField(name = "工具类型", type = ApiParamType.STRING)
     private String type;
+    @EntityField(name = "所属系统id", type = ApiParamType.LONG)
+    private Long systemId;
+    @EntityField(name = "所属系统名称", type = ApiParamType.STRING)
+    private String systemName;
     @EntityField(name = "脚本工具id", type = ApiParamType.LONG)
     private Long scriptId;
     @EntityField(name = "工具库工具id", type = ApiParamType.LONG)
@@ -44,6 +48,8 @@ public class DeployProfileVo extends BaseEditorVo {
     private Integer autoexecToolAndScriptCount = 0;
     @EntityField(name = "入参列表", type = ApiParamType.JSONARRAY)
     private List<AutoexecParamVo> inputParamList;
+    @EntityField(name = "工具库工具id/脚本工具id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> operateIdList;
 
     public Long getId() {
         if (id == null) {
@@ -124,6 +130,22 @@ public class DeployProfileVo extends BaseEditorVo {
         this.toolId = toolId;
     }
 
+    public Long getSystemId() {
+        return systemId;
+    }
+
+    public void setSystemId(Long systemId) {
+        this.systemId = systemId;
+    }
+
+    public String getSystemName() {
+        return systemName;
+    }
+
+    public void setSystemName(String systemName) {
+        this.systemName = systemName;
+    }
+
     public Long getOperateId() {
         return operateId;
     }
@@ -154,5 +176,13 @@ public class DeployProfileVo extends BaseEditorVo {
 
     public void setAutoexecToolAndScriptCount(Integer autoexecToolAndScriptCount) {
         this.autoexecToolAndScriptCount = autoexecToolAndScriptCount;
+    }
+
+    public List<Long> getOperateIdList() {
+        return operateIdList;
+    }
+
+    public void setOperateIdList(List<Long> operateIdList) {
+        this.operateIdList = operateIdList;
     }
 }

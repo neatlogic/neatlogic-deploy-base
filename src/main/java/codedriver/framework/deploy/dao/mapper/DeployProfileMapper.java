@@ -23,13 +23,13 @@ public interface DeployProfileMapper {
 
     List<DeployProfileVo> searchProfileListByIdList(@Param("idList") List<Long> idList);
 
-    List<DeployProfileOperationVo> getProfileToolListByProfileId(Long id);
+    List<DeployProfileOperationVo> getProfileOperationVoListByProfileId(Long id);
 
     DeployProfileVo getProfileVoById(Long id);
 
     DeployProfileOperationVo getProfileVoByOperateId(Long operateId);//////
 
-    void insertDeployProfileOperationByProfileIdAndOperateIdListAndType(@Param("id") Long id, @Param("toolIdList") List<Long> toolIdList, @Param("type") String type);
+    void insertDeployProfileOperationByProfileIdAndOperateIdListAndType(@Param("profileId") Long profileId, @Param("operateIdList") List<Long> operateIdList, @Param("type") String type);
 
     void insertProfile(DeployProfileVo profileVo);
 

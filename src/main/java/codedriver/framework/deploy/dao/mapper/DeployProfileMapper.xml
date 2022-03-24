@@ -16,6 +16,7 @@
          name,
          description,
          config,
+         system_id,
          fcd,
          fcu,
          lcd,
@@ -24,6 +25,7 @@
                 #{name},
                 #{description},
                 #{configStr},
+                #{systemId},
                 NOW(3),
                 #{fcu},
                 NOW(3),
@@ -34,9 +36,11 @@
         UPDATE `deploy_profile`
         SET `name`        = #{name},
             `config`      =#{configStr},
+            system_id     = #{systemId},
             `description` = #{description},
             `lcd`         = NOW(3),
             `lcu`         = #{lcu}
+        where `id` = #{di}
     </update>
 
     <select id="searchDeployProfileCount" parameterType="codedriver.framework.deploy.dto.profile.DeployProfileVo"
@@ -49,6 +53,7 @@
     <sql id="searchProfile">
         FROM
         `deploy_profile` a
+        LEFT JOIN cmdb_cientity cc ON cc.id = a.system_id
         <if test="operateId != null">
             LEFT JOIN deploy_profile_operate apo ON apo.profile_id = a.id
         </if>
@@ -69,6 +74,8 @@
         a.name,
         a.description,
         a.config as configStr,
+        a.system_id AS systemId,
+        cc.name as systemName,
         a.fcd,
         a.fcu,
         a.lcd,
@@ -86,17 +93,38 @@
         WHERE `id` = #{value}
     </select>
 
-    <select id="getProfileVoById" resultType="codedriver.framework.deploy.dto.profile.DeployProfileVo">
-        SELECT id,
-               name,
-               description,
-               config as configStr,
-               fcd,
-               fcu,
-               lcd,
-               lcu
-        FROM deploy_profile
-        WHERE id = #{value}
+    <resultMap id="profileMap" type="codedriver.framework.deploy.dto.profile.DeployProfileVo">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="configStr" property="configStr"/>
+        <result column="systemId" property="systemId"/>
+        <result column="systemName" property="systemName"/>
+        <result column="type" property="type"/>
+        <result column="operateId" property="operateId"/>
+        <collection property="autoexecToolAndScriptVoList"
+                    ofType="codedriver.framework.autoexec.dto.AutoexecToolAndScriptVo">
+            <id column="operateId" property="id"/>
+            <result column="type" property="type"/>
+        </collection>
+    </resultMap>
+
+    <select id="getProfileVoById" resultMap="profileMap">
+        SELECT a.id,
+               a.name,
+               a.description,
+               a.config       AS configStr,
+               a.system_id    AS systemId,
+               cc.name        as systemName,
+               dpo.type,
+               dpo.operate_id as operateId,
+               a.fcd,
+               a.fcu,
+               a.lcd,
+               a.lcu
+        FROM deploy_profile a
+                 left join deploy_profile_operate dpo on dpo.profile_id = a.id
+                 LEFT JOIN cmdb_cientity cc ON cc.id = a.system_id
+        WHERE a.id = #{value}
     </select>
 
     <select id="getProfileVoByOperateId"
@@ -109,14 +137,14 @@
     </select>
 
 
-    <select id="getProfileToolListByProfileId"
+    <select id="getProfileOperationVoListByProfileId"
             resultType="codedriver.framework.deploy.dto.profile.DeployProfileOperationVo">
         select profile_id, operate_id, type
         from deploy_profile_operate
     </select>
 
     <select id="getDeployProfileIdList" resultType="java.lang.Long">
-        SELECT id
+        SELECT a.id
         <include refid="searchProfile"></include>
         ORDER BY a.id DESC
         <if test="needPage == true">
@@ -127,16 +155,19 @@
 
     <select id="searchProfileListByIdList"
             resultType="codedriver.framework.deploy.dto.profile.DeployProfileVo">
-        SELECT id,
-        name,
-        description,
-        config as configStr,
-        fcd,
-        fcu,
-        lcd,
-        lcu
-        FROM deploy_profile
-        WHERE id in
+        SELECT a.id,
+        a.name,
+        a.description,
+        a.config as configStr,
+        a.system_id AS systemId,
+        cc.name as systemName,
+        a.fcd,
+        a.fcu,
+        a.lcd,
+        a.lcu
+        FROM deploy_profile a
+        LEFT JOIN cmdb_cientity cc ON cc.id = a.system_id
+        WHERE a.id in
         <foreach collection="idList" open="(" separator="," close=")" item="id">
             #{id}
         </foreach>

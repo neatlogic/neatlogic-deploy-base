@@ -14,7 +14,6 @@ import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * @author longrf
@@ -38,10 +37,6 @@ public class DeployProfileVo extends BaseEditorVo {
     private Long systemId;
     @EntityField(name = "所属系统名称", type = ApiParamType.STRING)
     private String systemName;
-    @EntityField(name = "脚本工具id", type = ApiParamType.LONG)
-    private Long scriptId;
-    @EntityField(name = "工具库工具id", type = ApiParamType.LONG)
-    private Long toolId;
     @EntityField(name = "工具库工具id/脚本工具id", type = ApiParamType.LONG)
     private Long operateId;
     @EntityField(name = "关联的工具和脚本列表", type = ApiParamType.JSONARRAY)
@@ -49,7 +44,7 @@ public class DeployProfileVo extends BaseEditorVo {
     @EntityField(name = "关联的工具和脚本列表", type = ApiParamType.INTEGER)
     private Integer autoexecToolAndScriptCount = 0;
     @EntityField(name = "入参列表", type = ApiParamType.JSONARRAY)
-    private List<AutoexecParamVo> inputParamList;
+    private List<AutoexecParamVo> paramList;
     @EntityField(name = "工具库工具id/脚本工具id列表", type = ApiParamType.JSONARRAY)
     private List<Long> operateIdList;
 
@@ -110,28 +105,6 @@ public class DeployProfileVo extends BaseEditorVo {
         this.type = type;
     }
 
-    public Long getScriptId() {
-        if (Objects.isNull(scriptId) && StringUtils.equals(type, "script") && !Objects.isNull(operateId)) {
-            scriptId = operateId;
-        }
-        return scriptId;
-    }
-
-    public void setScriptId(Long scriptId) {
-        this.scriptId = scriptId;
-    }
-
-    public Long getToolId() {
-        if (Objects.isNull(toolId) && StringUtils.equals(type, "tool") && !Objects.isNull(operateId)) {
-            toolId = operateId;
-        }
-        return toolId;
-    }
-
-    public void setToolId(Long toolId) {
-        this.toolId = toolId;
-    }
-
     public Long getSystemId() {
         return systemId;
     }
@@ -164,19 +137,19 @@ public class DeployProfileVo extends BaseEditorVo {
         this.autoexecToolAndScriptVoList = autoexecToolAndScriptVoList;
     }
 
-    public List<AutoexecParamVo> getInputParamList() {
-        if (CollectionUtils.isEmpty(inputParamList) && StringUtils.isNotBlank(configStr)) {
+    public List<AutoexecParamVo> getParamList() {
+        if (CollectionUtils.isEmpty(paramList) && StringUtils.isNotBlank(configStr)) {
             JSONObject toolConfig = JSONObject.parseObject(configStr);
             JSONArray params = toolConfig.getJSONArray("paramList");
             if (CollectionUtils.isNotEmpty(params)) {
-                this.inputParamList = params.toJavaList(AutoexecParamVo.class);
+                this.paramList = params.toJavaList(AutoexecParamVo.class);
             }
         }
-        return inputParamList;
+        return paramList;
     }
 
-    public void setInputParamList(List<AutoexecParamVo> inputParamList) {
-        this.inputParamList = inputParamList;
+    public void setParamList(List<AutoexecParamVo> paramList) {
+        this.paramList = paramList;
     }
 
     public Integer getAutoexecToolAndScriptCount() {

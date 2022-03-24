@@ -76,8 +76,14 @@ public class DeployProfileVo extends BaseEditorVo {
     }
 
     public JSONObject getConfig() {
-        if (MapUtils.isEmpty(config) && StringUtils.isNotBlank(configStr)) {
-            config = JSONObject.parseObject(configStr);
+        if (MapUtils.isEmpty(config)) {
+            if (StringUtils.isNotBlank(configStr)) {
+                config = JSONObject.parseObject(configStr);
+            } else if (CollectionUtils.isNotEmpty(paramList)) {
+                JSONObject configObject = new JSONObject();
+                configObject.put("paramList", paramList);
+                config = configObject;
+            }
         }
         return config;
     }
@@ -87,7 +93,7 @@ public class DeployProfileVo extends BaseEditorVo {
     }
 
     public String getConfigStr() {
-        if (StringUtils.isEmpty(configStr) && MapUtils.isNotEmpty(config)) {
+        if (StringUtils.isEmpty(configStr) && MapUtils.isNotEmpty(getConfig())) {
             configStr = config.toJSONString();
         }
         return configStr;

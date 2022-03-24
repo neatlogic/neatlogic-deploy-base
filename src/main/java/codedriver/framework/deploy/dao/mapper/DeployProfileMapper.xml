@@ -40,7 +40,7 @@
             `description` = #{description},
             `lcd`         = NOW(3),
             `lcu`         = #{lcu}
-        where `id` = #{di}
+        where `id` = #{id}
     </update>
 
     <select id="searchDeployProfileCount" parameterType="codedriver.framework.deploy.dto.profile.DeployProfileVo"
@@ -99,8 +99,6 @@
         <result column="configStr" property="configStr"/>
         <result column="systemId" property="systemId"/>
         <result column="systemName" property="systemName"/>
-        <result column="type" property="type"/>
-        <result column="operateId" property="operateId"/>
         <collection property="autoexecToolAndScriptVoList"
                     ofType="codedriver.framework.autoexec.dto.AutoexecToolAndScriptVo">
             <id column="operateId" property="id"/>

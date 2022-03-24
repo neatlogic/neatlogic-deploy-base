@@ -6,8 +6,10 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -163,6 +165,13 @@ public class DeployProfileVo extends BaseEditorVo {
     }
 
     public List<AutoexecParamVo> getInputParamList() {
+        if (CollectionUtils.isEmpty(inputParamList) && StringUtils.isNotBlank(configStr)) {
+            JSONObject toolConfig = JSONObject.parseObject(configStr);
+            JSONArray params = toolConfig.getJSONArray("paramList");
+            if (CollectionUtils.isNotEmpty(params)) {
+                this.inputParamList = params.toJavaList(AutoexecParamVo.class);
+            }
+        }
         return inputParamList;
     }
 

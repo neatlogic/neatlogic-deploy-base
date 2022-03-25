@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface DeployProfileMapper {
 
-     int searchDeployProfileCount(DeployProfileVo profileVo);
+    int searchDeployProfileCount(DeployProfileVo profileVo);
 
     int checkProfileIsExists(Long id);
 

@@ -107,6 +107,10 @@
         <result column="description" property="description"/>
         <result column="fromSystemId" property="fromSystemId"/>
         <result column="fromSystemName" property="fromSystemName"/>
+        <result column="fcu" property="fcu"/>
+        <result column="fcd" property="fcd"/>
+        <result column="lcu" property="lcu"/>
+        <result column="lcd" property="lcd"/>
         <collection property="ciEntityList" ofType="codedriver.framework.cmdb.dto.cientity.CiEntityVo">
             <id column="ciEntityId" property="id"/>
             <result column="ciEntityName" property="name"/>

@@ -46,7 +46,7 @@
     <select id="searchDeployProfileCount" parameterType="codedriver.framework.deploy.dto.profile.DeployProfileVo"
             resultType="int">
         SELECT
-        COUNT(1)
+        COUNT(distinct a.id)
         <include refid="searchProfile"></include>
     </select>
 

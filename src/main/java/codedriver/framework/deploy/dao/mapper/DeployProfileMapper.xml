@@ -66,8 +66,8 @@
             <if test="operateId != null">
                 and apo.`operate_id` = #{operateId}
             </if>
-            <if test="systemId != null">
-                and dpc.`ci_entity_id` = #{systemId}
+            <if test="ciEntityId != null">
+                and dpc.`ci_entity_id` = #{ciEntityId}
             </if>
         </where>
     </sql>
@@ -81,8 +81,8 @@
         a.config as configStr,
         a.system_id AS fromSystemId,
         cc.name as fromSystemName,
-        cct.id AS systemId,
-        cct.name as systemName,
+        cct.id AS ciEntityId,
+        cct.name as ciEntityName,
         a.fcd,
         a.fcu,
         a.lcd,
@@ -107,9 +107,9 @@
         <result column="description" property="description"/>
         <result column="fromSystemId" property="fromSystemId"/>
         <result column="fromSystemName" property="fromSystemName"/>
-        <collection property="systemList" ofType="codedriver.framework.cmdb.dto.cientity.CiEntityVo">
-            <id column="systemId" property="id"/>
-            <result column="systemName" property="name"/>
+        <collection property="ciEntityList" ofType="codedriver.framework.cmdb.dto.cientity.CiEntityVo">
+            <id column="ciEntityId" property="id"/>
+            <result column="ciEntityName" property="name"/>
             <result column="ciIcon" property="ciIcon"/>
         </collection>
         <collection property="autoexecToolAndScriptVoList"
@@ -126,8 +126,8 @@
                a.config       AS configStr,
                a.system_id    AS fromSystemId,
                cc.name        as fromSystemName,
-               cct.id         AS systemId,
-               cct.name       as systemName,
+               cct.id         AS ciEntityId,
+               cct.name       as ciEntityName,
                dpo.type,
                dpo.operate_id as operateId,
                a.fcd,
@@ -141,16 +141,6 @@
                  LEFT JOIN cmdb_cientity cct ON cct.id = dpc.ci_entity_id
         WHERE a.id = #{value}
     </select>
-
-    <select id="getProfileVoByOperateId"
-            resultType="codedriver.framework.deploy.dto.profile.DeployProfileOperationVo">
-        SELECT profile_id,
-               operate_id,
-               type
-        FROM deploy_profile_operation
-        WHERE operate_id = #{value}
-    </select>
-
 
     <select id="getProfileOperationVoListByProfileId"
             resultType="codedriver.framework.deploy.dto.profile.DeployProfileOperationVo">
@@ -175,8 +165,8 @@
         a.config as configStr,
         a.system_id AS fromSystemId,
         cc.name as fromSystemName,
-        cct.id AS systemId,
-        cct.name as systemName,
+        cct.id AS ciEntityId,
+        cct.name as ciEntityName,
         cci.icon as ciIcon,
         a.fcd,
         a.fcu,

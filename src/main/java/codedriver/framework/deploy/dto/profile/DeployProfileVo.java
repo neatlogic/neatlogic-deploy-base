@@ -38,12 +38,12 @@ public class DeployProfileVo extends BaseEditorVo {
     private Long fromSystemId;
     @EntityField(name = "所属系统名称", type = ApiParamType.STRING)
     private String fromSystemName;
-    @EntityField(name = "关联系统id", type = ApiParamType.LONG)
-    private Long systemId;
-    @EntityField(name = "关联系统名称", type = ApiParamType.STRING)
-    private String systemName;
-    @EntityField(name = "关联系统列表", type = ApiParamType.JSONARRAY)
-    private List<CiEntityVo> systemList;
+    @EntityField(name = "关联配置项id", type = ApiParamType.LONG)
+    private Long ciEntityId;
+    @EntityField(name = "关联配置项名称", type = ApiParamType.STRING)
+    private String ciEntityName;
+    @EntityField(name = "关联配置项列表", type = ApiParamType.JSONARRAY)
+    private List<CiEntityVo> ciEntityList;
     @EntityField(name = "工具库工具id/脚本工具id", type = ApiParamType.LONG)
     private Long operateId;
     @EntityField(name = "关联的工具和脚本列表", type = ApiParamType.JSONARRAY)
@@ -134,28 +134,28 @@ public class DeployProfileVo extends BaseEditorVo {
         this.fromSystemName = fromSystemName;
     }
 
-    public Long getSystemId() {
-        return systemId;
+    public Long getCiEntityId() {
+        return ciEntityId;
     }
 
-    public void setSystemId(Long systemId) {
-        this.systemId = systemId;
+    public void setCiEntityId(Long ciEntityId) {
+        this.ciEntityId = ciEntityId;
     }
 
-    public String getSystemName() {
-        return systemName;
+    public String getCiEntityName() {
+        return ciEntityName;
     }
 
-    public void setSystemName(String systemName) {
-        this.systemName = systemName;
+    public void setCiEntityName(String ciEntityName) {
+        this.ciEntityName = ciEntityName;
     }
 
-    public List<CiEntityVo> getSystemList() {
-        return systemList;
+    public List<CiEntityVo> getCiEntityList() {
+        return ciEntityList;
     }
 
-    public void setSystemList(List<CiEntityVo> systemList) {
-        this.systemList = systemList;
+    public void setCiEntityList(List<CiEntityVo> ciEntityList) {
+        this.ciEntityList = ciEntityList;
     }
 
     public Long getOperateId() {

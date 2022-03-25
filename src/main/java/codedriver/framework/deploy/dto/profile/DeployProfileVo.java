@@ -175,7 +175,6 @@ public class DeployProfileVo extends BaseEditorVo {
             if (CollectionUtils.isNotEmpty(params)) {
                 this.paramList = params.toJavaList(AutoexecParamVo.class);
             }
-        }
         return paramList;
     }
 

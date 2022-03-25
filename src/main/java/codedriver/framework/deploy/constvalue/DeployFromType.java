@@ -7,7 +7,8 @@ import codedriver.framework.dependency.core.IFromType;
  * @date 2022/3/23 10:08 上午
  */
 public enum DeployFromType  implements IFromType {
-    DEPLOY_PROFILE_OPERATION("deployprofileoperation","自动化profile工具库工具和自定义工具");
+    DEPLOY_PROFILE_OPERATION("deployprofileoperation","自动化profile工具库工具和自定义工具"),
+    DEPLOY_PROFILE_CIENTITY("deployprofilecientity","自动化profile配置项");
 
 
     private String value;

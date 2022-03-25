@@ -2,6 +2,7 @@ package codedriver.framework.deploy.dto.profile;
 
 import codedriver.framework.autoexec.dto.AutoexecParamVo;
 import codedriver.framework.autoexec.dto.AutoexecToolAndScriptVo;
+import codedriver.framework.cmdb.dto.cientity.CiEntityVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
@@ -34,9 +35,15 @@ public class DeployProfileVo extends BaseEditorVo {
     @EntityField(name = "工具类型", type = ApiParamType.STRING)
     private String type;
     @EntityField(name = "所属系统id", type = ApiParamType.LONG)
-    private Long systemId;
+    private Long fromSystemId;
     @EntityField(name = "所属系统名称", type = ApiParamType.STRING)
+    private String fromSystemName;
+    @EntityField(name = "关联系统id", type = ApiParamType.LONG)
+    private Long systemId;
+    @EntityField(name = "关联系统名称", type = ApiParamType.STRING)
     private String systemName;
+    @EntityField(name = "关联系统列表", type = ApiParamType.JSONARRAY)
+    private List<CiEntityVo> systemList;
     @EntityField(name = "工具库工具id/脚本工具id", type = ApiParamType.LONG)
     private Long operateId;
     @EntityField(name = "关联的工具和脚本列表", type = ApiParamType.JSONARRAY)
@@ -111,6 +118,22 @@ public class DeployProfileVo extends BaseEditorVo {
         this.type = type;
     }
 
+    public Long getFromSystemId() {
+        return fromSystemId;
+    }
+
+    public void setFromSystemId(Long fromSystemId) {
+        this.fromSystemId = fromSystemId;
+    }
+
+    public String getFromSystemName() {
+        return fromSystemName;
+    }
+
+    public void setFromSystemName(String fromSystemName) {
+        this.fromSystemName = fromSystemName;
+    }
+
     public Long getSystemId() {
         return systemId;
     }
@@ -125,6 +148,14 @@ public class DeployProfileVo extends BaseEditorVo {
 
     public void setSystemName(String systemName) {
         this.systemName = systemName;
+    }
+
+    public List<CiEntityVo> getSystemList() {
+        return systemList;
+    }
+
+    public void setSystemList(List<CiEntityVo> systemList) {
+        this.systemList = systemList;
     }
 
     public Long getOperateId() {

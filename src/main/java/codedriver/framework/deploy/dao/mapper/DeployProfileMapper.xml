@@ -3,7 +3,7 @@
 <mapper namespace="codedriver.framework.deploy.dao.mapper.DeployProfileMapper">
 
     <insert id="insertDeployProfileOperationByProfileIdAndOperateIdListAndType">
-        INSERT INTO deploy_profile_operate ( profile_id, operate_id ,type)
+        INSERT INTO deploy_profile_operation ( profile_id, operate_id ,type)
         VALUES
         <foreach collection="operateIdList" item="operateId" separator=",">
             (#{profileId},#{operateId},#{type})
@@ -25,7 +25,7 @@
                 #{name},
                 #{description},
                 #{configStr},
-                #{systemId},
+                #{fromSystemId},
                 NOW(3),
                 #{fcu},
                 NOW(3),
@@ -36,7 +36,7 @@
         UPDATE `deploy_profile`
         SET `name`        = #{name},
             `config`      =#{configStr},
-            system_id     = #{systemId},
+            system_id     = #{fromSystemId},
             `description` = #{description},
             `lcd`         = NOW(3),
             `lcu`         = #{lcu}
@@ -54,8 +54,10 @@
         FROM
         `deploy_profile` a
         LEFT JOIN cmdb_cientity cc ON cc.id = a.system_id
+        LEFT JOIN deploy_profile_cientity dpc ON dpc.profile_id=a.id
+        LEFT JOIN cmdb_cientity cct ON cct.id = dpc.ci_entity_id
         <if test="operateId != null">
-            LEFT JOIN deploy_profile_operate apo ON apo.profile_id = a.id
+            LEFT JOIN deploy_profile_operation apo ON apo.profile_id = a.id
         </if>
         <where>
             <if test="keyword != null and keyword != ''">
@@ -63,6 +65,9 @@
             </if>
             <if test="operateId != null">
                 and apo.`operate_id` = #{operateId}
+            </if>
+            <if test="systemId != null">
+                and dpc.`ci_entity_id` = #{systemId}
             </if>
         </where>
     </sql>
@@ -74,8 +79,10 @@
         a.name,
         a.description,
         a.config as configStr,
-        a.system_id AS systemId,
-        cc.name as systemName,
+        a.system_id AS fromSystemId,
+        cc.name as fromSystemName,
+        cct.id AS systemId,
+        cct.name as systemName,
         a.fcd,
         a.fcu,
         a.lcd,
@@ -97,8 +104,14 @@
         <result column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="configStr" property="configStr"/>
-        <result column="systemId" property="systemId"/>
-        <result column="systemName" property="systemName"/>
+        <result column="description" property="description"/>
+        <result column="fromSystemId" property="fromSystemId"/>
+        <result column="fromSystemName" property="fromSystemName"/>
+        <collection property="systemList" ofType="codedriver.framework.cmdb.dto.cientity.CiEntityVo">
+            <id column="systemId" property="id"/>
+            <result column="systemName" property="name"/>
+            <result column="ciIcon" property="ciIcon"/>
+        </collection>
         <collection property="autoexecToolAndScriptVoList"
                     ofType="codedriver.framework.autoexec.dto.AutoexecToolAndScriptVo">
             <id column="operateId" property="id"/>
@@ -111,8 +124,10 @@
                a.name,
                a.description,
                a.config       AS configStr,
-               a.system_id    AS systemId,
-               cc.name        as systemName,
+               a.system_id    AS fromSystemId,
+               cc.name        as fromSystemName,
+               cct.id         AS systemId,
+               cct.name       as systemName,
                dpo.type,
                dpo.operate_id as operateId,
                a.fcd,
@@ -120,8 +135,10 @@
                a.lcd,
                a.lcu
         FROM deploy_profile a
-                 left join deploy_profile_operate dpo on dpo.profile_id = a.id
+                 left join deploy_profile_operation dpo on dpo.profile_id = a.id
                  LEFT JOIN cmdb_cientity cc ON cc.id = a.system_id
+                 LEFT JOIN deploy_profile_cientity dpc ON dpc.profile_id = a.id
+                 LEFT JOIN cmdb_cientity cct ON cct.id = dpc.ci_entity_id
         WHERE a.id = #{value}
     </select>
 
@@ -130,7 +147,7 @@
         SELECT profile_id,
                operate_id,
                type
-        FROM deploy_profile_operate
+        FROM deploy_profile_operation
         WHERE operate_id = #{value}
     </select>
 
@@ -138,7 +155,7 @@
     <select id="getProfileOperationVoListByProfileId"
             resultType="codedriver.framework.deploy.dto.profile.DeployProfileOperationVo">
         select profile_id, operate_id, type
-        from deploy_profile_operate
+        from deploy_profile_operation
     </select>
 
     <select id="getDeployProfileIdList" resultType="java.lang.Long">
@@ -151,20 +168,25 @@
 
     </select>
 
-    <select id="searchProfileListByIdList"
-            resultType="codedriver.framework.deploy.dto.profile.DeployProfileVo">
+    <select id="searchProfileListByIdList" resultMap="profileMap">
         SELECT a.id,
         a.name,
         a.description,
         a.config as configStr,
-        a.system_id AS systemId,
-        cc.name as systemName,
+        a.system_id AS fromSystemId,
+        cc.name as fromSystemName,
+        cct.id AS systemId,
+        cct.name as systemName,
+        cci.icon as ciIcon,
         a.fcd,
         a.fcu,
         a.lcd,
         a.lcu
         FROM deploy_profile a
         LEFT JOIN cmdb_cientity cc ON cc.id = a.system_id
+        LEFT JOIN deploy_profile_cientity dpc ON dpc.profile_id=a.id
+        LEFT JOIN cmdb_cientity cct ON cct.id = dpc.ci_entity_id
+        LEFT JOIN cmdb_ci cci ON cci.id = cct.ci_id
         WHERE a.id in
         <foreach collection="idList" open="(" separator="," close=")" item="id">
             #{id}
@@ -179,7 +201,7 @@
 
     <delete id="deleteProfileOperateByProfileId">
         DELETE
-        FROM deploy_profile_operate
+        FROM deploy_profile_operation
         WHERE profile_id = #{value}
     </delete>
 </mapper>

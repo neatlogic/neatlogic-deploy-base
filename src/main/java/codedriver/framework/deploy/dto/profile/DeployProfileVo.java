@@ -86,10 +86,6 @@ public class DeployProfileVo extends BaseEditorVo {
         if (MapUtils.isEmpty(config)) {
             if (StringUtils.isNotBlank(configStr)) {
                 config = JSONObject.parseObject(configStr);
-            } else if (CollectionUtils.isNotEmpty(paramList)) {
-                JSONObject configObject = new JSONObject();
-                configObject.put("paramList", paramList);
-                config = configObject;
             }
         }
         return config;
@@ -175,9 +171,7 @@ public class DeployProfileVo extends BaseEditorVo {
     }
 
     public List<AutoexecParamVo> getParamList() {
-        if (CollectionUtils.isEmpty(paramList) && StringUtils.isNotBlank(configStr)) {
-            JSONObject toolConfig = JSONObject.parseObject(configStr);
-            JSONArray params = toolConfig.getJSONArray("paramList");
+            JSONArray params = getConfig().getJSONArray("paramList");
             if (CollectionUtils.isNotEmpty(params)) {
                 this.paramList = params.toJavaList(AutoexecParamVo.class);
             }

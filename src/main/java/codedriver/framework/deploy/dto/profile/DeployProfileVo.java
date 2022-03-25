@@ -171,10 +171,12 @@ public class DeployProfileVo extends BaseEditorVo {
     }
 
     public List<AutoexecParamVo> getParamList() {
+        if (CollectionUtils.isEmpty(paramList) && StringUtils.isNotBlank(configStr)) {
             JSONArray params = getConfig().getJSONArray("paramList");
             if (CollectionUtils.isNotEmpty(params)) {
                 this.paramList = params.toJavaList(AutoexecParamVo.class);
             }
+        }
         return paramList;
     }
 

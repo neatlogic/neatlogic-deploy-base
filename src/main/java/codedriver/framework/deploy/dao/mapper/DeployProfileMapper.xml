@@ -187,6 +187,12 @@
         </foreach>
     </select>
 
+    <select id="checkProfileNameIsRepeats" resultType="int">
+        SELECT count(1)
+        FROM deploy_profile
+        WHERE id = #{value}
+    </select>
+
     <delete id="deleteProfileById">
         DELETE
         FROM deploy_profile

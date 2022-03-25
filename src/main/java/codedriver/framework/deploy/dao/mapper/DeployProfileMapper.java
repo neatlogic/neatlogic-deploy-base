@@ -17,6 +17,8 @@ public interface DeployProfileMapper {
 
     int checkProfileIsExists(Long id);
 
+    int checkProfileNameIsRepeats(DeployProfileVo vo);
+
     List<Long> getDeployProfileIdList(DeployProfileVo profileVo);
 
     List<DeployProfileVo> searchDeployProfile(DeployProfileVo profileVo);

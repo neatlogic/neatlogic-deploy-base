@@ -153,7 +153,7 @@
     </select>
 
     <select id="getDeployProfileIdList" resultType="java.lang.Long">
-        SELECT a.id
+        SELECT distinct a.id
         <include refid="searchProfile"></include>
         ORDER BY a.id DESC
         <if test="needPage == true">
@@ -185,12 +185,14 @@
         <foreach collection="idList" open="(" separator="," close=")" item="id">
             #{id}
         </foreach>
+        ORDER BY a.lcd DESC
     </select>
 
     <select id="checkProfileNameIsRepeats" resultType="int">
         SELECT count(1)
         FROM deploy_profile
-        WHERE id = #{value}
+        WHERE id != #{id}
+          AND name =#{name}
     </select>
 
     <delete id="deleteProfileById">

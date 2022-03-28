@@ -150,6 +150,7 @@
             resultType="codedriver.framework.deploy.dto.profile.DeployProfileOperationVo">
         select profile_id, operate_id, type
         from deploy_profile_operation
+        where profile_id = #{value}
     </select>
 
     <select id="getDeployProfileIdList" resultType="java.lang.Long">

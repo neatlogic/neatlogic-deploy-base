@@ -160,7 +160,6 @@
         <if test="needPage == true">
             LIMIT #{startNum}, #{pageSize}
         </if>
-
     </select>
 
     <select id="searchProfileListByIdList" resultMap="profileMap">

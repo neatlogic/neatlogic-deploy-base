@@ -50,7 +50,7 @@ public class DeployProfileVo extends BaseEditorVo {
     private List<AutoexecToolAndScriptVo> autoexecToolAndScriptVoList;
     @EntityField(name = "关联的工具和脚本列表", type = ApiParamType.INTEGER)
     private Integer autoexecToolAndScriptCount = 0;
-    @EntityField(name = "入参列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "参数列表", type = ApiParamType.JSONARRAY)
     private List<AutoexecParamVo> paramList;
     @EntityField(name = "工具库工具id/脚本工具id列表", type = ApiParamType.JSONARRAY)
     private List<Long> operateIdList;

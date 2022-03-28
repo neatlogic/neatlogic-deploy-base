@@ -37,6 +37,6 @@ public interface DeployProfileMapper {
 
     void deleteProfileById(Long id);
 
-    void deleteProfileOperateByProfileId(Long id);
+    void deleteProfileOperationByProfileId(Long id);
 
 }

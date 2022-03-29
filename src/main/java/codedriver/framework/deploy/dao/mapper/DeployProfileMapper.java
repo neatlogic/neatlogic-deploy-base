@@ -1,6 +1,7 @@
 package codedriver.framework.deploy.dao.mapper;
 
 
+import codedriver.framework.autoexec.dto.AutoexecOperationVo;
 import codedriver.framework.deploy.dto.profile.DeployProfileOperationVo;
 import codedriver.framework.deploy.dto.profile.DeployProfileVo;
 import org.apache.ibatis.annotations.Param;
@@ -39,4 +40,7 @@ public interface DeployProfileMapper {
 
     void deleteProfileOperationByProfileId(Long id);
 
+    List<AutoexecOperationVo> getAutoexecOperationVoByProfileId(Long id);
+
+    List<AutoexecOperationVo> getAutoexecOperationVoByOperationIdList(@Param("idList") List<Long> idList);
 }

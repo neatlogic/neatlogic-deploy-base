@@ -119,8 +119,8 @@
             <result column="ciEntityName" property="name"/>
             <result column="ciIcon" property="ciIcon"/>
         </collection>
-        <collection property="autoexecToolAndScriptVoList"
-                    ofType="codedriver.framework.autoexec.dto.AutoexecToolAndScriptVo">
+        <collection property="autoexecOperationVoList"
+                    ofType="codedriver.framework.autoexec.dto.AutoexecOperationVo">
             <id column="operateId" property="id"/>
             <result column="type" property="type"/>
         </collection>
@@ -162,7 +162,7 @@
         </if>
     </select>
 
-    <select id="searchProfileListByIdList" resultMap="profileMap">
+    <select id="getProfileListByIdList" resultMap="profileMap">
         SELECT a.id,
         a.name,
         a.description,

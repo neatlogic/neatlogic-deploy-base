@@ -23,7 +23,7 @@ public interface DeployProfileMapper {
 
     List<DeployProfileVo> searchDeployProfile(DeployProfileVo profileVo);
 
-    List<DeployProfileVo> searchProfileListByIdList(@Param("idList") List<Long> idList);
+    List<DeployProfileVo> getProfileListByIdList(@Param("idList") List<Long> idList);
 
     List<DeployProfileOperationVo> getProfileOperationVoListByProfileId(Long id);
 

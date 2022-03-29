@@ -1,7 +1,7 @@
 package codedriver.framework.deploy.dto.profile;
 
+import codedriver.framework.autoexec.dto.AutoexecOperationVo;
 import codedriver.framework.autoexec.dto.AutoexecParamVo;
-import codedriver.framework.autoexec.dto.AutoexecToolAndScriptVo;
 import codedriver.framework.cmdb.dto.cientity.CiEntityVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
@@ -47,9 +47,9 @@ public class DeployProfileVo extends BaseEditorVo {
     @EntityField(name = "工具库工具id/脚本工具id", type = ApiParamType.LONG)
     private Long operateId;
     @EntityField(name = "关联的工具和脚本列表", type = ApiParamType.JSONARRAY)
-    private List<AutoexecToolAndScriptVo> autoexecToolAndScriptVoList;
+    private List<AutoexecOperationVo> autoexecOperationVoList;
     @EntityField(name = "关联的工具和脚本列表", type = ApiParamType.INTEGER)
-    private Integer autoexecToolAndScriptCount = 0;
+    private Integer autoexecOperationCount = 0;
     @EntityField(name = "参数列表", type = ApiParamType.JSONARRAY)
     private List<AutoexecParamVo> paramList;
     @EntityField(name = "工具库工具id/脚本工具id列表", type = ApiParamType.JSONARRAY)
@@ -166,12 +166,12 @@ public class DeployProfileVo extends BaseEditorVo {
         this.operateId = operateId;
     }
 
-    public List<AutoexecToolAndScriptVo> getAutoexecToolAndScriptVoList() {
-        return autoexecToolAndScriptVoList;
+    public List<AutoexecOperationVo> getAutoexecOperationVoList() {
+        return autoexecOperationVoList;
     }
 
-    public void setAutoexecToolAndScriptVoList(List<AutoexecToolAndScriptVo> autoexecToolAndScriptVoList) {
-        this.autoexecToolAndScriptVoList = autoexecToolAndScriptVoList;
+    public void setAutoexecOperationVoList(List<AutoexecOperationVo> autoexecOperationVoList) {
+        this.autoexecOperationVoList = autoexecOperationVoList;
     }
 
     public List<AutoexecParamVo> getParamList() {
@@ -188,12 +188,12 @@ public class DeployProfileVo extends BaseEditorVo {
         this.paramList = paramList;
     }
 
-    public Integer getAutoexecToolAndScriptCount() {
-        return autoexecToolAndScriptCount;
+    public Integer getAutoexecOperationCount() {
+        return autoexecOperationCount;
     }
 
-    public void setAutoexecToolAndScriptCount(Integer autoexecToolAndScriptCount) {
-        this.autoexecToolAndScriptCount = autoexecToolAndScriptCount;
+    public void setAutoexecOperationCount(Integer autoexecOperationCount) {
+        this.autoexecOperationCount = autoexecOperationCount;
     }
 
     public List<Long> getOperateIdList() {

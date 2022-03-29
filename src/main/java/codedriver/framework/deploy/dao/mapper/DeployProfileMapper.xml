@@ -79,27 +79,6 @@
         LEFT JOIN cmdb_cientity cct ON cct.id = dpc.ci_entity_id
     </sql>
 
-    <select id="searchDeployProfile" resultMap="profileMap">
-        SELECT
-        a.id,
-        a.name,
-        a.description,
-        a.config as configStr,
-        a.system_id AS fromSystemId,
-        cc.name as fromSystemName,
-        cct.id AS ciEntityId,
-        cct.name as ciEntityName,
-        a.fcd,
-        a.fcu,
-        a.lcd,
-        a.lcu
-        <include refid="searchProfile"></include>
-        ORDER BY a.id DESC
-        <if test="needPage == true">
-            LIMIT #{startNum}, #{pageSize}
-        </if>
-    </select>
-
     <select id="checkProfileIsExists" resultType="int">
         SELECT count(1)
         FROM `deploy_profile`

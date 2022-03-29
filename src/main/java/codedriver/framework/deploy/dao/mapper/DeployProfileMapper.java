@@ -22,8 +22,6 @@ public interface DeployProfileMapper {
 
     List<Long> getDeployProfileIdList(DeployProfileVo profileVo);
 
-    List<DeployProfileVo> searchDeployProfile(DeployProfileVo profileVo);
-
     List<DeployProfileVo> getProfileListByIdList(@Param("idList") List<Long> idList);
 
     List<DeployProfileOperationVo> getProfileOperationVoListByProfileId(Long id);

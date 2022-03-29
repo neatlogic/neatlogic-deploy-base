@@ -35,7 +35,7 @@
     <update id="updateProfile" parameterType="codedriver.framework.deploy.dto.profile.DeployProfileVo">
         UPDATE `deploy_profile`
         SET `name`        = #{name},
-            `config`      =#{configStr},
+            `config`      = #{configStr},
             system_id     = #{fromSystemId},
             `description` = #{description},
             `lcd`         = NOW(3),
@@ -64,6 +64,9 @@
             </if>
             <if test="ciEntityId != null">
                 and dpc.`ci_entity_id` = #{ciEntityId}
+            </if>
+            <if test="fromSystemId != null">
+                and cc.`id` = #{fromSystemId}
             </if>
         </where>
     </sql>

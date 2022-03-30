@@ -2,6 +2,7 @@ package codedriver.framework.deploy.dao.mapper;
 
 
 import codedriver.framework.autoexec.dto.AutoexecOperationVo;
+import codedriver.framework.deploy.crossover.IDeployCrossoverMapper;
 import codedriver.framework.deploy.dto.profile.DeployProfileOperationVo;
 import codedriver.framework.deploy.dto.profile.DeployProfileVo;
 import org.apache.ibatis.annotations.Param;
@@ -12,7 +13,7 @@ import java.util.List;
  * @author longrf
  * @date 2022/3/16 11:42 上午
  */
-public interface DeployProfileMapper {
+public interface DeployProfileMapper  extends IDeployCrossoverMapper {
 
     int searchDeployProfileCount(DeployProfileVo profileVo);
 
@@ -37,6 +38,8 @@ public interface DeployProfileMapper {
     void deleteProfileById(Long id);
 
     void deleteProfileOperationByProfileId(Long id);
+
+    void deleteProfileOperationByOperationId(Long id);
 
     List<AutoexecOperationVo> getAutoexecOperationVoByProfileId(Long id);
 

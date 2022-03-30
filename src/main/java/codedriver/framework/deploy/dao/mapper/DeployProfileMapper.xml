@@ -232,49 +232,6 @@
                    where profile_id = #{value}))
     </select>
 
-    <select id="getAutoexecOperationVoByOperationIdList"
-            resultType="codedriver.framework.autoexec.dto.AutoexecOperationVo">
-        (SELECT a.`id`,
-        a.`name`,
-        'script' AS `type`,
-        a.`exec_mode` AS execMode,
-        a.`type_id` AS typeId,
-        ate.`name` AS typeName,
-        a.`risk_id` AS riskId,
-        ar.`name` AS riskName,
-        ar.`color` AS riskColor,
-        a.`description`
-        FROM `autoexec_script` a
-        JOIN `autoexec_script_version` b ON a.`id` = b.`script_id`
-        LEFT JOIN autoexec_type ate ON a.`type_id` = ate.`id`
-        LEFT JOIN autoexec_risk ar ON a.`risk_id` = ar.`id`
-        WHERE b.`is_active` = 1
-        and a.`id` in
-        <foreach collection="idList" item="id" open="(" separator="," close=")">
-            #{id}
-        </foreach>)
-        union
-        (
-        select a.`id`,
-        a.`name`,
-        'tool' as `type`,
-        a.`exec_mode` as execMode,
-        a.`type_id` as typeId,
-        ate.`name` as typeName,
-        a.`risk_id` as riskId,
-        ar.`name` as riskName,
-        ar.`color` as riskColor,
-        a.`description`
-        from `autoexec_tool` a
-        LEFT JOIN autoexec_type ate ON a.`type_id` = ate.`id`
-        LEFT JOIN autoexec_risk ar ON a.`risk_id` = ar.`id`
-        where a.`is_active` = 1
-        and a.`id` in
-        <foreach collection="idList" item="id" open="(" separator="," close=")">
-            #{id}
-        </foreach>)
-    </select>
-
     <delete id="deleteProfileById">
         DELETE
         FROM deploy_profile

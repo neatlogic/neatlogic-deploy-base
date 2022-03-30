@@ -43,5 +43,4 @@ public interface DeployProfileMapper  extends IDeployCrossoverMapper {
 
     List<AutoexecOperationVo> getAutoexecOperationVoByProfileId(Long id);
 
-    List<AutoexecOperationVo> getAutoexecOperationVoByOperationIdList(@Param("idList") List<Long> idList);
 }

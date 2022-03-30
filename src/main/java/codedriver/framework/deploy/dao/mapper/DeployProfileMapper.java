@@ -28,7 +28,7 @@ public interface DeployProfileMapper {
 
     DeployProfileVo getProfileVoById(Long id);
 
-    void insertDeployProfileOperation(@Param("profileId") Long profileId, @Param("operateIdList") List<Long> operateIdList, @Param("type") String type);
+    void insertDeployProfileOperation(@Param("profileId") Long profileId, @Param("operationIdList") List<Long> operationIdList, @Param("type") String type);
 
     void insertProfile(DeployProfileVo profileVo);
 

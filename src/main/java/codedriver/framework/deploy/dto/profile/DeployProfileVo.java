@@ -45,7 +45,7 @@ public class DeployProfileVo extends BaseEditorVo {
     @EntityField(name = "关联配置项列表", type = ApiParamType.JSONARRAY)
     private List<CiEntityVo> ciEntityList;
     @EntityField(name = "工具库工具id/脚本工具id", type = ApiParamType.LONG)
-    private Long operateId;
+    private Long operationId;
     @EntityField(name = "关联的工具和脚本列表", type = ApiParamType.JSONARRAY)
     private List<AutoexecOperationVo> autoexecOperationVoList;
     @EntityField(name = "关联的工具和脚本列表", type = ApiParamType.INTEGER)
@@ -53,7 +53,7 @@ public class DeployProfileVo extends BaseEditorVo {
     @EntityField(name = "参数列表", type = ApiParamType.JSONARRAY)
     private List<AutoexecParamVo> paramList;
     @EntityField(name = "工具库工具id/脚本工具id列表", type = ApiParamType.JSONARRAY)
-    private List<Long> operateIdList;
+    private List<Long> operationIdList;
 
     public Long getId() {
         if (id == null) {
@@ -158,12 +158,12 @@ public class DeployProfileVo extends BaseEditorVo {
         this.ciEntityList = ciEntityList;
     }
 
-    public Long getOperateId() {
-        return operateId;
+    public Long getOperationId() {
+        return operationId;
     }
 
-    public void setOperateId(Long operateId) {
-        this.operateId = operateId;
+    public void setOperationId(Long operationId) {
+        this.operationId = operationId;
     }
 
     public List<AutoexecOperationVo> getAutoexecOperationVoList() {
@@ -196,11 +196,11 @@ public class DeployProfileVo extends BaseEditorVo {
         this.autoexecOperationCount = autoexecOperationCount;
     }
 
-    public List<Long> getOperateIdList() {
-        return operateIdList;
+    public List<Long> getOperationIdList() {
+        return operationIdList;
     }
 
-    public void setOperateIdList(List<Long> operateIdList) {
-        this.operateIdList = operateIdList;
+    public void setOperationIdList(List<Long> operationIdList) {
+        this.operationIdList = operationIdList;
     }
 }

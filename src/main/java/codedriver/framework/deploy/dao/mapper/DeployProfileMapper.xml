@@ -3,10 +3,10 @@
 <mapper namespace="codedriver.framework.deploy.dao.mapper.DeployProfileMapper">
 
     <insert id="insertDeployProfileOperation">
-        INSERT INTO deploy_profile_operation ( profile_id, operate_id ,type)
+        INSERT INTO deploy_profile_operation ( profile_id, operation_id ,type)
         VALUES
-        <foreach collection="operateIdList" item="operateId" separator=",">
-            (#{profileId},#{operateId},#{type})
+        <foreach collection="operationIdList" item="operationId" separator=",">
+            (#{profileId},#{operationId},#{type})
         </foreach>
     </insert>
 
@@ -52,15 +52,15 @@
 
     <sql id="searchProfile">
         <include refid="searchProfileFrom"></include>
-        <if test="operateId != null">
+        <if test="operationId != null">
             LEFT JOIN deploy_profile_operation apo ON apo.profile_id = a.id
         </if>
         <where>
             <if test="keyword != null and keyword != ''">
                 AND (a.`name` LIKE CONCAT('%',#{keyword}, '%') OR a.`description` LIKE CONCAT('%',#{keyword}, '%'))
             </if>
-            <if test="operateId != null">
-                and apo.`operate_id` = #{operateId}
+            <if test="operationId != null">
+                and apo.`operation_id` = #{operationId}
             </if>
             <if test="ciEntityId != null">
                 and dpc.`ci_entity_id` = #{ciEntityId}
@@ -103,7 +103,7 @@
         </collection>
         <collection property="autoexecOperationVoList"
                     ofType="codedriver.framework.autoexec.dto.AutoexecOperationVo">
-            <id column="operateId" property="id"/>
+            <id column="operationId" property="id"/>
             <result column="type" property="type"/>
         </collection>
     </resultMap>
@@ -118,7 +118,7 @@
         cct.id AS ciEntityId,
         cct.name as ciEntityName,
         dpo.type,
-        dpo.operate_id as operateId,
+        dpo.operation_id as operationId,
         a.fcd,
         a.fcu,
         a.lcd,
@@ -130,7 +130,7 @@
 
     <select id="getProfileOperationVoListByProfileId"
             resultType="codedriver.framework.deploy.dto.profile.DeployProfileOperationVo">
-        select profile_id, operate_id, type
+        select profile_id, operation_id, type
         from deploy_profile_operation
         where profile_id = #{value}
     </select>
@@ -207,7 +207,7 @@
                   LEFT JOIN autoexec_risk ar ON a.`risk_id` = ar.`id`
          WHERE b.`is_active` = 1
            and a.`id` in
-               (select operate_id
+               (select operation_id
                 from deploy_profile_operation
                 where profile_id = #{value}))
         union
@@ -227,7 +227,7 @@
                      LEFT JOIN autoexec_risk ar ON a.`risk_id` = ar.`id`
             where a.`is_active` = 1
               and a.`id` in
-                  (select operate_id
+                  (select operation_id
                    from deploy_profile_operation
                    where profile_id = #{value}))
     </select>

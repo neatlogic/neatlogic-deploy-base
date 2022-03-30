@@ -12,8 +12,8 @@ public class DeployProfileOperationVo extends BasePageVo {
 
     @EntityField(name = "profileId", type = ApiParamType.LONG)
     private Long profileId;
-    @EntityField(name = "operateId", type = ApiParamType.LONG)
-    private Long operateId;
+    @EntityField(name = "operationId", type = ApiParamType.LONG)
+    private Long operationId;
     @EntityField(name = "type", type = ApiParamType.STRING)
     private String type;
 
@@ -25,12 +25,12 @@ public class DeployProfileOperationVo extends BasePageVo {
         this.profileId = profileId;
     }
 
-    public Long getOperateId() {
-        return operateId;
+    public Long getOperationId() {
+        return operationId;
     }
 
-    public void setOperateId(Long operateId) {
-        this.operateId = operateId;
+    public void setOperationId(Long operationId) {
+        this.operationId = operationId;
     }
 
     public String getType() {

@@ -5,7 +5,6 @@
 
 package codedriver.framework.deploy.dto.pinelinetemplate;
 
-import codedriver.framework.autoexec.dto.AutoexecToolAndScriptVo;
 import codedriver.framework.autoexec.dto.combop.AutoexecCombopConfigVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
@@ -35,20 +34,10 @@ public class DeployPinelineTemplateVo extends BaseEditorVo implements Serializab
     private String typeName;
     @EntityField(name = "状态", type = ApiParamType.INTEGER)
     private Integer isActive = 1;
-    @EntityField(name = "操作类型", type = ApiParamType.STRING)
-    private String operationType;
     @EntityField(name = "配置信息", type = ApiParamType.JSONOBJECT)
     private AutoexecCombopConfigVo config;
-    @EntityField(name = "被引用次数", type = ApiParamType.INTEGER)
-    private int referenceCount;
 
     public DeployPinelineTemplateVo() {
-    }
-
-    public DeployPinelineTemplateVo(AutoexecToolAndScriptVo autoexecToolAndScriptVo) {
-        this.name = autoexecToolAndScriptVo.getName();
-        this.typeId = autoexecToolAndScriptVo.getTypeId();
-        this.operationType = autoexecToolAndScriptVo.getType();
     }
 
     public Long getId() {
@@ -102,28 +91,12 @@ public class DeployPinelineTemplateVo extends BaseEditorVo implements Serializab
         this.isActive = isActive;
     }
 
-    public String getOperationType() {
-        return operationType;
-    }
-
-    public void setOperationType(String operationType) {
-        this.operationType = operationType;
-    }
-
     public AutoexecCombopConfigVo getConfig() {
         return config;
     }
 
     public void setConfig(String config) {
         this.config = JSONObject.parseObject(config, AutoexecCombopConfigVo.class);
-    }
-
-    public int getReferenceCount() {
-        return referenceCount;
-    }
-
-    public void setReferenceCount(int referenceCount) {
-        this.referenceCount = referenceCount;
     }
 
     public String getConfigStr() {

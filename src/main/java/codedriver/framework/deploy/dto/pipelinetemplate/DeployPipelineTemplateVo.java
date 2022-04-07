@@ -3,7 +3,7 @@
  * 本内容仅限于深圳市赞悦科技有限公司内部传阅，禁止外泄以及用于其他的商业项目。
  */
 
-package codedriver.framework.deploy.dto.pinelinetemplate;
+package codedriver.framework.deploy.dto.pipelinetemplate;
 
 import codedriver.framework.autoexec.dto.combop.AutoexecCombopConfigVo;
 import codedriver.framework.common.constvalue.ApiParamType;
@@ -20,7 +20,7 @@ import java.io.Serializable;
  * @author: linbq
  * @since: 2021/4/13 9:54
  **/
-public class DeployPinelineTemplateVo extends BaseEditorVo implements Serializable {
+public class DeployPipelineTemplateVo extends BaseEditorVo implements Serializable {
 
     @EntityField(name = "主键id", type = ApiParamType.LONG)
     private Long id;
@@ -37,7 +37,7 @@ public class DeployPinelineTemplateVo extends BaseEditorVo implements Serializab
     @EntityField(name = "配置信息", type = ApiParamType.JSONOBJECT)
     private AutoexecCombopConfigVo config;
 
-    public DeployPinelineTemplateVo() {
+    public DeployPipelineTemplateVo() {
     }
 
     public Long getId() {

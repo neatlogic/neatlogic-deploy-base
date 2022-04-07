@@ -10,7 +10,7 @@ import codedriver.framework.auth.core.AuthBase;
 import java.util.Collections;
 import java.util.List;
 
-public class DEPLOY_PINELINE_TEMPLATE_MANAGE extends AuthBase {
+public class DEPLOY_PIPELINE_TEMPLATE_MANAGE extends AuthBase {
     @Override
     public String getAuthDisplayName() {
         return "流水线模板管理权限";

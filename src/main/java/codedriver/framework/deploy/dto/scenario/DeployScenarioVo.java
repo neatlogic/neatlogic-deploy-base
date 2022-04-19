@@ -1,4 +1,4 @@
-package codedriver.framework.deploy.dto.scene;
+package codedriver.framework.deploy.dto.scenario;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
@@ -9,7 +9,7 @@ import codedriver.framework.util.SnowflakeUtil;
  * @author longrf
  * @date 2022/4/15 12:06 下午
  */
-public class DeploySceneVo extends BaseEditorVo {
+public class DeployScenarioVo extends BaseEditorVo {
 
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;

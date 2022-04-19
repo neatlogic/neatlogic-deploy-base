@@ -17,6 +17,8 @@ public class DeploySceneVo extends BaseEditorVo {
     private String name;
     @EntityField(name = "描述", type = ApiParamType.STRING)
     private String description;
+    @EntityField(name = "应用引用个数", type = ApiParamType.INTEGER)
+    private Integer ciEntityReferredCount;
 
     public Long getId() {
         if (id == null) {
@@ -43,5 +45,13 @@ public class DeploySceneVo extends BaseEditorVo {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getCiEntityReferredCount() {
+        return ciEntityReferredCount;
+    }
+
+    public void setCiEntityReferredCount(Integer ciEntityReferredCount) {
+        this.ciEntityReferredCount = ciEntityReferredCount;
     }
 }

@@ -17,7 +17,7 @@ public class DeploySceneVo extends BaseEditorVo {
     private String name;
     @EntityField(name = "描述", type = ApiParamType.STRING)
     private String description;
-    @EntityField(name = "应用引用个数", type = ApiParamType.INTEGER)
+    @EntityField(name = "被应用引用个数", type = ApiParamType.INTEGER)
     private Integer ciEntityReferredCount;
 
     public Long getId() {

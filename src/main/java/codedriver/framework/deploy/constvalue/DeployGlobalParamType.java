@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author longrf
  * @date 2022/4/20 2:29 下午
  */
-public enum ParamValueType implements IEnum {
+public enum DeployGlobalParamType implements IEnum {
     TEXT("text", "文本", "文本参数，可输入字符串、数字"),
     PASSWORD("password", "密码",  "可输入数字或字符串，页面显示为密文"),
     DATE("date", "日期",  "日期选择器"),
@@ -23,7 +23,7 @@ public enum ParamValueType implements IEnum {
     private final String text;
     private final String description;
 
-    ParamValueType(String value, String text, String description) {
+    DeployGlobalParamType(String value, String text, String description) {
         this.value = value;
         this.text = text;
         this.description = description;
@@ -41,8 +41,8 @@ public enum ParamValueType implements IEnum {
         return description;
     }
 
-    public static ParamValueType getParamType(String _value) {
-        for (ParamValueType e : values()) {
+    public static DeployGlobalParamType getParamType(String _value) {
+        for (DeployGlobalParamType e : values()) {
             if (Objects.equals(e.getValue(), _value)) {
                 return e;
             }
@@ -53,7 +53,7 @@ public enum ParamValueType implements IEnum {
     @Override
     public List getValueTextList() {
         JSONArray resultList = new JSONArray();
-        for (ParamValueType e : values()) {
+        for (DeployGlobalParamType e : values()) {
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("value", e.getValue());
             jsonObj.put("text", e.getText());

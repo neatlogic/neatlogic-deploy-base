@@ -18,6 +18,8 @@ public class DeployGlobalParamVo extends BaseEditorVo {
     private String displayName;
     @EntityField(name = "参数值", type = ApiParamType.STRING)
     private String value;
+    @EntityField(name = "参数值类型", type = ApiParamType.STRING)
+    private String valueType;
     @EntityField(name = "描述", type = ApiParamType.STRING)
     private String description;
 
@@ -52,8 +54,17 @@ public class DeployGlobalParamVo extends BaseEditorVo {
         return value;
     }
 
+    public String getValueType() {
+        return valueType;
+    }
+
+    public void setValueType(String valueType) {
+        this.valueType = valueType;
+    }
+
     public void setValue(String value) {
         this.value = value;
+
     }
 
     public String getDescription() {

@@ -19,4 +19,6 @@ public interface IDeploySqlCrossoverMapper extends ICrossoverService {
     List<DeploySqlDetailVo> getAllJobDeploySqlDetailList(DeploySqlDetailVo deployVersionSql);
 
     void updateJobDeploySqlDetailIsDeleteAndStatusAndMd5AndLcdById(@Param("status") String status, @Param("md5") String md5, @Param("id") Long id);
+
+    void updateJobDeploySqlIsDeleteByIdList(@Param("idList") List<Long> idList);
 }

@@ -19,19 +19,13 @@ public class DeploySqlVo implements Serializable {
     private Long jobId;
     @EntityField(name = "执行sql文件id", type = ApiParamType.LONG)
     private Long sqlId;
-    @EntityField(name = "节点id", type = ApiParamType.LONG)
-    private Long nodeId;
-    @EntityField(name = "节点名称", type = ApiParamType.STRING)
-    private String nodeName;
 
     public DeploySqlVo() {
     }
 
-    public DeploySqlVo(Long jobId, Long sqlId, Long nodeId, String nodeName) {
+    public DeploySqlVo(Long jobId, Long sqlId) {
         this.jobId = jobId;
         this.sqlId = sqlId;
-        this.nodeId = nodeId;
-        this.nodeName = nodeName;
     }
 
     public Long getId() {
@@ -50,22 +44,6 @@ public class DeploySqlVo implements Serializable {
 
     public void setJobId(Long jobId) {
         this.jobId = jobId;
-    }
-
-    public Long getNodeId() {
-        return nodeId;
-    }
-
-    public void setNodeId(Long nodeId) {
-        this.nodeId = nodeId;
-    }
-
-    public String getNodeName() {
-        return nodeName;
-    }
-
-    public void setNodeName(String nodeName) {
-        this.nodeName = nodeName;
     }
 
     public Long getSqlId() {

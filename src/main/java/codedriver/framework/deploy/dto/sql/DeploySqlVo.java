@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @author longrf
  * @date 2022/4/27 11:04 上午
  */
-public class DeployJobSqlVo implements Serializable {
+public class DeploySqlVo implements Serializable {
     private static final long serialVersionUID = -3975625036003451623L;
 
     @EntityField(name = "id", type = ApiParamType.LONG)
@@ -19,13 +19,19 @@ public class DeployJobSqlVo implements Serializable {
     private Long jobId;
     @EntityField(name = "执行sql文件id", type = ApiParamType.LONG)
     private Long sqlId;
+    @EntityField(name = "节点id", type = ApiParamType.LONG)
+    private Long nodeId;
+    @EntityField(name = "节点名称", type = ApiParamType.STRING)
+    private String nodeName;
 
-    public DeployJobSqlVo() {
+    public DeploySqlVo() {
     }
 
-    public DeployJobSqlVo(Long jobId, Long sqlId) {
+    public DeploySqlVo(Long jobId, Long sqlId, Long nodeId, String nodeName) {
         this.jobId = jobId;
         this.sqlId = sqlId;
+        this.nodeId = nodeId;
+        this.nodeName = nodeName;
     }
 
     public Long getId() {
@@ -44,6 +50,22 @@ public class DeployJobSqlVo implements Serializable {
 
     public void setJobId(Long jobId) {
         this.jobId = jobId;
+    }
+
+    public Long getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(Long nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    public String getNodeName() {
+        return nodeName;
+    }
+
+    public void setNodeName(String nodeName) {
+        this.nodeName = nodeName;
     }
 
     public Long getSqlId() {

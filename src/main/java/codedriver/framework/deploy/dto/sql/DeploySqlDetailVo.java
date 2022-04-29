@@ -18,6 +18,10 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private Long id;
     @EntityField(name = "资源id", type = ApiParamType.LONG)
     private Long resourceId;
+    @EntityField(name = "runner id", type = ApiParamType.LONG)
+    private Long runnerId;
+    @EntityField(name = "runner 端口", type = ApiParamType.INTEGER)
+    private Integer runnerPort;
     @EntityField(name = "systemId", type = ApiParamType.LONG)
     private Long systemId;
     @EntityField(name = "moduleId", type = ApiParamType.LONG)
@@ -53,6 +57,8 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.host=(paramObj.getString("host"));
         this.port=(paramObj.getInteger("port"));
         this.resourceId=(paramObj.getLong("resourceId"));
+        this.runnerId=(paramObj.getLong("runnerId"));
+        this.runnerPort=(paramObj.getInteger("runnerPort"));
     }
 
     public DeploySqlDetailVo(Long systemId, Long moduleId, Long envId, String version) {
@@ -84,6 +90,22 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setResourceId(Long resourceId) {
         this.resourceId = resourceId;
+    }
+
+    public Long getRunnerId() {
+        return runnerId;
+    }
+
+    public void setRunnerId(Long runnerId) {
+        this.runnerId = runnerId;
+    }
+
+    public Integer getRunnerPort() {
+        return runnerPort;
+    }
+
+    public void setRunnerPort(Integer runnerPort) {
+        this.runnerPort = runnerPort;
     }
 
     public Long getSystemId() {

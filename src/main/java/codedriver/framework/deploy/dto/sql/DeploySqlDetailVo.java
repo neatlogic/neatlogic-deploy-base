@@ -1,6 +1,7 @@
 package codedriver.framework.deploy.dto.sql;
 
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
@@ -9,7 +10,7 @@ import com.alibaba.fastjson.JSONObject;
  * @author longrf
  * @date 2022/4/27 11:29 上午
  */
-public class DeploySqlDetailVo {
+public class DeploySqlDetailVo extends BaseEditorVo {
 
     private static final long serialVersionUID = -3906325036032471623L;
 
@@ -51,6 +52,7 @@ public class DeploySqlDetailVo {
         this.md5=(paramObj.getString("md5"));
         this.host=(paramObj.getString("host"));
         this.port=(paramObj.getInteger("port"));
+        this.resourceId=(paramObj.getLong("resourceId"));
     }
 
     public DeploySqlDetailVo(Long systemId, Long moduleId, Long envId, String version) {

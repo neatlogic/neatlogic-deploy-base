@@ -1,5 +1,6 @@
 package codedriver.framework.deploy.crossover;
 
+import codedriver.framework.deploy.dto.sql.DeployJobSqlVo;
 import codedriver.framework.crossover.ICrossoverService;
 import codedriver.framework.deploy.dto.sql.DeploySqlDetailVo;
 import org.apache.ibatis.annotations.Param;
@@ -21,4 +22,8 @@ public interface IDeploySqlCrossoverMapper extends ICrossoverService {
     void updateJobDeploySqlDetailIsDeleteAndStatusAndMd5AndLcdById(@Param("status") String status, @Param("md5") String md5, @Param("id") Long id);
 
     void updateJobDeploySqlIsDeleteByIdList(@Param("idList") List<Long> idList);
+
+    void insertDeploySqlDetail(DeploySqlDetailVo paramDeploySqlVo);
+
+    void insertDeploySql(DeployJobSqlVo jobId);
 }

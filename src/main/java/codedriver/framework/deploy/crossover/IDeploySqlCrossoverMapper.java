@@ -16,6 +16,10 @@ public interface IDeploySqlCrossoverMapper extends ICrossoverService {
 
     DeploySqlDetailVo getAutoexecJobIdByDeploySqlDetailVo(DeploySqlDetailVo paramDeploySqlVo);
 
+    int searchDeploySqlCount(AutoexecJobPhaseNodeVo jobPhaseNodeVo);
+
+    List<DeploySqlDetailVo> searchDeploySql(AutoexecJobPhaseNodeVo jobPhaseNodeVo);
+
     List<DeploySqlDetailVo> getDeploySqlDetailList(@Param("sqlFileDetailVoList") List<DeploySqlDetailVo> sqlFileDetailVoList);
 
     List<DeploySqlDetailVo> getAllDeploySqlDetailList(DeploySqlDetailVo deployVersionSql);
@@ -27,8 +31,4 @@ public interface IDeploySqlCrossoverMapper extends ICrossoverService {
     void insertDeploySqlDetail(DeploySqlDetailVo paramDeploySqlVo);
 
     void insertDeploySql(DeploySqlVo jobId);
-
-    int searchDeploySqlCount(AutoexecJobPhaseNodeVo jobPhaseNodeVo);
-
-    List<DeploySqlDetailVo> searchDeploySql(AutoexecJobPhaseNodeVo jobPhaseNodeVo);
 }

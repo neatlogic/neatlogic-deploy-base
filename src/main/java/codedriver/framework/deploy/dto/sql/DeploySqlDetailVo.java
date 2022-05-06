@@ -6,6 +6,8 @@ import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
 
+import java.util.Date;
+
 /**
  * @author longrf
  * @date 2022/4/27 11:29 上午
@@ -44,6 +46,10 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private Long jobId;
     @EntityField(name = "是否已经被删除", type = ApiParamType.INTEGER)
     private Integer isDelete = 0;
+    @EntityField(name = "开始时间", type = ApiParamType.LONG)
+    private Date startTime;
+    @EntityField(name = "结束时间", type = ApiParamType.LONG)
+    private Date endTime;
 
 
     public DeploySqlDetailVo(JSONObject paramObj) {
@@ -194,5 +200,21 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 }

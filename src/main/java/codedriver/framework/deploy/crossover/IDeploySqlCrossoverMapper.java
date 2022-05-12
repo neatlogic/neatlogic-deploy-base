@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface IDeploySqlCrossoverMapper extends ICrossoverService {
 
-    DeploySqlDetailVo getAutoexecJobIdByDeploySqlDetailVo(DeploySqlDetailVo paramDeploySqlVo);
+    DeploySqlDetailVo getDeploySqlBySysIdAndModuleIdAndEnvIdAndVersionAndSqlFile(@Param("sysId") Long sysId, @Param("envId") Long envId, @Param("moduleId") Long moduleId, @Param("version") String version, @Param("sqlFile") String sqlFile);
 
     int searchDeploySqlCount(AutoexecJobPhaseNodeVo jobPhaseNodeVo);
 
@@ -28,7 +28,7 @@ public interface IDeploySqlCrossoverMapper extends ICrossoverService {
 
     void updateDeploySqlIsDeleteByIdList(@Param("idList") List<Long> idList);
 
-    void insertDeploySqlDetail(DeploySqlDetailVo paramDeploySqlVo);
+    void insertDeploySqlDetail(@Param("sqlVo") DeploySqlDetailVo paramDeploySqlVo, @Param("sysId") Long sysId, @Param("envId") Long envId, @Param("moduleId") Long moduleId, @Param("version") String version, @Param("runnerId") Long runnerId);
 
-    void insertDeploySql(DeploySqlVo jobId);
+    void insertDeploySql(DeploySqlVo deploySqlVo);
 }

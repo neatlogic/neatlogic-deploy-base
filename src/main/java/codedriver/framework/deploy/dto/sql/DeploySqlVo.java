@@ -17,15 +17,18 @@ public class DeploySqlVo implements Serializable {
     private Long id;
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "执行sql文件id", type = ApiParamType.LONG)
+    @EntityField(name = "作业剧本名", type = ApiParamType.STRING)
+    private String phaseName;
+    @EntityField(name = "sql文件id", type = ApiParamType.LONG)
     private Long sqlId;
 
-    public DeploySqlVo() {
+    public DeploySqlVo(Long jobId, String phaseName, Long sqlId) {
+        this.jobId = jobId;
+        this.phaseName = phaseName;
+        this.sqlId = sqlId;
     }
 
-    public DeploySqlVo(Long jobId, Long sqlId) {
-        this.jobId = jobId;
-        this.sqlId = sqlId;
+    public DeploySqlVo() {
     }
 
     public Long getId() {
@@ -44,6 +47,14 @@ public class DeploySqlVo implements Serializable {
 
     public void setJobId(Long jobId) {
         this.jobId = jobId;
+    }
+
+    public String getPhaseName() {
+        return phaseName;
+    }
+
+    public void setPhaseName(String phaseName) {
+        this.phaseName = phaseName;
     }
 
     public Long getSqlId() {

@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @author longrf
  * @date 2022/4/27 11:04 上午
  */
-public class DeploySqlVo implements Serializable {
+public class DeploySqlJobPhaseVo implements Serializable {
     private static final long serialVersionUID = -3975625036003451623L;
 
     @EntityField(name = "id", type = ApiParamType.LONG)
@@ -22,13 +22,13 @@ public class DeploySqlVo implements Serializable {
     @EntityField(name = "sql文件id", type = ApiParamType.LONG)
     private Long sqlId;
 
-    public DeploySqlVo(Long jobId, String phaseName, Long sqlId) {
+    public DeploySqlJobPhaseVo(Long jobId, String phaseName, Long sqlId) {
         this.jobId = jobId;
         this.phaseName = phaseName;
         this.sqlId = sqlId;
     }
 
-    public DeploySqlVo() {
+    public DeploySqlJobPhaseVo() {
     }
 
     public Long getId() {

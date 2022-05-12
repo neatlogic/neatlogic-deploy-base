@@ -6,6 +6,7 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
+import codedriver.framework.util.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 
@@ -40,6 +41,8 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private String version;
     @EntityField(name = "sql文件名", type = ApiParamType.STRING)
     private String sqlFile;
+    @EntityField(name = "作业节点名", type = ApiParamType.STRING)
+    private String nodeName;
     @EntityField(name = "ip", type = ApiParamType.STRING)
     private String host;
     @EntityField(name = "端口", type = ApiParamType.INTEGER)
@@ -119,6 +122,14 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setRunnerId(Long runnerId) {
         this.runnerId = runnerId;
+    }
+
+    public String getNodeName() {
+        return nodeName;
+    }
+
+    public void setNodeName(String nodeName) {
+        this.nodeName = nodeName;
     }
 
     public String getRunnerHost() {
@@ -261,5 +272,16 @@ public class DeploySqlDetailVo extends BaseEditorVo {
             return 100;
         }
         return completionRate;
+    }
+
+    public String getCostTime() {
+        if (startTime != null) {
+            if (endTime != null) {
+                return TimeUtil.millisecondsTransferMaxTimeUnit(endTime.getTime() - startTime.getTime());
+            } else {
+                return TimeUtil.millisecondsTransferMaxTimeUnit(new Date().getTime() - startTime.getTime());
+            }
+        }
+        return costTime;
     }
 }

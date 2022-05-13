@@ -1,12 +1,17 @@
 package codedriver.framework.deploy.dto.sql;
 
+import codedriver.framework.autoexec.constvalue.JobNodeStatus;
+import codedriver.framework.autoexec.dto.job.AutoexecJobStatusVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
+import codedriver.framework.util.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * @author longrf
@@ -22,10 +27,12 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private Long resourceId;
     @EntityField(name = "runner id", type = ApiParamType.LONG)
     private Long runnerId;
+    @EntityField(name = "runner ip", type = ApiParamType.STRING)
+    private String runnerHost;
     @EntityField(name = "runner 端口", type = ApiParamType.INTEGER)
     private Integer runnerPort;
-    @EntityField(name = "systemId", type = ApiParamType.LONG)
-    private Long systemId;
+    @EntityField(name = "sysId", type = ApiParamType.LONG)
+    private Long sysId;
     @EntityField(name = "moduleId", type = ApiParamType.LONG)
     private Long moduleId;
     @EntityField(name = "envId", type = ApiParamType.LONG)
@@ -34,26 +41,36 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private String version;
     @EntityField(name = "sql文件名", type = ApiParamType.STRING)
     private String sqlFile;
+    @EntityField(name = "作业节点名", type = ApiParamType.STRING)
+    private String nodeName;
     @EntityField(name = "ip", type = ApiParamType.STRING)
     private String host;
     @EntityField(name = "端口", type = ApiParamType.INTEGER)
     private Integer port;
     @EntityField(name = "状态", type = ApiParamType.STRING)
     private String status;
+    @EntityField(name = "状态Vo", type = ApiParamType.JSONOBJECT)
+    private AutoexecJobStatusVo statusVo;
+    @EntityField(name = "完成率", type = ApiParamType.INTEGER)
+    private Integer completionRate = 0;
     @EntityField(name = "md5", type = ApiParamType.STRING)
     private String md5;
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
+    @EntityField(name = "作业剧本名", type = ApiParamType.STRING)
+    private String phaseName;
     @EntityField(name = "是否已经被删除", type = ApiParamType.INTEGER)
     private Integer isDelete = 0;
     @EntityField(name = "开始时间", type = ApiParamType.LONG)
     private Date startTime;
     @EntityField(name = "结束时间", type = ApiParamType.LONG)
     private Date endTime;
+    @EntityField(name = "耗时", type = ApiParamType.STRING)
+    private String costTime;
 
 
     public DeploySqlDetailVo(JSONObject paramObj) {
-        this.systemId=(paramObj.getLong("systemId"));
+        this.sysId =(paramObj.getLong("sysId"));
         this.moduleId=(paramObj.getLong("moduleId"));
         this.envId=(paramObj.getLong("envId"));
         this.version=(paramObj.getString("version"));
@@ -64,18 +81,17 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.port=(paramObj.getInteger("port"));
         this.resourceId=(paramObj.getLong("resourceId"));
         this.runnerId=(paramObj.getLong("runnerId"));
-        this.runnerPort=(paramObj.getInteger("runnerPort"));
-    }
-
-    public DeploySqlDetailVo(Long systemId, Long moduleId, Long envId, String version) {
-        this.systemId = systemId;
-        this.moduleId = moduleId;
-        this.envId = envId;
-        this.version = version;
     }
 
     public DeploySqlDetailVo() {
+    }
 
+    public DeploySqlDetailVo(Long sysId, Long moduleId, Long envId, String version, String phaseName) {
+        this.sysId = sysId;
+        this.moduleId = moduleId;
+        this.envId = envId;
+        this.version = version;
+        this.phaseName = phaseName;
     }
 
     public Long getId() {
@@ -106,6 +122,22 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.runnerId = runnerId;
     }
 
+    public String getNodeName() {
+        return nodeName;
+    }
+
+    public void setNodeName(String nodeName) {
+        this.nodeName = nodeName;
+    }
+
+    public String getRunnerHost() {
+        return runnerHost;
+    }
+
+    public void setRunnerHost(String runnerHost) {
+        this.runnerHost = runnerHost;
+    }
+
     public Integer getRunnerPort() {
         return runnerPort;
     }
@@ -114,12 +146,12 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.runnerPort = runnerPort;
     }
 
-    public Long getSystemId() {
-        return systemId;
+    public Long getSysId() {
+        return sysId;
     }
 
-    public void setSystemId(Long systemId) {
-        this.systemId = systemId;
+    public void setSysId(Long sysId) {
+        this.sysId = sysId;
     }
 
     public Long getModuleId() {
@@ -194,6 +226,14 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.jobId = jobId;
     }
 
+    public String getPhaseName() {
+        return phaseName;
+    }
+
+    public void setPhaseName(String phaseName) {
+        this.phaseName = phaseName;
+    }
+
     public Integer getIsDelete() {
         return isDelete;
     }
@@ -216,5 +256,30 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
+    }
+
+    public AutoexecJobStatusVo getStatusVo() {
+        if (statusVo == null && StringUtils.isNotBlank(status)) {
+            return new AutoexecJobStatusVo(status, JobNodeStatus.getText(status), JobNodeStatus.getColor(status));
+        }
+        return statusVo;
+    }
+
+    public Integer getCompletionRate() {
+        if (StringUtils.isNotBlank(status) && Objects.equals(JobNodeStatus.SUCCEED.getValue(), status)) {
+            return 100;
+        }
+        return completionRate;
+    }
+
+    public String getCostTime() {
+        if (startTime != null) {
+            if (endTime != null) {
+                return TimeUtil.millisecondsTransferMaxTimeUnit(endTime.getTime() - startTime.getTime());
+            } else {
+                return TimeUtil.millisecondsTransferMaxTimeUnit(new Date().getTime() - startTime.getTime());
+            }
+        }
+        return costTime;
     }
 }

@@ -4,7 +4,6 @@ import codedriver.framework.autoexec.dto.job.AutoexecJobPhaseNodeVo;
 import codedriver.framework.crossover.ICrossoverService;
 import codedriver.framework.deploy.dto.sql.DeploySqlDetailVo;
 import codedriver.framework.deploy.dto.sql.DeploySqlJobPhaseVo;
-import com.alibaba.fastjson.JSONArray;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -25,6 +24,8 @@ public interface IDeploySqlCrossoverMapper extends ICrossoverService {
 
     List<DeploySqlDetailVo> getAllDeploySqlDetailList(DeploySqlDetailVo deployVersionSql);
 
+    List<Long> getJobSqlIdListByJobIdAndJobPhaseNameList(@Param("jobId") Long jobId, @Param("jobPhaseNameList") List<String> jobPhaseNameList);
+
     void updateDeploySqlDetailIsDeleteAndStatusAndMd5ById(@Param("status") String status, @Param("md5") String md5, @Param("id") Long id);
 
     void updateDeploySqlIsDeleteByIdList(@Param("idList") List<Long> idList);
@@ -33,7 +34,5 @@ public interface IDeploySqlCrossoverMapper extends ICrossoverService {
 
     void insertDeploySql(DeploySqlJobPhaseVo deploySqlVo);
 
-    void resetDeploySqlStatusByJobIdAndPhaseNameList(@Param("jobId") Long jobId, @Param("jobPhaseNameList") List<String> jobPhaseNameList);
-
-    void resetDeploySqlStatusBySqlIdList(@Param("idList") JSONArray idList);
+    void resetDeploySqlStatusBySqlIdList(@Param("idList") List<Long> idList);
 }

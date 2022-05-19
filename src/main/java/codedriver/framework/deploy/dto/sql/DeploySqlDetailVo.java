@@ -79,6 +79,7 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.md5=(paramObj.getString("md5"));
         this.host=(paramObj.getString("host"));
         this.port=(paramObj.getInteger("port"));
+        this.nodeName=(paramObj.getString("nodeName"));
         this.resourceId=(paramObj.getLong("resourceId"));
         this.runnerId=(paramObj.getLong("runnerId"));
     }

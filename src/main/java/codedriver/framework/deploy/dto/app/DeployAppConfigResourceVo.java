@@ -6,10 +6,12 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.cmdb.dto.resourcecenter.ResourceVo;
+import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.restful.annotation.EntityField;
 
 public class DeployAppConfigResourceVo extends ResourceVo {
     private static final long serialVersionUID = 8079670497813410203L;
-
+    @EntityField(name = "是否被收藏", type = ApiParamType.INTEGER)
     private Integer isFavorite;
 
     public Integer getIsFavorite() {

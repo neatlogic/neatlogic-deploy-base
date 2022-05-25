@@ -6,21 +6,19 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.common.constvalue.ApiParamType;
-import codedriver.framework.common.dto.BasePageVo;
+import codedriver.framework.common.dto.BaseEditorVo;
+import codedriver.framework.dto.AuthorityVo;
 import codedriver.framework.restful.annotation.EntityField;
-import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
 
-public class DeployAppConfigAuthorityVo extends BasePageVo {
+public class DeployAppConfigAuthorityVo extends BaseEditorVo {
     private static final long serialVersionUID = -8106352774339841203L;
-    @EntityField(name = "id", type = ApiParamType.LONG)
-    private Long id;
     @EntityField(name = "应用资产id", type = ApiParamType.LONG)
-    private Long appResourceId;
+    private Long appSystemId;
     @EntityField(name = "环境资产id", type = ApiParamType.LONG)
-    private Long envResourceId;
+    private Long envId;
     @EntityField(name = "授权对象类型", type = ApiParamType.STRING)
     private String authType;
     @EntityField(name = "授权对象", type = ApiParamType.STRING)
@@ -35,33 +33,28 @@ public class DeployAppConfigAuthorityVo extends BasePageVo {
     List<String> actionList;
 
     @JSONField(serialize = false)
-    List<Long> envResourceIdList;
+    List<Long> envIdList;
 
-    public Long getId() {
-        if (id == null) {
-            id = SnowflakeUtil.uniqueLong();
-        }
-        return id;
+    @JSONField(serialize = false)
+    private List<AuthorityVo> authorityList;
+
+    @JSONField(serialize = false)
+    private Integer isEdit;
+
+    public Long getAppSystemId() {
+        return appSystemId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAppSystemId(Long appSystemId) {
+        this.appSystemId = appSystemId;
     }
 
-    public Long getAppResourceId() {
-        return appResourceId;
+    public Long getEnvId() {
+        return envId;
     }
 
-    public void setAppResourceId(Long appResourceId) {
-        this.appResourceId = appResourceId;
-    }
-
-    public Long getEnvResourceId() {
-        return envResourceId;
-    }
-
-    public void setEnvResourceId(Long envResourceId) {
-        this.envResourceId = envResourceId;
+    public void setEnvId(Long envId) {
+        this.envId = envId;
     }
 
     public String getAuthType() {
@@ -104,11 +97,27 @@ public class DeployAppConfigAuthorityVo extends BasePageVo {
         this.actionList = actionList;
     }
 
-    public List<Long> getEnvResourceIdList() {
-        return envResourceIdList;
+    public List<Long> getEnvIdList() {
+        return envIdList;
     }
 
-    public void setEnvResourceIdList(List<Long> envResourceIdList) {
-        this.envResourceIdList = envResourceIdList;
+    public void setEnvIdList(List<Long> envIdList) {
+        this.envIdList = envIdList;
+    }
+
+    public List<AuthorityVo> getAuthorityList() {
+        return authorityList;
+    }
+
+    public void setAuthorityList(List<AuthorityVo> authorityList) {
+        this.authorityList = authorityList;
+    }
+
+    public Integer getIsEdit() {
+        return isEdit;
+    }
+
+    public void setIsEdit(Integer isEdit) {
+        this.isEdit = isEdit;
     }
 }

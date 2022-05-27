@@ -11,12 +11,14 @@ import codedriver.framework.restful.annotation.EntityField;
 
 public class DeployAppConfigResourceVo extends BaseEditorVo {
     private static final long serialVersionUID = 8079670497813410203L;
-    @EntityField(name = "是否被收藏", type = ApiParamType.INTEGER)
-    private Integer isFavorite;
     @EntityField(name = "应用系统id", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "应用系统名", type = ApiParamType.STRING)
     private String appSystemName;
+    @EntityField(name = "是否被收藏", type = ApiParamType.INTEGER)
+    private Integer isFavorite;
+    @EntityField(name = "是否已配置", type = ApiParamType.INTEGER)
+    private Integer isConfig;
 
     public Integer getIsFavorite() {
         return isFavorite;
@@ -40,5 +42,13 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
 
     public void setAppSystemName(String appSystemName) {
         this.appSystemName = appSystemName;
+    }
+
+    public Integer getIsConfig() {
+        return isConfig;
+    }
+
+    public void setIsConfig(Integer isConfig) {
+        this.isConfig = isConfig;
     }
 }

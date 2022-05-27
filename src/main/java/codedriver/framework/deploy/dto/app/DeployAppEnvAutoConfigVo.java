@@ -15,23 +15,23 @@ import java.util.List;
 public class DeployAppEnvAutoConfigVo extends BaseEditorVo {
     private static final long serialVersionUID = -1948079785908118588L;
     @EntityField(name = "应用id", type = ApiParamType.LONG)
-    private Long appId;
+    private Long appSystemId;
     @EntityField(name = "模块id", type = ApiParamType.LONG)
     private Long moduleId;
     @EntityField(name = "环境id", type = ApiParamType.LONG)
     private Long envId;
     @EntityField(name = "实例id", type = ApiParamType.LONG)
-    private Long instanceId;
+    private Long instanceId = 0L;
 
     @JSONField(serialize = false)
     private List<DeployAppEnvAutoConfigKeyValueVo> keyValueList;
 
-    public Long getAppId() {
-        return appId;
+    public Long getAppSystemId() {
+        return appSystemId;
     }
 
-    public void setAppId(Long appId) {
-        this.appId = appId;
+    public void setAppSystemId(Long appSystemId) {
+        this.appSystemId = appSystemId;
     }
 
     public Long getModuleId() {

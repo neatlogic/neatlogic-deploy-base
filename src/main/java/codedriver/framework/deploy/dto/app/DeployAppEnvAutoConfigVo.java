@@ -6,12 +6,18 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
 
-public class DeployAppEnvAutoConfigVo {
+public class DeployAppEnvAutoConfigVo extends BaseEditorVo {
+    private static final long serialVersionUID = -1948079785908118588L;
+    @EntityField(name = "应用id", type = ApiParamType.LONG)
+    private Long appId;
+    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    private Long moduleId;
     @EntityField(name = "环境id", type = ApiParamType.LONG)
     private Long envId;
     @EntityField(name = "实例id", type = ApiParamType.LONG)
@@ -19,6 +25,22 @@ public class DeployAppEnvAutoConfigVo {
 
     @JSONField(serialize = false)
     private List<DeployAppEnvAutoConfigKeyValueVo> keyValueList;
+
+    public Long getAppId() {
+        return appId;
+    }
+
+    public void setAppId(Long appId) {
+        this.appId = appId;
+    }
+
+    public Long getModuleId() {
+        return moduleId;
+    }
+
+    public void setModuleId(Long moduleId) {
+        this.moduleId = moduleId;
+    }
 
     public Long getEnvId() {
         return envId;

@@ -5,13 +5,20 @@
 
 package codedriver.framework.deploy.dto.app;
 
+import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.StringUtils;
 
 public class DeployAppConfigVo {
+    @EntityField(name = "应用系统ID", type = ApiParamType.LONG)
     private Long appSystemId;
+    @EntityField(name = "是否已配置", type = ApiParamType.INTEGER)
     private Integer isConfig;
+    @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
+    @JSONField(serialize = false)
     private String configStr;
 
     public Long getAppSystemId() {

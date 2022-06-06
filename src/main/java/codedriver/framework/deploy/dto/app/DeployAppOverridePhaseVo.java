@@ -8,7 +8,7 @@ package codedriver.framework.deploy.dto.app;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 
-public class DeployAppOverridephaseVo {
+public class DeployAppOverridePhaseVo {
 
     private Long id;
     private Long appSystemId;

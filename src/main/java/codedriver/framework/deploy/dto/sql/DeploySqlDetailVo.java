@@ -43,8 +43,6 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private String sqlFile;
     @EntityField(name = "作业节点名", type = ApiParamType.STRING)
     private String nodeName;
-    @EntityField(name = "用户名", type = ApiParamType.STRING)
-    private String userName;
     @EntityField(name = "ip", type = ApiParamType.STRING)
     private String host;
     @EntityField(name = "端口", type = ApiParamType.INTEGER)
@@ -82,7 +80,6 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.host=(paramObj.getString("host"));
         this.port=(paramObj.getInteger("port"));
         this.nodeName=(paramObj.getString("nodeName"));
-        this.userName=(paramObj.getString("userName"));
         this.resourceId=(paramObj.getLong("resourceId"));
         this.runnerId=(paramObj.getLong("runnerId"));
     }
@@ -132,14 +129,6 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setNodeName(String nodeName) {
         this.nodeName = nodeName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getRunnerHost() {

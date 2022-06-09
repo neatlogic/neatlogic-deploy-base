@@ -8,13 +8,24 @@ package codedriver.framework.deploy.dto.app;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 
-public class DeployAppConfigOverrideVo {
+public class DeployAppOverridePhaseVo {
 
+    private Long id;
     private Long appSystemId;
-    private Long moduleId = 0L;
-    private Long envId = 0L;
-    private DeployPipelineConfigVo config;
+    private Long moduleId;
+    private Long envId;
+    private Long phaseId;
+    private Integer isActive;
+    private JSONObject config;
     private String configStr;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getAppSystemId() {
         return appSystemId;
@@ -40,20 +51,36 @@ public class DeployAppConfigOverrideVo {
         this.envId = envId;
     }
 
-    public DeployPipelineConfigVo getConfig() {
+    public Long getPhaseId() {
+        return phaseId;
+    }
+
+    public void setPhaseId(Long phaseId) {
+        this.phaseId = phaseId;
+    }
+
+    public Integer getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Integer isActive) {
+        this.isActive = isActive;
+    }
+
+    public JSONObject getConfig() {
         if (config == null && StringUtils.isNotBlank(configStr)) {
-            config = JSONObject.parseObject(configStr, DeployPipelineConfigVo.class);
+            config = JSONObject.parseObject(configStr);
         }
         return config;
     }
 
-    public void setConfig(DeployPipelineConfigVo config) {
+    public void setConfig(JSONObject config) {
         this.config = config;
     }
 
     public String getConfigStr() {
         if (configStr == null && config != null) {
-            configStr = JSONObject.toJSONString(config);
+            configStr = config.toJSONString();
         }
         return configStr;
     }

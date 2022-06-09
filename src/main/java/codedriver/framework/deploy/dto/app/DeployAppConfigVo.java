@@ -14,8 +14,10 @@ import org.apache.commons.lang3.StringUtils;
 public class DeployAppConfigVo {
     @EntityField(name = "应用系统ID", type = ApiParamType.LONG)
     private Long appSystemId;
+    @EntityField(name = "是否已配置", type = ApiParamType.INTEGER)
+    private Integer isConfig;
     @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
-    private DeployPipelineConfigVo config;
+    private JSONObject config;
     @JSONField(serialize = false)
     private String configStr;
 
@@ -27,20 +29,28 @@ public class DeployAppConfigVo {
         this.appSystemId = appSystemId;
     }
 
-    public DeployPipelineConfigVo getConfig() {
+    public Integer getIsConfig() {
+        return isConfig;
+    }
+
+    public void setIsConfig(Integer isConfig) {
+        this.isConfig = isConfig;
+    }
+
+    public JSONObject getConfig() {
         if (config == null && StringUtils.isNotBlank(configStr)) {
-            config = JSONObject.parseObject(configStr, DeployPipelineConfigVo.class);
+            config = JSONObject.parseObject(configStr);
         }
         return config;
     }
 
-    public void setConfig(DeployPipelineConfigVo config) {
+    public void setConfig(JSONObject config) {
         this.config = config;
     }
 
     public String getConfigStr() {
         if (configStr == null && config != null) {
-            configStr = JSONObject.toJSONString(config);
+            configStr = config.toJSONString();
         }
         return configStr;
     }

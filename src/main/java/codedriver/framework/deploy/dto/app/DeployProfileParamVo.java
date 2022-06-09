@@ -5,45 +5,35 @@
 
 package codedriver.framework.deploy.dto.app;
 
-public class DeployProfileParamVo {
+import codedriver.framework.autoexec.dto.AutoexecParamVo;
 
-    private String key;
-    private Object value;
-    private String description;
-    private String type;
+public class DeployProfileParamVo extends AutoexecParamVo {
+
     private String source;
     private Integer inherit;
 
-    public String getKey() {
-        return key;
+    public DeployProfileParamVo() {
+
     }
 
-    public void setKey(String key) {
-        this.key = key;
-    }
+    public DeployProfileParamVo(AutoexecParamVo autoexecParamVo) {
+        super.setKey(autoexecParamVo.getKey());
+        super.setName(autoexecParamVo.getName());
+        super.setDefaultValue(autoexecParamVo.getDefaultValue());
+        super.setMode(autoexecParamVo.getMode());
+        super.setType(autoexecParamVo.getType());
+        super.setIsRequired(autoexecParamVo.getIsRequired());
+        super.setDescription(autoexecParamVo.getDescription());
+        super.setSort(autoexecParamVo.getSort());
+        super.setValidate(autoexecParamVo.getValidate());
+        super.setOperationId(autoexecParamVo.getOperationId());
+        super.setOperationType(autoexecParamVo.getOperationType());
+        if (autoexecParamVo.getConfig() != null) {
+            super.setConfig(autoexecParamVo.getConfig().toJSONString());
 
-    public Object getValue() {
-        return value;
-    }
-
-    public void setValue(Object value) {
-        this.value = value;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+        }
+        super.setArgumentCount(autoexecParamVo.getArgumentCount());
+        super.setMappingMode(autoexecParamVo.getMappingMode());
     }
 
     public String getSource() {

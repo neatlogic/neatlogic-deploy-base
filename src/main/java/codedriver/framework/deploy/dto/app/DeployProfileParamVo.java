@@ -6,10 +6,14 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.autoexec.dto.AutoexecParamVo;
+import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.restful.annotation.EntityField;
 
 public class DeployProfileParamVo extends AutoexecParamVo {
 
+    @EntityField(name = "来源", type = ApiParamType.STRING)
     private String source;
+    @EntityField(name = "继承", type = ApiParamType.INTEGER)
     private Integer inherit;
 
     public DeployProfileParamVo() {

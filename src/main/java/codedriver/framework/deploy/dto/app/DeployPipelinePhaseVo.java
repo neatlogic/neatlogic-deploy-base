@@ -6,10 +6,15 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.autoexec.dto.combop.AutoexecCombopPhaseVo;
+import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.restful.annotation.EntityField;
 
 public class DeployPipelinePhaseVo extends AutoexecCombopPhaseVo {
+    @EntityField(name = "启用", type = ApiParamType.INTEGER)
     private Integer isActive;
+    @EntityField(name = "重载", type = ApiParamType.INTEGER)
     private Integer override;
+    @EntityField(name = "继承", type = ApiParamType.STRING)
     private String inherit;
 
     public Integer getIsActive() {

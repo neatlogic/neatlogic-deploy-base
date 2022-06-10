@@ -16,6 +16,20 @@ public class DeployAppConfigOverrideVo {
     private DeployPipelineConfigVo config;
     private String configStr;
 
+    public DeployAppConfigOverrideVo() {
+
+    }
+
+    public DeployAppConfigOverrideVo(Long appSystemId, Long moduleId) {
+        this(appSystemId, moduleId, null);
+    }
+
+    public DeployAppConfigOverrideVo(Long appSystemId, Long moduleId, Long envId) {
+        this.appSystemId = appSystemId;
+        this.moduleId = moduleId;
+        this.envId = envId;
+    }
+
     public Long getAppSystemId() {
         return appSystemId;
     }

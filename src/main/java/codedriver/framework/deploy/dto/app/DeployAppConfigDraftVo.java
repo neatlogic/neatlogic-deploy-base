@@ -5,36 +5,32 @@
 
 package codedriver.framework.deploy.dto.app;
 
-import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
-import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.StringUtils;
 
-public class DeployAppConfigVo extends BaseEditorVo {
-    @EntityField(name = "应用系统ID", type = ApiParamType.LONG)
-    private Long appSystemId;
-    @EntityField(name = "模块ID", type = ApiParamType.LONG)
-    private Long moduleId = 0L;
-    @EntityField(name = "环境ID", type = ApiParamType.LONG)
-    private Long envId = 0L;
-    @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
-    private DeployPipelineConfigVo config;
+public class DeployAppConfigDraftVo extends BaseEditorVo {
 
-    @JSONField(serialize = false)
+    private Long appSystemId;
+    private Long moduleId = 0L;
+    private Long envId = 0L;
+    private DeployPipelineConfigVo config;
     private String configStr;
 
-    public DeployAppConfigVo() {
+    public DeployAppConfigDraftVo() {
+
     }
-    public DeployAppConfigVo(Long appSystemId) {
+
+    public DeployAppConfigDraftVo(Long appSystemId) {
         this.appSystemId = appSystemId;
     }
-    public DeployAppConfigVo(Long appSystemId, Long moduleId) {
+
+    public DeployAppConfigDraftVo(Long appSystemId, Long moduleId) {
         this.appSystemId = appSystemId;
         this.moduleId = moduleId;
     }
-    public DeployAppConfigVo(Long appSystemId, Long moduleId, Long envId) {
+
+    public DeployAppConfigDraftVo(Long appSystemId, Long moduleId, Long envId) {
         this.appSystemId = appSystemId;
         this.moduleId = moduleId;
         this.envId = envId;

@@ -6,20 +6,39 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.StringUtils;
 
-public class DeployAppConfigVo {
+public class DeployAppConfigVo extends BaseEditorVo {
     @EntityField(name = "应用系统ID", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "是否已配置", type = ApiParamType.INTEGER)
-    private Integer isConfig;
+    @EntityField(name = "模块ID", type = ApiParamType.LONG)
+    private Long moduleId = 0L;
+    @EntityField(name = "环境ID", type = ApiParamType.LONG)
+    private Long envId = 0L;
     @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
-    private JSONObject config;
+    private DeployPipelineConfigVo config;
+
     @JSONField(serialize = false)
     private String configStr;
+
+    public DeployAppConfigVo() {
+    }
+    public DeployAppConfigVo(Long appSystemId) {
+        this.appSystemId = appSystemId;
+    }
+    public DeployAppConfigVo(Long appSystemId, Long moduleId) {
+        this.appSystemId = appSystemId;
+        this.moduleId = moduleId;
+    }
+    public DeployAppConfigVo(Long appSystemId, Long moduleId, Long envId) {
+        this.appSystemId = appSystemId;
+        this.moduleId = moduleId;
+        this.envId = envId;
+    }
 
     public Long getAppSystemId() {
         return appSystemId;
@@ -29,28 +48,36 @@ public class DeployAppConfigVo {
         this.appSystemId = appSystemId;
     }
 
-    public Integer getIsConfig() {
-        return isConfig;
+    public Long getModuleId() {
+        return moduleId;
     }
 
-    public void setIsConfig(Integer isConfig) {
-        this.isConfig = isConfig;
+    public void setModuleId(Long moduleId) {
+        this.moduleId = moduleId;
     }
 
-    public JSONObject getConfig() {
+    public Long getEnvId() {
+        return envId;
+    }
+
+    public void setEnvId(Long envId) {
+        this.envId = envId;
+    }
+
+    public DeployPipelineConfigVo getConfig() {
         if (config == null && StringUtils.isNotBlank(configStr)) {
-            config = JSONObject.parseObject(configStr);
+            config = JSONObject.parseObject(configStr, DeployPipelineConfigVo.class);
         }
         return config;
     }
 
-    public void setConfig(JSONObject config) {
+    public void setConfig(DeployPipelineConfigVo config) {
         this.config = config;
     }
 
     public String getConfigStr() {
         if (configStr == null && config != null) {
-            configStr = config.toJSONString();
+            configStr = JSONObject.toJSONString(config);
         }
         return configStr;
     }

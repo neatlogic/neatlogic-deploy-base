@@ -25,7 +25,7 @@ public class DeployVersionVo extends BaseEditorVo {
     @EntityField(name = "应用模块名称", type = ApiParamType.STRING)
     private String appModuleName;
     @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
-    private Integer isUnLock;
+    private Integer isLock;
 
     public Long getId() {
         return id;
@@ -83,11 +83,11 @@ public class DeployVersionVo extends BaseEditorVo {
         this.appModuleName = appModuleName;
     }
 
-    public Integer getIsUnLock() {
-        return isUnLock;
+    public Integer getIsLock() {
+        return isLock;
     }
 
-    public void setIsUnLock(Integer isUnLock) {
-        this.isUnLock = isUnLock;
+    public void setIsLock(Integer isLock) {
+        this.isLock = isLock;
     }
 }

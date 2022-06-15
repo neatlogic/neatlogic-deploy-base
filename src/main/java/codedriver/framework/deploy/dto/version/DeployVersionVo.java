@@ -3,6 +3,7 @@ package codedriver.framework.deploy.dto.version;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
+import codedriver.framework.util.SnowflakeUtil;
 
 /**
  * @author longrf
@@ -17,9 +18,9 @@ public class DeployVersionVo extends BaseEditorVo {
     @EntityField(name = "状态", type = ApiParamType.STRING)
     private String status;
     @EntityField(name = "应用id", type = ApiParamType.LONG)
-    private Long appId;
+    private Long appSystemId;
     @EntityField(name = "应用名称", type = ApiParamType.STRING)
-    private String appName;
+    private String appSystemName;
     @EntityField(name = "应用模块id", type = ApiParamType.LONG)
     private Long appModuleId;
     @EntityField(name = "应用模块名称", type = ApiParamType.STRING)
@@ -28,6 +29,9 @@ public class DeployVersionVo extends BaseEditorVo {
     private Integer isLock;
 
     public Long getId() {
+        if (id == null) {
+            id = SnowflakeUtil.uniqueLong();
+        }
         return id;
     }
 
@@ -51,20 +55,20 @@ public class DeployVersionVo extends BaseEditorVo {
         this.status = status;
     }
 
-    public Long getAppId() {
-        return appId;
+    public Long getAppSystemId() {
+        return appSystemId;
     }
 
-    public void setAppId(Long appId) {
-        this.appId = appId;
+    public void setAppSystemId(Long appSystemId) {
+        this.appSystemId = appSystemId;
     }
 
-    public String getAppName() {
-        return appName;
+    public String getAppSystemName() {
+        return appSystemName;
     }
 
-    public void setAppName(String appName) {
-        this.appName = appName;
+    public void setAppSystemName(String appSystemName) {
+        this.appSystemName = appSystemName;
     }
 
     public Long getAppModuleId() {

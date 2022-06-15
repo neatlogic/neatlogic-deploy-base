@@ -1,5 +1,8 @@
 package codedriver.framework.deploy.constvalue;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * @author lvzk
  * @date 2022/05/24 4:16 下午
@@ -14,7 +17,7 @@ public enum DeployAppConfigAction {
     private final String value;
     private final String text;
 
-    private DeployAppConfigAction(String value, String text) {
+    DeployAppConfigAction(String value, String text) {
         this.value = value;
         this.text = text;
     }
@@ -25,5 +28,20 @@ public enum DeployAppConfigAction {
 
     public String getText() {
         return text;
+    }
+
+    public static JSONArray getValueTextList() {
+        JSONArray array = new JSONArray();
+        for (DeployAppConfigAction action : DeployAppConfigAction.values()) {
+            array.add(new JSONObject() {
+                private static final long serialVersionUID = 1670544546905960015L;
+
+                {
+                    this.put("value", action.getValue());
+                    this.put("text", action.getText());
+                }
+            });
+        }
+        return array;
     }
 }

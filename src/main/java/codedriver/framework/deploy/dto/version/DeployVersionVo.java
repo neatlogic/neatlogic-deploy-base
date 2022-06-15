@@ -5,6 +5,8 @@ import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 
+import java.util.List;
+
 /**
  * @author longrf
  * @date 2022/5/26 4:37 下午
@@ -17,9 +19,9 @@ public class DeployVersionVo extends BaseEditorVo {
     private String version;
     @EntityField(name = "状态", type = ApiParamType.STRING)
     private String status;
-    @EntityField(name = "应用id", type = ApiParamType.LONG)
+    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用名称", type = ApiParamType.STRING)
+    @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
     private String appSystemName;
     @EntityField(name = "应用模块id", type = ApiParamType.LONG)
     private Long appModuleId;
@@ -27,6 +29,12 @@ public class DeployVersionVo extends BaseEditorVo {
     private String appModuleName;
     @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
     private Integer isLock;
+    @EntityField(name = "应用系统id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> appSystemIdList;
+    @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> appModuleIdList;
+    @EntityField(name = "状态列表", type = ApiParamType.JSONARRAY)
+    private List<String> statusList;
 
     public Long getId() {
         if (id == null) {
@@ -93,5 +101,30 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setIsLock(Integer isLock) {
         this.isLock = isLock;
+    }
+
+
+    public List<Long> getAppSystemIdList() {
+        return appSystemIdList;
+    }
+
+    public void setAppSystemIdList(List<Long> appSystemIdList) {
+        this.appSystemIdList = appSystemIdList;
+    }
+
+    public List<Long> getAppModuleIdList() {
+        return appModuleIdList;
+    }
+
+    public void setAppModuleIdList(List<Long> appModuleIdList) {
+        this.appModuleIdList = appModuleIdList;
+    }
+
+    public List<String> getStatusList() {
+        return statusList;
+    }
+
+    public void setStatusList(List<String> statusList) {
+        this.statusList = statusList;
     }
 }

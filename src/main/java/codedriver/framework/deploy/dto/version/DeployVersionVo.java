@@ -3,6 +3,9 @@ package codedriver.framework.deploy.dto.version;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
+import codedriver.framework.util.SnowflakeUtil;
+
+import java.util.List;
 
 /**
  * @author longrf
@@ -16,18 +19,27 @@ public class DeployVersionVo extends BaseEditorVo {
     private String version;
     @EntityField(name = "状态", type = ApiParamType.STRING)
     private String status;
-    @EntityField(name = "应用id", type = ApiParamType.LONG)
-    private Long appId;
-    @EntityField(name = "应用名称", type = ApiParamType.STRING)
-    private String appName;
+    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    private Long appSystemId;
+    @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
+    private String appSystemName;
     @EntityField(name = "应用模块id", type = ApiParamType.LONG)
     private Long appModuleId;
     @EntityField(name = "应用模块名称", type = ApiParamType.STRING)
     private String appModuleName;
     @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
-    private Integer isUnLock;
+    private Integer isLocked;
+    @EntityField(name = "应用系统id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> appSystemIdList;
+    @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> appModuleIdList;
+    @EntityField(name = "状态列表", type = ApiParamType.JSONARRAY)
+    private List<String> statusList;
 
     public Long getId() {
+        if (id == null) {
+            id = SnowflakeUtil.uniqueLong();
+        }
         return id;
     }
 
@@ -51,20 +63,20 @@ public class DeployVersionVo extends BaseEditorVo {
         this.status = status;
     }
 
-    public Long getAppId() {
-        return appId;
+    public Long getAppSystemId() {
+        return appSystemId;
     }
 
-    public void setAppId(Long appId) {
-        this.appId = appId;
+    public void setAppSystemId(Long appSystemId) {
+        this.appSystemId = appSystemId;
     }
 
-    public String getAppName() {
-        return appName;
+    public String getAppSystemName() {
+        return appSystemName;
     }
 
-    public void setAppName(String appName) {
-        this.appName = appName;
+    public void setAppSystemName(String appSystemName) {
+        this.appSystemName = appSystemName;
     }
 
     public Long getAppModuleId() {
@@ -83,11 +95,36 @@ public class DeployVersionVo extends BaseEditorVo {
         this.appModuleName = appModuleName;
     }
 
-    public Integer getIsUnLock() {
-        return isUnLock;
+    public Integer getIsLocked() {
+        return isLocked;
     }
 
-    public void setIsUnLock(Integer isUnLock) {
-        this.isUnLock = isUnLock;
+    public void setIsLocked(Integer isLocked) {
+        this.isLocked = isLocked;
+    }
+
+
+    public List<Long> getAppSystemIdList() {
+        return appSystemIdList;
+    }
+
+    public void setAppSystemIdList(List<Long> appSystemIdList) {
+        this.appSystemIdList = appSystemIdList;
+    }
+
+    public List<Long> getAppModuleIdList() {
+        return appModuleIdList;
+    }
+
+    public void setAppModuleIdList(List<Long> appModuleIdList) {
+        this.appModuleIdList = appModuleIdList;
+    }
+
+    public List<String> getStatusList() {
+        return statusList;
+    }
+
+    public void setStatusList(List<String> statusList) {
+        this.statusList = statusList;
     }
 }

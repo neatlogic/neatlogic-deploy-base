@@ -10,7 +10,9 @@ import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.dto.AuthorityVo;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeployAppConfigAuthorityVo extends BaseEditorVo {
@@ -37,6 +39,9 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
 
     @JSONField(serialize = false)
     private List<AuthorityVo> authorityList;
+
+    @JSONField(serialize = false)
+    private List<String> authorityStrList;
 
     @JSONField(serialize = false)
     private Integer isEdit;
@@ -106,7 +111,22 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
     }
 
     public List<AuthorityVo> getAuthorityList() {
+        if (CollectionUtils.isEmpty(authorityList) && CollectionUtils.isNotEmpty(authorityStrList)) {
+            for (String authorityStr : authorityStrList) {
+                String[] authorityArray = authorityStr.split("#");
+                authorityList = new ArrayList<>();
+                authorityList.add(new AuthorityVo(authorityArray[0], authorityArray[1]));
+            }
+        }
         return authorityList;
+    }
+
+    public List<String> getAuthorityStrList() {
+        return authorityStrList;
+    }
+
+    public void setAuthorityStrList(List<String> authorityStrList) {
+        this.authorityStrList = authorityStrList;
     }
 
     public void setAuthorityList(List<AuthorityVo> authorityList) {

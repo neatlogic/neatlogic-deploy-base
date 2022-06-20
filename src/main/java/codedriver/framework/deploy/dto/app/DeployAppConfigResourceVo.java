@@ -5,9 +5,12 @@
 
 package codedriver.framework.deploy.dto.app;
 
+import codedriver.framework.cmdb.dto.resourcecenter.entity.AppModuleVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
+
+import java.util.List;
 
 public class DeployAppConfigResourceVo extends BaseEditorVo {
     private static final long serialVersionUID = 8079670497813410203L;
@@ -19,6 +22,8 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
     private Integer isFavorite;
     @EntityField(name = "是否已配置", type = ApiParamType.INTEGER)
     private Integer isConfig;
+    @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
+    private List<AppModuleVo> appModuleList;
 
     public Integer getIsFavorite() {
         return isFavorite;
@@ -50,5 +55,13 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
 
     public void setIsConfig(Integer isConfig) {
         this.isConfig = isConfig;
+    }
+
+    public List<AppModuleVo> getAppModuleList() {
+        return appModuleList;
+    }
+
+    public void setAppModuleList(List<AppModuleVo> appModuleList) {
+        this.appModuleList = appModuleList;
     }
 }

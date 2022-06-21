@@ -21,6 +21,7 @@ public class DeployProfileParamVo extends AutoexecParamVo {
     }
 
     public DeployProfileParamVo(AutoexecParamVo autoexecParamVo) {
+        super.setId(autoexecParamVo.getId());
         super.setKey(autoexecParamVo.getKey());
         super.setName(autoexecParamVo.getName());
         super.setDefaultValue(autoexecParamVo.getDefaultValue());

@@ -18,9 +18,9 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
     private Long appSystemId;
     @EntityField(name = "应用系统名", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "是否被收藏", type = ApiParamType.INTEGER)
+    @EntityField(name = "是否被收藏（1：收藏，0：取消收藏）", type = ApiParamType.INTEGER)
     private Integer isFavorite;
-    @EntityField(name = "是否已配置", type = ApiParamType.INTEGER)
+    @EntityField(name = "是否已配置（1：已配置，0：未配置）", type = ApiParamType.INTEGER)
     private Integer isConfig;
     @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
     private List<AppModuleVo> appModuleList;

@@ -7,10 +7,8 @@ package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.autoexec.dto.AutoexecParamVo;
 import codedriver.framework.autoexec.dto.combop.*;
-import codedriver.framework.autoexec.dto.profile.AutoexecProfileVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
-import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;

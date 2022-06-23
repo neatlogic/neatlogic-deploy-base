@@ -8,7 +8,6 @@ package codedriver.framework.deploy.dto.app;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
-import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
 
@@ -17,13 +16,14 @@ public class DeployAppEnvAutoConfigVo extends BaseEditorVo {
     @EntityField(name = "应用id", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "模块id", type = ApiParamType.LONG)
-    private Long moduleId;
+    private Long appModuleId;
     @EntityField(name = "环境id", type = ApiParamType.LONG)
     private Long envId;
     @EntityField(name = "实例id", type = ApiParamType.LONG)
     private Long instanceId = 0L;
+    @EntityField(name = "实例名称", type = ApiParamType.STRING)
+    private String instanceName ;
 
-    @JSONField(serialize = false)
     private List<DeployAppEnvAutoConfigKeyValueVo> keyValueList;
 
     public Long getAppSystemId() {
@@ -34,12 +34,12 @@ public class DeployAppEnvAutoConfigVo extends BaseEditorVo {
         this.appSystemId = appSystemId;
     }
 
-    public Long getModuleId() {
-        return moduleId;
+    public Long getAppModuleId() {
+        return appModuleId;
     }
 
-    public void setModuleId(Long moduleId) {
-        this.moduleId = moduleId;
+    public void setAppModuleId(Long appModuleId) {
+        this.appModuleId = appModuleId;
     }
 
     public Long getEnvId() {
@@ -56,6 +56,14 @@ public class DeployAppEnvAutoConfigVo extends BaseEditorVo {
 
     public void setInstanceId(Long instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
     }
 
     public List<DeployAppEnvAutoConfigKeyValueVo> getKeyValueList() {

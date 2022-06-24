@@ -16,7 +16,7 @@ public class DeployAppConfigVo extends BaseEditorVo {
     @EntityField(name = "应用系统ID", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "模块ID", type = ApiParamType.LONG)
-    private Long moduleId = 0L;
+    private Long appModuleId = 0L;
     @EntityField(name = "环境ID", type = ApiParamType.LONG)
     private Long envId = 0L;
     @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
@@ -32,11 +32,11 @@ public class DeployAppConfigVo extends BaseEditorVo {
     }
     public DeployAppConfigVo(Long appSystemId, Long moduleId) {
         this.appSystemId = appSystemId;
-        this.moduleId = moduleId;
+        this.appModuleId = moduleId;
     }
     public DeployAppConfigVo(Long appSystemId, Long moduleId, Long envId) {
         this.appSystemId = appSystemId;
-        this.moduleId = moduleId;
+        this.appModuleId = moduleId;
         this.envId = envId;
     }
 
@@ -48,12 +48,12 @@ public class DeployAppConfigVo extends BaseEditorVo {
         this.appSystemId = appSystemId;
     }
 
-    public Long getModuleId() {
-        return moduleId;
+    public Long getAppModuleId() {
+        return appModuleId;
     }
 
-    public void setModuleId(Long moduleId) {
-        this.moduleId = moduleId;
+    public void setAppModuleId(Long appModuleId) {
+        this.appModuleId = appModuleId;
     }
 
     public Long getEnvId() {

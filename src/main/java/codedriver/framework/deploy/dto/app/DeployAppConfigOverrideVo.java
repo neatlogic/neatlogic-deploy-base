@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 public class DeployAppConfigOverrideVo {
 
     private Long appSystemId;
-    private Long moduleId = 0L;
+    private Long appModuleId = 0L;
     private Long envId = 0L;
     private DeployPipelineConfigVo config;
     private String configStr;
@@ -20,13 +20,13 @@ public class DeployAppConfigOverrideVo {
 
     }
 
-    public DeployAppConfigOverrideVo(Long appSystemId, Long moduleId) {
-        this(appSystemId, moduleId, null);
+    public DeployAppConfigOverrideVo(Long appSystemId, Long appModuleId) {
+        this(appSystemId, appModuleId, null);
     }
 
-    public DeployAppConfigOverrideVo(Long appSystemId, Long moduleId, Long envId) {
+    public DeployAppConfigOverrideVo(Long appSystemId, Long appModuleId, Long envId) {
         this.appSystemId = appSystemId;
-        this.moduleId = moduleId;
+        this.appModuleId = appModuleId;
         this.envId = envId;
     }
 
@@ -38,12 +38,12 @@ public class DeployAppConfigOverrideVo {
         this.appSystemId = appSystemId;
     }
 
-    public Long getModuleId() {
-        return moduleId;
+    public Long getAppModuleId() {
+        return appModuleId;
     }
 
-    public void setModuleId(Long moduleId) {
-        this.moduleId = moduleId;
+    public void setAppModuleId(Long appModuleId) {
+        this.appModuleId = appModuleId;
     }
 
     public Long getEnvId() {

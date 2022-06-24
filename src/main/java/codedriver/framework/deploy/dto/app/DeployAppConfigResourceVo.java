@@ -5,7 +5,6 @@
 
 package codedriver.framework.deploy.dto.app;
 
-import codedriver.framework.cmdb.dto.resourcecenter.entity.AppModuleVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
@@ -23,7 +22,12 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
     @EntityField(name = "是否已配置（1：已配置，0：未配置）", type = ApiParamType.INTEGER)
     private Integer isConfig;
     @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
-    private List<AppModuleVo> appModuleList;
+    private List<DeployAppModuleVo> appModuleList;
+
+    @EntityField(name = "应用模块个数", type = ApiParamType.INTEGER)
+    private Integer appModuleCount;
+    @EntityField(name = "是否有模块（1：有，0：没有）", type = ApiParamType.INTEGER)
+    private Integer isHasModule = 0;
 
     public Integer getIsFavorite() {
         return isFavorite;
@@ -57,11 +61,27 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
         this.isConfig = isConfig;
     }
 
-    public List<AppModuleVo> getAppModuleList() {
+    public List<DeployAppModuleVo> getAppModuleList() {
         return appModuleList;
     }
 
-    public void setAppModuleList(List<AppModuleVo> appModuleList) {
+    public void setAppModuleList(List<DeployAppModuleVo> appModuleList) {
         this.appModuleList = appModuleList;
+    }
+
+    public Integer getAppModuleCount() {
+        return appModuleCount;
+    }
+
+    public void setAppModuleCount(Integer appModuleCount) {
+        this.appModuleCount = appModuleCount;
+    }
+
+    public Integer getIsHasModule() {
+        return isHasModule;
+    }
+
+    public void setIsHasModule(Integer isHasModule) {
+        this.isHasModule = isHasModule;
     }
 }

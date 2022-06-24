@@ -26,6 +26,8 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
 
     @EntityField(name = "应用模块个数", type = ApiParamType.INTEGER)
     private Integer appModuleCount;
+    @EntityField(name = "是否有模块（1：有，0：没有）", type = ApiParamType.INTEGER)
+    private Integer isHasModule = 0;
 
     public Integer getIsFavorite() {
         return isFavorite;
@@ -73,5 +75,13 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
 
     public void setAppModuleCount(Integer appModuleCount) {
         this.appModuleCount = appModuleCount;
+    }
+
+    public Integer getIsHasModule() {
+        return isHasModule;
+    }
+
+    public void setIsHasModule(Integer isHasModule) {
+        this.isHasModule = isHasModule;
     }
 }

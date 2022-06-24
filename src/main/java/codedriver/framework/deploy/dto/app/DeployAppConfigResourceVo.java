@@ -26,13 +26,6 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
 
     @EntityField(name = "是否有模块（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasModule = 0;
-    @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
-    private Integer isHasEnv = 0;
-
-    public DeployAppConfigResourceVo(Long id, String name) {
-        this.appSystemId = id;
-        this.appSystemName = name;
-    }
 
     public Integer getIsFavorite() {
         return isFavorite;
@@ -80,13 +73,5 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
 
     public void setIsHasModule(Integer isHasModule) {
         this.isHasModule = isHasModule;
-    }
-
-    public Integer getIsHasEnv() {
-        return isHasEnv;
-    }
-
-    public void setIsHasEnv(Integer isHasEnv) {
-        this.isHasEnv = isHasEnv;
     }
 }

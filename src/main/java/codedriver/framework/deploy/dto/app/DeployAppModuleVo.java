@@ -10,18 +10,8 @@ import codedriver.framework.restful.annotation.EntityField;
  */
 public class DeployAppModuleVo extends AppModuleVo {
 
-    @EntityField(name = "环境个数", type = ApiParamType.INTEGER)
-    private Integer envCount;
     @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
-
-    public Integer getEnvCount() {
-        return envCount;
-    }
-
-    public void setEnvCount(Integer envCount) {
-        this.envCount = envCount;
-    }
 
     public Integer getIsHasEnv() {
         return isHasEnv;

@@ -1,14 +1,13 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.common.constvalue.ApiParamType;
-import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 
 /**
  * @author longrf
  * @date 2022/6/23 3:41 下午
  */
-public class DeployAppModuleVo extends BaseEditorVo {
+public class DeployAppModuleVo {
 
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;

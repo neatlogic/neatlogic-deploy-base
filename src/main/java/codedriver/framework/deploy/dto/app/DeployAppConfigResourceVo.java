@@ -24,8 +24,6 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
     @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
     private List<DeployAppModuleVo> appModuleList;
 
-    @EntityField(name = "应用模块个数", type = ApiParamType.INTEGER)
-    private Integer appModuleCount;
     @EntityField(name = "是否有模块（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasModule = 0;
 
@@ -67,14 +65,6 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
 
     public void setAppModuleList(List<DeployAppModuleVo> appModuleList) {
         this.appModuleList = appModuleList;
-    }
-
-    public Integer getAppModuleCount() {
-        return appModuleCount;
-    }
-
-    public void setAppModuleCount(Integer appModuleCount) {
-        this.appModuleCount = appModuleCount;
     }
 
     public Integer getIsHasModule() {

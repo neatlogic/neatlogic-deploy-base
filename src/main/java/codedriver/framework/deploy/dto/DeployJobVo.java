@@ -22,6 +22,8 @@ public class DeployJobVo {
     private String version;
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
+    @EntityField(name = "runner映射id", type = ApiParamType.LONG)
+    private Long runnerMapId;
 
     public Long getId() {
         if (id == null) {
@@ -71,5 +73,13 @@ public class DeployJobVo {
 
     public void setJobId(Long jobId) {
         this.jobId = jobId;
+    }
+
+    public Long getRunnerMapId() {
+        return runnerMapId;
+    }
+
+    public void setRunnerMapId(Long runnerMapId) {
+        this.runnerMapId = runnerMapId;
     }
 }

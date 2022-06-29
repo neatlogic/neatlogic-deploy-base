@@ -8,11 +8,15 @@ package codedriver.framework.deploy.dto.app;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
+import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.StringUtils;
 
 public class DeployAppConfigVo extends BaseEditorVo {
+    private static final long serialVersionUID = -4457900289777364590L;
+    @EntityField(name = "id", type = ApiParamType.LONG)
+    private Long id;
     @EntityField(name = "应用系统ID", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "模块ID", type = ApiParamType.LONG)
@@ -38,6 +42,17 @@ public class DeployAppConfigVo extends BaseEditorVo {
         this.appSystemId = appSystemId;
         this.appModuleId = moduleId;
         this.envId = envId;
+    }
+
+    public Long getId() {
+        if (id == null) {
+            id = SnowflakeUtil.uniqueLong();
+        }
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getAppSystemId() {

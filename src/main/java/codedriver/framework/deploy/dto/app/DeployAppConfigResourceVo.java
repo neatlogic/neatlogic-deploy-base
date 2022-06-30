@@ -27,7 +27,6 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
     @EntityField(name = "是否有模块（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasModule = 0;
 
-
     public Integer getIsFavorite() {
         return isFavorite;
     }

@@ -13,6 +13,12 @@ import java.util.List;
 
 public class DeployAppConfigResourceVo extends BaseEditorVo {
     private static final long serialVersionUID = 8079670497813410203L;
+    @EntityField(name = "id", type = ApiParamType.LONG)
+    private Long id;
+    @EntityField(name = "ip", type = ApiParamType.STRING)
+    private String ip;
+    @EntityField(name = "端口", type = ApiParamType.INTEGER)
+    private Integer port;
     @EntityField(name = "应用系统id", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "应用系统名", type = ApiParamType.STRING)
@@ -26,6 +32,30 @@ public class DeployAppConfigResourceVo extends BaseEditorVo {
 
     @EntityField(name = "是否有模块（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasModule = 0;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
 
     public Integer getIsFavorite() {
         return isFavorite;

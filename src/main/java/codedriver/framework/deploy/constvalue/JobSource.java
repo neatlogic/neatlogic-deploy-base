@@ -37,6 +37,10 @@ public enum JobSource implements IAutoexecJobSource {
         return "";
     }
 
+    public String getType(){
+        return JobSourceType.DEPLOY.getValue();
+    }
+
     /**
      * @return 返回对应的来源
      */
@@ -47,6 +51,7 @@ public enum JobSource implements IAutoexecJobSource {
             AutoexecJobSourceVo source = new AutoexecJobSourceVo();
             source.setSource(s.value);
             source.setSourceName(s.text);
+            source.setType(s.getType());
             list.add(source);
         }
         return list;

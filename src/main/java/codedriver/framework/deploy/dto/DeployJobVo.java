@@ -8,6 +8,7 @@ package codedriver.framework.deploy.dto;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
+import com.alibaba.fastjson.JSONObject;
 
 public class DeployJobVo {
     @EntityField(name = "id", type = ApiParamType.LONG)
@@ -15,7 +16,7 @@ public class DeployJobVo {
     @EntityField(name = "应用资产id", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "系统模块id", type = ApiParamType.LONG)
-    private Long systemModuleId;
+    private Long appModuleId;
     @EntityField(name = "环境资产id", type = ApiParamType.LONG)
     private Long envId;
     @EntityField(name = "版本", type = ApiParamType.STRING)
@@ -24,6 +25,17 @@ public class DeployJobVo {
     private Long jobId;
     @EntityField(name = "runner映射id", type = ApiParamType.LONG)
     private Long runnerMapId;
+
+    public DeployJobVo(){
+
+    }
+
+    public DeployJobVo(JSONObject jsonObj) {
+        appSystemId = jsonObj.getLong("appSystemId");
+        appModuleId = jsonObj.getLong("appModuleId");
+        envId = jsonObj.getLong("envId");
+        version = jsonObj.getString("version");
+    }
 
     public Long getId() {
         if (id == null) {
@@ -44,11 +56,11 @@ public class DeployJobVo {
     }
 
     public Long getSystemModuleId() {
-        return systemModuleId;
+        return appModuleId;
     }
 
     public void setSystemModuleId(Long systemModuleId) {
-        this.systemModuleId = systemModuleId;
+        this.appModuleId = systemModuleId;
     }
 
     public Long getEnvId() {

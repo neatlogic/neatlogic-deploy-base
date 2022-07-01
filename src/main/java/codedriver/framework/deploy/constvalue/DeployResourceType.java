@@ -14,7 +14,7 @@ public enum DeployResourceType {
     ENV_SQL_SCRIPT("env_sql_script", "SQL脚本", "db"),
     MIRROR_PRODUCT("mirror_product", "镜像制品", "app"),
     MIRROR_DIFF("mirror_diff", "镜像差异", "app.ins"),
-    MIRROR_SQL_SCRIPT("mirror_sql_script", "SQL脚本", "db"),
+    WORKSPACE("workspace", "工程目录", "workspace"),
     ;
 
     private final String value;

@@ -8,9 +8,10 @@ package codedriver.framework.deploy.constvalue;
  */
 public enum DeployResourceType {
     VERSION_PRODUCT("version_product", "版本制品", "app"),
+    VERSION_SQL_SCRIPT("version_sql_script", "SQL脚本", "db"),
     ENV_PRODUCT("env_product", "环境制品", "app"),
     DIFF_DIRECTORY("diff_directory", "差异目录", "app.ins"),
-    SQL_SCRIPT("sql_script", "SQL脚本", "db"),
+    ENV_SQL_SCRIPT("env_sql_script", "SQL脚本", "db"),
     MIRROR_PRODUCT("mirror_product", "镜像制品", "app"),
     MIRROR_DIFF("mirror_diff", "镜像差异", "app.ins"),
     MIRROR_SQL_SCRIPT("mirror_sql_script", "SQL脚本", "db"),

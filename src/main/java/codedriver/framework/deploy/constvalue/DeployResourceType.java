@@ -7,8 +7,8 @@ package codedriver.framework.deploy.constvalue;
  * @date 2022/06/29 4:16 下午
  */
 public enum DeployResourceType {
-    VERSION_PRODUCT("version_product", "版本制品", "app"),
-    VERSION_SQL_SCRIPT("version_sql_script", "SQL脚本", "db"),
+    BUILD_PRODUCT("build_product", "版本制品", "app"),
+    BUILD_SQL_SCRIPT("build_sql_script", "SQL脚本", "db"),
     ENV_PRODUCT("env_product", "环境制品", "app"),
     ENV_DIFF_DIRECTORY("env_diff_directory", "差异目录", "app.ins"),
     ENV_SQL_SCRIPT("env_sql_script", "SQL脚本", "db"),

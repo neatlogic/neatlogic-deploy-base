@@ -6,9 +6,11 @@
 package codedriver.framework.deploy.dto;
 
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.deploy.dto.app.DeployPipelineConfigVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.annotation.JSONField;
 
 public class DeployJobVo {
     @EntityField(name = "id", type = ApiParamType.LONG)
@@ -25,6 +27,10 @@ public class DeployJobVo {
     private Long jobId;
     @EntityField(name = "编译|构造的runner_id", type = ApiParamType.LONG)
     private Long runnerMapId;
+    @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
+    private DeployPipelineConfigVo config;
+    @JSONField(serialize = false)
+    private String configStr;
 
     public DeployJobVo(){
 
@@ -93,5 +99,20 @@ public class DeployJobVo {
 
     public void setRunnerMapId(Long runnerMapId) {
         this.runnerMapId = runnerMapId;
+    }
+
+    public void setConfig(DeployPipelineConfigVo config) {
+        this.config = config;
+    }
+
+    public String getConfigStr() {
+        if (configStr == null && config != null) {
+            configStr = JSONObject.toJSONString(config);
+        }
+        return configStr;
+    }
+
+    public void setConfigStr(String configStr) {
+        this.configStr = configStr;
     }
 }

@@ -7,10 +7,12 @@ package codedriver.framework.deploy.constvalue;
  * @date 2022/06/29 4:16 下午
  */
 public enum DeployResourceType {
-    VERSION_RESOURCE("version_product", "版本制品", "app"),
-    ENV_RESOURCE("env_product", "环境制品", "app"),
+    VERSION_PRODUCT("version_product", "版本制品", "app"),
+    ENV_PRODUCT("env_product", "环境制品", "app"),
     DIFF_DIRECTORY("diff_directory", "差异目录", "app.ins"),
-    SQL_SCRIPT("sql_script", "SQL脚本", "db");
+    SQL_SCRIPT("sql_script", "SQL脚本", "db"),
+    MIRROR_PRODUCT("mirror", "镜像制品", "app"),
+    DIFF_MIRROR("mirror", "镜像差异", "app.ins");
 
     private final String value;
     private final String text;

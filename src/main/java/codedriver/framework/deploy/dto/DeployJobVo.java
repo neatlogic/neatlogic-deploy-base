@@ -23,6 +23,8 @@ public class DeployJobVo {
     private Long envId;
     @EntityField(name = "版本", type = ApiParamType.STRING)
     private String version;
+    @EntityField(name = "编译号", type = ApiParamType.INTEGER)
+    private Integer buildNo;
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "编译|构造的runner_id", type = ApiParamType.LONG)
@@ -41,6 +43,7 @@ public class DeployJobVo {
         appModuleId = jsonObj.getLong("appModuleId");
         envId = jsonObj.getLong("envId");
         version = jsonObj.getString("version");
+        buildNo = jsonObj.getInteger("buildNo");
     }
 
     public Long getId() {
@@ -61,12 +64,12 @@ public class DeployJobVo {
         this.appSystemId = appSystemId;
     }
 
-    public Long getSystemModuleId() {
+    public Long getAppModuleId() {
         return appModuleId;
     }
 
-    public void setSystemModuleId(Long systemModuleId) {
-        this.appModuleId = systemModuleId;
+    public void setAppModuleId(Long appModuleId) {
+        this.appModuleId = appModuleId;
     }
 
     public Long getEnvId() {
@@ -114,5 +117,13 @@ public class DeployJobVo {
 
     public void setConfigStr(String configStr) {
         this.configStr = configStr;
+    }
+
+    public Integer getBuildNo() {
+        return buildNo;
+    }
+
+    public void setBuildNo(Integer buildNo) {
+        this.buildNo = buildNo;
     }
 }

@@ -23,7 +23,7 @@ public class DeployJobVo {
     private String version;
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "runner映射id", type = ApiParamType.LONG)
+    @EntityField(name = "编译|构造的runner_id", type = ApiParamType.LONG)
     private Long runnerMapId;
 
     public DeployJobVo(){

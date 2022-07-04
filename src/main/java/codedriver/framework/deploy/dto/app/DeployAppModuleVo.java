@@ -13,6 +13,8 @@ public class DeployAppModuleVo {
     private Long id;
     @EntityField(name = "名称", type = ApiParamType.STRING)
     private String name;
+    @EntityField(name = "简称", type = ApiParamType.STRING)
+    private String abbrName;
     @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
 
@@ -35,6 +37,14 @@ public class DeployAppModuleVo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAbbrName() {
+        return abbrName;
+    }
+
+    public void setAbbrName(String abbrName) {
+        this.abbrName = abbrName;
     }
 
     public Integer getIsHasEnv() {

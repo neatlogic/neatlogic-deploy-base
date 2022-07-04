@@ -15,7 +15,7 @@ public class DeployJobVo {
     @EntityField(name = "应用资产id", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "系统模块id", type = ApiParamType.LONG)
-    private Long systemModuleId;
+    private Long appModuleId;
     @EntityField(name = "环境资产id", type = ApiParamType.LONG)
     private Long envId;
     @EntityField(name = "版本", type = ApiParamType.STRING)
@@ -44,12 +44,12 @@ public class DeployJobVo {
         this.appSystemId = appSystemId;
     }
 
-    public Long getSystemModuleId() {
-        return systemModuleId;
+    public Long getAppModuleId() {
+        return appModuleId;
     }
 
-    public void setSystemModuleId(Long systemModuleId) {
-        this.systemModuleId = systemModuleId;
+    public void setAppModuleId(Long appModuleId) {
+        this.appModuleId = appModuleId;
     }
 
     public Long getEnvId() {

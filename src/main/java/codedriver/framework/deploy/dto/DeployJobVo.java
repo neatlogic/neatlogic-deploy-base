@@ -46,6 +46,11 @@ public class DeployJobVo {
         buildNo = jsonObj.getInteger("buildNo");
     }
 
+    public DeployJobVo(Long _jobId, Long _runnerMapId) {
+        jobId = _jobId;
+        runnerMapId = _runnerMapId;
+    }
+
     public Long getId() {
         if (id == null) {
             id = SnowflakeUtil.uniqueLong();

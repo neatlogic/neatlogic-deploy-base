@@ -1,12 +1,18 @@
 package codedriver.framework.deploy.constvalue;
 
+import codedriver.framework.common.constvalue.IEnum;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.List;
+
 /**
  * 版本制品类型
  *
  * @author laiwt
  * @date 2022/06/29 4:16 下午
  */
-public enum DeployResourceType {
+public enum DeployResourceType implements IEnum {
     BUILD_PRODUCT("build_product", "版本制品", "app"),
     BUILD_SQL_SCRIPT("build_sql_script", "SQL脚本", "db"),
     ENV_PRODUCT("env_product", "环境制品", "app"),
@@ -49,4 +55,15 @@ public enum DeployResourceType {
     }
 
 
+    @Override
+    public List getValueTextList() {
+        JSONArray array = new JSONArray();
+        for (DeployResourceType type : values()) {
+            JSONObject json = new JSONObject();
+            json.put("value", type.getValue());
+            json.put("text", type.getText());
+            array.add(json);
+        }
+        return array;
+    }
 }

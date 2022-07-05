@@ -16,6 +16,12 @@ public class DeployAppConfigInstanceVo extends BaseEditorVo {
     private String ip;
     @EntityField(name = "端口", type = ApiParamType.INTEGER)
     private Integer port;
+    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    private Long appSystemId;
+    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    private Long appModuleId;
+    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    private Long envId;
 
     public Long getId() {
         return id;
@@ -39,5 +45,29 @@ public class DeployAppConfigInstanceVo extends BaseEditorVo {
 
     public void setPort(Integer port) {
         this.port = port;
+    }
+
+    public Long getAppSystemId() {
+        return appSystemId;
+    }
+
+    public void setAppSystemId(Long appSystemId) {
+        this.appSystemId = appSystemId;
+    }
+
+    public Long getAppModuleId() {
+        return appModuleId;
+    }
+
+    public void setAppModuleId(Long appModuleId) {
+        this.appModuleId = appModuleId;
+    }
+
+    public Long getEnvId() {
+        return envId;
+    }
+
+    public void setEnvId(Long envId) {
+        this.envId = envId;
     }
 }

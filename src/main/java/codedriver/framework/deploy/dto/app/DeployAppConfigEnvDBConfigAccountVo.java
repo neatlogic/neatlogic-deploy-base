@@ -20,6 +20,8 @@ public class DeployAppConfigEnvDBConfigAccountVo {
     private String accountAlias;
     @EntityField(name = "用户名", type = ApiParamType.STRING)
     private String accountName;
+    @EntityField(name = "账号", type = ApiParamType.STRING)
+    private String account;
     @EntityField(name = "账号id", type = ApiParamType.LONG)
     private Long accountId;
 
@@ -66,4 +68,11 @@ public class DeployAppConfigEnvDBConfigAccountVo {
         this.accountName = accountName;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
 }

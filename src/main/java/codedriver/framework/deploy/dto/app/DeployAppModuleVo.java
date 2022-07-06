@@ -3,6 +3,8 @@ package codedriver.framework.deploy.dto.app;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 
+import java.util.List;
+
 /**
  * @author longrf
  * @date 2022/6/23 3:41 下午
@@ -17,6 +19,8 @@ public class DeployAppModuleVo {
     private String abbrName;
     @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
+
+    private List<DeployAppConfigInstanceVo> instanceVoList;
 
     public DeployAppModuleVo(Long id, String name) {
         this.id = id;
@@ -53,5 +57,13 @@ public class DeployAppModuleVo {
 
     public void setIsHasEnv(Integer isHasEnv) {
         this.isHasEnv = isHasEnv;
+    }
+
+    public List<DeployAppConfigInstanceVo> getInstanceVoList() {
+        return instanceVoList;
+    }
+
+    public void setInstanceVoList(List<DeployAppConfigInstanceVo> instanceVoList) {
+        this.instanceVoList = instanceVoList;
     }
 }

@@ -36,6 +36,12 @@ public class DeployAppConfigEnvDBConfigVo {
     @JSONField(serialize = false)
     private String configStr;
 
+    public DeployAppConfigEnvDBConfigVo(Long appSystemId, Long appModuleId, Long envId) {
+        this.appSystemId = appSystemId;
+        this.appModuleId = appModuleId;
+        this.envId = envId;
+    }
+
     public Long getAppSystemId() {
         return appSystemId;
     }

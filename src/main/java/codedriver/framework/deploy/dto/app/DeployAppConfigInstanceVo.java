@@ -9,7 +9,7 @@ import codedriver.framework.restful.annotation.EntityField;
  * @date 2022/6/30 2:17 下午
  */
 public class DeployAppConfigInstanceVo extends BaseEditorVo {
-
+    private static final long serialVersionUID = 2764705905637129693L;
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "ip", type = ApiParamType.STRING)
@@ -22,6 +22,8 @@ public class DeployAppConfigInstanceVo extends BaseEditorVo {
     private Long appModuleId;
     @EntityField(name = "环境id", type = ApiParamType.LONG)
     private Long envId;
+    @EntityField(name = "实例名", type = ApiParamType.STRING)
+    private String name;
 
     public Long getId() {
         return id;
@@ -69,5 +71,13 @@ public class DeployAppConfigInstanceVo extends BaseEditorVo {
 
     public void setEnvId(Long envId) {
         this.envId = envId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

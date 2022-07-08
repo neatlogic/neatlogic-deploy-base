@@ -17,8 +17,6 @@ public class DeployVersionVo extends BaseEditorVo {
     private Long id;
     @EntityField(name = "版本", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "状态", type = ApiParamType.STRING)
-    private String status;
     @EntityField(name = "应用系统id", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
@@ -35,6 +33,10 @@ public class DeployVersionVo extends BaseEditorVo {
     private List<Long> appModuleIdList;
     @EntityField(name = "状态列表", type = ApiParamType.JSONARRAY)
     private List<String> statusList;
+    @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
+    private List<DeployVersionEnvVo> envList;
+    @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
+    private List<DeployVersionBuildNoVo> buildNoList;
 
     public Long getId() {
         if (id == null) {
@@ -53,14 +55,6 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setVersion(String version) {
         this.version = version;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Long getAppSystemId() {
@@ -126,5 +120,21 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setStatusList(List<String> statusList) {
         this.statusList = statusList;
+    }
+
+    public List<DeployVersionEnvVo> getEnvList() {
+        return envList;
+    }
+
+    public void setEnvList(List<DeployVersionEnvVo> envList) {
+        this.envList = envList;
+    }
+
+    public List<DeployVersionBuildNoVo> getBuildNoList() {
+        return buildNoList;
+    }
+
+    public void setBuildNoList(List<DeployVersionBuildNoVo> buildNoList) {
+        this.buildNoList = buildNoList;
     }
 }

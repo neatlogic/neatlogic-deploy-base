@@ -35,7 +35,7 @@ public class DeployVersionVo extends BaseEditorVo {
     private List<String> statusList;
     @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
     private List<DeployVersionEnvVo> envList;
-    @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "编译号列表", type = ApiParamType.JSONARRAY)
     private List<DeployVersionBuildNoVo> buildNoList;
 
     public Long getId() {

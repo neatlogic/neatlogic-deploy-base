@@ -26,9 +26,11 @@ public class DeployAppConfigEnvDBConfigVo {
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "数据库别名", type = ApiParamType.STRING)
-    private String DBAlias;
+    private String dbAlias;
     @EntityField(name = "数据库资产id", type = ApiParamType.LONG)
-    private Long DBResourceId;
+    private Long dbResourceId;
+    @EntityField(name = "数据库名称", type = ApiParamType.STRING)
+    private String dbResourceName;
     @EntityField(name = "执行用户列表", type = ApiParamType.JSONARRAY)
     private List<DeployAppConfigEnvDBConfigAccountVo> accountList;
     @EntityField(name = "高级设置", type = ApiParamType.JSONOBJECT)
@@ -36,11 +38,15 @@ public class DeployAppConfigEnvDBConfigVo {
     @JSONField(serialize = false)
     private String configStr;
 
+    public DeployAppConfigEnvDBConfigVo() {
+    }
+
     public DeployAppConfigEnvDBConfigVo(Long appSystemId, Long appModuleId, Long envId) {
         this.appSystemId = appSystemId;
         this.appModuleId = appModuleId;
         this.envId = envId;
     }
+
 
     public Long getAppSystemId() {
         return appSystemId;
@@ -77,20 +83,28 @@ public class DeployAppConfigEnvDBConfigVo {
         this.id = id;
     }
 
-    public String getDBAlias() {
-        return DBAlias;
+    public String getDbAlias() {
+        return dbAlias;
     }
 
-    public void setDBAlias(String DBAlias) {
-        this.DBAlias = DBAlias;
+    public void setDbAlias(String dbAlias) {
+        this.dbAlias = dbAlias;
     }
 
-    public Long getDBResourceId() {
-        return DBResourceId;
+    public Long getDbResourceId() {
+        return dbResourceId;
     }
 
-    public void setDBResourceId(Long DBResourceId) {
-        this.DBResourceId = DBResourceId;
+    public void setDbResourceId(Long dbResourceId) {
+        this.dbResourceId = dbResourceId;
+    }
+
+    public String getDbResourceName() {
+        return dbResourceName;
+    }
+
+    public void setDbResourceName(String dbResourceName) {
+        this.dbResourceName = dbResourceName;
     }
 
     public List<DeployAppConfigEnvDBConfigAccountVo> getAccountList() {

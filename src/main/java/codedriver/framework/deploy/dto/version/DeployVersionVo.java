@@ -31,8 +31,6 @@ public class DeployVersionVo extends BaseEditorVo {
     private List<Long> appSystemIdList;
     @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
     private List<Long> appModuleIdList;
-    @EntityField(name = "状态列表", type = ApiParamType.JSONARRAY)
-    private List<String> statusList;
     @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
     private List<DeployVersionEnvVo> envList;
     @EntityField(name = "编译号列表", type = ApiParamType.JSONARRAY)
@@ -112,14 +110,6 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setAppModuleIdList(List<Long> appModuleIdList) {
         this.appModuleIdList = appModuleIdList;
-    }
-
-    public List<String> getStatusList() {
-        return statusList;
-    }
-
-    public void setStatusList(List<String> statusList) {
-        this.statusList = statusList;
     }
 
     public List<DeployVersionEnvVo> getEnvList() {

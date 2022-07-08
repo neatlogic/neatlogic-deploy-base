@@ -16,8 +16,6 @@ public class DeployAppEnvironmentVo {
     private Long id;
     @EntityField(name = "名称", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "是否可编辑", type = ApiParamType.INTEGER)
-    private Integer isEdit;
     @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
     private List<AppModuleVo> appModuleList;
 
@@ -35,14 +33,6 @@ public class DeployAppEnvironmentVo {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Integer getIsEdit() {
-        return isEdit;
-    }
-
-    public void setIsEdit(Integer isEdit) {
-        this.isEdit = isEdit;
     }
 
     public List<AppModuleVo> getAppModuleList() {

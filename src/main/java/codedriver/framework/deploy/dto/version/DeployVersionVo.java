@@ -4,6 +4,9 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -27,6 +30,8 @@ public class DeployVersionVo extends BaseEditorVo {
     private String appModuleName;
     @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
     private Integer isLocked;
+    @EntityField(name = "配置信息", type = ApiParamType.JSONOBJECT)
+    private JSONObject config;
     @EntityField(name = "应用系统id列表", type = ApiParamType.JSONARRAY)
     private List<Long> appSystemIdList;
     @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
@@ -35,6 +40,23 @@ public class DeployVersionVo extends BaseEditorVo {
     private List<DeployVersionEnvVo> envList;
     @EntityField(name = "编译号列表", type = ApiParamType.JSONARRAY)
     private List<DeployVersionBuildNoVo> buildNoList;
+
+    @JSONField(serialize = false)
+    private String configStr;
+
+    public DeployVersionVo() {
+    }
+
+    public DeployVersionVo(String version, Long appSystemId, Long appModuleId) {
+        this.version = version;
+        this.appSystemId = appSystemId;
+        this.appModuleId = appModuleId;
+    }
+
+    public DeployVersionVo(Long id, JSONObject config) {
+        this.id = id;
+        this.config = config;
+    }
 
     public Long getId() {
         if (id == null) {
@@ -126,5 +148,24 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setBuildNoList(List<DeployVersionBuildNoVo> buildNoList) {
         this.buildNoList = buildNoList;
+    }
+
+    public JSONObject getConfig() {
+        return config;
+    }
+
+    public void setConfig(String configStr) {
+        if (StringUtils.isNotBlank(configStr)) {
+            this.config = JSONObject.parseObject(configStr);
+        } else {
+            this.config = null;
+        }
+    }
+
+    public String getConfigStr() {
+        if (config != null) {
+            return config.toJSONString();
+        }
+        return null;
     }
 }

@@ -10,4 +10,8 @@ public class DeployVersionNotFoundException extends ApiRuntimeException {
     public DeployVersionNotFoundException(Long versionId) {
         super("发布版本“" + versionId + "”不存在");
     }
+
+    public DeployVersionNotFoundException(String version) {
+        super("发布版本“" + version + "”不存在");
+    }
 }

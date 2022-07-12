@@ -1,9 +1,11 @@
 package codedriver.framework.deploy.dto.version;
 
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.deploy.constvalue.VersionEnvStatus;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.nacos.common.utils.StringUtils;
 
 /**
  * @author longrf
@@ -21,8 +23,10 @@ public class DeployVersionEnvVo {
     private String envName;
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "编译状态", type = ApiParamType.STRING)
+    @EntityField(name = "状态", type = ApiParamType.STRING)
     private String status;
+    @EntityField(name = "状态名称", type = ApiParamType.STRING)
+    private String statusName;
     @EntityField(name = "额外信息", type = ApiParamType.JSONOBJECT)
     private JSONObject data;
     @JSONField(serialize = false)
@@ -66,6 +70,13 @@ public class DeployVersionEnvVo {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getStatusName() {
+        if (StringUtils.isBlank(statusName) && StringUtils.isNotBlank(status)) {
+            return VersionEnvStatus.getText(status);
+        }
+        return statusName;
     }
 
     public JSONObject getData() {

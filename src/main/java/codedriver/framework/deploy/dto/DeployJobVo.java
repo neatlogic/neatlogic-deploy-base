@@ -6,8 +6,11 @@
 package codedriver.framework.deploy.dto;
 
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.deploy.dto.app.DeployPipelineConfigVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.annotation.JSONField;
 
 public class DeployJobVo {
     @EntityField(name = "id", type = ApiParamType.LONG)
@@ -20,10 +23,33 @@ public class DeployJobVo {
     private Long envId;
     @EntityField(name = "版本", type = ApiParamType.STRING)
     private String version;
+    @EntityField(name = "编译号", type = ApiParamType.INTEGER)
+    private Integer buildNo;
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "编译|构造的runner_id", type = ApiParamType.LONG)
     private Long runnerMapId;
+    @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
+    private DeployPipelineConfigVo config;
+    @JSONField(serialize = false)
+    private String configStr;
+
+    public DeployJobVo(){
+
+    }
+
+    public DeployJobVo(JSONObject jsonObj) {
+        appSystemId = jsonObj.getLong("appSystemId");
+        appModuleId = jsonObj.getLong("appModuleId");
+        envId = jsonObj.getLong("envId");
+        version = jsonObj.getString("version");
+        buildNo = jsonObj.getInteger("buildNo");
+    }
+
+    public DeployJobVo(Long _jobId, Long _runnerMapId) {
+        jobId = _jobId;
+        runnerMapId = _runnerMapId;
+    }
 
     public Long getId() {
         if (id == null) {
@@ -31,7 +57,6 @@ public class DeployJobVo {
         }
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -82,5 +107,28 @@ public class DeployJobVo {
 
     public void setRunnerMapId(Long runnerMapId) {
         this.runnerMapId = runnerMapId;
+    }
+
+    public void setConfig(DeployPipelineConfigVo config) {
+        this.config = config;
+    }
+
+    public String getConfigStr() {
+        if (configStr == null && config != null) {
+            configStr = JSONObject.toJSONString(config);
+        }
+        return configStr;
+    }
+
+    public void setConfigStr(String configStr) {
+        this.configStr = configStr;
+    }
+
+    public Integer getBuildNo() {
+        return buildNo;
+    }
+
+    public void setBuildNo(Integer buildNo) {
+        this.buildNo = buildNo;
     }
 }

@@ -11,7 +11,7 @@ public class DeployAppConfigModuleRunnerGroupNotFoundException extends ApiRuntim
 
     private static final long serialVersionUID = 6333597401986892305L;
 
-    public  DeployAppConfigModuleRunnerGroupNotFoundException(Long appSystemId, Long systemModuleId){
-        super("应用系统 '"+appSystemId+"',模块'"+systemModuleId+"'没有配置runner组");
+    public  DeployAppConfigModuleRunnerGroupNotFoundException(String appSystem, String systemModule){
+        super("应用系统 '"+appSystem+"',模块'"+systemModule+"'没有配置runner组");
     }
 }

@@ -19,6 +19,10 @@ public class DeployAppModuleVo {
     private String abbrName;
     @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
+    //发布作业：当前场景是否有BUILD分类的工具，前端需要根据此标识调用 不同的选择版本下拉接口
+    @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
+    private int isHasBuildTypeTool = 0;
+
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
 
@@ -66,4 +70,13 @@ public class DeployAppModuleVo {
     public void setInstanceVoList(List<DeployAppConfigInstanceVo> instanceVoList) {
         this.instanceVoList = instanceVoList;
     }
+
+    public int getIsHasBuildTypeTool() {
+        return isHasBuildTypeTool;
+    }
+
+    public void setIsHasBuildTypeTool(int isHasBuildTypeTool) {
+        this.isHasBuildTypeTool = isHasBuildTypeTool;
+    }
+
 }

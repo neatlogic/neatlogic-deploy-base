@@ -8,6 +8,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -40,6 +41,12 @@ public class DeployVersionVo extends BaseEditorVo {
     private List<DeployVersionEnvVo> envList;
     @EntityField(name = "编译号列表", type = ApiParamType.JSONARRAY)
     private List<DeployVersionBuildNoVo> buildNoList;
+    @EntityField(name = "开始时间", type = ApiParamType.LONG)
+    private Date startTime;
+    @EntityField(name = "结束时间", type = ApiParamType.LONG)
+    private Date endTime;
+    @EntityField(name = "耗时（毫秒）", type = ApiParamType.LONG)
+    private Long timeCost;
 
     @JSONField(serialize = false)
     private String configStr;
@@ -167,5 +174,29 @@ public class DeployVersionVo extends BaseEditorVo {
             return config.toJSONString();
         }
         return null;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public Long getTimeCost() {
+        return timeCost;
+    }
+
+    public void setTimeCost(Long timeCost) {
+        this.timeCost = timeCost;
     }
 }

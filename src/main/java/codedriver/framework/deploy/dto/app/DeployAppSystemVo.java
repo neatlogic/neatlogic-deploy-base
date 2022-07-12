@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2022/6/23 3:41 下午
  */
 public class DeployAppSystemVo extends BaseEditorVo {
-
+    private static final long serialVersionUID = 3794860793337591800L;
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "名称", type = ApiParamType.STRING)
@@ -30,8 +30,8 @@ public class DeployAppSystemVo extends BaseEditorVo {
     @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
     private List<DeployAppModuleVo> appModuleList;
 
-    @EntityField(name = "模块数量", type = ApiParamType.INTEGER)
-    private Integer moduleCount = 0;
+    @EntityField(name = "是否包含模块", type = ApiParamType.INTEGER)
+    private Integer isHasModule = 0;
 
     public DeployAppSystemVo() {
 
@@ -96,11 +96,11 @@ public class DeployAppSystemVo extends BaseEditorVo {
         this.appModuleList = appModuleList;
     }
 
-    public Integer getModuleCount() {
-        return moduleCount;
+    public Integer getIsHasModule() {
+        return isHasModule;
     }
 
-    public void setModuleCount(Integer moduleCount) {
-        this.moduleCount = moduleCount;
+    public void setIsHasModule(Integer isHasModule) {
+        this.isHasModule = isHasModule;
     }
 }

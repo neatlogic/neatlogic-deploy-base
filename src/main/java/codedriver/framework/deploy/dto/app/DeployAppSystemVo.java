@@ -33,9 +33,19 @@ public class DeployAppSystemVo extends BaseEditorVo {
     @EntityField(name = "模块数量", type = ApiParamType.INTEGER)
     private Integer moduleCount = 0;
 
+    public DeployAppSystemVo() {
+
+    }
+
     public DeployAppSystemVo(Long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public DeployAppSystemVo(Long id, String name, String abbrName) {
+        this.id = id;
+        this.name = name;
+        this.abbrName = abbrName;
     }
 
     public Long getId() {

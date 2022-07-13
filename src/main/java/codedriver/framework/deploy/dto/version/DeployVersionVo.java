@@ -6,9 +6,11 @@ import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -41,12 +43,8 @@ public class DeployVersionVo extends BaseEditorVo {
     private List<DeployVersionEnvVo> envList;
     @EntityField(name = "编译号列表", type = ApiParamType.JSONARRAY)
     private List<DeployVersionBuildNoVo> buildNoList;
-    @EntityField(name = "开始时间", type = ApiParamType.LONG)
-    private Date startTime;
-    @EntityField(name = "结束时间", type = ApiParamType.LONG)
-    private Date endTime;
-    @EntityField(name = "耗时（毫秒）", type = ApiParamType.LONG)
-    private Long timeCost;
+    @JSONField(serialize = false)
+    private JSONObject startTimeRange;
 
     @JSONField(serialize = false)
     private String configStr;
@@ -176,27 +174,47 @@ public class DeployVersionVo extends BaseEditorVo {
         return null;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public List<Long> getStartTimeRange() {
+        long startTime = 0L;
+        long endTime = 0L;
+        if (MapUtils.isNotEmpty(this.startTimeRange)) {
+            String unit = this.startTimeRange.getString("timeUnit");
+            String timeRange = this.startTimeRange.getString("timeRange");
+            long st = this.startTimeRange.getLongValue("startTime");
+            long et = this.startTimeRange.getLongValue("endTime");
+            if (StringUtils.isNotBlank(unit) && StringUtils.isNotBlank(timeRange)) {
+                endTime = System.currentTimeMillis() / 1000;
+                int tr = Integer.parseInt(timeRange);
+                Calendar now = Calendar.getInstance();
+                switch (unit) {
+                    case "day":
+                        now.add(Calendar.DAY_OF_YEAR, -tr);
+                        break;
+                    case "week":
+                        now.add(Calendar.WEEK_OF_YEAR, -tr);
+                        break;
+                    case "month":
+                        now.add(Calendar.MONTH, -tr);
+                        break;
+                    case "year":
+                        now.add(Calendar.YEAR, -tr);
+                        break;
+                }
+                startTime = now.getTimeInMillis() / 1000;
+            } else if (st > 0 && et > 0) {
+                startTime = st / 1000;
+                endTime = et / 1000;
+            }
+        }
+        List<Long> startTimeRange = new ArrayList<>();
+        if (startTime > 0 && endTime > 0 && startTime <= endTime) {
+            startTimeRange.add(startTime);
+            startTimeRange.add(endTime);
+        }
+        return startTimeRange;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public Long getTimeCost() {
-        return timeCost;
-    }
-
-    public void setTimeCost(Long timeCost) {
-        this.timeCost = timeCost;
+    public void setStartTimeRange(JSONObject startTimeRange) {
+        this.startTimeRange = startTimeRange;
     }
 }

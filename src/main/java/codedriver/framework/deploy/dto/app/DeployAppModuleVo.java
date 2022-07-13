@@ -26,9 +26,10 @@ public class DeployAppModuleVo {
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
 
-    public DeployAppModuleVo(Long id, String name) {
+    public DeployAppModuleVo(Long id, String name, String abbrName) {
         this.id = id;
         this.name = name;
+        this.abbrName = abbrName;
     }
 
     public Long getId() {

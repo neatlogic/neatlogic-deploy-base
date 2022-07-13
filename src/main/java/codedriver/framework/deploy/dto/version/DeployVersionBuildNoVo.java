@@ -4,12 +4,14 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.deploy.constvalue.BuildNoStatus;
 import codedriver.framework.restful.annotation.EntityField;
+import codedriver.framework.util.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author longrf
@@ -37,12 +39,8 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     private JSONObject data;
     @JSONField(serialize = false)
     private String dataStr;
-    @EntityField(name = "开始时间", type = ApiParamType.LONG)
-    private Date startTime;
-    @EntityField(name = "结束时间", type = ApiParamType.LONG)
-    private Date endTime;
-    @EntityField(name = "耗时（毫秒）", type = ApiParamType.LONG)
-    private Long timeCost;
+    @JSONField(serialize = false)
+    private JSONObject startTimeRange;
     @EntityField(name = "编译开始时间", type = ApiParamType.STRING)
     private Date compileStartTime;
     @EntityField(name = "编译结束时间", type = ApiParamType.STRING)
@@ -125,28 +123,12 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
         this.dataStr = dataStr;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public List<Long> getStartTimeRange() {
+        return TimeUtil.getTimeRangeList(this.startTimeRange);
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public Long getTimeCost() {
-        return timeCost;
-    }
-
-    public void setTimeCost(Long timeCost) {
-        this.timeCost = timeCost;
+    public void setStartTimeRange(JSONObject startTimeRange) {
+        this.startTimeRange = startTimeRange;
     }
 
     public Date getCompileStartTime() {

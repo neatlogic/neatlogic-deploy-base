@@ -84,7 +84,14 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.runnerId=(paramObj.getLong("runnerId"));
     }
 
-    public DeploySqlDetailVo() {
+    public DeploySqlDetailVo(Long sysId, Long envId, Long moduleId, String version, String sqlFile, Long jobId, String phaseName) {
+        this.sysId = sysId;
+        this.moduleId = moduleId;
+        this.envId = envId;
+        this.version = version;
+        this.sqlFile = sqlFile;
+        this.jobId = jobId;
+        this.phaseName = phaseName;
     }
 
     public DeploySqlDetailVo(Long sysId, Long moduleId, Long envId, String version) {

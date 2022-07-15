@@ -87,12 +87,11 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     public DeploySqlDetailVo() {
     }
 
-    public DeploySqlDetailVo(Long sysId, Long moduleId, Long envId, String version, String phaseName) {
+    public DeploySqlDetailVo(Long sysId, Long moduleId, Long envId, String version) {
         this.sysId = sysId;
         this.moduleId = moduleId;
         this.envId = envId;
         this.version = version;
-        this.phaseName = phaseName;
     }
 
     public Long getId() {

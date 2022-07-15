@@ -101,6 +101,9 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.version = version;
     }
 
+    public DeploySqlDetailVo() {
+    }
+
     public Long getId() {
         if (id == null) {
             id = SnowflakeUtil.uniqueLong();

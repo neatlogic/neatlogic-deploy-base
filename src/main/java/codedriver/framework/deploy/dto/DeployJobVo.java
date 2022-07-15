@@ -11,6 +11,10 @@ import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.DigestUtils;
+
+import java.nio.charset.StandardCharsets;
 
 public class DeployJobVo {
     @EntityField(name = "id", type = ApiParamType.LONG)
@@ -33,7 +37,8 @@ public class DeployJobVo {
     private DeployPipelineConfigVo config;
     @JSONField(serialize = false)
     private String configStr;
-
+    @JSONField(serialize = false)
+    private String configHash;
     public DeployJobVo(){
 
     }
@@ -130,5 +135,20 @@ public class DeployJobVo {
 
     public void setBuildNo(Integer buildNo) {
         this.buildNo = buildNo;
+    }
+
+    public DeployPipelineConfigVo getConfig() {
+        return config;
+    }
+
+    public String getConfigHash() {
+        if (StringUtils.isBlank(configHash) && StringUtils.isNotBlank(configStr)) {
+            configHash = DigestUtils.md5DigestAsHex(configStr.getBytes(StandardCharsets.UTF_8));
+        }
+        return configHash;
+    }
+
+    public void setConfigHash(String configHash) {
+        this.configHash = configHash;
     }
 }

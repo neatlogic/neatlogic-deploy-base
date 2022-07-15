@@ -82,7 +82,6 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.nodeName=(paramObj.getString("nodeName"));
         this.resourceId=(paramObj.getLong("resourceId"));
         this.runnerId=(paramObj.getLong("runnerId"));
-        this.jobId=(paramObj.getLong("runnerId"));
     }
 
     public DeploySqlDetailVo(Long sysId, Long envId, Long moduleId, String version, String sqlFile, Long jobId, String phaseName) {

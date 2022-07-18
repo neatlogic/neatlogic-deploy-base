@@ -30,9 +30,25 @@ public class DeployVersionVo extends BaseEditorVo {
     @EntityField(name = "应用模块名称", type = ApiParamType.STRING)
     private String appModuleName;
     @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
-    private Integer isLocked;
+    private Integer isFreeze;
     @EntityField(name = "配置信息", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
+    @EntityField(name = "仓库类型", type = ApiParamType.STRING)
+    private String repoType;
+    @EntityField(name = "仓库地址", type = ApiParamType.STRING)
+    private String repo;
+    @EntityField(name = "主干", type = ApiParamType.STRING)
+    private String trunk;
+    @EntityField(name = "分支", type = ApiParamType.STRING)
+    private String branch;
+    @EntityField(name = "标签", type = ApiParamType.STRING)
+    private String tag;
+    @EntityField(name = "标签目录", type = ApiParamType.STRING)
+    private String tagsDir;
+    @EntityField(name = "开始Rev号", type = ApiParamType.STRING)
+    private String startRev;
+    @EntityField(name = "结束Rev号", type = ApiParamType.STRING)
+    private String endRev;
     @EntityField(name = "应用系统id列表", type = ApiParamType.JSONARRAY)
     private List<Long> appSystemIdList;
     @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
@@ -112,12 +128,12 @@ public class DeployVersionVo extends BaseEditorVo {
         this.appModuleName = appModuleName;
     }
 
-    public Integer getIsLocked() {
-        return isLocked;
+    public Integer getIsFreeze() {
+        return isFreeze;
     }
 
-    public void setIsLocked(Integer isLocked) {
-        this.isLocked = isLocked;
+    public void setIsFreeze(Integer isFreeze) {
+        this.isFreeze = isFreeze;
     }
 
 
@@ -178,5 +194,69 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setStartTimeRange(JSONObject startTimeRange) {
         this.startTimeRange = startTimeRange;
+    }
+
+    public String getRepoType() {
+        return repoType;
+    }
+
+    public void setRepoType(String repoType) {
+        this.repoType = repoType;
+    }
+
+    public String getRepo() {
+        return repo;
+    }
+
+    public void setRepo(String repo) {
+        this.repo = repo;
+    }
+
+    public String getTrunk() {
+        return trunk;
+    }
+
+    public void setTrunk(String trunk) {
+        this.trunk = trunk;
+    }
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getTagsDir() {
+        return tagsDir;
+    }
+
+    public void setTagsDir(String tagsDir) {
+        this.tagsDir = tagsDir;
+    }
+
+    public String getStartRev() {
+        return startRev;
+    }
+
+    public void setStartRev(String startRev) {
+        this.startRev = startRev;
+    }
+
+    public String getEndRev() {
+        return endRev;
+    }
+
+    public void setEndRev(String endRev) {
+        this.endRev = endRev;
     }
 }

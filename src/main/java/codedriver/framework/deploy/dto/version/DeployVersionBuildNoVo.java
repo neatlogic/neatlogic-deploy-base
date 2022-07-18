@@ -45,6 +45,8 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     private Date compileStartTime;
     @EntityField(name = "编译结束时间", type = ApiParamType.STRING)
     private Date compileEndTime;
+    @EntityField(name = "结束Rev号", type = ApiParamType.STRING)
+    private String endRev;
 
     @EntityField(name = "应用系统id列表", type = ApiParamType.JSONARRAY)
     private List<Long> appSystemIdList;
@@ -175,5 +177,13 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
 
     public void setAppModuleIdList(List<Long> appModuleIdList) {
         this.appModuleIdList = appModuleIdList;
+    }
+
+    public String getEndRev() {
+        return endRev;
+    }
+
+    public void setEndRev(String endRev) {
+        this.endRev = endRev;
     }
 }

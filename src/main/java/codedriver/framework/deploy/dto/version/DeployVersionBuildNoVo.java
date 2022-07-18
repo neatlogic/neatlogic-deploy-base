@@ -26,7 +26,7 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     @EntityField(name = "版本", type = ApiParamType.STRING)
     private String version;
     @EntityField(name = "版本是否封版", type = ApiParamType.INTEGER)
-    private Integer versionIsLocked;
+    private Integer versionIsFreeze;
     @EntityField(name = "编译号", type = ApiParamType.INTEGER)
     private Integer buildNo;
     @EntityField(name = "作业id", type = ApiParamType.LONG)
@@ -67,12 +67,12 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
         this.version = version;
     }
 
-    public Integer getVersionIsLocked() {
-        return versionIsLocked;
+    public Integer getVersionIsFreeze() {
+        return versionIsFreeze;
     }
 
-    public void setVersionIsLocked(Integer versionIsLocked) {
-        this.versionIsLocked = versionIsLocked;
+    public void setVersionIsFreeze(Integer versionIsFreeze) {
+        this.versionIsFreeze = versionIsFreeze;
     }
 
     public Integer getBuildNo() {

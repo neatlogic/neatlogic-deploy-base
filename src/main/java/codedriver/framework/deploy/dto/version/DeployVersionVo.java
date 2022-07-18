@@ -7,7 +7,6 @@ import codedriver.framework.util.SnowflakeUtil;
 import codedriver.framework.util.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -31,8 +30,6 @@ public class DeployVersionVo extends BaseEditorVo {
     private String appModuleName;
     @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
     private Integer isFreeze;
-    @EntityField(name = "配置信息", type = ApiParamType.JSONOBJECT)
-    private JSONObject config;
     @EntityField(name = "仓库类型", type = ApiParamType.STRING)
     private String repoType;
     @EntityField(name = "仓库地址", type = ApiParamType.STRING)
@@ -60,9 +57,6 @@ public class DeployVersionVo extends BaseEditorVo {
     @JSONField(serialize = false)
     private JSONObject startTimeRange;
 
-    @JSONField(serialize = false)
-    private String configStr;
-
     public DeployVersionVo() {
     }
 
@@ -70,11 +64,6 @@ public class DeployVersionVo extends BaseEditorVo {
         this.version = version;
         this.appSystemId = appSystemId;
         this.appModuleId = appModuleId;
-    }
-
-    public DeployVersionVo(Long id, JSONObject config) {
-        this.id = id;
-        this.config = config;
     }
 
     public Long getId() {
@@ -167,25 +156,6 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setBuildNoList(List<DeployVersionBuildNoVo> buildNoList) {
         this.buildNoList = buildNoList;
-    }
-
-    public JSONObject getConfig() {
-        return config;
-    }
-
-    public void setConfig(String configStr) {
-        if (StringUtils.isNotBlank(configStr)) {
-            this.config = JSONObject.parseObject(configStr);
-        } else {
-            this.config = null;
-        }
-    }
-
-    public String getConfigStr() {
-        if (config != null) {
-            return config.toJSONString();
-        }
-        return null;
     }
 
     public List<Long> getStartTimeRange() {

@@ -30,7 +30,7 @@ public class DeployVersionVo extends BaseEditorVo {
     @EntityField(name = "应用模块名称", type = ApiParamType.STRING)
     private String appModuleName;
     @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
-    private Integer isLocked;
+    private Integer isFreeze;
     @EntityField(name = "配置信息", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
     @EntityField(name = "应用系统id列表", type = ApiParamType.JSONARRAY)
@@ -112,12 +112,12 @@ public class DeployVersionVo extends BaseEditorVo {
         this.appModuleName = appModuleName;
     }
 
-    public Integer getIsLocked() {
-        return isLocked;
+    public Integer getIsFreeze() {
+        return isFreeze;
     }
 
-    public void setIsLocked(Integer isLocked) {
-        this.isLocked = isLocked;
+    public void setIsFreeze(Integer isFreeze) {
+        this.isFreeze = isFreeze;
     }
 
 

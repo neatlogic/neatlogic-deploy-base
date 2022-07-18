@@ -1,5 +1,6 @@
 package codedriver.framework.deploy.dto.app;
 
+import codedriver.framework.cmdb.dto.resourcecenter.ResourceVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 
@@ -22,6 +23,8 @@ public class DeployAppModuleVo {
     //发布作业：当前场景是否有BUILD分类的工具，前端需要根据此标识调用 不同的选择版本下拉接口
     @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
     private int isHasBuildTypeTool = 0;
+    @EntityField(name = "实例列表", type = ApiParamType.JSONARRAY)
+    private List<ResourceVo> instanceList;
 
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
@@ -80,4 +83,11 @@ public class DeployAppModuleVo {
         this.isHasBuildTypeTool = isHasBuildTypeTool;
     }
 
+    public List<ResourceVo> getInstanceList() {
+        return instanceList;
+    }
+
+    public void setInstanceList(List<ResourceVo> instanceList) {
+        this.instanceList = instanceList;
+    }
 }

@@ -51,6 +51,15 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
     private List<Long> appModuleIdList;
 
+    public DeployVersionBuildNoVo(){}
+
+    public DeployVersionBuildNoVo(Long versionId, Integer buildNo, Long jobId,String status) {
+        this.versionId = versionId;
+        this.buildNo = buildNo;
+        this.jobId = jobId;
+        this.status = status;
+    }
+
     public Long getVersionId() {
         return versionId;
     }

@@ -24,6 +24,8 @@ public class DeployAppConfigEnvDBConfigAccountVo {
     private String account;
     @EntityField(name = "账号id", type = ApiParamType.LONG)
     private Long accountId;
+    @EntityField(name = "加密密码", type = ApiParamType.STRING)
+    private String passwordCipher;
 
     public Long getId() {
         if (id == null) {
@@ -74,5 +76,13 @@ public class DeployAppConfigEnvDBConfigAccountVo {
 
     public void setAccount(String account) {
         this.account = account;
+    }
+
+    public String getPasswordCipher() {
+        return passwordCipher;
+    }
+
+    public void setPasswordCipher(String passwordCipher) {
+        this.passwordCipher = passwordCipher;
     }
 }

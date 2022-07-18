@@ -26,7 +26,7 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     @EntityField(name = "版本", type = ApiParamType.STRING)
     private String version;
     @EntityField(name = "版本是否封版", type = ApiParamType.INTEGER)
-    private Integer versionIsLocked;
+    private Integer versionIsFreeze;
     @EntityField(name = "编译号", type = ApiParamType.INTEGER)
     private Integer buildNo;
     @EntityField(name = "作业id", type = ApiParamType.LONG)
@@ -48,6 +48,11 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     @EntityField(name = "结束Rev号", type = ApiParamType.STRING)
     private String endRev;
 
+    @EntityField(name = "应用系统id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> appSystemIdList;
+    @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> appModuleIdList;
+
     public Long getVersionId() {
         return versionId;
     }
@@ -64,12 +69,12 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
         this.version = version;
     }
 
-    public Integer getVersionIsLocked() {
-        return versionIsLocked;
+    public Integer getVersionIsFreeze() {
+        return versionIsFreeze;
     }
 
-    public void setVersionIsLocked(Integer versionIsLocked) {
-        this.versionIsLocked = versionIsLocked;
+    public void setVersionIsFreeze(Integer versionIsFreeze) {
+        this.versionIsFreeze = versionIsFreeze;
     }
 
     public Integer getBuildNo() {
@@ -147,6 +152,22 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
 
     public void setCompileEndTime(Date compileEndTime) {
         this.compileEndTime = compileEndTime;
+    }
+
+    public List<Long> getAppSystemIdList() {
+        return appSystemIdList;
+    }
+
+    public void setAppSystemIdList(List<Long> appSystemIdList) {
+        this.appSystemIdList = appSystemIdList;
+    }
+
+    public List<Long> getAppModuleIdList() {
+        return appModuleIdList;
+    }
+
+    public void setAppModuleIdList(List<Long> appModuleIdList) {
+        this.appModuleIdList = appModuleIdList;
     }
 
     public String getEndRev() {

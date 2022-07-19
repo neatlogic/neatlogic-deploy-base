@@ -23,10 +23,6 @@ public class DeployAppSystemVo extends BaseEditorVo {
     private String name;
     @EntityField(name = "简称", type = ApiParamType.STRING)
     private String abbrName;
-    @EntityField(name = "状态id列表", type = ApiParamType.JSONARRAY)
-    private List<Long> statusIdList;
-    @EntityField(name = "负责人id列表", type = ApiParamType.JSONARRAY)
-    private List<Long> ownerIdList;
     @EntityField(name = "维护窗口", type = ApiParamType.STRING)
     private String maintenanceWindow;
     @EntityField(name = "备注", type = ApiParamType.STRING)
@@ -84,22 +80,6 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setAbbrName(String abbrName) {
         this.abbrName = abbrName;
-    }
-
-    public List<Long> getStatusIdList() {
-        return statusIdList;
-    }
-
-    public void setStatusIdList(List<Long> statusIdList) {
-        this.statusIdList = statusIdList;
-    }
-
-    public List<Long> getOwnerIdList() {
-        return ownerIdList;
-    }
-
-    public void setOwnerIdList(List<Long> ownerIdList) {
-        this.ownerIdList = ownerIdList;
     }
 
     public String getMaintenanceWindow() {

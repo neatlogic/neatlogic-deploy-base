@@ -1,11 +1,8 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.common.constvalue.ApiParamType;
-import codedriver.framework.common.constvalue.CiphertextPrefix;
-import codedriver.framework.common.util.RC4Util;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author longrf
@@ -27,8 +24,6 @@ public class DeployAppConfigEnvDBConfigAccountVo {
     private String account;
     @EntityField(name = "账号id", type = ApiParamType.LONG)
     private Long accountId;
-    @EntityField(name = "解密密码", type = ApiParamType.STRING)
-    private String passwordPlain;
     @EntityField(name = "加密密码", type = ApiParamType.STRING)
     private String passwordCipher;
 
@@ -83,34 +78,11 @@ public class DeployAppConfigEnvDBConfigAccountVo {
         this.account = account;
     }
 
-    public String getPasswordPlain() {
-        if (StringUtils.isBlank(passwordPlain)) {
-            if (StringUtils.isNotBlank(passwordCipher)) {
-                if (passwordCipher.startsWith(CiphertextPrefix.RC4.getValue())) {
-                    this.passwordPlain = RC4Util.decrypt(this.passwordCipher.substring(4));
-                } else {
-                    this.passwordPlain = this.passwordCipher;
-                }
-            }
-        }
-        return passwordPlain;
-    }
-
-    public void setPasswordPlain(String passwordPlain) {
-        this.passwordPlain = passwordPlain;
-    }
-
     public String getPasswordCipher() {
-        if (StringUtils.isBlank(passwordCipher)) {
-            if (StringUtils.isNotBlank(passwordPlain)) {
-                this.passwordCipher = CiphertextPrefix.RC4.getValue() + RC4Util.encrypt(passwordPlain);
-            }
-        }
         return passwordCipher;
     }
 
     public void setPasswordCipher(String passwordCipher) {
         this.passwordCipher = passwordCipher;
     }
-
 }

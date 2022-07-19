@@ -32,6 +32,8 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     @EntityField(name = "是否包含模块", type = ApiParamType.INTEGER)
     private Integer isHasModule = 0;
+    @EntityField(name = "是否包含环境", type = ApiParamType.INTEGER)
+    private Integer isHasEnv = 0;
 
     public DeployAppSystemVo() {
 
@@ -102,5 +104,13 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setIsHasModule(Integer isHasModule) {
         this.isHasModule = isHasModule;
+    }
+
+    public Integer getIsHasEnv() {
+        return isHasEnv;
+    }
+
+    public void setIsHasEnv(Integer isHasEnv) {
+        this.isHasEnv = isHasEnv;
     }
 }

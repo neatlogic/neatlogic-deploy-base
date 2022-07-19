@@ -23,12 +23,24 @@ public class DeployAppSystemVo extends BaseEditorVo {
     private String name;
     @EntityField(name = "简称", type = ApiParamType.STRING)
     private String abbrName;
+    @EntityField(name = "状态id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> statusIdList;
+    @EntityField(name = "负责人id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> ownerIdList;
+    @EntityField(name = "维护窗口", type = ApiParamType.STRING)
+    private String maintenanceWindow;
+    @EntityField(name = "备注", type = ApiParamType.STRING)
+    private String description;
     @EntityField(name = "是否被收藏（1：收藏，0：取消收藏）", type = ApiParamType.INTEGER)
     private Integer isFavorite;
     @EntityField(name = "是否已配置（1：已配置，0：未配置）", type = ApiParamType.INTEGER)
     private Integer isConfig;
     @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
     private List<DeployAppModuleVo> appModuleList;
+    @EntityField(name = "状态列表", type = ApiParamType.JSONARRAY)
+    private List<DeployAppSystemStateVo> statusList;
+    @EntityField(name = "负责人列表", type = ApiParamType.JSONARRAY)
+    private List<DeployAppSystemOwnerVo> ownerList;
 
     @EntityField(name = "是否包含模块", type = ApiParamType.INTEGER)
     private Integer isHasModule = 0;
@@ -74,6 +86,38 @@ public class DeployAppSystemVo extends BaseEditorVo {
         this.abbrName = abbrName;
     }
 
+    public List<Long> getStatusIdList() {
+        return statusIdList;
+    }
+
+    public void setStatusIdList(List<Long> statusIdList) {
+        this.statusIdList = statusIdList;
+    }
+
+    public List<Long> getOwnerIdList() {
+        return ownerIdList;
+    }
+
+    public void setOwnerIdList(List<Long> ownerIdList) {
+        this.ownerIdList = ownerIdList;
+    }
+
+    public String getMaintenanceWindow() {
+        return maintenanceWindow;
+    }
+
+    public void setMaintenanceWindow(String maintenanceWindow) {
+        this.maintenanceWindow = maintenanceWindow;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Integer getIsFavorite() {
         return isFavorite;
     }
@@ -96,6 +140,22 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setAppModuleList(List<DeployAppModuleVo> appModuleList) {
         this.appModuleList = appModuleList;
+    }
+
+    public List<DeployAppSystemStateVo> getStatusList() {
+        return statusList;
+    }
+
+    public void setStatusList(List<DeployAppSystemStateVo> statusList) {
+        this.statusList = statusList;
+    }
+
+    public List<DeployAppSystemOwnerVo> getOwnerList() {
+        return ownerList;
+    }
+
+    public void setOwnerList(List<DeployAppSystemOwnerVo> ownerList) {
+        this.ownerList = ownerList;
     }
 
     public Integer getIsHasModule() {

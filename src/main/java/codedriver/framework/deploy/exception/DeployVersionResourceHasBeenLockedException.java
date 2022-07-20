@@ -11,6 +11,6 @@ public class DeployVersionResourceHasBeenLockedException extends ApiRuntimeExcep
     private static final long serialVersionUID = 7151703755201232671L;
 
     public DeployVersionResourceHasBeenLockedException() {
-        super("制品文件已被锁定，请稍后再试");
+        super("HOME已被锁定，请稍后再试");
     }
 }

@@ -5,21 +5,21 @@ import codedriver.framework.restful.annotation.EntityField;
 
 /**
  * @author longrf
- * @date 2022/7/19 16:29
+ * @date 2022/7/19 16:17
  */
-public class DeployAppSystemOwnerVo {
+public class DeployAppUsedStateVo {
 
-    private static final long serialVersionUID = 3712156893337591800L;
+    private static final long serialVersionUID = 3794156893337591800L;
 
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "名称", type = ApiParamType.STRING)
     private String name;
 
-    public DeployAppSystemOwnerVo() {
+    public DeployAppUsedStateVo() {
     }
 
-    public DeployAppSystemOwnerVo(Long id, String name) {
+    public DeployAppUsedStateVo(Long id, String name) {
         this.id = id;
         this.name = name;
     }

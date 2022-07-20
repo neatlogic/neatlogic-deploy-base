@@ -14,7 +14,7 @@ public interface IDeploySqlCrossoverMapper extends ICrossoverService {
 
     List<DeploySqlDetailVo> getDeploySqlDetailList(@Param("sqlFileDetailVoList") List<DeploySqlDetailVo> sqlFileDetailVoList);
 
-    List<Long> getJobSqlIdListByJobIdAndJobPhaseNameList(@Param("jobId") Long jobId, @Param("jobPhaseNameList") List<String> jobPhaseNameList);
+    List<Long> getDeployJobSqlIdListByJobIdAndJobPhaseNameList(@Param("jobId") Long jobId, @Param("jobPhaseNameList") List<String> jobPhaseNameList);
 
     void resetDeploySqlStatusBySqlIdList(@Param("idList") List<Long> idList);
 }

@@ -46,8 +46,12 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private String host;
     @EntityField(name = "端口", type = ApiParamType.INTEGER)
     private Integer port;
+    @EntityField(name = "用户名", type = ApiParamType.STRING)
+    private String username;
     @EntityField(name = "服务地址", type = ApiParamType.STRING)
     private String serviceAddr;
+    @EntityField(name = "节点类型", type = ApiParamType.STRING)
+    private String nodeType;
     @EntityField(name = "状态", type = ApiParamType.STRING)
     private String status;
     @EntityField(name = "状态名", type = ApiParamType.STRING)
@@ -219,6 +223,22 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setServiceAddr(String serviceAddr) {
         this.serviceAddr = serviceAddr;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
     }
 
     public String getStatus() {

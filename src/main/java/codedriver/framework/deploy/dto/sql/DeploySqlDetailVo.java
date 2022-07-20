@@ -1,7 +1,6 @@
 package codedriver.framework.deploy.dto.sql;
 
 import codedriver.framework.autoexec.constvalue.JobNodeStatus;
-import codedriver.framework.autoexec.dto.job.AutoexecJobStatusVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
@@ -51,8 +50,8 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private String serviceAddr;
     @EntityField(name = "状态", type = ApiParamType.STRING)
     private String status;
-    @EntityField(name = "状态Vo", type = ApiParamType.JSONOBJECT)
-    private AutoexecJobStatusVo statusVo;
+    @EntityField(name = "状态名", type = ApiParamType.STRING)
+    private String statusName;
     @EntityField(name = "完成率", type = ApiParamType.INTEGER)
     private Integer completionRate = 0;
     @EntityField(name = "md5", type = ApiParamType.STRING)
@@ -230,6 +229,13 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.status = status;
     }
 
+    public String getStatusName() {
+        if (StringUtils.isBlank(statusName) && StringUtils.isNotBlank(status)) {
+            statusName = JobNodeStatus.getText(status);
+        }
+        return statusName;
+    }
+
     public String getMd5() {
         return md5;
     }
@@ -276,13 +282,6 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
-    }
-
-    public AutoexecJobStatusVo getStatusVo() {
-        if (statusVo == null && StringUtils.isNotBlank(status)) {
-            return new AutoexecJobStatusVo(status, JobNodeStatus.getText(status), JobNodeStatus.getColor(status));
-        }
-        return statusVo;
     }
 
     public Integer getCompletionRate() {

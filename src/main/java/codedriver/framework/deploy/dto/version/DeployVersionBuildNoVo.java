@@ -7,7 +7,6 @@ import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
-import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
@@ -35,16 +34,14 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     private String status;
     @EntityField(name = "编译状态名称", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "额外信息", type = ApiParamType.JSONOBJECT)
-    private JSONObject data;
-    @JSONField(serialize = false)
-    private String dataStr;
     @JSONField(serialize = false)
     private JSONObject startTimeRange;
     @EntityField(name = "编译开始时间", type = ApiParamType.STRING)
     private Date compileStartTime;
     @EntityField(name = "编译结束时间", type = ApiParamType.STRING)
     private Date compileEndTime;
+    @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
+    private Long runnerMapId;
     @EntityField(name = "结束Rev号", type = ApiParamType.STRING)
     private String endRev;
 
@@ -117,28 +114,6 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
         return statusName;
     }
 
-    public JSONObject getData() {
-        if (MapUtils.isEmpty(data) && StringUtils.isNotBlank(dataStr)) {
-            data = JSONObject.parseObject(dataStr);
-        }
-        return data;
-    }
-
-    public void setData(JSONObject data) {
-        this.data = data;
-    }
-
-    public String getDataStr() {
-        if (StringUtils.isEmpty(dataStr) && MapUtils.isNotEmpty(data)) {
-            dataStr = data.toJSONString();
-        }
-        return dataStr;
-    }
-
-    public void setDataStr(String dataStr) {
-        this.dataStr = dataStr;
-    }
-
     public List<Long> getStartTimeRange() {
         return TimeUtil.getTimeRangeList(this.startTimeRange);
     }
@@ -161,6 +136,14 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
 
     public void setCompileEndTime(Date compileEndTime) {
         this.compileEndTime = compileEndTime;
+    }
+
+    public Long getRunnerMapId() {
+        return runnerMapId;
+    }
+
+    public void setRunnerMapId(Long runnerMapId) {
+        this.runnerMapId = runnerMapId;
     }
 
     public List<Long> getAppSystemIdList() {

@@ -7,7 +7,6 @@ import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
-import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
@@ -35,10 +34,6 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     private String status;
     @EntityField(name = "编译状态名称", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "额外信息", type = ApiParamType.JSONOBJECT)
-    private JSONObject data;
-    @JSONField(serialize = false)
-    private String dataStr;
     @JSONField(serialize = false)
     private JSONObject startTimeRange;
     @EntityField(name = "编译开始时间", type = ApiParamType.STRING)
@@ -117,28 +112,6 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
             return BuildNoStatus.getText(status);
         }
         return statusName;
-    }
-
-    public JSONObject getData() {
-        if (MapUtils.isEmpty(data) && StringUtils.isNotBlank(dataStr)) {
-            data = JSONObject.parseObject(dataStr);
-        }
-        return data;
-    }
-
-    public void setData(JSONObject data) {
-        this.data = data;
-    }
-
-    public String getDataStr() {
-        if (StringUtils.isEmpty(dataStr) && MapUtils.isNotEmpty(data)) {
-            dataStr = data.toJSONString();
-        }
-        return dataStr;
-    }
-
-    public void setDataStr(String dataStr) {
-        this.dataStr = dataStr;
     }
 
     public List<Long> getStartTimeRange() {

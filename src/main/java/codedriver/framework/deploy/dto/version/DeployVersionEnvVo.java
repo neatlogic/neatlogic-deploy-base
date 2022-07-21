@@ -1,19 +1,18 @@
 package codedriver.framework.deploy.dto.version;
 
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.deploy.constvalue.VersionEnvStatus;
 import codedriver.framework.restful.annotation.EntityField;
-import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.nacos.common.utils.StringUtils;
 
 /**
  * @author longrf
  * @date 2022/7/8 11:12 上午
  */
-public class DeployVersionEnvVo {
+public class DeployVersionEnvVo extends BaseEditorVo {
 
-    private static final long serialVersionUID = -1948071236425154588L;
+    private static final long serialVersionUID = -5292013432947748975L;
 
     @EntityField(name = "版本id", type = ApiParamType.LONG)
     private Long versionId;
@@ -27,10 +26,12 @@ public class DeployVersionEnvVo {
     private String status;
     @EntityField(name = "状态名称", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "额外信息", type = ApiParamType.JSONOBJECT)
-    private JSONObject data;
-    @JSONField(serialize = false)
-    private String dataStr;
+    @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
+    private Long runnerMapId;
+    @EntityField(name = "buildNo", type = ApiParamType.INTEGER)
+    private Integer buildNo;
+    @EntityField(name = "是否镜像发布", type = ApiParamType.INTEGER)
+    private Integer isMirror;
 
     public Long getVersionId() {
         return versionId;
@@ -79,19 +80,27 @@ public class DeployVersionEnvVo {
         return statusName;
     }
 
-    public JSONObject getData() {
-        return data;
+    public Long getRunnerMapId() {
+        return runnerMapId;
     }
 
-    public void setData(JSONObject data) {
-        this.data = data;
+    public void setRunnerMapId(Long runnerMapId) {
+        this.runnerMapId = runnerMapId;
     }
 
-    public String getDataStr() {
-        return dataStr;
+    public Integer getBuildNo() {
+        return buildNo;
     }
 
-    public void setDataStr(String dataStr) {
-        this.dataStr = dataStr;
+    public void setBuildNo(Integer buildNo) {
+        this.buildNo = buildNo;
+    }
+
+    public Integer getIsMirror() {
+        return isMirror;
+    }
+
+    public void setIsMirror(Integer isMirror) {
+        this.isMirror = isMirror;
     }
 }

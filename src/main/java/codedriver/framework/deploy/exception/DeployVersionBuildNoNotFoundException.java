@@ -13,4 +13,8 @@ public class DeployVersionBuildNoNotFoundException extends ApiRuntimeException {
     public DeployVersionBuildNoNotFoundException(String versionName, Integer buildNo) {
         super("版本“" + versionName + "”的buildNo" + buildNo + "不存在");
     }
+
+    public DeployVersionBuildNoNotFoundException(Integer buildNo) {
+        super("buildNo" + buildNo + "不存在");
+    }
 }

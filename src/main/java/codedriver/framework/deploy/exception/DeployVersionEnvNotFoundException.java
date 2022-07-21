@@ -12,4 +12,8 @@ public class DeployVersionEnvNotFoundException extends ApiRuntimeException {
     public DeployVersionEnvNotFoundException(String versionName, Long envId) {
         super("版本“" + versionName + "”的" + envId + "环境不存在");
     }
+
+    public DeployVersionEnvNotFoundException(Long envId) {
+        super("环境id:" + envId + "不存在");
+    }
 }

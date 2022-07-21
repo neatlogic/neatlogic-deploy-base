@@ -45,6 +45,8 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     private Date compileStartTime;
     @EntityField(name = "编译结束时间", type = ApiParamType.STRING)
     private Date compileEndTime;
+    @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
+    private Long runnerMapId;
     @EntityField(name = "结束Rev号", type = ApiParamType.STRING)
     private String endRev;
 
@@ -161,6 +163,14 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
 
     public void setCompileEndTime(Date compileEndTime) {
         this.compileEndTime = compileEndTime;
+    }
+
+    public Long getRunnerMapId() {
+        return runnerMapId;
+    }
+
+    public void setRunnerMapId(Long runnerMapId) {
+        this.runnerMapId = runnerMapId;
     }
 
     public List<Long> getAppSystemIdList() {

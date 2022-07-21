@@ -5,67 +5,17 @@
 
 package codedriver.framework.deploy.dto.app;
 
-import codedriver.framework.autoexec.dto.combop.*;
+import codedriver.framework.autoexec.dto.combop.AutoexecCombopConfigVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeployPipelineConfigVo extends AutoexecCombopConfigVo{
-
-//    @EntityField(name = "阶段列表", type = ApiParamType.JSONARRAY)
-//    private List<DeployPipelinePhaseVo> combopPhaseList;
-
-//    @EntityField(name = "阶段组列表", type = ApiParamType.JSONARRAY)
-//    private List<AutoexecCombopGroupVo> combopGroupList;
-
-    @EntityField(name = "执行目标配置", type = ApiParamType.JSONOBJECT)
-    @Deprecated
-    private AutoexecCombopExecuteConfigVo executeConfig;
-
-//    @EntityField(name = "场景列表", type = ApiParamType.JSONARRAY)
-//    private List<AutoexecCombopScenarioVo> scenarioList;
+public class DeployPipelineConfigVo extends AutoexecCombopConfigVo {
 
     @EntityField(name = "重载预置参数集列表", type = ApiParamType.JSONARRAY)
     private List<DeployProfileVo> overrideProfileList;
-
-//    @EntityField(name = "作业参数列表", type = ApiParamType.JSONARRAY)
-//    private List<AutoexecParamVo> runtimeParamList;
-
-//    public List<DeployPipelinePhaseVo> getCombopPhaseList() {
-//        return combopPhaseList;
-//    }
-//
-//    public void setCombopPhaseList(List<DeployPipelinePhaseVo> combopPhaseList) {
-//        this.combopPhaseList = combopPhaseList;
-//    }
-//
-//    public List<AutoexecCombopGroupVo> getCombopGroupList() {
-//        return combopGroupList;
-//    }
-//
-//    public void setCombopGroupList(List<AutoexecCombopGroupVo> combopGroupList) {
-//        this.combopGroupList = combopGroupList;
-//    }
-    @Deprecated
-    @Override
-    public AutoexecCombopExecuteConfigVo getExecuteConfig() {
-        return executeConfig;
-    }
-    @Deprecated
-    @Override
-    public void setExecuteConfig(AutoexecCombopExecuteConfigVo executeConfig) {
-        this.executeConfig = executeConfig;
-    }
-
-//    public List<AutoexecCombopScenarioVo> getScenarioList() {
-//        return scenarioList;
-//    }
-//
-//    public void setScenarioList(List<AutoexecCombopScenarioVo> scenarioList) {
-//        this.scenarioList = scenarioList;
-//    }
 
     public List<DeployProfileVo> getOverrideProfileList() {
         if (overrideProfileList == null) {
@@ -78,11 +28,4 @@ public class DeployPipelineConfigVo extends AutoexecCombopConfigVo{
         this.overrideProfileList = overrideProfileList;
     }
 
-//    public List<AutoexecParamVo> getRuntimeParamList() {
-//        return runtimeParamList;
-//    }
-//
-//    public void setRuntimeParamList(List<AutoexecParamVo> runtimeParamList) {
-//        this.runtimeParamList = runtimeParamList;
-//    }
 }

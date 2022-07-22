@@ -10,6 +10,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -72,6 +73,11 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private Date endTime;
     @EntityField(name = "耗时", type = ApiParamType.STRING)
     private String costTime;
+    @EntityField(name = "sql排序", type = ApiParamType.INTEGER)
+    private Integer sort;
+
+    @EntityField(name = "sql文件名列表", type = ApiParamType.JSONARRAY)
+    private List<String> sqlFiles;
 
 
     public DeploySqlDetailVo(JSONObject paramObj) {
@@ -320,5 +326,21 @@ public class DeploySqlDetailVo extends BaseEditorVo {
             }
         }
         return costTime;
+    }
+
+    public List<String> getSqlFiles() {
+        return sqlFiles;
+    }
+
+    public void setSqlFiles(List<String> sqlFiles) {
+        this.sqlFiles = sqlFiles;
+    }
+
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
     }
 }

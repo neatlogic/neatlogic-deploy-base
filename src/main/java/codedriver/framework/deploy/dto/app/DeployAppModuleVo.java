@@ -17,14 +17,25 @@ public class DeployAppModuleVo {
     private String name;
     @EntityField(name = "简称", type = ApiParamType.STRING)
     private String abbrName;
+    @EntityField(name = "维护窗口", type = ApiParamType.STRING)
+    private String maintenanceWindow;
+    @EntityField(name = "备注", type = ApiParamType.STRING)
+    private String description;
     @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
     //发布作业：当前场景是否有BUILD分类的工具，前端需要根据此标识调用 不同的选择版本下拉接口
     @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
     private int isHasBuildTypeTool = 0;
+    @EntityField(name = "状态列表", type = ApiParamType.JSONARRAY)
+    private List<DeployAppUsedStateVo> stateList;
+    @EntityField(name = "负责人列表", type = ApiParamType.JSONARRAY)
+    private List<DeployAppOwnerVo> ownerList;
 
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
+
+    public DeployAppModuleVo() {
+    }
 
     public DeployAppModuleVo(Long id, String name, String abbrName) {
         this.id = id;
@@ -80,4 +91,35 @@ public class DeployAppModuleVo {
         this.isHasBuildTypeTool = isHasBuildTypeTool;
     }
 
+    public String getMaintenanceWindow() {
+        return maintenanceWindow;
+    }
+
+    public void setMaintenanceWindow(String maintenanceWindow) {
+        this.maintenanceWindow = maintenanceWindow;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<DeployAppUsedStateVo> getStateList() {
+        return stateList;
+    }
+
+    public void setStateList(List<DeployAppUsedStateVo> stateList) {
+        this.stateList = stateList;
+    }
+
+    public List<DeployAppOwnerVo> getOwnerList() {
+        return ownerList;
+    }
+
+    public void setOwnerList(List<DeployAppOwnerVo> ownerList) {
+        this.ownerList = ownerList;
+    }
 }

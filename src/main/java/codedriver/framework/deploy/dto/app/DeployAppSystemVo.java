@@ -23,12 +23,20 @@ public class DeployAppSystemVo extends BaseEditorVo {
     private String name;
     @EntityField(name = "简称", type = ApiParamType.STRING)
     private String abbrName;
+    @EntityField(name = "维护窗口", type = ApiParamType.STRING)
+    private String maintenanceWindow;
+    @EntityField(name = "备注", type = ApiParamType.STRING)
+    private String description;
     @EntityField(name = "是否被收藏（1：收藏，0：取消收藏）", type = ApiParamType.INTEGER)
     private Integer isFavorite;
     @EntityField(name = "是否已配置（1：已配置，0：未配置）", type = ApiParamType.INTEGER)
     private Integer isConfig;
     @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
     private List<DeployAppModuleVo> appModuleList;
+    @EntityField(name = "状态列表", type = ApiParamType.JSONARRAY)
+    private List<DeployAppUsedStateVo> stateList;
+    @EntityField(name = "负责人列表", type = ApiParamType.JSONARRAY)
+    private List<DeployAppOwnerVo> ownerList;
 
     @EntityField(name = "是否包含模块", type = ApiParamType.INTEGER)
     private Integer isHasModule = 0;
@@ -74,6 +82,22 @@ public class DeployAppSystemVo extends BaseEditorVo {
         this.abbrName = abbrName;
     }
 
+    public String getMaintenanceWindow() {
+        return maintenanceWindow;
+    }
+
+    public void setMaintenanceWindow(String maintenanceWindow) {
+        this.maintenanceWindow = maintenanceWindow;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Integer getIsFavorite() {
         return isFavorite;
     }
@@ -96,6 +120,22 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setAppModuleList(List<DeployAppModuleVo> appModuleList) {
         this.appModuleList = appModuleList;
+    }
+
+    public List<DeployAppUsedStateVo> getStateList() {
+        return stateList;
+    }
+
+    public void setStateList(List<DeployAppUsedStateVo> stateList) {
+        this.stateList = stateList;
+    }
+
+    public List<DeployAppOwnerVo> getOwnerList() {
+        return ownerList;
+    }
+
+    public void setOwnerList(List<DeployAppOwnerVo> ownerList) {
+        this.ownerList = ownerList;
     }
 
     public Integer getIsHasModule() {

@@ -10,6 +10,10 @@ public class DeployVersionRunnerNotFoundException extends ApiRuntimeException {
 
     private static final long serialVersionUID = -881044150035926493L;
 
+    public DeployVersionRunnerNotFoundException(String versionName) {
+        super("未找到版本“" + versionName + "”对应的runnner");
+    }
+
     public DeployVersionRunnerNotFoundException(String versionName, Integer buildNo) {
         super("未找到版本“" + versionName + "”(buildNo为" + buildNo + ")对应的runnner");
     }

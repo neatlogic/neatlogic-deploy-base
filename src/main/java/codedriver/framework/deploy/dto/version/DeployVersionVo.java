@@ -7,6 +7,8 @@ import codedriver.framework.util.SnowflakeUtil;
 import codedriver.framework.util.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -56,6 +58,12 @@ public class DeployVersionVo extends BaseEditorVo {
     private List<DeployVersionBuildNoVo> buildNoList;
     @JSONField(serialize = false)
     private JSONObject startTimeRange;
+    @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
+    private Long runnerMapId;
+    @EntityField(name = "runnerGroup", type = ApiParamType.JSONOBJECT)
+    private JSONObject runnerGroup;
+    @JSONField(serialize = false)
+    private String runnerGroupStr;
 
     public DeployVersionVo() {
     }
@@ -228,5 +236,35 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setEndRev(String endRev) {
         this.endRev = endRev;
+    }
+
+    public Long getRunnerMapId() {
+        return runnerMapId;
+    }
+
+    public void setRunnerMapId(Long runnerMapId) {
+        this.runnerMapId = runnerMapId;
+    }
+
+    public JSONObject getRunnerGroup() {
+        if (runnerGroup == null && StringUtils.isNotBlank(runnerGroupStr)) {
+            runnerGroup = JSONObject.parseObject(runnerGroupStr);
+        }
+        return runnerGroup;
+    }
+
+    public void setRunnerGroup(JSONObject runnerGroup) {
+        this.runnerGroup = runnerGroup;
+    }
+
+    public String getRunnerGroupStr() {
+        if (StringUtils.isBlank(runnerGroupStr) && MapUtils.isNotEmpty(runnerGroup)) {
+            runnerGroupStr = JSONObject.toJSONString(runnerGroup);
+        }
+        return runnerGroupStr;
+    }
+
+    public void setRunnerGroupStr(String runnerGroupStr) {
+        this.runnerGroupStr = runnerGroupStr;
     }
 }

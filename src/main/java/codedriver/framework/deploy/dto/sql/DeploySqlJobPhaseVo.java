@@ -23,22 +23,12 @@ public class DeploySqlJobPhaseVo implements Serializable {
     private String phaseName;
     @EntityField(name = "sql文件id", type = ApiParamType.LONG)
     private Long sqlId;
-    @EntityField(name = "sql排序", type = ApiParamType.INTEGER)
-    private Integer sort;
 
     public DeploySqlJobPhaseVo(Long jobId, String phaseName, Long phaseId, Long sqlId) {
         this.jobId = jobId;
         this.phaseId = phaseId;
         this.phaseName = phaseName;
         this.sqlId = sqlId;
-    }
-
-    public DeploySqlJobPhaseVo(Long jobId, String phaseName, Long phaseId, Long sqlId, Integer sort) {
-        this.jobId = jobId;
-        this.phaseId = phaseId;
-        this.phaseName = phaseName;
-        this.sqlId = sqlId;
-        this.sort = sort;
     }
 
     public DeploySqlJobPhaseVo() {
@@ -85,13 +75,5 @@ public class DeploySqlJobPhaseVo implements Serializable {
 
     public void setSqlId(Long sqlId) {
         this.sqlId = sqlId;
-    }
-
-    public Integer getSort() {
-        return sort;
-    }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
     }
 }

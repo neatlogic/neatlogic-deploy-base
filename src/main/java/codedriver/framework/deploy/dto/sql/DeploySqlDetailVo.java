@@ -73,6 +73,8 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private Date endTime;
     @EntityField(name = "耗时", type = ApiParamType.STRING)
     private String costTime;
+    @EntityField(name = "sql排序", type = ApiParamType.INTEGER)
+    private Integer sort;
 
     @EntityField(name = "sql文件名列表", type = ApiParamType.JSONARRAY)
     private List<String> sqlFiles;
@@ -332,5 +334,13 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setSqlFiles(List<String> sqlFiles) {
         this.sqlFiles = sqlFiles;
+    }
+
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
     }
 }

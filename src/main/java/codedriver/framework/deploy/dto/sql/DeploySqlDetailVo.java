@@ -75,8 +75,6 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private String costTime;
     @EntityField(name = "sql排序", type = ApiParamType.INTEGER)
     private Integer sort;
-    @EntityField(name = "是否改动", type = ApiParamType.INTEGER)
-    private Integer isModified = 0;
 
     @EntityField(name = "sql文件名列表", type = ApiParamType.JSONARRAY)
     private List<String> sqlFiles;
@@ -95,7 +93,6 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.nodeName=(paramObj.getString("nodeName"));
         this.resourceId=(paramObj.getLong("resourceId"));
         this.runnerId=(paramObj.getLong("runnerId"));
-        this.isModified=(paramObj.getInteger("isModified"));
     }
 
     public DeploySqlDetailVo(Long sysId, Long envId, Long moduleId, String version, String sqlFile, Long jobId, String phaseName) {
@@ -347,11 +344,4 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.sort = sort;
     }
 
-    public Integer getIsModified() {
-        return isModified;
-    }
-
-    public void setIsModified(Integer isModified) {
-        this.isModified = isModified;
-    }
 }

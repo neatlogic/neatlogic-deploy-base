@@ -343,5 +343,4 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     public void setSort(Integer sort) {
         this.sort = sort;
     }
-
 }

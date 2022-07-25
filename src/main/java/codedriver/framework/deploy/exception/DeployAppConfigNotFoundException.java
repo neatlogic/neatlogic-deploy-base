@@ -5,13 +5,18 @@
 
 package codedriver.framework.deploy.exception;
 
+import codedriver.framework.cmdb.dto.cientity.CiEntityVo;
 import codedriver.framework.exception.core.ApiRuntimeException;
 
 public class DeployAppConfigNotFoundException extends ApiRuntimeException {
 
     private static final long serialVersionUID = -977868275722986124L;
 
-    public DeployAppConfigNotFoundException(Long id){
+    public DeployAppConfigNotFoundException(Long id) {
         super("应用'" + id + "的流水线不存在");
+    }
+
+    public DeployAppConfigNotFoundException(CiEntityVo ciEntityVo) {
+        super("应用：" + ciEntityVo.getName() + "(" + ciEntityVo.getId() + ")的流水线不存在");
     }
 }

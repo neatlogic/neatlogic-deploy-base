@@ -26,6 +26,9 @@ public class DeployPipelineConfigVo implements Serializable {
     @EntityField(name = "场景列表", type = ApiParamType.JSONARRAY)
     private List<AutoexecCombopScenarioVo> scenarioList;
 
+    @EntityField(name = "默认场景id", type = ApiParamType.LONG)
+    private Long defaultScenarioId;
+
     @EntityField(name = "运行时参数列表", type = ApiParamType.INTEGER)
     private List<AutoexecParamVo> runtimeParamList;
 
@@ -57,6 +60,14 @@ public class DeployPipelineConfigVo implements Serializable {
 
     public void setScenarioList(List<AutoexecCombopScenarioVo> scenarioList) {
         this.scenarioList = scenarioList;
+    }
+
+    public Long getDefaultScenarioId() {
+        return defaultScenarioId;
+    }
+
+    public void setDefaultScenarioId(Long defaultScenarioId) {
+        this.defaultScenarioId = defaultScenarioId;
     }
 
     public List<AutoexecParamVo> getRuntimeParamList() {

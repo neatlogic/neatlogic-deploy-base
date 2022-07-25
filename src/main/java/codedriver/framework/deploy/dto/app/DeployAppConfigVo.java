@@ -11,7 +11,11 @@ import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DeployAppConfigVo extends BaseEditorVo {
     private static final long serialVersionUID = -4457900289777364590L;
@@ -19,10 +23,18 @@ public class DeployAppConfigVo extends BaseEditorVo {
     private Long id;
     @EntityField(name = "应用系统ID", type = ApiParamType.LONG)
     private Long appSystemId;
+    @EntityField(name = "应用系统名", type = ApiParamType.STRING)
+    private String appSystemName;
     @EntityField(name = "模块ID", type = ApiParamType.LONG)
     private Long appModuleId = 0L;
+    @EntityField(name = "模块名", type = ApiParamType.STRING)
+    private String appModuleName;
     @EntityField(name = "环境ID", type = ApiParamType.LONG)
     private Long envId = 0L;
+    @EntityField(name = "环境名", type = ApiParamType.STRING)
+    private String envName;
+    @EntityField(name = "路径", type = ApiParamType.STRING)
+    private String path;
     @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
     private DeployPipelineConfigVo config;
 
@@ -99,5 +111,52 @@ public class DeployAppConfigVo extends BaseEditorVo {
 
     public void setConfigStr(String configStr) {
         this.configStr = configStr;
+    }
+
+    public String getAppSystemName() {
+        return appSystemName;
+    }
+
+    public void setAppSystemName(String appSystemName) {
+        this.appSystemName = appSystemName;
+    }
+
+    public String getAppModuleName() {
+        return appModuleName;
+    }
+
+    public void setAppModuleName(String appModuleName) {
+        this.appModuleName = appModuleName;
+    }
+
+    public String getEnvName() {
+        return envName;
+    }
+
+    public void setEnvName(String envName) {
+        this.envName = envName;
+    }
+
+    public String getPath() {
+        if (StringUtils.isBlank(path)) {
+            List<String> list = new ArrayList<>();
+            if (StringUtils.isNotBlank(appSystemName)) {
+                list.add(appSystemName);
+            }
+            if (StringUtils.isNotBlank(appModuleName)) {
+                list.add(appModuleName);
+            }
+            if (StringUtils.isNotBlank(envName)) {
+                list.add(envName);
+            }
+            if (CollectionUtils.isNotEmpty(list)) {
+                path = String.join("/", list);
+            }
+        }
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

@@ -78,29 +78,35 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     @EntityField(name = "是否改动", type = ApiParamType.INTEGER)
     private Integer isModified = 0;
     @EntityField(name = "告警个数", type = ApiParamType.INTEGER)
-    private Integer warnCount;
+    private Integer warnCount = 0;
 
     @EntityField(name = "sql文件名列表", type = ApiParamType.JSONARRAY)
     private List<String> sqlFiles;
 
 
     public DeploySqlDetailVo(JSONObject paramObj) {
-        this.sysId =(paramObj.getLong("sysId"));
-        this.moduleId=(paramObj.getLong("moduleId"));
-        this.envId=(paramObj.getLong("envId"));
-        this.version=(paramObj.getString("version"));
+        this.sysId = (paramObj.getLong("sysId"));
+        this.moduleId = (paramObj.getLong("moduleId"));
+        this.envId = (paramObj.getLong("envId"));
+        this.version = (paramObj.getString("version"));
         if (StringUtils.isNotBlank(paramObj.getString("status"))) {
             this.status = (paramObj.getString("status"));
         }
-        this.sqlFile=(paramObj.getString("sqlFile"));
-        this.md5=(paramObj.getString("md5"));
-        this.host=(paramObj.getString("host"));
-        this.port=(paramObj.getInteger("port"));
-        this.nodeName=(paramObj.getString("nodeName"));
-        this.resourceId=(paramObj.getLong("resourceId"));
-        this.runnerId=(paramObj.getLong("runnerId"));
-        this.isModified=(paramObj.getInteger("isModified"));
-        this.warnCount=(paramObj.getInteger("warnCount"));
+        this.sqlFile = (paramObj.getString("sqlFile"));
+        this.md5 = (paramObj.getString("md5"));
+        this.host = (paramObj.getString("host"));
+        this.port = (paramObj.getInteger("port"));
+        this.nodeName = (paramObj.getString("nodeName"));
+        this.resourceId = (paramObj.getLong("resourceId"));
+        this.runnerId = (paramObj.getLong("runnerId"));
+        if (!Objects.isNull(paramObj.getInteger("isModified"))) {
+            this.isModified = (paramObj.getInteger("isModified"));
+
+        }
+        if (!Objects.isNull(paramObj.getInteger("warnCount"))) {
+            this.warnCount = (paramObj.getInteger("warnCount"));
+
+        }
     }
 
     public DeploySqlDetailVo(Long sysId, Long envId, Long moduleId, String version, String sqlFile, Long jobId, String phaseName) {

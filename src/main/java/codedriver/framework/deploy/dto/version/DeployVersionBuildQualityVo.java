@@ -30,7 +30,7 @@ public class DeployVersionBuildQualityVo {
     private Integer minorViolations;
     private Integer executableLinesData;
     private Integer itConditionsToCover;
-    private Integer itVranchCoverage;
+    private Integer itBranchCoverage;
     private Integer itConditionsByLine;
     private Integer itCoverage;
     private Integer itCoverageLineHitsData;
@@ -285,12 +285,12 @@ public class DeployVersionBuildQualityVo {
         this.itConditionsToCover = itConditionsToCover;
     }
 
-    public Integer getItVranchCoverage() {
-        return itVranchCoverage;
+    public Integer getItBranchCoverage() {
+        return itBranchCoverage;
     }
 
-    public void setItVranchCoverage(Integer itVranchCoverage) {
-        this.itVranchCoverage = itVranchCoverage;
+    public void setItBranchCoverage(Integer itBranchCoverage) {
+        this.itBranchCoverage = itBranchCoverage;
     }
 
     public Integer getItConditionsByLine() {

@@ -7,6 +7,7 @@ import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
@@ -42,6 +43,10 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     private Date compileEndTime;
     @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
     private Long runnerMapId;
+    @EntityField(name = "runnerGroup", type = ApiParamType.JSONOBJECT)
+    private JSONObject runnerGroup;
+    @JSONField(serialize = false)
+    private String runnerGroupStr;
     @EntityField(name = "结束Rev号", type = ApiParamType.STRING)
     private String endRev;
 
@@ -50,9 +55,10 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
     private List<Long> appModuleIdList;
 
-    public DeployVersionBuildNoVo(){}
+    public DeployVersionBuildNoVo() {
+    }
 
-    public DeployVersionBuildNoVo(Long versionId, Integer buildNo, Long jobId,String status) {
+    public DeployVersionBuildNoVo(Long versionId, Integer buildNo, Long jobId, String status) {
         this.versionId = versionId;
         this.buildNo = buildNo;
         this.jobId = jobId;
@@ -144,6 +150,28 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
 
     public void setRunnerMapId(Long runnerMapId) {
         this.runnerMapId = runnerMapId;
+    }
+
+    public JSONObject getRunnerGroup() {
+        if (runnerGroup == null && StringUtils.isNotBlank(runnerGroupStr)) {
+            runnerGroup = JSONObject.parseObject(runnerGroupStr);
+        }
+        return runnerGroup;
+    }
+
+    public void setRunnerGroup(JSONObject runnerGroup) {
+        this.runnerGroup = runnerGroup;
+    }
+
+    public String getRunnerGroupStr() {
+        if (StringUtils.isBlank(runnerGroupStr) && MapUtils.isNotEmpty(runnerGroup)) {
+            runnerGroupStr = JSONObject.toJSONString(runnerGroup);
+        }
+        return runnerGroupStr;
+    }
+
+    public void setRunnerGroupStr(String runnerGroupStr) {
+        this.runnerGroupStr = runnerGroupStr;
     }
 
     public List<Long> getAppSystemIdList() {

@@ -37,6 +37,7 @@ public enum JobSource implements IAutoexecJobSource {
         return "";
     }
 
+    @Override
     public String getType(){
         return JobSourceType.DEPLOY.getValue();
     }

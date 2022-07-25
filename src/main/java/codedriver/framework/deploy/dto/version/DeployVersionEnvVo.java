@@ -4,7 +4,10 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.deploy.constvalue.VersionEnvStatus;
 import codedriver.framework.restful.annotation.EntityField;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.nacos.common.utils.StringUtils;
+import org.apache.commons.collections4.MapUtils;
 
 /**
  * @author longrf
@@ -28,10 +31,14 @@ public class DeployVersionEnvVo extends BaseEditorVo {
     private String statusName;
     @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
     private Long runnerMapId;
+    @EntityField(name = "runnerGroup", type = ApiParamType.JSONOBJECT)
+    private JSONObject runnerGroup;
     @EntityField(name = "buildNo", type = ApiParamType.INTEGER)
     private Integer buildNo;
     @EntityField(name = "是否镜像发布", type = ApiParamType.INTEGER)
     private Integer isMirror;
+    @JSONField(serialize = false)
+    private String runnerGroupStr;
 
     public Long getVersionId() {
         return versionId;
@@ -86,6 +93,28 @@ public class DeployVersionEnvVo extends BaseEditorVo {
 
     public void setRunnerMapId(Long runnerMapId) {
         this.runnerMapId = runnerMapId;
+    }
+
+    public JSONObject getRunnerGroup() {
+        if (runnerGroup == null && org.apache.commons.lang3.StringUtils.isNotBlank(runnerGroupStr)) {
+            runnerGroup = JSONObject.parseObject(runnerGroupStr);
+        }
+        return runnerGroup;
+    }
+
+    public void setRunnerGroup(JSONObject runnerGroup) {
+        this.runnerGroup = runnerGroup;
+    }
+
+    public String getRunnerGroupStr() {
+        if (org.apache.commons.lang3.StringUtils.isBlank(runnerGroupStr) && MapUtils.isNotEmpty(runnerGroup)) {
+            runnerGroupStr = JSONObject.toJSONString(runnerGroup);
+        }
+        return runnerGroupStr;
+    }
+
+    public void setRunnerGroupStr(String runnerGroupStr) {
+        this.runnerGroupStr = runnerGroupStr;
     }
 
     public Integer getBuildNo() {

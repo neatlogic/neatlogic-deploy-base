@@ -1,9 +1,11 @@
 /*
- * Copyright (c)  2021 TechSure Co.,Ltd.  All Rights Reserved.
+ * Copyright(c) 2022 TechSure Co., Ltd. All Rights Reserved.
  * 本内容仅限于深圳市赞悦科技有限公司内部传阅，禁止外泄以及用于其他的商业项目。
  */
 
-package codedriver.framework.deploy.dto;
+package codedriver.framework.deploy.dto.job;
+
+import codedriver.framework.util.Md5Util;
 
 /**
  * @author lvzk
@@ -16,8 +18,8 @@ public class DeployJobContentVo {
     public DeployJobContentVo() {
     }
 
-    public DeployJobContentVo(String hash, String content) {
-        this.hash = hash;
+    public DeployJobContentVo(String content) {
+        this.hash = Md5Util.encryptMD5(content);
         this.content = content;
     }
 

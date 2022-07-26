@@ -1,6 +1,8 @@
 package codedriver.framework.deploy.dto.version;
 
+import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.deploy.dto.DeployPackageVo;
+import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import org.apache.commons.lang3.StringUtils;
 
@@ -8,11 +10,17 @@ import java.util.Date;
 import java.util.Objects;
 
 public class DeployVersionDependencyVo {
+    @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
+    @EntityField(name = "发布版本id", type = ApiParamType.LONG)
     private Long versionId;
+    @EntityField(name = "依赖包id", type = ApiParamType.LONG)
     private Long packageId;
+    @EntityField(name = "依赖作用域", type = ApiParamType.STRING)
     private String scope = "compile";
+    @EntityField(name = "父依赖id", type = ApiParamType.LONG)
     private Long parentId;
+    @EntityField(name = "编译时间", type = ApiParamType.LONG)
     private Date buildTime;
 
     private String version;

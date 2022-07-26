@@ -1,15 +1,24 @@
 package codedriver.framework.deploy.dto;
 
+import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import org.apache.commons.lang3.StringUtils;
 
 public class DeployPackageVo {
+    @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
+    @EntityField(name = "工程足标识", type = ApiParamType.STRING)
     private String groupId;
+    @EntityField(name = "工程标识", type = ApiParamType.STRING)
     private String artifactId;
+    @EntityField(name = "工程版本号", type = ApiParamType.STRING)
     private String version;
+    @EntityField(name = "包类型", type = ApiParamType.STRING)
     private String type = "jar";
+    @EntityField(name = "版权许可、开源协议", type = ApiParamType.STRING)
     private String license;
+    @EntityField(name = "包在maven仓库中的地址", type = ApiParamType.STRING)
     private String url;
 
     public DeployPackageVo(String groupId, String artifactId, String version, String license, String url, String type) {

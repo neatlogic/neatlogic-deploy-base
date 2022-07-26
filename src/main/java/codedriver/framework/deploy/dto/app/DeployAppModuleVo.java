@@ -26,10 +26,10 @@ public class DeployAppModuleVo {
     //发布作业：当前场景是否有BUILD分类的工具，前端需要根据此标识调用 不同的选择版本下拉接口
     @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
     private int isHasBuildTypeTool = 0;
-    @EntityField(name = "状态列表", type = ApiParamType.JSONARRAY)
-    private List<DeployAppUsedStateVo> stateList;
-    @EntityField(name = "负责人列表", type = ApiParamType.JSONARRAY)
-    private List<DeployAppOwnerVo> ownerList;
+    @EntityField(name = "状态id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> stateIdList;
+    @EntityField(name = "负责人id列表", type = ApiParamType.JSONARRAY)
+    private List<Long> ownerIdList;
 
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
@@ -107,19 +107,19 @@ public class DeployAppModuleVo {
         this.description = description;
     }
 
-    public List<DeployAppUsedStateVo> getStateList() {
-        return stateList;
+    public List<Long> getStateIdList() {
+        return stateIdList;
     }
 
-    public void setStateList(List<DeployAppUsedStateVo> stateList) {
-        this.stateList = stateList;
+    public void setStateIdList(List<Long> stateIdList) {
+        this.stateIdList = stateIdList;
     }
 
-    public List<DeployAppOwnerVo> getOwnerList() {
-        return ownerList;
+    public List<Long> getOwnerIdList() {
+        return ownerIdList;
     }
 
-    public void setOwnerList(List<DeployAppOwnerVo> ownerList) {
-        this.ownerList = ownerList;
+    public void setOwnerIdList(List<Long> ownerIdList) {
+        this.ownerIdList = ownerIdList;
     }
 }

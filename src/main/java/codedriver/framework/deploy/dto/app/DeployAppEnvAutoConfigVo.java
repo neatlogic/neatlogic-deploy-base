@@ -22,7 +22,11 @@ public class DeployAppEnvAutoConfigVo extends BaseEditorVo {
     @EntityField(name = "实例id", type = ApiParamType.LONG)
     private Long instanceId = 0L;
     @EntityField(name = "实例名称", type = ApiParamType.STRING)
-    private String instanceName ;
+    private String instanceName;
+    @EntityField(name = "实例ip", type = ApiParamType.STRING)
+    private String instanceIp ;
+    @EntityField(name = "实例名称", type = ApiParamType.INTEGER)
+    private Integer instancePort;
     @EntityField(name = "是否有AutoConfig", type = ApiParamType.INTEGER)
     private Integer isAutoConfig ;
 
@@ -82,6 +86,22 @@ public class DeployAppEnvAutoConfigVo extends BaseEditorVo {
 
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
+    }
+
+    public String getInstanceIp() {
+        return instanceIp;
+    }
+
+    public void setInstanceIp(String instanceIp) {
+        this.instanceIp = instanceIp;
+    }
+
+    public Integer getInstancePort() {
+        return instancePort;
+    }
+
+    public void setInstancePort(Integer instancePort) {
+        this.instancePort = instancePort;
     }
 
     public List<DeployAppEnvAutoConfigKeyValueVo> getKeyValueList() {

@@ -11,7 +11,7 @@ public class DeployPackageNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = -3746048570994740846L;
 
     public DeployPackageNotFoundException(String groupId, String artifactId, String version) {
-        super("依赖包：" + groupId + "-" + artifactId + "-" + version + "不存在");
+        super("依赖包：" + groupId + "->" + artifactId + "->" + version + "不存在");
     }
 
 }

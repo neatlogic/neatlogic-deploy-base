@@ -54,7 +54,7 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     @EntityField(name = "节点类型", type = ApiParamType.STRING)
     private String nodeType;
     @EntityField(name = "状态", type = ApiParamType.STRING)
-    private String status;
+    private String status = "pending";
     @EntityField(name = "状态名", type = ApiParamType.STRING)
     private String statusName;
     @EntityField(name = "完成率", type = ApiParamType.INTEGER)
@@ -75,24 +75,38 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private String costTime;
     @EntityField(name = "sql排序", type = ApiParamType.INTEGER)
     private Integer sort;
+    @EntityField(name = "是否改动", type = ApiParamType.INTEGER)
+    private Integer isModified = 0;
+    @EntityField(name = "告警个数", type = ApiParamType.INTEGER)
+    private Integer warnCount = 0;
 
     @EntityField(name = "sql文件名列表", type = ApiParamType.JSONARRAY)
     private List<String> sqlFiles;
 
 
     public DeploySqlDetailVo(JSONObject paramObj) {
-        this.sysId =(paramObj.getLong("sysId"));
-        this.moduleId=(paramObj.getLong("moduleId"));
-        this.envId=(paramObj.getLong("envId"));
-        this.version=(paramObj.getString("version"));
-        this.status=(paramObj.getString("status"));
-        this.sqlFile=(paramObj.getString("sqlFile"));
-        this.md5=(paramObj.getString("md5"));
-        this.host=(paramObj.getString("host"));
-        this.port=(paramObj.getInteger("port"));
-        this.nodeName=(paramObj.getString("nodeName"));
-        this.resourceId=(paramObj.getLong("resourceId"));
-        this.runnerId=(paramObj.getLong("runnerId"));
+        this.sysId = (paramObj.getLong("sysId"));
+        this.moduleId = (paramObj.getLong("moduleId"));
+        this.envId = (paramObj.getLong("envId"));
+        this.version = (paramObj.getString("version"));
+        if (StringUtils.isNotBlank(paramObj.getString("status"))) {
+            this.status = (paramObj.getString("status"));
+        }
+        this.sqlFile = (paramObj.getString("sqlFile"));
+        this.md5 = (paramObj.getString("md5"));
+        this.host = (paramObj.getString("host"));
+        this.port = (paramObj.getInteger("port"));
+        this.nodeName = (paramObj.getString("nodeName"));
+        this.resourceId = (paramObj.getLong("resourceId"));
+        this.runnerId = (paramObj.getLong("runnerId"));
+        if (!Objects.isNull(paramObj.getInteger("isModified"))) {
+            this.isModified = (paramObj.getInteger("isModified"));
+
+        }
+        if (!Objects.isNull(paramObj.getInteger("warnCount"))) {
+            this.warnCount = (paramObj.getInteger("warnCount"));
+
+        }
     }
 
     public DeploySqlDetailVo(Long sysId, Long envId, Long moduleId, String version, String sqlFile, Long jobId, String phaseName) {
@@ -342,5 +356,21 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    public Integer getIsModified() {
+        return isModified;
+    }
+
+    public void setIsModified(Integer isModified) {
+        this.isModified = isModified;
+    }
+
+    public Integer getWarnCount() {
+        return warnCount;
+    }
+
+    public void setWarnCount(Integer warnCount) {
+        this.warnCount = warnCount;
     }
 }

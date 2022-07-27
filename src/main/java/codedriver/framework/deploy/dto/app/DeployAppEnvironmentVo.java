@@ -18,6 +18,8 @@ public class DeployAppEnvironmentVo {
     private String name;
     @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
     private List<AppModuleVo> appModuleList;
+    @EntityField(name = "是否可删除", type = ApiParamType.INTEGER)
+    private Integer isDeletable;
 
     public Long getId() {
         return id;
@@ -41,5 +43,13 @@ public class DeployAppEnvironmentVo {
 
     public void setAppModuleList(List<AppModuleVo> appModuleList) {
         this.appModuleList = appModuleList;
+    }
+
+    public Integer getIsDeletable() {
+        return isDeletable;
+    }
+
+    public void setIsDeletable(Integer isDeletable) {
+        this.isDeletable = isDeletable;
     }
 }

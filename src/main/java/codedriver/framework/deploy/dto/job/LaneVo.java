@@ -5,6 +5,7 @@
 
 package codedriver.framework.deploy.dto.job;
 
+import codedriver.framework.autoexec.constvalue.JobStatus;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
@@ -14,6 +15,10 @@ import java.util.List;
 public class LaneVo {
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
+    @EntityField(name = "状态", type = ApiParamType.ENUM, member = JobStatus.class)
+    private String status;
+    @EntityField(name = "批量作业id", type = ApiParamType.LONG)
+    private Long batchJobId;
     @EntityField(name = "组列表", type = ApiParamType.JSONARRAY)
     private List<LaneGroupVo> groupList;
     @EntityField(name = "排序", type = ApiParamType.INTEGER)
@@ -44,5 +49,21 @@ public class LaneVo {
 
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    public Long getBatchJobId() {
+        return batchJobId;
+    }
+
+    public void setBatchJobId(Long batchJobId) {
+        this.batchJobId = batchJobId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

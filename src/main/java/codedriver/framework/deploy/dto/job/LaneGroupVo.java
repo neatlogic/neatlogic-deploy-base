@@ -6,7 +6,6 @@
 package codedriver.framework.deploy.dto.job;
 
 import codedriver.framework.autoexec.constvalue.JobStatus;
-import codedriver.framework.autoexec.dto.job.AutoexecJobVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
@@ -16,12 +15,14 @@ import java.util.List;
 public class LaneGroupVo {
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
+    @EntityField(name = "通道id", type = ApiParamType.LONG)
+    private Long laneId;
     @EntityField(name = "是否需要等待", type = ApiParamType.INTEGER)
     private Integer needWait;
     @EntityField(name = "状态", type = ApiParamType.ENUM, member = JobStatus.class)
     private String status;
     @EntityField(name = "作业列表", type = ApiParamType.JSONARRAY)
-    private List<AutoexecJobVo> jobList;
+    private List<DeployJobVo> jobList;
 
     @EntityField(name = "排序", type = ApiParamType.INTEGER)
     private Integer sort;
@@ -37,11 +38,19 @@ public class LaneGroupVo {
         this.id = id;
     }
 
-    public List<AutoexecJobVo> getJobList() {
+    public Long getLaneId() {
+        return laneId;
+    }
+
+    public void setLaneId(Long laneId) {
+        this.laneId = laneId;
+    }
+
+    public List<DeployJobVo> getJobList() {
         return jobList;
     }
 
-    public void setJobList(List<AutoexecJobVo> jobList) {
+    public void setJobList(List<DeployJobVo> jobList) {
         this.jobList = jobList;
     }
 

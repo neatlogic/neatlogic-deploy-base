@@ -9,7 +9,6 @@ import codedriver.framework.autoexec.dto.job.AutoexecJobVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.deploy.dto.app.DeployPipelineConfigVo;
 import codedriver.framework.restful.annotation.EntityField;
-import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.StringUtils;
@@ -20,8 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeployJobVo extends AutoexecJobVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
-    private Long id;
     @EntityField(name = "应用资产id", type = ApiParamType.LONG)
     private Long appSystemId;
 
@@ -40,8 +37,6 @@ public class DeployJobVo extends AutoexecJobVo {
     private String version;
     @EntityField(name = "编译号", type = ApiParamType.INTEGER)
     private Integer buildNo;
-    @EntityField(name = "作业id", type = ApiParamType.LONG)
-    private Long jobId;
     @EntityField(name = "编译|构造的runner_id", type = ApiParamType.LONG)
     private Long runnerMapId;
     @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
@@ -72,6 +67,7 @@ public class DeployJobVo extends AutoexecJobVo {
         sourceList.add("batchdeploy");
         this.setSourceList(sourceList);
     }
+
 
     public String getAppSystemName() {
         return appSystemName;
@@ -105,21 +101,6 @@ public class DeployJobVo extends AutoexecJobVo {
         this.laneList = laneList;
     }
 
-    public DeployJobVo(Long _jobId, Long _runnerMapId) {
-        jobId = _jobId;
-        runnerMapId = _runnerMapId;
-    }
-
-    public Long getId() {
-        if (id == null) {
-            id = SnowflakeUtil.uniqueLong();
-        }
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getAppSystemId() {
         return appSystemId;
@@ -153,13 +134,6 @@ public class DeployJobVo extends AutoexecJobVo {
         this.version = version;
     }
 
-    public Long getJobId() {
-        return jobId;
-    }
-
-    public void setJobId(Long jobId) {
-        this.jobId = jobId;
-    }
 
     public Long getRunnerMapId() {
         return runnerMapId;

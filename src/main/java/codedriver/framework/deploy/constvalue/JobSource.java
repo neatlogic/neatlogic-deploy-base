@@ -1,3 +1,8 @@
+/*
+ * Copyright(c) 2022 TechSure Co., Ltd. All Rights Reserved.
+ * 本内容仅限于深圳市赞悦科技有限公司内部传阅，禁止外泄以及用于其他的商业项目。
+ */
+
 package codedriver.framework.deploy.constvalue;
 
 import codedriver.framework.autoexec.dto.AutoexecJobSourceVo;
@@ -11,7 +16,8 @@ import java.util.List;
  * @date 2022/5/5 5:20 下午
  */
 public enum JobSource implements IAutoexecJobSource {
-    DEPLOY("发布", "deploy");
+    DEPLOY("发布", "deploy"),
+    BATCHDEPLOY("批量发布", "batchdeploy");
     private final String text;
     private final String value;
 
@@ -38,7 +44,7 @@ public enum JobSource implements IAutoexecJobSource {
     }
 
     @Override
-    public String getType(){
+    public String getType() {
         return JobSourceType.DEPLOY.getValue();
     }
 

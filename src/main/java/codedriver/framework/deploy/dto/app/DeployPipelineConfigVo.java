@@ -23,6 +23,9 @@ public class DeployPipelineConfigVo implements Serializable {
     @EntityField(name = "阶段组列表", type = ApiParamType.JSONARRAY)
     private List<AutoexecCombopGroupVo> combopGroupList;
 
+    @EntityField(name = "执行信息配置", type = ApiParamType.JSONOBJECT)
+    private DeployPipelineExecuteConfigVo executeConfigVo;
+
     @EntityField(name = "场景列表", type = ApiParamType.JSONARRAY)
     private List<AutoexecCombopScenarioVo> scenarioList;
 
@@ -52,6 +55,17 @@ public class DeployPipelineConfigVo implements Serializable {
 
     public void setCombopGroupList(List<AutoexecCombopGroupVo> combopGroupList) {
         this.combopGroupList = combopGroupList;
+    }
+
+    public DeployPipelineExecuteConfigVo getExecuteConfigVo() {
+        if (executeConfigVo == null) {
+            executeConfigVo = new DeployPipelineExecuteConfigVo();
+        }
+        return executeConfigVo;
+    }
+
+    public void setExecuteConfigVo(DeployPipelineExecuteConfigVo executeConfigVo) {
+        this.executeConfigVo = executeConfigVo;
     }
 
     public List<AutoexecCombopScenarioVo> getScenarioList() {

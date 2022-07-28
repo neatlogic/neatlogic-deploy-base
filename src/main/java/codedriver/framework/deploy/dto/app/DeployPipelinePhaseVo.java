@@ -17,8 +17,8 @@ public class DeployPipelinePhaseVo extends AutoexecCombopPhaseVo {
     private Integer isActive;
     @EntityField(name = "重载", type = ApiParamType.INTEGER)
     private Integer override;
-    @EntityField(name = "继承", type = ApiParamType.STRING)
-    private String inherit;
+    @EntityField(name = "来源", type = ApiParamType.STRING)
+    private String source;
 
     public Integer getParentIsActive() {
         return parentIsActive;
@@ -44,12 +44,12 @@ public class DeployPipelinePhaseVo extends AutoexecCombopPhaseVo {
         this.override = override;
     }
 
-    public String getInherit() {
-        return inherit;
+    public String getSource() {
+        return source;
     }
 
-    public void setInherit(String inherit) {
-        this.inherit = inherit;
+    public void setSource(String source) {
+        this.source = source;
     }
 
 }

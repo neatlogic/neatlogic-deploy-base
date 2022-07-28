@@ -17,7 +17,7 @@ public class DeployPipelineExecuteConfigVo implements Serializable {
     @EntityField(name = "执行用户", type = ApiParamType.STRING)
     private String executeUser;
     @EntityField(name = "重载", type = ApiParamType.INTEGER)
-    private Integer override;
+    private Integer inherit;
 
     public Long getProtocolId() {
         return protocolId;
@@ -35,11 +35,11 @@ public class DeployPipelineExecuteConfigVo implements Serializable {
         this.executeUser = executeUser;
     }
 
-    public Integer getOverride() {
-        return override;
+    public Integer getInherit() {
+        return inherit;
     }
 
-    public void setOverride(Integer override) {
-        this.override = override;
+    public void setInherit(Integer inherit) {
+        this.inherit = inherit;
     }
 }

@@ -18,7 +18,7 @@ public class LaneGroupVo {
     @EntityField(name = "通道id", type = ApiParamType.LONG)
     private Long laneId;
     @EntityField(name = "是否需要等待", type = ApiParamType.INTEGER)
-    private Integer needWait;
+    private Integer needWait = 0;
     @EntityField(name = "状态", type = ApiParamType.ENUM, member = JobStatus.class)
     private String status;
     @EntityField(name = "作业列表", type = ApiParamType.JSONARRAY)

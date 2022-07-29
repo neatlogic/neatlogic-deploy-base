@@ -16,4 +16,8 @@ public class DeployVersionEnvNotFoundException extends ApiRuntimeException {
     public DeployVersionEnvNotFoundException(Long envId) {
         super("环境id:" + envId + "不存在");
     }
+
+    public DeployVersionEnvNotFoundException(String sysName, String moduleName, String envName, String version) {
+        super(String.format("%s/%s/%s 环境:%s 不存在", sysName, moduleName, version, envName));
+    }
 }

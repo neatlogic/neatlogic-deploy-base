@@ -115,6 +115,12 @@ public class DeployPipelineConfigVo implements Serializable {
             }
             autoexecCombopConfigVo.setCombopPhaseList(autoexecCombopPhaseList);
         }
+        if (this.executeConfig != null) {
+            AutoexecCombopExecuteConfigVo executeConfigVo = new AutoexecCombopExecuteConfigVo();
+            executeConfigVo.setExecuteUser(this.executeConfig.getExecuteUser());
+            executeConfigVo.setProtocolId(this.executeConfig.getProtocolId());
+            autoexecCombopConfigVo.setExecuteConfig(executeConfigVo);
+        }
         return autoexecCombopConfigVo;
     }
 }

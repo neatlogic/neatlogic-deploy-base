@@ -4,6 +4,8 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 
+import java.util.Date;
+
 public class DeployEnvVersionVo extends BaseEditorVo {
     @EntityField(name = "应用系统id", type = ApiParamType.LONG)
     private Long appSystemId;
@@ -25,6 +27,16 @@ public class DeployEnvVersionVo extends BaseEditorVo {
         this.envId = envId;
         this.versionId = versionId;
         this.buildNo = buildNo;
+    }
+
+    public DeployEnvVersionVo(Long appSystemId, Long appModuleId, Long envId, Long versionId, Integer buildNo, String lcu, Date lcd) {
+        this.appSystemId = appSystemId;
+        this.appModuleId = appModuleId;
+        this.envId = envId;
+        this.versionId = versionId;
+        this.buildNo = buildNo;
+        super.setLcu(lcu);
+        super.setLcd(lcd);
     }
 
     public Long getAppSystemId() {

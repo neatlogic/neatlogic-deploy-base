@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 public class DeployPackageVo {
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "工程足标识", type = ApiParamType.STRING)
+    @EntityField(name = "工程组标识", type = ApiParamType.STRING)
     private String groupId;
     @EntityField(name = "工程标识", type = ApiParamType.STRING)
     private String artifactId;

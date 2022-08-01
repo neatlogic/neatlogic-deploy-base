@@ -112,9 +112,9 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
 
     public List<AuthorityVo> getAuthorityList() {
         if (CollectionUtils.isEmpty(authorityList) && CollectionUtils.isNotEmpty(authorityStrList)) {
+            authorityList = new ArrayList<>();
             for (String authorityStr : authorityStrList) {
                 String[] authorityArray = authorityStr.split("#");
-                authorityList = new ArrayList<>();
                 authorityList.add(new AuthorityVo(authorityArray[0], authorityArray[1]));
             }
         }

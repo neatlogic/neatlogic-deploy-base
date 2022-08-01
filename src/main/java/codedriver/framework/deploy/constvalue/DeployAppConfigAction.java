@@ -8,7 +8,7 @@ import com.alibaba.fastjson.JSONObject;
  * @date 2022/05/24 4:16 下午
  */
 public enum DeployAppConfigAction {
-    VIEW("view","查看作业/配置"),
+    VIEW("view","查看配置"),
     EDIT("edit","编辑配置"),
     UPLOAD("productManager","制品管理"),
     VALIDATE("validate","验证"),

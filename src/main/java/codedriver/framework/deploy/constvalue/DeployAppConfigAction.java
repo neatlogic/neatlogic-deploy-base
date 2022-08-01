@@ -10,7 +10,7 @@ import com.alibaba.fastjson.JSONObject;
 public enum DeployAppConfigAction {
     VIEW("view","查看作业/配置"),
     EDIT("edit","编辑配置"),
-    UPLOAD("upload","上传"),
+    UPLOAD("productManager","制品管理"),
     VALIDATE("validate","验证")
     ;
 

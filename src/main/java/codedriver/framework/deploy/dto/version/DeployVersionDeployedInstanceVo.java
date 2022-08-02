@@ -1,13 +1,12 @@
 package codedriver.framework.deploy.dto.version;
 
 import codedriver.framework.common.constvalue.ApiParamType;
-import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 
 import java.util.Date;
 
-public class DeployVersionDeployedInstanceVo extends BaseEditorVo {
+public class DeployVersionDeployedInstanceVo {
 
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
@@ -15,15 +14,36 @@ public class DeployVersionDeployedInstanceVo extends BaseEditorVo {
     private Long resourceId;
     @EntityField(name = "版本id", type = ApiParamType.LONG)
     private Long versionId;
+    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    private Long envId;
+
+    @EntityField(name = "实例名", type = ApiParamType.STRING)
+    private String resourceName;
+    @EntityField(name = "ip", type = ApiParamType.STRING)
+    private String ip;
+
+    @EntityField(name = "发布用户", type = ApiParamType.STRING)
+    private String deployUser;
+    @EntityField(name = "发布时间", type = ApiParamType.LONG)
+    private Date deployTime;
+    @EntityField(name = "是否发布", type = ApiParamType.INTEGER)
+    private Integer status = 0;
 
     public DeployVersionDeployedInstanceVo() {
     }
 
-    public DeployVersionDeployedInstanceVo(Long resourceId, Long versionId, String lcu, Date lcd) {
+    public DeployVersionDeployedInstanceVo(Long resourceId, String resourceName, String ip) {
+        this.resourceId = resourceId;
+        this.resourceName = resourceName;
+        this.ip = ip;
+    }
+
+    public DeployVersionDeployedInstanceVo(Long resourceId, Long versionId, Long envId, String deployUser, Date deployTime) {
         this.resourceId = resourceId;
         this.versionId = versionId;
-        super.setLcu(lcu);
-        super.setLcd(lcd);
+        this.envId = envId;
+        this.deployUser = deployUser;
+        this.deployTime = deployTime;
     }
 
     public Long getId() {
@@ -51,5 +71,53 @@ public class DeployVersionDeployedInstanceVo extends BaseEditorVo {
 
     public void setVersionId(Long versionId) {
         this.versionId = versionId;
+    }
+
+    public Long getEnvId() {
+        return envId;
+    }
+
+    public void setEnvId(Long envId) {
+        this.envId = envId;
+    }
+
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public String getDeployUser() {
+        return deployUser;
+    }
+
+    public void setDeployUser(String deployUser) {
+        this.deployUser = deployUser;
+    }
+
+    public Date getDeployTime() {
+        return deployTime;
+    }
+
+    public void setDeployTime(Date deployTime) {
+        this.deployTime = deployTime;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

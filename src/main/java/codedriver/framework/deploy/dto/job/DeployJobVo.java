@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeployJobVo extends AutoexecJobVo {
+
+    private static final long serialVersionUID = 7515358153391228987L;
+
     @EntityField(name = "应用资产id", type = ApiParamType.LONG)
     private Long appSystemId;
 

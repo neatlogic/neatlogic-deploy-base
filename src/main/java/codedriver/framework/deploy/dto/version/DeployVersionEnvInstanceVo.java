@@ -7,7 +7,7 @@ import codedriver.framework.util.SnowflakeUtil;
 
 import java.util.Date;
 
-public class DeployVersionDeployedInstanceVo {
+public class DeployVersionEnvInstanceVo {
 
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
@@ -32,16 +32,16 @@ public class DeployVersionDeployedInstanceVo {
     @EntityField(name = "发布用户", type = ApiParamType.JSONOBJECT)
     private UserVo deployUserVo;
 
-    public DeployVersionDeployedInstanceVo() {
+    public DeployVersionEnvInstanceVo() {
     }
 
-    public DeployVersionDeployedInstanceVo(Long resourceId, String resourceName, String ip) {
+    public DeployVersionEnvInstanceVo(Long resourceId, String resourceName, String ip) {
         this.resourceId = resourceId;
         this.resourceName = resourceName;
         this.ip = ip;
     }
 
-    public DeployVersionDeployedInstanceVo(Long resourceId, Long versionId, Long envId, String deployUser, Date deployTime) {
+    public DeployVersionEnvInstanceVo(Long resourceId, Long versionId, Long envId, String deployUser, Date deployTime) {
         this.resourceId = resourceId;
         this.versionId = versionId;
         this.envId = envId;

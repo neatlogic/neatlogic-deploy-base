@@ -1,6 +1,7 @@
 package codedriver.framework.deploy.dto.version;
 
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.dto.UserVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 
@@ -22,12 +23,14 @@ public class DeployVersionDeployedInstanceVo {
     @EntityField(name = "ip", type = ApiParamType.STRING)
     private String ip;
 
-    @EntityField(name = "发布用户", type = ApiParamType.STRING)
+    @EntityField(name = "发布用户uuid", type = ApiParamType.STRING)
     private String deployUser;
     @EntityField(name = "发布时间", type = ApiParamType.LONG)
     private Date deployTime;
     @EntityField(name = "是否发布", type = ApiParamType.INTEGER)
     private Integer status = 0;
+    @EntityField(name = "发布用户", type = ApiParamType.JSONOBJECT)
+    private UserVo deployUserVo;
 
     public DeployVersionDeployedInstanceVo() {
     }
@@ -119,5 +122,13 @@ public class DeployVersionDeployedInstanceVo {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public UserVo getDeployUserVo() {
+        return deployUserVo;
+    }
+
+    public void setDeployUserVo(UserVo deployUserVo) {
+        this.deployUserVo = deployUserVo;
     }
 }

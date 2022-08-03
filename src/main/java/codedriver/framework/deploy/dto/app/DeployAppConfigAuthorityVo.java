@@ -27,6 +27,8 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
     private String authUuid;
     @EntityField(name = "授权操作", type = ApiParamType.STRING)
     private String action;
+    @EntityField(name = "授权操作类型", type = ApiParamType.STRING)
+    private String authorityActionType;
 
     @JSONField(serialize = false)
     List<String> authUuidList;
@@ -84,6 +86,14 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
 
     public void setAction(String action) {
         this.action = action;
+    }
+
+    public String getAuthorityActionType() {
+        return authorityActionType;
+    }
+
+    public void setAuthorityActionType(String authorityActionType) {
+        this.authorityActionType = authorityActionType;
     }
 
     public List<String> getAuthUuidList() {

@@ -40,6 +40,26 @@ public class DeployVersionEnvVo extends BaseEditorVo {
     @JSONField(serialize = false)
     private String runnerGroupStr;
 
+    public DeployVersionEnvVo() {
+    }
+
+    public DeployVersionEnvVo(Long versionId, Long envId, String envName, String status) {
+        this.versionId=versionId;
+        this.envId=envId;
+        this.envName=envName;
+        this.status=status;
+
+    }
+
+    public DeployVersionEnvVo(Long versionId, Long envId, String envName, String status, Integer isMirror, Integer buildNo) {
+        this.versionId=versionId;
+        this.envId=envId;
+        this.envName=envName;
+        this.status=status;
+        this.isMirror=isMirror;
+        this.buildNo=buildNo;
+    }
+
     public Long getVersionId() {
         return versionId;
     }

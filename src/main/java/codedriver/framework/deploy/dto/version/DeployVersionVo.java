@@ -64,6 +64,14 @@ public class DeployVersionVo extends BaseEditorVo {
     private JSONObject runnerGroup;
     @JSONField(serialize = false)
     private String runnerGroupStr;
+    @EntityField(name = "编译次数", type = ApiParamType.INTEGER)
+    private Integer complieCount = 0;
+    @EntityField(name = "编译成功次数", type = ApiParamType.INTEGER)
+    private Integer complieSuccessCount = 0;
+    @EntityField(name = "编译失败次数", type = ApiParamType.INTEGER)
+    private Integer complieFailCount = 0;
+    @JSONField(serialize = false)
+    private Integer isCompiled; // 是否编译成功
 
     public DeployVersionVo() {
     }
@@ -266,5 +274,34 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setRunnerGroupStr(String runnerGroupStr) {
         this.runnerGroupStr = runnerGroupStr;
+    }
+
+    public Integer getComplieCount() {
+        complieCount = complieSuccessCount + complieFailCount;
+        return complieCount;
+    }
+
+    public Integer getComplieSuccessCount() {
+        return complieSuccessCount;
+    }
+
+    public void setComplieSuccessCount(Integer complieSuccessCount) {
+        this.complieSuccessCount = complieSuccessCount;
+    }
+
+    public Integer getComplieFailCount() {
+        return complieFailCount;
+    }
+
+    public void setComplieFailCount(Integer complieFailCount) {
+        this.complieFailCount = complieFailCount;
+    }
+
+    public Integer getIsCompiled() {
+        return isCompiled;
+    }
+
+    public void setIsCompiled(Integer isCompiled) {
+        this.isCompiled = isCompiled;
     }
 }

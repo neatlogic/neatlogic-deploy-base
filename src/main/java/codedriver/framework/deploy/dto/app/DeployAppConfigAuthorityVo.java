@@ -34,7 +34,7 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
     List<String> authUuidList;
 
     @JSONField(serialize = false)
-    List<String> actionList;
+    List<DeployAppConfigAuthorityActionVo> actionList;
 
     @JSONField(serialize = false)
     List<Long> envIdList;
@@ -97,6 +97,12 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
     }
 
     public List<String> getAuthUuidList() {
+        if (CollectionUtils.isEmpty(authUuidList) && CollectionUtils.isNotEmpty(getAuthorityList())) {
+            authUuidList = new ArrayList<>();
+            for (AuthorityVo authorityVo : getAuthorityList()) {
+                authUuidList.add(authorityVo.getUuid());
+            }
+        }
         return authUuidList;
     }
 
@@ -104,11 +110,11 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
         this.authUuidList = authUuidList;
     }
 
-    public List<String> getActionList() {
+    public List<DeployAppConfigAuthorityActionVo> getActionList() {
         return actionList;
     }
 
-    public void setActionList(List<String> actionList) {
+    public void setActionList(List<DeployAppConfigAuthorityActionVo> actionList) {
         this.actionList = actionList;
     }
 

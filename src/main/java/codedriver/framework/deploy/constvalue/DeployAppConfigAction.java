@@ -46,4 +46,12 @@ public enum DeployAppConfigAction {
         }
         return returnList;
     }
+
+    public static List<String> getValueList() {
+        List<String> returnList = new ArrayList<>();
+        for (DeployAppConfigAction action : DeployAppConfigAction.values()) {
+            returnList.add(action.getValue());
+        }
+        return returnList;
+    }
 }

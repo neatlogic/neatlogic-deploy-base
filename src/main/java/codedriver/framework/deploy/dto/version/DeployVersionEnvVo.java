@@ -26,7 +26,7 @@ public class DeployVersionEnvVo extends BaseEditorVo {
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "状态", type = ApiParamType.STRING)
-    private String status;
+    private String status = "pending";
     @EntityField(name = "状态名称", type = ApiParamType.STRING)
     private String statusName;
     @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
@@ -39,26 +39,6 @@ public class DeployVersionEnvVo extends BaseEditorVo {
     private Integer isMirror;
     @JSONField(serialize = false)
     private String runnerGroupStr;
-
-    public DeployVersionEnvVo() {
-    }
-
-    public DeployVersionEnvVo(Long versionId, Long envId, String envName, String status) {
-        this.versionId=versionId;
-        this.envId=envId;
-        this.envName=envName;
-        this.status=status;
-
-    }
-
-    public DeployVersionEnvVo(Long versionId, Long envId, String envName, String status, Integer isMirror, Integer buildNo) {
-        this.versionId=versionId;
-        this.envId=envId;
-        this.envName=envName;
-        this.status=status;
-        this.isMirror=isMirror;
-        this.buildNo=buildNo;
-    }
 
     public Long getVersionId() {
         return versionId;

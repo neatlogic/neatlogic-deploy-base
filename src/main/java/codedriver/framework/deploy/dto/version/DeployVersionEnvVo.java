@@ -26,7 +26,7 @@ public class DeployVersionEnvVo extends BaseEditorVo {
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "状态", type = ApiParamType.STRING)
-    private String status;
+    private String status = "pending";
     @EntityField(name = "状态名称", type = ApiParamType.STRING)
     private String statusName;
     @EntityField(name = "runnerMapId", type = ApiParamType.LONG)

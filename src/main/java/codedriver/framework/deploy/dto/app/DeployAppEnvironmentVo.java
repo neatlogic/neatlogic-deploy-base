@@ -21,7 +21,14 @@ public class DeployAppEnvironmentVo {
     @EntityField(name = "是否可删除", type = ApiParamType.INTEGER)
     private Integer isDeletable;
 
-    public Long getId() {
+    public DeployAppEnvironmentVo(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public DeployAppEnvironmentVo() {
+    }
+        public Long getId() {
         return id;
     }
 

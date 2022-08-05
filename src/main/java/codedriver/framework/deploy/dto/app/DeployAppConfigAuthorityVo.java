@@ -27,12 +27,14 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
     private String authUuid;
     @EntityField(name = "授权操作", type = ApiParamType.STRING)
     private String action;
+    @EntityField(name = "授权操作类型", type = ApiParamType.STRING)
+    private String authorityActionType;
 
     @JSONField(serialize = false)
     List<String> authUuidList;
 
     @JSONField(serialize = false)
-    List<String> actionList;
+    List<DeployAppConfigAuthorityActionVo> actionList;
 
     @JSONField(serialize = false)
     List<Long> envIdList;
@@ -86,7 +88,21 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
         this.action = action;
     }
 
+    public String getAuthorityActionType() {
+        return authorityActionType;
+    }
+
+    public void setAuthorityActionType(String authorityActionType) {
+        this.authorityActionType = authorityActionType;
+    }
+
     public List<String> getAuthUuidList() {
+        if (CollectionUtils.isEmpty(authUuidList) && CollectionUtils.isNotEmpty(getAuthorityList())) {
+            authUuidList = new ArrayList<>();
+            for (AuthorityVo authorityVo : getAuthorityList()) {
+                authUuidList.add(authorityVo.getUuid());
+            }
+        }
         return authUuidList;
     }
 
@@ -94,11 +110,11 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
         this.authUuidList = authUuidList;
     }
 
-    public List<String> getActionList() {
+    public List<DeployAppConfigAuthorityActionVo> getActionList() {
         return actionList;
     }
 
-    public void setActionList(List<String> actionList) {
+    public void setActionList(List<DeployAppConfigAuthorityActionVo> actionList) {
         this.actionList = actionList;
     }
 
@@ -112,9 +128,9 @@ public class DeployAppConfigAuthorityVo extends BaseEditorVo {
 
     public List<AuthorityVo> getAuthorityList() {
         if (CollectionUtils.isEmpty(authorityList) && CollectionUtils.isNotEmpty(authorityStrList)) {
+            authorityList = new ArrayList<>();
             for (String authorityStr : authorityStrList) {
                 String[] authorityArray = authorityStr.split("#");
-                authorityList = new ArrayList<>();
                 authorityList.add(new AuthorityVo(authorityArray[0], authorityArray[1]));
             }
         }

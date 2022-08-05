@@ -23,7 +23,8 @@ public class LaneGroupVo {
     private String status;
     @EntityField(name = "作业列表", type = ApiParamType.JSONARRAY)
     private List<DeployJobVo> jobList;
-
+    @EntityField(name = "重跑类型：   重置并重跑所有：refireResetAll；重跑所有：refireAll", type = ApiParamType.STRING)
+    private String refireType;
     @EntityField(name = "排序", type = ApiParamType.INTEGER)
     private Integer sort;
 
@@ -76,5 +77,13 @@ public class LaneGroupVo {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getRefireType() {
+        return refireType;
+    }
+
+    public void setRefireType(String refireType) {
+        this.refireType = refireType;
     }
 }

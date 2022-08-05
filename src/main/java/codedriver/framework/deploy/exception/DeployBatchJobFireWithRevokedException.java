@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
  * @author lvzk
  * @date 2022/8/2 9:55 上午
  */
-public class DeployBatchJobFireWithInvalidStatusException extends ApiRuntimeException {
+public class DeployBatchJobFireWithRevokedException extends ApiRuntimeException {
 
     private static final long serialVersionUID = 2949252138258270630L;
 
-    public DeployBatchJobFireWithInvalidStatusException(List<AutoexecJobVo> autoexecJobVos) {
+    public DeployBatchJobFireWithRevokedException(List<AutoexecJobVo> autoexecJobVos) {
         super("执行批量作业不允许存在'已撤销'的作业：" + autoexecJobVos.stream().map(o->o.getName()+"("+o.getId()+")").collect(Collectors.joining(",")));
     }
 }

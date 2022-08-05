@@ -99,6 +99,9 @@ public class DeployAppConfigVo extends BaseEditorVo {
     }
 
     public void setConfig(DeployPipelineConfigVo config) {
+        if (config != null) {
+            this.configStr = null;
+        }
         this.config = config;
     }
 
@@ -110,6 +113,9 @@ public class DeployAppConfigVo extends BaseEditorVo {
     }
 
     public void setConfigStr(String configStr) {
+        if (configStr != null) {
+            this.config = null;
+        }
         this.configStr = configStr;
     }
 

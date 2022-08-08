@@ -47,8 +47,9 @@ public class DeployEnvVersionVo extends BaseEditorVo {
         super.setLcd(lcd);
     }
 
-    public DeployEnvVersionVo(Long envId, String status) {
+    public DeployEnvVersionVo(Long envId, String envName, String status) {
         this.envId = envId;
+        this.envName = envName;
         this.status = status;
     }
 

@@ -24,6 +24,10 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
 
     @JSONField(serialize = false)
     private List<Long> notInIdList;
+    @JSONField(serialize = false)
+    private List<Long> appSystemIdList;
+    @JSONField(serialize = false)
+    private List<Long> appModuleIdList;
 
     public Integer getIsConfig() {
         return isConfig;
@@ -67,5 +71,25 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
 
     public void setNotInIdList(List<Long> notInIdList) {
         this.notInIdList = notInIdList;
+    }
+
+    @Override
+    public List<Long> getAppSystemIdList() {
+        return appSystemIdList;
+    }
+
+    @Override
+    public void setAppSystemIdList(List<Long> appSystemIdList) {
+        this.appSystemIdList = appSystemIdList;
+    }
+
+    @Override
+    public List<Long> getAppModuleIdList() {
+        return appModuleIdList;
+    }
+
+    @Override
+    public void setAppModuleIdList(List<Long> appModuleIdList) {
+        this.appModuleIdList = appModuleIdList;
     }
 }

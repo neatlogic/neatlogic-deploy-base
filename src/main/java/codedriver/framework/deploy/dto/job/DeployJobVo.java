@@ -48,8 +48,10 @@ public class DeployJobVo extends AutoexecJobVo {
     private String pipeLineConfigStr;
     @JSONField(serialize = false)
     private String configHash;
-    @EntityField(name = "泳道列表")
+    @EntityField(name = "泳道列表", type = ApiParamType.JSONARRAY)
     private List<LaneVo> laneList;
+    @EntityField(name = "授权列表", type = ApiParamType.JSONARRAY)
+    private List<DeployJobAuthVo> authList;
 
 
     public DeployJobVo() {
@@ -57,6 +59,14 @@ public class DeployJobVo extends AutoexecJobVo {
         sourceList.add("deploy");
         sourceList.add("batchdeploy");
         this.setSourceList(sourceList);
+    }
+
+    public List<DeployJobAuthVo> getAuthList() {
+        return authList;
+    }
+
+    public void setAuthList(List<DeployJobAuthVo> authList) {
+        this.authList = authList;
     }
 
     public DeployJobVo(JSONObject jsonObj) {

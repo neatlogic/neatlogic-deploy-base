@@ -9,17 +9,16 @@ import java.util.List;
  * @author lvzk
  * @date 2022/05/24 4:16 下午
  */
-public enum DeployAppConfigAction {
-    VIEW("view","查看作业/配置"),
-    EDIT("edit","编辑配置"),
-    UPLOAD("productManager","制品管理"),
-    VALIDATE("validate","验证"),
+public enum DeployAppConfigActionType {
+    OPERATION("operation","操作"),
+    SCENARIO("scenario","场景"),
+    ENV("env","环境")
     ;
 
     private final String value;
     private final String text;
 
-    DeployAppConfigAction(String value, String text) {
+    DeployAppConfigActionType(String value, String text) {
         this.value = value;
         this.text = text;
     }
@@ -34,7 +33,7 @@ public enum DeployAppConfigAction {
 
     public static List<JSONObject> getValueTextList() {
         List<JSONObject> returnList = new ArrayList<>();
-        for (DeployAppConfigAction action : DeployAppConfigAction.values()) {
+        for (DeployAppConfigActionType action : DeployAppConfigActionType.values()) {
             returnList.add(new JSONObject() {
                 private static final long serialVersionUID = 1670544546905960015L;
 
@@ -43,14 +42,6 @@ public enum DeployAppConfigAction {
                     this.put("text", action.getText());
                 }
             });
-        }
-        return returnList;
-    }
-
-    public static List<String> getValueList() {
-        List<String> returnList = new ArrayList<>();
-        for (DeployAppConfigAction action : DeployAppConfigAction.values()) {
-            returnList.add(action.getValue());
         }
         return returnList;
     }

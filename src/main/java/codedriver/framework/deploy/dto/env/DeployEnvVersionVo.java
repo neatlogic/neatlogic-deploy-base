@@ -17,6 +17,12 @@ public class DeployEnvVersionVo extends BaseEditorVo {
     private Long versionId;
     @EntityField(name = "编译号", type = ApiParamType.INTEGER)
     private Integer buildNo;
+    @EntityField(name = "发布状态", type = ApiParamType.STRING)
+    private String status;
+    @EntityField(name = "发布时间", type = ApiParamType.LONG)
+    private Date deployTime;
+    @EntityField(name = "回滚时间", type = ApiParamType.LONG)
+    private Date rollbackTime;
 
     public DeployEnvVersionVo() {
     }
@@ -77,5 +83,29 @@ public class DeployEnvVersionVo extends BaseEditorVo {
 
     public void setBuildNo(Integer buildNo) {
         this.buildNo = buildNo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Date getDeployTime() {
+        return deployTime;
+    }
+
+    public void setDeployTime(Date deployTime) {
+        this.deployTime = deployTime;
+    }
+
+    public Date getRollbackTime() {
+        return rollbackTime;
+    }
+
+    public void setRollbackTime(Date rollbackTime) {
+        this.rollbackTime = rollbackTime;
     }
 }

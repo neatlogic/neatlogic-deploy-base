@@ -1,7 +1,7 @@
 package codedriver.framework.deploy.dto.version;
 
 import codedriver.framework.common.constvalue.ApiParamType;
-import codedriver.framework.deploy.dto.env.DeployEnvVersionAuditVo;
+import codedriver.framework.deploy.dto.env.DeployEnvVersionVo;
 import codedriver.framework.restful.annotation.EntityField;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class DeployActiveVersionVo {
     @EntityField(name = "编译失败次数", type = ApiParamType.INTEGER)
     private Integer complieFailCount = 0;
     @EntityField(name = "发布环境列表", type = ApiParamType.JSONARRAY)
-    List<DeployEnvVersionAuditVo> envList;
+    List<DeployEnvVersionVo> envList;
 
     public Long getVersionId() {
         return versionId;
@@ -58,11 +58,11 @@ public class DeployActiveVersionVo {
         this.complieFailCount = complieFailCount;
     }
 
-    public List<DeployEnvVersionAuditVo> getEnvList() {
+    public List<DeployEnvVersionVo> getEnvList() {
         return envList;
     }
 
-    public void setEnvList(List<DeployEnvVersionAuditVo> envList) {
+    public void setEnvList(List<DeployEnvVersionVo> envList) {
         this.envList = envList;
     }
 }

@@ -23,6 +23,8 @@ public class DeployAppModuleVo {
     private String description;
     @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
+    @EntityField(name = "是否有配置（1：有，0：没有）", type = ApiParamType.INTEGER)
+    private Integer isConfig;
     //发布作业：当前场景是否有BUILD分类的工具，前端需要根据此标识调用 不同的选择版本下拉接口
     @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
     private int isHasBuildTypeTool = 0;
@@ -75,6 +77,14 @@ public class DeployAppModuleVo {
 
     public void setIsHasEnv(Integer isHasEnv) {
         this.isHasEnv = isHasEnv;
+    }
+
+    public Integer getIsConfig() {
+        return isConfig;
+    }
+
+    public void setIsConfig(Integer isConfig) {
+        this.isConfig = isConfig;
     }
 
     public List<DeployAppConfigInstanceVo> getInstanceVoList() {

@@ -1,10 +1,16 @@
 package codedriver.framework.deploy.dto.app;
 
+import codedriver.framework.asynchronization.threadlocal.UserContext;
+import codedriver.framework.auth.core.AuthActionChecker;
 import codedriver.framework.cmdb.dto.resourcecenter.ResourceSearchVo;
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
+import codedriver.framework.dto.AuthenticationInfoVo;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,14 +26,16 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
     @EntityField(name = "模块id", type = ApiParamType.LONG)
     private Long appModuleId;
     @EntityField(name = "环境id", type = ApiParamType.LONG)
-    private Long envId ;
+    private Long envId;
+    @EntityField(name = "是否拥有所有权限", type = ApiParamType.INTEGER)
+    private Integer isHasAllAuthority;
+    @EntityField(name = "权限uuid列表", type = ApiParamType.JSONARRAY)
+    private List<String> authUuidList;
 
     @JSONField(serialize = false)
     private List<Long> notInIdList;
     @JSONField(serialize = false)
     private List<Long> appSystemIdList;
-    @JSONField(serialize = false)
-    private List<Long> appModuleIdList;
 
     public Integer getIsConfig() {
         return isConfig;
@@ -83,13 +91,37 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
         this.appSystemIdList = appSystemIdList;
     }
 
-    @Override
-    public List<Long> getAppModuleIdList() {
-        return appModuleIdList;
+    public Integer getIsHasAllAuthority() {
+        if (isHasAllAuthority == null) {
+            if (AuthActionChecker.check(DEPLOY_MODIFY.class)) {
+                isHasAllAuthority = 1;
+            } else {
+                isHasAllAuthority = 0;
+            }
+        }
+        return isHasAllAuthority;
     }
 
-    @Override
-    public void setAppModuleIdList(List<Long> appModuleIdList) {
-        this.appModuleIdList = appModuleIdList;
+    public void setIsHasAllAuthority(Integer isHasAllAuthority) {
+        this.isHasAllAuthority = isHasAllAuthority;
+    }
+
+    public List<String> getAuthUuidList() {
+        if (CollectionUtils.isEmpty(authUuidList)) {
+            authUuidList = new ArrayList<>();
+            AuthenticationInfoVo authInfo = UserContext.get().getAuthenticationInfoVo();
+            authUuidList.add(authInfo.getUserUuid());
+            if (CollectionUtils.isNotEmpty(authInfo.getTeamUuidList())) {
+                authUuidList.addAll(authInfo.getTeamUuidList());
+            }
+            if (CollectionUtils.isNotEmpty(authInfo.getRoleUuidList())) {
+                authUuidList.addAll(authInfo.getRoleUuidList());
+            }
+        }
+        return authUuidList;
+    }
+
+    public void setAuthUuidList(List<String> authUuidList) {
+        this.authUuidList = authUuidList;
     }
 }

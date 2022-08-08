@@ -65,11 +65,11 @@ public class DeployVersionVo extends BaseEditorVo {
     @JSONField(serialize = false)
     private String runnerGroupStr;
     @EntityField(name = "编译次数", type = ApiParamType.INTEGER)
-    private Integer complieCount = 0;
+    private Integer compileCount = 0;
     @EntityField(name = "编译成功次数", type = ApiParamType.INTEGER)
-    private Integer complieSuccessCount = 0;
+    private Integer compileSuccessCount = 0;
     @EntityField(name = "编译失败次数", type = ApiParamType.INTEGER)
-    private Integer complieFailCount = 0;
+    private Integer compileFailCount = 0;
     @JSONField(serialize = false)
     private Integer isCompiled; // 是否编译成功
 
@@ -276,25 +276,25 @@ public class DeployVersionVo extends BaseEditorVo {
         this.runnerGroupStr = runnerGroupStr;
     }
 
-    public Integer getComplieCount() {
-        complieCount = complieSuccessCount + complieFailCount;
-        return complieCount;
+    public Integer getcompileCount() {
+        compileCount = compileSuccessCount + compileFailCount;
+        return compileCount;
     }
 
-    public Integer getComplieSuccessCount() {
-        return complieSuccessCount;
+    public Integer getcompileSuccessCount() {
+        return compileSuccessCount;
     }
 
-    public void setComplieSuccessCount(Integer complieSuccessCount) {
-        this.complieSuccessCount = complieSuccessCount;
+    public void setcompileSuccessCount(Integer compileSuccessCount) {
+        this.compileSuccessCount = compileSuccessCount;
     }
 
-    public Integer getComplieFailCount() {
-        return complieFailCount;
+    public Integer getcompileFailCount() {
+        return compileFailCount;
     }
 
-    public void setComplieFailCount(Integer complieFailCount) {
-        this.complieFailCount = complieFailCount;
+    public void setcompileFailCount(Integer compileFailCount) {
+        this.compileFailCount = compileFailCount;
     }
 
     public Integer getIsCompiled() {

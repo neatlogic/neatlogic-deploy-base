@@ -13,6 +13,8 @@ public class DeployEnvVersionVo extends BaseEditorVo {
     private Long appModuleId;
     @EntityField(name = "环境id", type = ApiParamType.LONG)
     private Long envId;
+    @EntityField(name = "环境名称", type = ApiParamType.STRING)
+    private String envName;
     @EntityField(name = "版本id", type = ApiParamType.LONG)
     private Long versionId;
     @EntityField(name = "编译号", type = ApiParamType.INTEGER)
@@ -43,6 +45,11 @@ public class DeployEnvVersionVo extends BaseEditorVo {
         this.buildNo = buildNo;
         super.setLcu(lcu);
         super.setLcd(lcd);
+    }
+
+    public DeployEnvVersionVo(Long envId, String status) {
+        this.envId = envId;
+        this.status = status;
     }
 
     public Long getAppSystemId() {
@@ -107,5 +114,13 @@ public class DeployEnvVersionVo extends BaseEditorVo {
 
     public void setRollbackTime(Date rollbackTime) {
         this.rollbackTime = rollbackTime;
+    }
+
+    public String getEnvName() {
+        return envName;
+    }
+
+    public void setEnvName(String envName) {
+        this.envName = envName;
     }
 }

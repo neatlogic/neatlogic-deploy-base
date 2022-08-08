@@ -13,11 +13,11 @@ public class DeployActiveVersionVo {
     @EntityField(name = "版本号", type = ApiParamType.STRING)
     private String version;
     @EntityField(name = "编译次数", type = ApiParamType.INTEGER)
-    private Integer complieCount = 0;
+    private Integer compileCount = 0;
     @EntityField(name = "编译成功次数", type = ApiParamType.INTEGER)
-    private Integer complieSuccessCount = 0;
+    private Integer compileSuccessCount = 0;
     @EntityField(name = "编译失败次数", type = ApiParamType.INTEGER)
-    private Integer complieFailCount = 0;
+    private Integer compileFailCount = 0;
     @EntityField(name = "发布环境列表", type = ApiParamType.JSONARRAY)
     List<DeployEnvVersionVo> envList;
 
@@ -37,25 +37,25 @@ public class DeployActiveVersionVo {
         this.version = version;
     }
 
-    public Integer getComplieCount() {
-        complieCount = complieSuccessCount + complieFailCount;
-        return complieCount;
+    public Integer getcompileCount() {
+        compileCount = compileSuccessCount + compileFailCount;
+        return compileCount;
     }
 
-    public Integer getComplieSuccessCount() {
-        return complieSuccessCount;
+    public Integer getcompileSuccessCount() {
+        return compileSuccessCount;
     }
 
-    public void setComplieSuccessCount(Integer complieSuccessCount) {
-        this.complieSuccessCount = complieSuccessCount;
+    public void setcompileSuccessCount(Integer compileSuccessCount) {
+        this.compileSuccessCount = compileSuccessCount;
     }
 
-    public Integer getComplieFailCount() {
-        return complieFailCount;
+    public Integer getcompileFailCount() {
+        return compileFailCount;
     }
 
-    public void setComplieFailCount(Integer complieFailCount) {
-        this.complieFailCount = complieFailCount;
+    public void setcompileFailCount(Integer compileFailCount) {
+        this.compileFailCount = compileFailCount;
     }
 
     public List<DeployEnvVersionVo> getEnvList() {

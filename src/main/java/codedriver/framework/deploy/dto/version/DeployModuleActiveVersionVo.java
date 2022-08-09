@@ -1,5 +1,6 @@
 package codedriver.framework.deploy.dto.version;
 
+import codedriver.framework.cmdb.dto.resourcecenter.entity.AppEnvironmentVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 
@@ -19,6 +20,8 @@ public class DeployModuleActiveVersionVo {
     private String appModuleAbbrName;
     @EntityField(name = "应用模块名称", type = ApiParamType.STRING)
     private String appModuleName;
+    @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
+    private List<AppEnvironmentVo> envList;
     @EntityField(name = "版本列表", type = ApiParamType.JSONARRAY)
     private List<DeployActiveVersionVo> versionList;
 
@@ -78,6 +81,14 @@ public class DeployModuleActiveVersionVo {
 
     public void setAppModuleAbbrName(String appModuleAbbrName) {
         this.appModuleAbbrName = appModuleAbbrName;
+    }
+
+    public List<AppEnvironmentVo> getEnvList() {
+        return envList;
+    }
+
+    public void setEnvList(List<AppEnvironmentVo> envList) {
+        this.envList = envList;
     }
 
     public List<DeployActiveVersionVo> getVersionList() {

@@ -36,6 +36,8 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
     private List<Long> notInIdList;
     @JSONField(serialize = false)
     private List<Long> appSystemIdList;
+    @JSONField(serialize = false)
+    List<String> actionList;
 
     public Integer getIsConfig() {
         return isConfig;
@@ -123,5 +125,13 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
 
     public void setAuthUuidList(List<String> authUuidList) {
         this.authUuidList = authUuidList;
+    }
+
+    public List<String> getActionList() {
+        return actionList;
+    }
+
+    public void setActionList(List<String> actionList) {
+        this.actionList = actionList;
     }
 }

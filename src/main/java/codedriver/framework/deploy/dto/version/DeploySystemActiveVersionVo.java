@@ -10,6 +10,8 @@ public class DeploySystemActiveVersionVo extends BasePageVo {
 
     @EntityField(name = "应用系统id", type = ApiParamType.LONG)
     private Long appSystemId;
+    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    private String appSystemAbbrName;
     @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
     private String appSystemName;
     @EntityField(name = "模块列表", type = ApiParamType.JSONARRAY)
@@ -18,12 +20,26 @@ public class DeploySystemActiveVersionVo extends BasePageVo {
     public DeploySystemActiveVersionVo() {
     }
 
+    public DeploySystemActiveVersionVo(Long appSystemId, String appSystemAbbrName, String appSystemName) {
+        this.appSystemId = appSystemId;
+        this.appSystemAbbrName = appSystemAbbrName;
+        this.appSystemName = appSystemName;
+    }
+
     public Long getAppSystemId() {
         return appSystemId;
     }
 
     public void setAppSystemId(Long appSystemId) {
         this.appSystemId = appSystemId;
+    }
+
+    public String getAppSystemAbbrName() {
+        return appSystemAbbrName;
+    }
+
+    public void setAppSystemAbbrName(String appSystemAbbrName) {
+        this.appSystemAbbrName = appSystemAbbrName;
     }
 
     public String getAppSystemName() {

@@ -21,6 +21,16 @@ public class DeployActiveVersionVo {
     @EntityField(name = "发布环境列表", type = ApiParamType.JSONARRAY)
     List<DeployEnvVersionVo> envList;
 
+    public DeployActiveVersionVo() {
+    }
+
+    public DeployActiveVersionVo(DeployVersionVo versionVo) {
+        this.versionId = versionVo.getId();
+        this.version = versionVo.getVersion();
+        this.compileSuccessCount = versionVo.getcompileSuccessCount();
+        this.compileFailCount = versionVo.getcompileFailCount();
+    }
+
     public Long getVersionId() {
         return versionId;
     }

@@ -20,6 +20,8 @@ public class DeployAppEnvironmentVo {
     private List<AppModuleVo> appModuleList;
     @EntityField(name = "是否可删除", type = ApiParamType.INTEGER)
     private Integer isDeletable;
+    @EntityField(name = "是否配置", type = ApiParamType.INTEGER)
+    private Integer isConfig;
 
     public DeployAppEnvironmentVo(Long id, String name) {
         this.id = id;
@@ -58,5 +60,13 @@ public class DeployAppEnvironmentVo {
 
     public void setIsDeletable(Integer isDeletable) {
         this.isDeletable = isDeletable;
+    }
+
+    public Integer getIsConfig() {
+        return isConfig;
+    }
+
+    public void setIsConfig(Integer isConfig) {
+        this.isConfig = isConfig;
     }
 }

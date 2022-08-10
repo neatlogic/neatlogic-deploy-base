@@ -29,15 +29,15 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
     private Long envId;
 
     @JSONField(serialize = false)
-    private Integer isHasAllAuthority;
-    @JSONField(serialize = false)
     private List<Long> notInIdList;
     @JSONField(serialize = false)
     private List<Long> appSystemIdList;
     @JSONField(serialize = false)
-    List<String> authorityActionList;
+    private Integer isHasAllAuthority; //是否拥有发布管理员权限
     @JSONField(serialize = false)
-    private List<String> authUuidList;
+    List<String> authorityActionList; //权限列表
+    @JSONField(serialize = false)
+    private List<String> authUuidList; //用户、分组、角色的uuid列表
 
     public Integer getIsConfig() {
         return isConfig;

@@ -34,6 +34,14 @@ public class LaneGroupVo {
     @EntityField(name = "排序", type = ApiParamType.INTEGER)
     private Integer sort;
 
+    public LaneGroupVo() {
+    }
+
+    public LaneGroupVo(Long id, String status) {
+        this.id = id;
+        this.status = status;
+    }
+
     public Long getId() {
         if (id == null) {
             id = SnowflakeUtil.uniqueLong();

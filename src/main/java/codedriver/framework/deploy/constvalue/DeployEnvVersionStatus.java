@@ -3,7 +3,6 @@ package codedriver.framework.deploy.constvalue;
 public enum DeployEnvVersionStatus {
     DEPLOYED("deployed"),
     PENDING("pending"),
-    ROLLBACK("rollback"),
     ;
 
     private final String value;

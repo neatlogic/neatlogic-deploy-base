@@ -53,6 +53,11 @@ public class DeployEnvVersionVo extends BaseEditorVo {
         this.status = status;
     }
 
+    public DeployEnvVersionVo(Long envId, String status) {
+        this.envId = envId;
+        this.status = status;
+    }
+
     public Long getAppSystemId() {
         return appSystemId;
     }

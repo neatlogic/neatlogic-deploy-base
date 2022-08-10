@@ -42,6 +42,8 @@ public class DeployAppSystemVo extends BaseEditorVo {
     private Integer isHasModule = 0;
     @EntityField(name = "是否包含环境", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
+    @EntityField(name = "是否配置权限", type = ApiParamType.INTEGER)
+    private Integer isConfigAuthority = 0;
 
     public DeployAppSystemVo() {
 
@@ -152,5 +154,13 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setIsHasEnv(Integer isHasEnv) {
         this.isHasEnv = isHasEnv;
+    }
+
+    public Integer getIsConfigAuthority() {
+        return isConfigAuthority;
+    }
+
+    public void setIsConfigAuthority(Integer isConfigAuthority) {
+        this.isConfigAuthority = isConfigAuthority;
     }
 }

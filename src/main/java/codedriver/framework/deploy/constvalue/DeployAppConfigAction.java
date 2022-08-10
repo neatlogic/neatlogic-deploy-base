@@ -12,8 +12,7 @@ import java.util.List;
 public enum DeployAppConfigAction {
     VIEW("view","查看作业/配置"),
     EDIT("edit","编辑配置"),
-    UPLOAD("productManager","制品管理"),
-    VALIDATE("validate","验证"),
+    VERSION_AND_PRODUCT_MANAGER("versionAndProductManager","版本&制品管理"),
     ;
 
     private final String value;

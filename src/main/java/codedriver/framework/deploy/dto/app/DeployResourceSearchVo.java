@@ -27,17 +27,17 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
     private Long appModuleId;
     @EntityField(name = "环境id", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "是否拥有所有权限", type = ApiParamType.INTEGER)
-    private Integer isHasAllAuthority;
-    @EntityField(name = "权限uuid列表", type = ApiParamType.JSONARRAY)
-    private List<String> authUuidList;
 
     @JSONField(serialize = false)
     private List<Long> notInIdList;
     @JSONField(serialize = false)
     private List<Long> appSystemIdList;
     @JSONField(serialize = false)
-    List<String> actionList;
+    private Integer isHasAllAuthority; //是否拥有发布管理员权限
+    @JSONField(serialize = false)
+    List<String> authorityActionList; //权限列表
+    @JSONField(serialize = false)
+    private List<String> authUuidList; //用户、分组、角色的uuid列表
 
     public Integer getIsConfig() {
         return isConfig;
@@ -127,11 +127,11 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
         this.authUuidList = authUuidList;
     }
 
-    public List<String> getActionList() {
-        return actionList;
+    public List<String> getAuthorityActionList() {
+        return authorityActionList;
     }
 
-    public void setActionList(List<String> actionList) {
-        this.actionList = actionList;
+    public void setAuthorityActionList(List<String> authorityActionList) {
+        this.authorityActionList = authorityActionList;
     }
 }

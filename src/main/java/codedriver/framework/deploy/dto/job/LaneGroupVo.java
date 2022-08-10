@@ -21,6 +21,8 @@ public class LaneGroupVo {
     private Integer needWait = 0;
     @EntityField(name = "执行完当前组是否停止不继续执行后续组，但仍受needWait约束，1：是，0：否", type = ApiParamType.INTEGER)
     private Integer isGoon = 1;
+    @EntityField(name = "是否是强行执行组，1：是，0：否", type = ApiParamType.INTEGER)
+    private Integer isGroupRun = 0;
     @EntityField(name = "状态", type = ApiParamType.ENUM, member = JobStatus.class)
     private String status;
     @EntityField(name = "作业列表", type = ApiParamType.JSONARRAY)
@@ -105,5 +107,13 @@ public class LaneGroupVo {
 
     public void setIsGoon(Integer isGoon) {
         this.isGoon = isGoon;
+    }
+
+    public Integer getIsGroupRun() {
+        return isGroupRun;
+    }
+
+    public void setIsGroupRun(Integer isGroupRun) {
+        this.isGroupRun = isGroupRun;
     }
 }

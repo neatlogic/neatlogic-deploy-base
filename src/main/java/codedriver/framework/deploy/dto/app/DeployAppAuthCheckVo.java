@@ -19,10 +19,13 @@ public class DeployAppAuthCheckVo {
     private List<String> authorityActionList;
     private List<String> authUuidList;
     private Integer isHasAllAuthority;
+    private List<DeployAppConfigAuthorityActionVo> actionVoList;
 
     public DeployAppAuthCheckVo(Long appSystemId, List<String> authorityActionList) {
         this.appSystemId = appSystemId;
         this.authorityActionList = authorityActionList;
+    }
+    public DeployAppAuthCheckVo(){
     }
 
     public Long getAppSystemId() {
@@ -73,6 +76,14 @@ public class DeployAppAuthCheckVo {
 
     public void setAuthorityActionList(List<String> authorityActionList) {
         this.authorityActionList = authorityActionList;
+    }
+
+    public List<DeployAppConfigAuthorityActionVo> getActionVoList() {
+        return actionVoList;
+    }
+
+    public void setActionVoList(List<DeployAppConfigAuthorityActionVo> actionVoList) {
+        this.actionVoList = actionVoList;
     }
 }
 

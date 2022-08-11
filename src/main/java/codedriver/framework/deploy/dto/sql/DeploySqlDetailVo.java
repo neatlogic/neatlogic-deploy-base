@@ -109,7 +109,7 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         }
     }
 
-    public DeploySqlDetailVo(Long sysId, Long envId, Long moduleId, String version, String sqlFile, Long jobId, String phaseName) {
+    public DeploySqlDetailVo(Long sysId, Long envId, Long moduleId, String version, String sqlFile, Long jobId, String phaseName, Long resourceId) {
         this.sysId = sysId;
         this.moduleId = moduleId;
         this.envId = envId;
@@ -117,6 +117,7 @@ public class DeploySqlDetailVo extends BaseEditorVo {
         this.sqlFile = sqlFile;
         this.jobId = jobId;
         this.phaseName = phaseName;
+        this.resourceId = resourceId;
     }
 
     public DeploySqlDetailVo(Long sysId, Long moduleId, Long envId, String version) {

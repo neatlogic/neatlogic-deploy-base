@@ -17,6 +17,8 @@ public class DeployEnvVersionVo extends BaseEditorVo {
     private String envName;
     @EntityField(name = "版本id", type = ApiParamType.LONG)
     private Long versionId;
+    @EntityField(name = "版本", type = ApiParamType.STRING)
+    private String version;
     @EntityField(name = "编译号", type = ApiParamType.INTEGER)
     private Integer buildNo;
     @EntityField(name = "发布状态", type = ApiParamType.STRING)
@@ -128,5 +130,13 @@ public class DeployEnvVersionVo extends BaseEditorVo {
 
     public void setEnvName(String envName) {
         this.envName = envName;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }

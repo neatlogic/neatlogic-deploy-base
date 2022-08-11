@@ -6,12 +6,13 @@
 package codedriver.framework.deploy.exception;
 
 import codedriver.framework.exception.core.ApiRuntimeException;
+import org.apache.commons.lang3.StringUtils;
 
 public class DeployAppConfigModuleRunnerGroupNotFoundException extends ApiRuntimeException {
 
     private static final long serialVersionUID = 6333597401986892305L;
 
-    public  DeployAppConfigModuleRunnerGroupNotFoundException(String appSystem, String systemModule){
-        super("应用系统 '"+appSystem+"',模块'"+systemModule+"'没有配置runner组");
+    public DeployAppConfigModuleRunnerGroupNotFoundException(String appSystem, String systemModule) {
+        super("应用系统 '" + (StringUtils.isBlank(appSystem) ? StringUtils.EMPTY : appSystem) + "',模块'" + (StringUtils.isBlank(systemModule) ? StringUtils.EMPTY : systemModule) + "'没有配置runner组");
     }
 }

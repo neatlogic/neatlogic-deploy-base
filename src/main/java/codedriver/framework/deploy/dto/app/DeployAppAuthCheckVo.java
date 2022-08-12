@@ -5,25 +5,29 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.asynchronization.threadlocal.UserContext;
-import codedriver.framework.auth.core.AuthActionChecker;
-import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
 import codedriver.framework.dto.AuthenticationInfoVo;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class DeployAppAuthCheckVo {
 
     private Long appSystemId;
     private List<String> authorityActionList;
     private List<String> authUuidList;
-    private Integer isHasAllAuthority;
     private List<DeployAppConfigAuthorityActionVo> actionVoList;
 
-    public DeployAppAuthCheckVo(Long appSystemId, List<String> authorityActionList) {
+    public DeployAppAuthCheckVo(Long appSystemId, Set<String> authorityActionList) {
         this.appSystemId = appSystemId;
-        this.authorityActionList = authorityActionList;
+        this.authorityActionList = new ArrayList<>(authorityActionList);
+    }
+
+    public DeployAppAuthCheckVo(Long appSystemId, List<DeployAppConfigAuthorityActionVo> actionVoList) {
+        this.appSystemId = appSystemId;
+        this.actionVoList = actionVoList;
     }
     public DeployAppAuthCheckVo(){
     }
@@ -34,21 +38,6 @@ public class DeployAppAuthCheckVo {
 
     public void setAppSystemId(Long appSystemId) {
         this.appSystemId = appSystemId;
-    }
-
-    public Integer getIsHasAllAuthority() {
-        if (isHasAllAuthority == null) {
-            if (AuthActionChecker.check(DEPLOY_MODIFY.class)) {
-                isHasAllAuthority = 1;
-            } else {
-                isHasAllAuthority = 0;
-            }
-        }
-        return isHasAllAuthority;
-    }
-
-    public void setIsHasAllAuthority(Integer isHasAllAuthority) {
-        this.isHasAllAuthority = isHasAllAuthority;
     }
 
     public List<String> getAuthUuidList() {
@@ -71,6 +60,9 @@ public class DeployAppAuthCheckVo {
     }
 
     public List<String> getAuthorityActionList() {
+        if (CollectionUtils.isEmpty(authorityActionList) && CollectionUtils.isNotEmpty(actionVoList)) {
+            authorityActionList = actionVoList.stream().map(DeployAppConfigAuthorityActionVo::getAction).collect(Collectors.toList());
+        }
         return authorityActionList;
     }
 

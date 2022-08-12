@@ -10,6 +10,7 @@ import codedriver.framework.auth.core.AuthActionChecker;
 import codedriver.framework.autoexec.dto.job.AutoexecJobVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
+import codedriver.framework.deploy.constvalue.JobSource;
 import codedriver.framework.deploy.dto.app.DeployPipelineConfigVo;
 import codedriver.framework.dto.AuthenticationInfoVo;
 import codedriver.framework.restful.annotation.EntityField;
@@ -21,6 +22,7 @@ import org.springframework.util.DigestUtils;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DeployJobVo extends AutoexecJobVo {
@@ -66,10 +68,7 @@ public class DeployJobVo extends AutoexecJobVo {
     private List<String> authUuidList; //用户、分组、角色的uuid列表
 
     public DeployJobVo() {
-        List<String> sourceList = new ArrayList<>();
-        sourceList.add("deploy");
-        sourceList.add("batchdeploy");
-        this.setSourceList(sourceList);
+        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(),JobSource.BATCHDEPLOY.getValue()));
     }
 
     public List<DeployJobAuthVo> getAuthList() {
@@ -86,10 +85,7 @@ public class DeployJobVo extends AutoexecJobVo {
         envId = jsonObj.getLong("envId");
         version = jsonObj.getString("version");
         buildNo = jsonObj.getInteger("buildNo");
-        List<String> sourceList = new ArrayList<>();
-        sourceList.add("deploy");
-        sourceList.add("batchdeploy");
-        this.setSourceList(sourceList);
+        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(),JobSource.BATCHDEPLOY.getValue()));
     }
 
 

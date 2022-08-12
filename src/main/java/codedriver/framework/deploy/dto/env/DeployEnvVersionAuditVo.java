@@ -17,8 +17,12 @@ public class DeployEnvVersionAuditVo extends BaseEditorVo {
     private Long envId;
     @EntityField(name = "新版本id", type = ApiParamType.LONG)
     private Long newVersionId;
+    @EntityField(name = "新版本号", type = ApiParamType.STRING)
+    private String newVersion;
     @EntityField(name = "旧版本id", type = ApiParamType.LONG)
     private Long oldVersionId;
+    @EntityField(name = "旧版本号", type = ApiParamType.STRING)
+    private String oldVersion;
     @EntityField(name = "新编译号", type = ApiParamType.INTEGER)
     private Integer newBuildNo;
     @EntityField(name = "旧编译号", type = ApiParamType.INTEGER)
@@ -113,5 +117,21 @@ public class DeployEnvVersionAuditVo extends BaseEditorVo {
 
     public void setDirection(String direction) {
         this.direction = direction;
+    }
+
+    public String getNewVersion() {
+        return newVersion;
+    }
+
+    public void setNewVersion(String newVersion) {
+        this.newVersion = newVersion;
+    }
+
+    public String getOldVersion() {
+        return oldVersion;
+    }
+
+    public void setOldVersion(String oldVersion) {
+        this.oldVersion = oldVersion;
     }
 }

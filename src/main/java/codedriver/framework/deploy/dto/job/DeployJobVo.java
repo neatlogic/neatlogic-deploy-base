@@ -51,6 +51,8 @@ public class DeployJobVo extends AutoexecJobVo {
     private Long runnerMapId;
     @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
     private DeployPipelineConfigVo pipeLineConfig;
+    @EntityField(name = "是否有执行组权限", type = ApiParamType.INTEGER)
+    private Integer isCanGroupExecute = 0;
     @JSONField(serialize = false)
     private String pipeLineConfigStr;
     @JSONField(serialize = false)
@@ -241,5 +243,13 @@ public class DeployJobVo extends AutoexecJobVo {
 
     public void setAuthorityActionList(List<String> authorityActionList) {
         this.authorityActionList = authorityActionList;
+    }
+
+    public Integer getIsCanGroupExecute() {
+        return isCanGroupExecute;
+    }
+
+    public void setIsCanGroupExecute(Integer isCanGroupExecute) {
+        this.isCanGroupExecute = isCanGroupExecute;
     }
 }

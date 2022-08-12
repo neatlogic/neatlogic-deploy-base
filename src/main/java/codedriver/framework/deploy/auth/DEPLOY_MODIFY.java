@@ -33,6 +33,6 @@ public class DEPLOY_MODIFY extends AuthBase {
 
     @Override
     public List<Class<? extends AuthBase>> getIncludeAuths() {
-        return Collections.singletonList(DEPLOY_BASE.class);
+        return Collections.singletonList(BATCHDEPLOY_VERIFY.class);
     }
 }

@@ -36,4 +36,8 @@ public class DeployAppConfigAuthorityActionVo {
     public void setType(String type) {
         this.type = type;
     }
+
+    public String getTypeActionString() {
+        return type + "#" + action;
+    }
 }

@@ -13,6 +13,14 @@ public class DeployAppConfigAuthorityActionVo {
     @EntityField(name = "授权操作类型", type = ApiParamType.STRING)
     private String type;
 
+    public DeployAppConfigAuthorityActionVo(String action, String type) {
+        this.action = action;
+        this.type = type;
+    }
+
+    public DeployAppConfigAuthorityActionVo() {
+    }
+
     public String getAction() {
         return action;
     }
@@ -27,5 +35,9 @@ public class DeployAppConfigAuthorityActionVo {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getTypeActionString() {
+        return type + "#" + action;
     }
 }

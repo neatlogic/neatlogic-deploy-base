@@ -13,4 +13,8 @@ public class DeployBatchJobNotFoundException extends ApiRuntimeException {
     public DeployBatchJobNotFoundException(Long id) {
         super("批量发布作业：'"+id+"' 不存在" );
     }
+
+    public DeployBatchJobNotFoundException() {
+        super("该组的批量发布作业不存在" );
+    }
 }

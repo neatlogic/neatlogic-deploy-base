@@ -27,8 +27,8 @@ public class DeployActiveVersionVo {
     public DeployActiveVersionVo(DeployVersionVo versionVo) {
         this.versionId = versionVo.getId();
         this.version = versionVo.getVersion();
-        this.compileSuccessCount = versionVo.getcompileSuccessCount();
-        this.compileFailCount = versionVo.getcompileFailCount();
+        this.compileSuccessCount = versionVo.getCompileSuccessCount();
+        this.compileFailCount = versionVo.getCompileFailCount();
     }
 
     public Long getVersionId() {

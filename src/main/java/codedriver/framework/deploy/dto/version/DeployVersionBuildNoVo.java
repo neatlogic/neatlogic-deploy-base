@@ -65,6 +65,16 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
         this.status = status;
     }
 
+    public DeployVersionBuildNoVo(Long versionId, Integer buildNo, Long jobId, String status, Long runnerMapId, JSONObject runnerGroup, String endRev) {
+        this.versionId = versionId;
+        this.buildNo = buildNo;
+        this.jobId = jobId;
+        this.status = status;
+        this.runnerMapId = runnerMapId;
+        this.runnerGroup = runnerGroup;
+        this.endRev = endRev;
+    }
+
     public Long getVersionId() {
         return versionId;
     }

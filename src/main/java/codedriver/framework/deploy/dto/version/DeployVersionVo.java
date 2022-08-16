@@ -289,24 +289,24 @@ public class DeployVersionVo extends BaseEditorVo {
         this.runnerGroupStr = runnerGroupStr;
     }
 
-    public Integer getcompileCount() {
+    public Integer getCompileCount() {
         compileCount = compileSuccessCount + compileFailCount;
         return compileCount;
     }
 
-    public Integer getcompileSuccessCount() {
+    public Integer getCompileSuccessCount() {
         return compileSuccessCount;
     }
 
-    public void setcompileSuccessCount(Integer compileSuccessCount) {
+    public void setCompileSuccessCount(Integer compileSuccessCount) {
         this.compileSuccessCount = compileSuccessCount;
     }
 
-    public Integer getcompileFailCount() {
+    public Integer getCompileFailCount() {
         return compileFailCount;
     }
 
-    public void setcompileFailCount(Integer compileFailCount) {
+    public void setCompileFailCount(Integer compileFailCount) {
         this.compileFailCount = compileFailCount;
     }
 

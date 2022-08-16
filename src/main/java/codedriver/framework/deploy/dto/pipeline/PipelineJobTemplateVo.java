@@ -44,6 +44,8 @@ public class PipelineJobTemplateVo extends BasePageVo {
     private JSONObject config;
     @EntityField(name = "场景id", type = ApiParamType.LONG)
     private Long scenarioId;
+    @EntityField(name = "分批数量", type = ApiParamType.INTEGER)
+    private Integer roundCount;
 
     public Long getId() {
         if (id == null) {
@@ -169,5 +171,13 @@ public class PipelineJobTemplateVo extends BasePageVo {
 
     public void setExcludeIdList(List<Long> excludeIdList) {
         this.excludeIdList = excludeIdList;
+    }
+
+    public Integer getRoundCount() {
+        return roundCount;
+    }
+
+    public void setRoundCount(Integer roundCount) {
+        this.roundCount = roundCount;
     }
 }

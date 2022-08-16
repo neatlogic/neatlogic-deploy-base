@@ -7,23 +7,15 @@ package codedriver.framework.deploy.auth;
 
 import codedriver.framework.auth.core.AuthBase;
 
-import java.util.Collections;
-import java.util.List;
-
-/**
- * @author longrf
- * @date 2022/4/15 5:09 下午
- */
-public class DEPLOY_MODIFY extends AuthBase {
-
+public class PIPELINE_MODIFY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "自动发布管理权限";
+        return "超级流水线管理权限";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "自动发布全局参数管理、场景定义";
+        return "创建、维护和删除超级流水线";
     }
 
     @Override
@@ -33,11 +25,6 @@ public class DEPLOY_MODIFY extends AuthBase {
 
     @Override
     public Integer getSort() {
-        return 4;
-    }
-
-    @Override
-    public List<Class<? extends AuthBase>> getIncludeAuths() {
-        return Collections.singletonList(BATCHDEPLOY_VERIFY.class);
+        return 5;
     }
 }

@@ -34,6 +34,8 @@ public class DeployAppModuleVo {
     private List<Long> stateIdList;
     @EntityField(name = "负责人id列表", type = ApiParamType.JSONARRAY)
     private List<Long> ownerIdList;
+    @EntityField(name = "是否有配置执行器（1：有，0：没有）", type = ApiParamType.INTEGER)
+    private Integer isHasRunner = 0;
 
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
@@ -141,5 +143,13 @@ public class DeployAppModuleVo {
 
     public void setOwnerIdList(List<Long> ownerIdList) {
         this.ownerIdList = ownerIdList;
+    }
+
+    public Integer getIsHasRunner() {
+        return isHasRunner;
+    }
+
+    public void setIsHasRunner(Integer isHasRunner) {
+        this.isHasRunner = isHasRunner;
     }
 }

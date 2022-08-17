@@ -7,7 +7,7 @@ package codedriver.framework.deploy.dto.app;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 
-public class DeployAppModuleRunnerVo {
+public class DeployAppModuleRunnerGroupVo {
 
     @EntityField(name = "应用系统id", type = ApiParamType.LONG)
     private Long appSystemId;

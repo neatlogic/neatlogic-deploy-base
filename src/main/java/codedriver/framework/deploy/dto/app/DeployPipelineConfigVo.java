@@ -39,7 +39,7 @@ public class DeployPipelineConfigVo implements Serializable {
     private List<DeployProfileVo> overrideProfileList;
 
     @JSONField(serialize = false)
-    private List<DeployAppModuleRunnerVo> moduleRunnerVoList;
+    private List<DeployAppModuleRunnerGroupVo> moduleRunnerGroupList;
 
     @JSONField(serialize = false)
     private AutoexecCombopConfigVo autoexecCombopConfigVo;
@@ -127,11 +127,11 @@ public class DeployPipelineConfigVo implements Serializable {
         return autoexecCombopConfigVo;
     }
 
-    public List<DeployAppModuleRunnerVo> getModuleRunnerVoList() {
-        return moduleRunnerVoList;
+    public List<DeployAppModuleRunnerGroupVo> getModuleRunnerGroupList() {
+        return moduleRunnerGroupList;
     }
 
-    public void setModuleRunnerVoList(List<DeployAppModuleRunnerVo> moduleRunnerVoList) {
-        this.moduleRunnerVoList = moduleRunnerVoList;
+    public void setModuleRunnerGroupList(List<DeployAppModuleRunnerGroupVo> moduleRunnerGroupList) {
+        this.moduleRunnerGroupList = moduleRunnerGroupList;
     }
 }

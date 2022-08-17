@@ -24,8 +24,6 @@ public class PipelineJobTemplateVo extends BasePageVo {
     private List<Long> excludeIdList;
     @EntityField(name = "泳道分组id", type = ApiParamType.LONG)
     private Long groupId;
-    @EntityField(name = "名称", type = ApiParamType.STRING)
-    private String name;
     @EntityField(name = "应用系统id", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "应用系统模块id", type = ApiParamType.LONG)
@@ -44,8 +42,13 @@ public class PipelineJobTemplateVo extends BasePageVo {
     private JSONObject config;
     @EntityField(name = "场景id", type = ApiParamType.LONG)
     private Long scenarioId;
+
+    @EntityField(name = "场景名称", type = ApiParamType.STRING)
+    private String scenarioName;
     @EntityField(name = "分批数量", type = ApiParamType.INTEGER)
     private Integer roundCount;
+    @EntityField(name = "排序", type = ApiParamType.INTEGER)
+    private Integer sort;
 
     public Long getId() {
         if (id == null) {
@@ -64,14 +67,6 @@ public class PipelineJobTemplateVo extends BasePageVo {
 
     public void setGroupId(Long groupId) {
         this.groupId = groupId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Long getAppSystemId() {
@@ -179,5 +174,21 @@ public class PipelineJobTemplateVo extends BasePageVo {
 
     public void setRoundCount(Integer roundCount) {
         this.roundCount = roundCount;
+    }
+
+    public String getScenarioName() {
+        return scenarioName;
+    }
+
+    public void setScenarioName(String scenarioName) {
+        this.scenarioName = scenarioName;
+    }
+
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
     }
 }

@@ -25,7 +25,7 @@ public class PipelineVo extends BasePageVo {
     @EntityField(name = "创建用户", type = ApiParamType.STRING)
     private String fcu;
     @EntityField(name = "修改时间", type = ApiParamType.LONG)
-    private Long lcd;
+    private Date lcd;
     @EntityField(name = "修改用户", type = ApiParamType.STRING)
     private String lcu;
     @EntityField(name = "通道列表", type = ApiParamType.JSONARRAY)
@@ -84,11 +84,11 @@ public class PipelineVo extends BasePageVo {
         this.fcu = fcu;
     }
 
-    public Long getLcd() {
+    public Date getLcd() {
         return lcd;
     }
 
-    public void setLcd(Long lcd) {
+    public void setLcd(Date lcd) {
         this.lcd = lcd;
     }
 

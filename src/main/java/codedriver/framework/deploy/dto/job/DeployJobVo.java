@@ -31,12 +31,10 @@ public class DeployJobVo extends AutoexecJobVo {
 
     @EntityField(name = "应用资产id", type = ApiParamType.LONG)
     private Long appSystemId;
-
     @EntityField(name = "应用资产名称", type = ApiParamType.STRING)
     private String appSystemName;
     @EntityField(name = "系统模块id", type = ApiParamType.LONG)
     private Long appModuleId;
-
     @EntityField(name = "系统模块名称", type = ApiParamType.STRING)
     private String appModuleName;
     @EntityField(name = "环境资产id", type = ApiParamType.LONG)
@@ -84,6 +82,7 @@ public class DeployJobVo extends AutoexecJobVo {
     public DeployJobVo(JSONObject jsonObj) {
         appSystemId = jsonObj.getLong("appSystemId");
         appModuleId = jsonObj.getLong("appModuleId");
+        super.setScenarioId(jsonObj.getLong("scenarioId"));
         envId = jsonObj.getLong("envId");
         version = jsonObj.getString("version");
         buildNo = jsonObj.getInteger("buildNo");

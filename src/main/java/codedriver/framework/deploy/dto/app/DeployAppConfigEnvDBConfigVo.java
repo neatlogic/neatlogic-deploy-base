@@ -25,10 +25,14 @@ public class DeployAppConfigEnvDBConfigVo {
     private Long envId;
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "数据库别名", type = ApiParamType.STRING)
-    private String dbAlias;
+    @EntityField(name = "数据库schema", type = ApiParamType.STRING)
+    private String dbSchema;
     @EntityField(name = "数据库资产id", type = ApiParamType.LONG)
     private Long dbResourceId;
+    @EntityField(name = "账号id", type = ApiParamType.LONG)
+    private Long accountId;
+    @EntityField(name = "账号", type = ApiParamType.STRING)
+    private String account;
     @EntityField(name = "数据库名称", type = ApiParamType.STRING)
     private String dbResourceName;
     @EntityField(name = "执行用户列表", type = ApiParamType.JSONARRAY)
@@ -83,12 +87,12 @@ public class DeployAppConfigEnvDBConfigVo {
         this.id = id;
     }
 
-    public String getDbAlias() {
-        return dbAlias;
+    public String getDbSchema() {
+        return dbSchema;
     }
 
-    public void setDbAlias(String dbAlias) {
-        this.dbAlias = dbAlias;
+    public void setDbSchema(String dbSchema) {
+        this.dbSchema = dbSchema;
     }
 
     public Long getDbResourceId() {
@@ -101,6 +105,22 @@ public class DeployAppConfigEnvDBConfigVo {
 
     public String getDbResourceName() {
         return dbResourceName;
+    }
+
+    public Long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Long accountId) {
+        this.accountId = accountId;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     public void setDbResourceName(String dbResourceName) {

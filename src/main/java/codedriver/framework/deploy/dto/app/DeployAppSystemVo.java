@@ -8,6 +8,7 @@ package codedriver.framework.deploy.dto.app;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
@@ -46,8 +47,13 @@ public class DeployAppSystemVo extends BaseEditorVo {
     @EntityField(name = "是否配置权限", type = ApiParamType.INTEGER)
     private Integer isConfigAuthority = 0;
 
+    @EntityField(name = "权限列表", type = ApiParamType.JSONARRAY)
+    private List<DeployAppConfigAuthorityVo> authList;
+
     @JSONField(serialize = false)
     private List<Long> envIdList;
+
+    JSONObject authInfo;
 
     public DeployAppSystemVo() {
 
@@ -174,5 +180,21 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setEnvIdList(List<Long> envIdList) {
         this.envIdList = envIdList;
+    }
+
+    public List<DeployAppConfigAuthorityVo> getAuthList() {
+        return authList;
+    }
+
+    public void setAuthList(List<DeployAppConfigAuthorityVo> authList) {
+        this.authList = authList;
+    }
+
+    public JSONObject getAuthInfo() {
+        return authInfo;
+    }
+
+    public void setAuthInfo(JSONObject authInfo) {
+        this.authInfo = authInfo;
     }
 }

@@ -5,6 +5,7 @@
 
 package codedriver.framework.deploy.dto.pipeline;
 
+import codedriver.framework.autoexec.dto.scenario.AutoexecScenarioVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BasePageVo;
 import codedriver.framework.restful.annotation.EntityField;
@@ -13,6 +14,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PipelineJobTemplateVo extends BasePageVo {
@@ -49,6 +51,21 @@ public class PipelineJobTemplateVo extends BasePageVo {
     private Integer roundCount;
     @EntityField(name = "排序", type = ApiParamType.INTEGER)
     private Integer sort;
+    @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
+    private int isHasBuildTypeTool = 0;
+    @EntityField(name = "是否拥有DEPLOY类型的工具库工具", type = ApiParamType.INTEGER)
+    private int isHasDeployTypeTool = 0;
+    @EntityField(name = "场景列表")
+    private List<AutoexecScenarioVo> scenarioList;
+
+    public void addScenario(AutoexecScenarioVo scenarioVo) {
+        if (scenarioList == null) {
+            scenarioList = new ArrayList<>();
+        }
+        if (scenarioList.stream().noneMatch(d -> d.getId().equals(scenarioVo.getId()))) {
+            scenarioList.add(scenarioVo);
+        }
+    }
 
     public Long getId() {
         if (id == null) {
@@ -190,5 +207,29 @@ public class PipelineJobTemplateVo extends BasePageVo {
 
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    public int getIsHasBuildTypeTool() {
+        return isHasBuildTypeTool;
+    }
+
+    public void setIsHasBuildTypeTool(int isHasBuildTypeTool) {
+        this.isHasBuildTypeTool = isHasBuildTypeTool;
+    }
+
+    public int getIsHasDeployTypeTool() {
+        return isHasDeployTypeTool;
+    }
+
+    public void setIsHasDeployTypeTool(int isHasDeployTypeTool) {
+        this.isHasDeployTypeTool = isHasDeployTypeTool;
+    }
+
+    public List<AutoexecScenarioVo> getScenarioList() {
+        return scenarioList;
+    }
+
+    public void setScenarioList(List<AutoexecScenarioVo> scenarioList) {
+        this.scenarioList = scenarioList;
     }
 }

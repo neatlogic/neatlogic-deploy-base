@@ -5,13 +5,15 @@
 
 package codedriver.framework.deploy.dto.app;
 
+import codedriver.framework.auth.core.AuthActionChecker;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
+import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
 import codedriver.framework.restful.annotation.EntityField;
-import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author longrf
@@ -46,14 +48,17 @@ public class DeployAppSystemVo extends BaseEditorVo {
     private Integer isHasEnv = 0;
     @EntityField(name = "是否配置权限", type = ApiParamType.INTEGER)
     private Integer isConfigAuthority = 0;
+    @EntityField(name = "是否拥有所有数据权限", type = ApiParamType.INTEGER)
+    private Integer isHasAllAuthority;
 
-    @EntityField(name = "权限列表", type = ApiParamType.JSONARRAY)
+    @JSONField(serialize = false)
     private List<DeployAppConfigAuthorityVo> authList;
 
     @JSONField(serialize = false)
     private List<Long> envIdList;
 
-    JSONObject authInfo;
+    @EntityField(name = "权限动作列表", type = ApiParamType.JSONARRAY)
+    Set<String> authActionSet;
 
     public DeployAppSystemVo() {
 
@@ -190,11 +195,25 @@ public class DeployAppSystemVo extends BaseEditorVo {
         this.authList = authList;
     }
 
-    public JSONObject getAuthInfo() {
-        return authInfo;
+    public Set<String> getAuthActionSet() {
+        return authActionSet;
     }
 
-    public void setAuthInfo(JSONObject authInfo) {
-        this.authInfo = authInfo;
+    public void setAuthActionSet(Set<String> authActionSet) {
+        this.authActionSet = authActionSet;
+    }
+
+    public Integer getIsHasAllAuthority() {
+        if (isHasAllAuthority == null) {
+            if (AuthActionChecker.check(DEPLOY_MODIFY.class)) {
+                isHasAllAuthority = 1;
+            } else {
+                isHasAllAuthority = 0;
+            }
+        }
+        return isHasAllAuthority;
+    }
+    public void setIsHasAllAuthority(Integer isHasAllAuthority) {
+        this.isHasAllAuthority = isHasAllAuthority;
     }
 }

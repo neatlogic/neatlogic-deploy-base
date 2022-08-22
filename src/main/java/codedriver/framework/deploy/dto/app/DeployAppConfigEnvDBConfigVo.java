@@ -35,6 +35,8 @@ public class DeployAppConfigEnvDBConfigVo {
     private String account;
     @EntityField(name = "数据库名称", type = ApiParamType.STRING)
     private String dbResourceName;
+    @EntityField(name = "加密密码", type = ApiParamType.STRING)
+    private String passwordCipher;
     @EntityField(name = "执行用户列表", type = ApiParamType.JSONARRAY)
     private List<DeployAppConfigEnvDBConfigAccountVo> accountList;
     @EntityField(name = "高级设置", type = ApiParamType.JSONOBJECT)
@@ -156,5 +158,13 @@ public class DeployAppConfigEnvDBConfigVo {
 
     public void setConfigStr(String configStr) {
         this.configStr = configStr;
+    }
+
+    public String getPasswordCipher() {
+        return passwordCipher;
+    }
+
+    public void setPasswordCipher(String passwordCipher) {
+        this.passwordCipher = passwordCipher;
     }
 }

@@ -51,5 +51,4 @@ public class DeployPipelinePhaseVo extends AutoexecCombopPhaseVo {
     public void setSource(String source) {
         this.source = source;
     }
-
 }

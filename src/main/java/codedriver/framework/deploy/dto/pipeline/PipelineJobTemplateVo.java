@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PipelineJobTemplateVo extends BasePageVo {
@@ -49,6 +50,21 @@ public class PipelineJobTemplateVo extends BasePageVo {
     private Integer roundCount;
     @EntityField(name = "排序", type = ApiParamType.INTEGER)
     private Integer sort;
+    @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
+    private int isHasBuildTypeTool = 0;
+    @EntityField(name = "是否拥有DEPLOY类型的工具库工具", type = ApiParamType.INTEGER)
+    private int isHasDeployTypeTool = 0;
+    @EntityField(name = "场景列表")
+    private List<PipelineEnvScenarioVo> envScenarioList;
+
+    public void addEnvScenario(PipelineEnvScenarioVo envScenarioVo) {
+        if (envScenarioList == null) {
+            envScenarioList = new ArrayList<>();
+        }
+        if (envScenarioList.stream().noneMatch(d -> d.getEnvId().equals(envScenarioVo.getEnvId()) && d.getScenarioId().equals(envScenarioVo.getScenarioId()))) {
+            envScenarioList.add(envScenarioVo);
+        }
+    }
 
     public Long getId() {
         if (id == null) {
@@ -190,5 +206,29 @@ public class PipelineJobTemplateVo extends BasePageVo {
 
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    public int getIsHasBuildTypeTool() {
+        return isHasBuildTypeTool;
+    }
+
+    public void setIsHasBuildTypeTool(int isHasBuildTypeTool) {
+        this.isHasBuildTypeTool = isHasBuildTypeTool;
+    }
+
+    public int getIsHasDeployTypeTool() {
+        return isHasDeployTypeTool;
+    }
+
+    public void setIsHasDeployTypeTool(int isHasDeployTypeTool) {
+        this.isHasDeployTypeTool = isHasDeployTypeTool;
+    }
+
+    public List<PipelineEnvScenarioVo> getEnvScenarioList() {
+        return envScenarioList;
+    }
+
+    public void setEnvScenarioList(List<PipelineEnvScenarioVo> envScenarioList) {
+        this.envScenarioList = envScenarioList;
     }
 }

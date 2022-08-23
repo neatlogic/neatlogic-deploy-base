@@ -14,6 +14,13 @@ public class DeployAppEnvAutoConfigKeyValueVo {
     @EntityField(name = "值", type = ApiParamType.LONG)
     private String value;
 
+    public DeployAppEnvAutoConfigKeyValueVo() {
+    }
+
+    public DeployAppEnvAutoConfigKeyValueVo(String key) {
+        this.key = key;
+    }
+
     public String getKey() {
         return key;
     }

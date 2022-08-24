@@ -55,6 +55,11 @@ public class DeployAppConfigVo extends BaseEditorVo {
         this.appModuleId = moduleId;
         this.envId = envId;
     }
+    public DeployAppConfigVo(Long appSystemId, Long moduleId, DeployPipelineConfigVo config) {
+        this.appSystemId = appSystemId;
+        this.appModuleId = moduleId;
+        this.config = config;
+    }
 
     public Long getId() {
         if (id == null) {

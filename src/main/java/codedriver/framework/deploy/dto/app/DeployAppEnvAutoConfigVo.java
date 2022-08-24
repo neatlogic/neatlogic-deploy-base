@@ -48,6 +48,13 @@ public class DeployAppEnvAutoConfigVo extends BaseEditorVo {
         this.instanceId = instanceId;
     }
 
+    public DeployAppEnvAutoConfigVo(Long appSystemId, Long appModuleId, Long envId, List<DeployAppEnvAutoConfigKeyValueVo> keyValueList) {
+        this.appSystemId = appSystemId;
+        this.appModuleId = appModuleId;
+        this.envId = envId;
+        this.keyValueList = keyValueList;
+    }
+
     public Long getAppSystemId() {
         return appSystemId;
     }

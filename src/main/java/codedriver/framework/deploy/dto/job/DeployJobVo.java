@@ -295,4 +295,12 @@ public class DeployJobVo extends AutoexecJobVo {
     public void setModuleList(List<DeployJobModuleVo> moduleList) {
         this.moduleList = moduleList;
     }
+
+    @Override
+    public String getName() {
+        if(StringUtils.isBlank(super.getName())) {
+            return appSystemAbbrName + "/" + appModuleAbbrName + "/" + envName + (StringUtils.isBlank(version) ? StringUtils.EMPTY : "/" + version);
+        }
+        return super.getName();
+    }
 }

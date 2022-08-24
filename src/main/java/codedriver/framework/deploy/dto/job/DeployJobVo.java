@@ -33,10 +33,14 @@ public class DeployJobVo extends AutoexecJobVo {
     private Long appSystemId;
     @EntityField(name = "应用资产名称", type = ApiParamType.STRING)
     private String appSystemName;
+    @EntityField(name = "应用资产简称", type = ApiParamType.STRING)
+    private String appSystemAbbrName;
     @EntityField(name = "系统模块id", type = ApiParamType.LONG)
     private Long appModuleId;
     @EntityField(name = "系统模块名称", type = ApiParamType.STRING)
     private String appModuleName;
+    @EntityField(name = "系统模块简称", type = ApiParamType.STRING)
+    private String appModuleAbbrName;
     @EntityField(name = "环境资产id", type = ApiParamType.LONG)
     private Long envId;
     @EntityField(name = "环境资产名称", type = ApiParamType.STRING)
@@ -68,6 +72,8 @@ public class DeployJobVo extends AutoexecJobVo {
     List<String> authorityActionList; //权限列表
     @JSONField(serialize = false)
     private List<String> authUuidList; //用户、分组、角色的uuid列表
+    @JSONField(serialize = false)
+    private List<DeployJobModuleVo> moduleList;
 
     public DeployJobVo() {
         this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(),JobSource.BATCHDEPLOY.getValue()));
@@ -100,12 +106,24 @@ public class DeployJobVo extends AutoexecJobVo {
         this.appSystemName = appSystemName;
     }
 
+    public void setSysName(String sysName) {
+        this.appSystemName = sysName;
+    }
+
     public String getAppModuleName() {
         return appModuleName;
     }
 
     public void setAppModuleName(String appModuleName) {
         this.appModuleName = appModuleName;
+    }
+
+    public String getAppModuleAbbrName() {
+        return appModuleAbbrName;
+    }
+
+    public void setAppModuleAbbrName(String appModuleAbbrName) {
+        this.appModuleAbbrName = appModuleAbbrName;
     }
 
     public String getEnvName() {
@@ -260,5 +278,21 @@ public class DeployJobVo extends AutoexecJobVo {
 
     public void setVersionId(Long versionId) {
         this.versionId = versionId;
+    }
+
+    public String getAppSystemAbbrName() {
+        return appSystemAbbrName;
+    }
+
+    public void setAppSystemAbbrName(String appSystemAbbrName) {
+        this.appSystemAbbrName = appSystemAbbrName;
+    }
+
+    public List<DeployJobModuleVo> getModuleList() {
+        return moduleList;
+    }
+
+    public void setModuleList(List<DeployJobModuleVo> moduleList) {
+        this.moduleList = moduleList;
     }
 }

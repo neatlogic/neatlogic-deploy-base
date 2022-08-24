@@ -38,6 +38,8 @@ public class DeployVersionVo extends BaseEditorVo {
     private String appModuleName;
     @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
     private Integer isFreeze;
+    @EntityField(name = "备注", type = ApiParamType.STRING)
+    private String description;
     @EntityField(name = "仓库类型", type = ApiParamType.STRING)
     private String repoType;
     @EntityField(name = "仓库地址", type = ApiParamType.STRING)
@@ -154,6 +156,13 @@ public class DeployVersionVo extends BaseEditorVo {
         this.isFreeze = isFreeze;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public List<Long> getAppSystemIdList() {
         return appSystemIdList;

@@ -5,7 +5,6 @@
 
 package codedriver.framework.deploy.dto.pipeline;
 
-import codedriver.framework.autoexec.dto.scenario.AutoexecScenarioVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BasePageVo;
 import codedriver.framework.restful.annotation.EntityField;
@@ -56,14 +55,14 @@ public class PipelineJobTemplateVo extends BasePageVo {
     @EntityField(name = "是否拥有DEPLOY类型的工具库工具", type = ApiParamType.INTEGER)
     private int isHasDeployTypeTool = 0;
     @EntityField(name = "场景列表")
-    private List<AutoexecScenarioVo> scenarioList;
+    private List<PipelineEnvScenarioVo> envScenarioList;
 
-    public void addScenario(AutoexecScenarioVo scenarioVo) {
-        if (scenarioList == null) {
-            scenarioList = new ArrayList<>();
+    public void addEnvScenario(PipelineEnvScenarioVo envScenarioVo) {
+        if (envScenarioList == null) {
+            envScenarioList = new ArrayList<>();
         }
-        if (scenarioList.stream().noneMatch(d -> d.getId().equals(scenarioVo.getId()))) {
-            scenarioList.add(scenarioVo);
+        if (envScenarioList.stream().noneMatch(d -> d.getEnvId().equals(envScenarioVo.getEnvId()) && d.getScenarioId().equals(envScenarioVo.getScenarioId()))) {
+            envScenarioList.add(envScenarioVo);
         }
     }
 
@@ -225,11 +224,11 @@ public class PipelineJobTemplateVo extends BasePageVo {
         this.isHasDeployTypeTool = isHasDeployTypeTool;
     }
 
-    public List<AutoexecScenarioVo> getScenarioList() {
-        return scenarioList;
+    public List<PipelineEnvScenarioVo> getEnvScenarioList() {
+        return envScenarioList;
     }
 
-    public void setScenarioList(List<AutoexecScenarioVo> scenarioList) {
-        this.scenarioList = scenarioList;
+    public void setEnvScenarioList(List<PipelineEnvScenarioVo> envScenarioList) {
+        this.envScenarioList = envScenarioList;
     }
 }

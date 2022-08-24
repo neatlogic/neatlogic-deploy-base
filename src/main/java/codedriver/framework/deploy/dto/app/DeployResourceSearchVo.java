@@ -29,8 +29,6 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
     private Long envId;
 
     @JSONField(serialize = false)
-    private List<Long> notInIdList;
-    @JSONField(serialize = false)
     private List<Long> appSystemIdList;
     @JSONField(serialize = false)
     private Integer isHasAllAuthority; //是否拥有发布管理员权限
@@ -73,14 +71,6 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
     @Override
     public void setEnvId(Long envId) {
         this.envId = envId;
-    }
-
-    public List<Long> getNotInIdList() {
-        return notInIdList;
-    }
-
-    public void setNotInIdList(List<Long> notInIdList) {
-        this.notInIdList = notInIdList;
     }
 
     @Override

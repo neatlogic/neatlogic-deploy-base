@@ -43,6 +43,8 @@ public class DeployJobVo extends AutoexecJobVo {
     private String envName;
     @EntityField(name = "版本", type = ApiParamType.STRING)
     private String version;
+    @EntityField(name = "版本Id", type = ApiParamType.LONG)
+    private Long versionId;
     @EntityField(name = "编译号", type = ApiParamType.INTEGER)
     private Integer buildNo;
     @EntityField(name = "编译|构造的runner_id", type = ApiParamType.LONG)
@@ -250,5 +252,13 @@ public class DeployJobVo extends AutoexecJobVo {
 
     public void setIsCanGroupExecute(Integer isCanGroupExecute) {
         this.isCanGroupExecute = isCanGroupExecute;
+    }
+
+    public Long getVersionId() {
+        return versionId;
+    }
+
+    public void setVersionId(Long versionId) {
+        this.versionId = versionId;
     }
 }

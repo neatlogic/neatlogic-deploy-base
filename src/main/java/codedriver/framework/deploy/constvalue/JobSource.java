@@ -17,7 +17,8 @@ import java.util.List;
  */
 public enum JobSource implements IAutoexecJobSource {
     DEPLOY("发布", "deploy"),
-    BATCHDEPLOY("批量发布", "batchdeploy");
+    BATCHDEPLOY("批量发布", "batchdeploy"),
+    PIPELINE("超级流水线", "pipeline");
     private final String text;
     private final String value;
 

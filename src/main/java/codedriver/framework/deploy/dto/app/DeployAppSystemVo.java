@@ -239,13 +239,7 @@ public class DeployAppSystemVo extends BaseEditorVo {
         //循环拥有的权限，将其余散存的权限拼接
         for (DeployAppConfigAuthorityActionVo actionVo : authActionVoList) {
             if (!allActionTypeList.contains(actionVo.getType())) {
-                if (StringUtils.equals(actionVo.getType(), DeployAppConfigActionType.OPERATION.getValue())) {
-                    authActionSet.add(DeployAppConfigActionType.OPERATION.getValue() + "#" + actionVo.getAction());
-                } else if (StringUtils.equals(actionVo.getType(), DeployAppConfigActionType.ENV.getValue())) {
-                    authActionSet.add(DeployAppConfigActionType.ENV.getValue() + "#" + actionVo.getAction());
-                } else if (StringUtils.equals(actionVo.getType(), DeployAppConfigActionType.SCENARIO.getValue())) {
-                    authActionSet.add(DeployAppConfigActionType.SCENARIO.getValue() + "#" + actionVo.getAction());
-                }
+                authActionSet.add(actionVo.getType() + "#" + actionVo.getAction());
             }
         }
         return authActionSet;

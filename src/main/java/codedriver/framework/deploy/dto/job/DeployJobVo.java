@@ -18,9 +18,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.util.DigestUtils;
 
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -57,10 +55,6 @@ public class DeployJobVo extends AutoexecJobVo {
     private DeployPipelineConfigVo pipeLineConfig;
     @EntityField(name = "是否有执行组权限", type = ApiParamType.INTEGER)
     private Integer isCanGroupExecute = 0;
-    @JSONField(serialize = false)
-    private String pipeLineConfigStr;
-    @JSONField(serialize = false)
-    private String configHash;
     @EntityField(name = "泳道列表", type = ApiParamType.JSONARRAY)
     private List<LaneVo> laneList;
     @EntityField(name = "授权列表", type = ApiParamType.JSONARRAY)
@@ -184,21 +178,6 @@ public class DeployJobVo extends AutoexecJobVo {
         this.runnerMapId = runnerMapId;
     }
 
-    public void setPipeLineConfig(DeployPipelineConfigVo pipeLineConfig) {
-        this.pipeLineConfig = pipeLineConfig;
-    }
-
-    public String getPipeLineConfigStr() {
-        if (pipeLineConfigStr == null && pipeLineConfig != null) {
-            pipeLineConfigStr = JSONObject.toJSONString(pipeLineConfig);
-        }
-        return pipeLineConfigStr;
-    }
-
-    public void setPipeLineConfigStr(String pipeLineConfigStr) {
-        this.pipeLineConfigStr = pipeLineConfigStr;
-    }
-
     public Integer getBuildNo() {
         return buildNo;
     }
@@ -209,17 +188,6 @@ public class DeployJobVo extends AutoexecJobVo {
 
     public DeployPipelineConfigVo getPipeLineConfig() {
         return pipeLineConfig;
-    }
-
-    public String getConfigHash() {
-        if (StringUtils.isBlank(configHash) && StringUtils.isNotBlank(pipeLineConfigStr)) {
-            configHash = DigestUtils.md5DigestAsHex(pipeLineConfigStr.getBytes(StandardCharsets.UTF_8));
-        }
-        return configHash;
-    }
-
-    public void setConfigHash(String configHash) {
-        this.configHash = configHash;
     }
 
     public Integer getIsHasAllAuthority() {

@@ -53,6 +53,8 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     @JSONField(serialize = false)
     private List<DeployAppConfigAuthorityVo> authList;
+    @JSONField(serialize = false)
+    private List<DeployAppConfigAuthorityActionVo> authActionVoList;
 
     @JSONField(serialize = false)
     private List<Long> envIdList;
@@ -193,6 +195,14 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setAuthList(List<DeployAppConfigAuthorityVo> authList) {
         this.authList = authList;
+    }
+
+    public List<DeployAppConfigAuthorityActionVo> getAuthActionVoList() {
+        return authActionVoList;
+    }
+
+    public void setAuthActionVoList(List<DeployAppConfigAuthorityActionVo> authActionVoList) {
+        this.authActionVoList = authActionVoList;
     }
 
     public Set<String> getAuthActionSet() {

@@ -3,6 +3,7 @@ package codedriver.framework.deploy.dto.app;
 import codedriver.framework.cmdb.dto.resourcecenter.entity.AppModuleVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
 
@@ -22,6 +23,11 @@ public class DeployAppEnvironmentVo {
     private Integer isDeletable;
     @EntityField(name = "是否配置", type = ApiParamType.INTEGER)
     private Integer isConfig;
+
+    @JSONField(serialize = false)
+    private List<String> dbSchemaList;
+    @JSONField(serialize = false)
+    private List<String> autoCfgKeyList;
 
     public DeployAppEnvironmentVo(Long id, String name) {
         this.id = id;
@@ -68,5 +74,21 @@ public class DeployAppEnvironmentVo {
 
     public void setIsConfig(Integer isConfig) {
         this.isConfig = isConfig;
+    }
+
+    public List<String> getDbSchemaList() {
+        return dbSchemaList;
+    }
+
+    public void setDbSchemaList(List<String> dbSchemaList) {
+        this.dbSchemaList = dbSchemaList;
+    }
+
+    public List<String> getAutoCfgKeyList() {
+        return autoCfgKeyList;
+    }
+
+    public void setAutoCfgKeyList(List<String> autoCfgKeyList) {
+        this.autoCfgKeyList = autoCfgKeyList;
     }
 }

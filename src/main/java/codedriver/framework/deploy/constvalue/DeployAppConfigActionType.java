@@ -85,7 +85,7 @@ public enum DeployAppConfigActionType {
     }
 
     /**
-     * 批量将带有operation#、scenario#、env# 前缀的转为 DeployAppConfigAuthorityActionVo类
+     * 批量将带有operation#、scenario#、env# 前缀去掉
      *
      * @param paramActionList 权限信息字符串列表
      * @return 权限actionVo列表
@@ -107,5 +107,20 @@ public enum DeployAppConfigActionType {
             }
         }
         return returnSet;
+    }
+
+
+    /**
+     * 将带有operation#、scenario#、env# 前缀去掉
+     *
+     * @param paramAction 权限信息字符串
+     * @return 权限action
+     */
+    public static String getAction(String paramAction) {
+        String[] actionString = paramAction.split("#");
+        if (actionString.length < 2) {
+            throw new DeployAppAuthActionIrregularException(paramAction);
+        }
+        return actionString[1];
     }
 }

@@ -60,6 +60,9 @@ public class DeployJobVo extends AutoexecJobVo {
     @EntityField(name = "授权列表", type = ApiParamType.JSONARRAY)
     private List<DeployJobAuthVo> authList;
 
+    @EntityField(name = "超级流水线id", type = ApiParamType.LONG)
+    private Long pipelineId;
+
     @JSONField(serialize = false)
     private Integer isHasAllAuthority; //是否拥有发布管理员权限
     @JSONField(serialize = false)
@@ -70,7 +73,7 @@ public class DeployJobVo extends AutoexecJobVo {
     private List<DeployJobModuleVo> moduleList;
 
     public DeployJobVo() {
-        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(),JobSource.BATCHDEPLOY.getValue()));
+        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue()));
     }
 
     public List<DeployJobAuthVo> getAuthList() {
@@ -88,7 +91,7 @@ public class DeployJobVo extends AutoexecJobVo {
         envId = jsonObj.getLong("envId");
         version = jsonObj.getString("version");
         buildNo = jsonObj.getInteger("buildNo");
-        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(),JobSource.BATCHDEPLOY.getValue()));
+        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue()));
     }
 
 
@@ -264,9 +267,17 @@ public class DeployJobVo extends AutoexecJobVo {
         this.moduleList = moduleList;
     }
 
+    public Long getPipelineId() {
+        return pipelineId;
+    }
+
+    public void setPipelineId(Long pipelineId) {
+        this.pipelineId = pipelineId;
+    }
+
     @Override
     public String getName() {
-        if(StringUtils.isBlank(super.getName())) {
+        if (StringUtils.isBlank(super.getName())) {
             return appSystemAbbrName + "/" + appModuleAbbrName + "/" + envName + (StringUtils.isBlank(version) ? StringUtils.EMPTY : "/" + version);
         }
         return super.getName();

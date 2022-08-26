@@ -5,12 +5,18 @@
 
 package codedriver.framework.deploy.dto.app;
 
+import codedriver.framework.auth.core.AuthActionChecker;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
+import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
+import codedriver.framework.deploy.constvalue.DeployAppConfigActionType;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author longrf
@@ -45,9 +51,19 @@ public class DeployAppSystemVo extends BaseEditorVo {
     private Integer isHasEnv = 0;
     @EntityField(name = "是否配置权限", type = ApiParamType.INTEGER)
     private Integer isConfigAuthority = 0;
+    @EntityField(name = "是否拥有所有数据权限", type = ApiParamType.INTEGER)
+    private Integer isHasAllAuthority;
+
+    @JSONField(serialize = false)
+    private List<DeployAppConfigAuthorityVo> authList;
+    @JSONField(serialize = false)
+    private List<DeployAppConfigAuthorityActionVo> authActionVoList;
 
     @JSONField(serialize = false)
     private List<Long> envIdList;
+
+    @EntityField(name = "权限动作列表", type = ApiParamType.JSONARRAY)
+    Set<String> authActionSet;
 
     public DeployAppSystemVo() {
 
@@ -174,5 +190,77 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setEnvIdList(List<Long> envIdList) {
         this.envIdList = envIdList;
+    }
+
+    public List<DeployAppConfigAuthorityVo> getAuthList() {
+        return authList;
+    }
+
+    public void setAuthList(List<DeployAppConfigAuthorityVo> authList) {
+        this.authList = authList;
+    }
+
+    public List<DeployAppConfigAuthorityActionVo> getAuthActionVoList() {
+        return authActionVoList;
+    }
+
+    public void setAuthActionVoList(List<DeployAppConfigAuthorityActionVo> authActionVoList) {
+        this.authActionVoList = authActionVoList;
+    }
+
+    public Set<String> getAuthActionSet() {
+        if (CollectionUtils.isNotEmpty(authActionSet)) {
+            return authActionSet;
+        }
+        if (CollectionUtils.isEmpty(authActionVoList)) {
+            return authActionSet;
+        }
+        authActionSet = new HashSet<>();
+       /* 拼接权限数据结构：
+          1、循环权限类型，将可能拥有一个类型所有权限的类型优先拼接
+          2、循环已有权限，将其余散存的权限拼接*/
+
+        // map<权限类型，权限列表>
+        Map<String, List<DeployAppConfigAuthorityActionVo>> authTypeAuthActionListMap = authActionVoList.stream().collect(Collectors.groupingBy(DeployAppConfigAuthorityActionVo::getType));
+
+        List<String> allActionTypeList = new ArrayList<>();
+        //循环权限类型
+        for (String actionType : DeployAppConfigActionType.getValueList()) {
+            List<DeployAppConfigAuthorityActionVo> actionTypeActionVoList = authTypeAuthActionListMap.get(actionType);
+            if (CollectionUtils.isEmpty(actionTypeActionVoList)) {
+                continue;
+            }
+            //拥有当前类型的所有权限
+            if (CollectionUtils.isNotEmpty(actionTypeActionVoList.stream().filter(e -> StringUtils.equals(e.getAction(), "all")).collect(Collectors.toList()))) {
+                authActionSet.add(actionType + "#all");
+                allActionTypeList.add(actionType);
+            }
+        }
+        //循环拥有的权限，将其余散存的权限拼接
+        for (DeployAppConfigAuthorityActionVo actionVo : authActionVoList) {
+            if (!allActionTypeList.contains(actionVo.getType())) {
+                authActionSet.add(actionVo.getType() + "#" + actionVo.getAction());
+            }
+        }
+        return authActionSet;
+    }
+
+    public void setAuthActionSet(Set<String> authActionSet) {
+        this.authActionSet = authActionSet;
+    }
+
+    public Integer getIsHasAllAuthority() {
+        if (isHasAllAuthority == null) {
+            if (AuthActionChecker.check(DEPLOY_MODIFY.class)) {
+                isHasAllAuthority = 1;
+            } else {
+                isHasAllAuthority = 0;
+            }
+        }
+        return isHasAllAuthority;
+    }
+
+    public void setIsHasAllAuthority(Integer isHasAllAuthority) {
+        this.isHasAllAuthority = isHasAllAuthority;
     }
 }

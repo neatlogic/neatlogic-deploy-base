@@ -8,6 +8,8 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 
 public class DeployAppConfigAuthorityActionVo {
+    private static final long serialVersionUID = 3794860793315891800L;
+
     @EntityField(name = "授权操作", type = ApiParamType.STRING)
     private String action;
     @EntityField(name = "授权操作类型", type = ApiParamType.STRING)

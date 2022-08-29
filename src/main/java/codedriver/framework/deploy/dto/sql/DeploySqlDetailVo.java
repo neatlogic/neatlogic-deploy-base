@@ -31,6 +31,8 @@ public class DeploySqlDetailVo extends BaseEditorVo {
     private String runnerHost;
     @EntityField(name = "runner 端口", type = ApiParamType.INTEGER)
     private Integer runnerPort;
+    @EntityField(name = "runner url", type = ApiParamType.STRING)
+    private String runnerUrl;
     @EntityField(name = "sysId", type = ApiParamType.LONG)
     private Long sysId;
     @EntityField(name = "moduleId", type = ApiParamType.LONG)
@@ -180,6 +182,14 @@ public class DeploySqlDetailVo extends BaseEditorVo {
 
     public void setRunnerPort(Integer runnerPort) {
         this.runnerPort = runnerPort;
+    }
+
+    public String getRunnerUrl() {
+        return runnerUrl;
+    }
+
+    public void setRunnerUrl(String runnerUrl) {
+        this.runnerUrl = runnerUrl;
     }
 
     public Long getSysId() {

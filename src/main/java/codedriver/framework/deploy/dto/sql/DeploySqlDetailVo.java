@@ -1,6 +1,7 @@
 package codedriver.framework.deploy.dto.sql;
 
 import codedriver.framework.autoexec.constvalue.JobNodeStatus;
+import codedriver.framework.autoexec.dto.ISqlDetail;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
@@ -17,7 +18,7 @@ import java.util.Objects;
  * @author longrf
  * @date 2022/4/27 11:29 上午
  */
-public class DeploySqlDetailVo extends BaseEditorVo {
+public class DeploySqlDetailVo extends BaseEditorVo implements ISqlDetail {
 
     private static final long serialVersionUID = -3906325036032471623L;
 

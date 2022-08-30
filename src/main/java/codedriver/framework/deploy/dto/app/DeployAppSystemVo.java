@@ -53,6 +53,9 @@ public class DeployAppSystemVo extends BaseEditorVo {
     private Integer isConfigAuthority = 0;
     @EntityField(name = "是否拥有所有数据权限", type = ApiParamType.INTEGER)
     private Integer isHasAllAuthority;
+    @EntityField(name = "是否拥有资源锁", type = ApiParamType.INTEGER)
+    private Integer isHasResourceLock = 0;
+
 
     @JSONField(serialize = false)
     private List<DeployAppConfigAuthorityVo> authList;
@@ -262,5 +265,13 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setIsHasAllAuthority(Integer isHasAllAuthority) {
         this.isHasAllAuthority = isHasAllAuthority;
+    }
+
+    public Integer getIsHasResourceLock() {
+        return isHasResourceLock;
+    }
+
+    public void setIsHasResourceLock(Integer isHasResourceLock) {
+        this.isHasResourceLock = isHasResourceLock;
     }
 }

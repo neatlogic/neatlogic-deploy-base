@@ -19,7 +19,7 @@ public class DeployAppModuleVo {
     @EntityField(name = "简称", type = ApiParamType.STRING)
     private String abbrName;
     @EntityField(name = "维护窗口", type = ApiParamType.STRING)
-    private String maintenanceWindow;
+    private List<String> maintenanceWindow;
     @EntityField(name = "备注", type = ApiParamType.STRING)
     private String description;
     @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
@@ -116,11 +116,11 @@ public class DeployAppModuleVo {
         this.isHasDeployTypeTool = isHasDeployTypeTool;
     }
 
-    public String getMaintenanceWindow() {
+    public List<String> getMaintenanceWindow() {
         return maintenanceWindow;
     }
 
-    public void setMaintenanceWindow(String maintenanceWindow) {
+    public void setMaintenanceWindow(List<String> maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
     }
 

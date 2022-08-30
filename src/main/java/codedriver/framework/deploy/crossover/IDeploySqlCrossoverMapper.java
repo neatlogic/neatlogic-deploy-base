@@ -1,7 +1,7 @@
 package codedriver.framework.deploy.crossover;
 
 import codedriver.framework.crossover.ICrossoverService;
-import codedriver.framework.deploy.dto.sql.DeploySqlDetailVo;
+import codedriver.framework.deploy.dto.sql.DeploySqlNodeDetailVo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface IDeploySqlCrossoverMapper extends ICrossoverService {
 
-    List<DeploySqlDetailVo> getDeploySqlDetailList(@Param("sqlFileDetailVoList") List<DeploySqlDetailVo> sqlFileDetailVoList);
+    List<DeploySqlNodeDetailVo> getDeploySqlDetailList(@Param("sqlFileDetailVoList") List<DeploySqlNodeDetailVo> sqlFileDetailVoList);
 
     List<Long> getDeployJobSqlIdListByJobIdAndJobPhaseNameList(@Param("jobId") Long jobId, @Param("jobPhaseNameList") List<String> jobPhaseNameList);
 

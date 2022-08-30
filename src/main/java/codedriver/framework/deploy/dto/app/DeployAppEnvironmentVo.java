@@ -25,9 +25,9 @@ public class DeployAppEnvironmentVo {
     private Integer isConfig;
 
     @JSONField(serialize = false)
-    private List<String> dbSchemaList;
+    private List<DeployAppConfigEnvDBConfigVo> dbSchemaList;
     @JSONField(serialize = false)
-    private List<String> autoCfgKeyList;
+    private List<DeployAppEnvAutoConfigKeyValueVo> autoCfgKeyValueList;
 
     public DeployAppEnvironmentVo(Long id, String name) {
         this.id = id;
@@ -76,19 +76,19 @@ public class DeployAppEnvironmentVo {
         this.isConfig = isConfig;
     }
 
-    public List<String> getDbSchemaList() {
+    public List<DeployAppConfigEnvDBConfigVo> getDbSchemaList() {
         return dbSchemaList;
     }
 
-    public void setDbSchemaList(List<String> dbSchemaList) {
+    public void setDbSchemaList(List<DeployAppConfigEnvDBConfigVo> dbSchemaList) {
         this.dbSchemaList = dbSchemaList;
     }
 
-    public List<String> getAutoCfgKeyList() {
-        return autoCfgKeyList;
+    public List<DeployAppEnvAutoConfigKeyValueVo> getAutoCfgKeyValueList() {
+        return autoCfgKeyValueList;
     }
 
-    public void setAutoCfgKeyList(List<String> autoCfgKeyList) {
-        this.autoCfgKeyList = autoCfgKeyList;
+    public void setAutoCfgKeyValueList(List<DeployAppEnvAutoConfigKeyValueVo> autoCfgKeyValueList) {
+        this.autoCfgKeyValueList = autoCfgKeyValueList;
     }
 }

@@ -61,6 +61,13 @@ public class DeployAppConfigVo extends BaseEditorVo {
         this.config = config;
     }
 
+    public DeployAppConfigVo(Long appSystemId, Long moduleId, Long envId, DeployPipelineConfigVo config) {
+        this.appSystemId = appSystemId;
+        this.appModuleId = moduleId;
+        this.envId = envId;
+        this.config = config;
+    }
+
     public Long getId() {
         if (id == null) {
             id = SnowflakeUtil.uniqueLong();

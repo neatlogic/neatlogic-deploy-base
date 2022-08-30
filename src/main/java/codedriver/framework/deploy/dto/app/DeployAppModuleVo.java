@@ -2,6 +2,7 @@ package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
 
@@ -37,6 +38,8 @@ public class DeployAppModuleVo {
     @EntityField(name = "是否有配置执行器（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasRunner = 0;
 
+    @JSONField(serialize = false)
+    private List<DeployAppEnvironmentVo> envList;
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
 
@@ -151,5 +154,13 @@ public class DeployAppModuleVo {
 
     public void setIsHasRunner(Integer isHasRunner) {
         this.isHasRunner = isHasRunner;
+    }
+
+    public List<DeployAppEnvironmentVo> getEnvList() {
+        return envList;
+    }
+
+    public void setEnvList(List<DeployAppEnvironmentVo> envList) {
+        this.envList = envList;
     }
 }

@@ -56,6 +56,14 @@ public class DeployAppConfigEnvDBConfigVo {
         this.dbSchema = dbSchema;
     }
 
+    public DeployAppConfigEnvDBConfigVo(Long appSystemId, Long appModuleId, Long envId, String dbSchema, JSONObject config) {
+        this.appSystemId = appSystemId;
+        this.appModuleId = appModuleId;
+        this.envId = envId;
+        this.dbSchema = dbSchema;
+        this.config = config;
+    }
+
     public Long getAppSystemId() {
         return appSystemId;
     }

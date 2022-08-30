@@ -1,7 +1,7 @@
 package codedriver.framework.deploy.dto.sql;
 
 import codedriver.framework.autoexec.constvalue.JobNodeStatus;
-import codedriver.framework.autoexec.dto.ISqlDetail;
+import codedriver.framework.autoexec.dto.ISqlNodeDetail;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
@@ -18,7 +18,7 @@ import java.util.Objects;
  * @author longrf
  * @date 2022/4/27 11:29 上午
  */
-public class DeploySqlDetailVo extends BaseEditorVo implements ISqlDetail {
+public class DeploySqlNodeDetailVo extends BaseEditorVo implements ISqlNodeDetail {
 
     private static final long serialVersionUID = -3906325036032471623L;
 
@@ -87,7 +87,7 @@ public class DeploySqlDetailVo extends BaseEditorVo implements ISqlDetail {
     private List<String> sqlFiles;
 
 
-    public DeploySqlDetailVo(JSONObject paramObj) {
+    public DeploySqlNodeDetailVo(JSONObject paramObj) {
         this.sysId = (paramObj.getLong("sysId"));
         this.moduleId = (paramObj.getLong("moduleId"));
         this.envId = (paramObj.getLong("envId"));
@@ -112,7 +112,7 @@ public class DeploySqlDetailVo extends BaseEditorVo implements ISqlDetail {
         }
     }
 
-    public DeploySqlDetailVo(Long sysId, Long envId, Long moduleId, String version, String sqlFile, Long jobId, String phaseName, Long resourceId) {
+    public DeploySqlNodeDetailVo(Long sysId, Long envId, Long moduleId, String version, String sqlFile, Long jobId, String phaseName, Long resourceId) {
         this.sysId = sysId;
         this.moduleId = moduleId;
         this.envId = envId;
@@ -123,14 +123,14 @@ public class DeploySqlDetailVo extends BaseEditorVo implements ISqlDetail {
         this.resourceId = resourceId;
     }
 
-    public DeploySqlDetailVo(Long sysId, Long moduleId, Long envId, String version) {
+    public DeploySqlNodeDetailVo(Long sysId, Long moduleId, Long envId, String version) {
         this.sysId = sysId;
         this.moduleId = moduleId;
         this.envId = envId;
         this.version = version;
     }
 
-    public DeploySqlDetailVo() {
+    public DeploySqlNodeDetailVo() {
     }
 
     public Long getId() {

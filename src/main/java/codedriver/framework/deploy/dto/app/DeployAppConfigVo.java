@@ -25,10 +25,14 @@ public class DeployAppConfigVo extends BaseEditorVo {
     private Long appSystemId;
     @EntityField(name = "应用系统名", type = ApiParamType.STRING)
     private String appSystemName;
+    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    private String appSystemAbbrName;
     @EntityField(name = "模块ID", type = ApiParamType.LONG)
     private Long appModuleId = 0L;
     @EntityField(name = "模块名", type = ApiParamType.STRING)
     private String appModuleName;
+    @EntityField(name = "模块简称", type = ApiParamType.STRING)
+    private String appModuleAbbrName;
     @EntityField(name = "环境ID", type = ApiParamType.LONG)
     private Long envId = 0L;
     @EntityField(name = "环境名", type = ApiParamType.STRING)
@@ -147,6 +151,22 @@ public class DeployAppConfigVo extends BaseEditorVo {
         this.appModuleName = appModuleName;
     }
 
+    public String getAppSystemAbbrName() {
+        return appSystemAbbrName;
+    }
+
+    public void setAppSystemAbbrName(String appSystemAbbrName) {
+        this.appSystemAbbrName = appSystemAbbrName;
+    }
+
+    public String getAppModuleAbbrName() {
+        return appModuleAbbrName;
+    }
+
+    public void setAppModuleAbbrName(String appModuleAbbrName) {
+        this.appModuleAbbrName = appModuleAbbrName;
+    }
+
     public String getEnvName() {
         return envName;
     }
@@ -158,11 +178,11 @@ public class DeployAppConfigVo extends BaseEditorVo {
     public String getPath() {
         if (StringUtils.isBlank(path)) {
             List<String> list = new ArrayList<>();
-            if (StringUtils.isNotBlank(appSystemName)) {
-                list.add(appSystemName);
+            if (StringUtils.isNotBlank(appSystemAbbrName)) {
+                list.add(appSystemAbbrName);
             }
-            if (StringUtils.isNotBlank(appModuleName)) {
-                list.add(appModuleName);
+            if (StringUtils.isNotBlank(appModuleAbbrName)) {
+                list.add(appModuleAbbrName);
             }
             if (StringUtils.isNotBlank(envName)) {
                 list.add(envName);

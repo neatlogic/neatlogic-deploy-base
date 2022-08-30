@@ -31,7 +31,7 @@ public class DeployAppSystemVo extends BaseEditorVo {
     @EntityField(name = "简称", type = ApiParamType.STRING)
     private String abbrName;
     @EntityField(name = "维护窗口", type = ApiParamType.STRING)
-    private String maintenanceWindow;
+    private List<String> maintenanceWindow;
     @EntityField(name = "备注", type = ApiParamType.STRING)
     private String description;
     @EntityField(name = "是否被收藏（1：收藏，0：取消收藏）", type = ApiParamType.INTEGER)
@@ -104,11 +104,11 @@ public class DeployAppSystemVo extends BaseEditorVo {
         this.abbrName = abbrName;
     }
 
-    public String getMaintenanceWindow() {
+    public List<String> getMaintenanceWindow() {
         return maintenanceWindow;
     }
 
-    public void setMaintenanceWindow(String maintenanceWindow) {
+    public void setMaintenanceWindow(List<String> maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
     }
 

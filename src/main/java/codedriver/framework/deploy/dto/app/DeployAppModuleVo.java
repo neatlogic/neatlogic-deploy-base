@@ -2,6 +2,7 @@ package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
 
@@ -18,13 +19,15 @@ public class DeployAppModuleVo {
     @EntityField(name = "简称", type = ApiParamType.STRING)
     private String abbrName;
     @EntityField(name = "维护窗口", type = ApiParamType.STRING)
-    private String maintenanceWindow;
+    private List<String> maintenanceWindow;
     @EntityField(name = "备注", type = ApiParamType.STRING)
     private String description;
     @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
     @EntityField(name = "是否有配置（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isConfig;
+    @EntityField(name = "系统id", type = ApiParamType.LONG)
+    private Long appSystemId;
     //发布作业：当前场景是否有BUILD分类的工具，前端需要根据此标识调用 不同的选择版本下拉接口
     @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
     private int isHasBuildTypeTool = 0;
@@ -37,6 +40,8 @@ public class DeployAppModuleVo {
     @EntityField(name = "是否有配置执行器（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasRunner = 0;
 
+    @JSONField(serialize = false)
+    private List<DeployAppEnvironmentVo> envList;
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
 
@@ -89,6 +94,14 @@ public class DeployAppModuleVo {
         this.isConfig = isConfig;
     }
 
+    public Long getAppSystemId() {
+        return appSystemId;
+    }
+
+    public void setAppSystemId(Long appSystemId) {
+        this.appSystemId = appSystemId;
+    }
+
     public List<DeployAppConfigInstanceVo> getInstanceVoList() {
         return instanceVoList;
     }
@@ -113,11 +126,11 @@ public class DeployAppModuleVo {
         this.isHasDeployTypeTool = isHasDeployTypeTool;
     }
 
-    public String getMaintenanceWindow() {
+    public List<String> getMaintenanceWindow() {
         return maintenanceWindow;
     }
 
-    public void setMaintenanceWindow(String maintenanceWindow) {
+    public void setMaintenanceWindow(List<String> maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
     }
 
@@ -151,5 +164,13 @@ public class DeployAppModuleVo {
 
     public void setIsHasRunner(Integer isHasRunner) {
         this.isHasRunner = isHasRunner;
+    }
+
+    public List<DeployAppEnvironmentVo> getEnvList() {
+        return envList;
+    }
+
+    public void setEnvList(List<DeployAppEnvironmentVo> envList) {
+        this.envList = envList;
     }
 }

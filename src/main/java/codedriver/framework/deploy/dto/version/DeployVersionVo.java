@@ -32,10 +32,14 @@ public class DeployVersionVo extends BaseEditorVo {
     private Long appSystemId;
     @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
     private String appSystemName;
+    @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
+    private String appSystemAbbrName;
     @EntityField(name = "应用模块id", type = ApiParamType.LONG)
     private Long appModuleId;
     @EntityField(name = "应用模块名称", type = ApiParamType.STRING)
     private String appModuleName;
+    @EntityField(name = "应用模块简称", type = ApiParamType.STRING)
+    private String appModuleAbbrName;
     @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
     private Integer isFreeze;
     @EntityField(name = "备注", type = ApiParamType.STRING)
@@ -146,6 +150,22 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setAppModuleName(String appModuleName) {
         this.appModuleName = appModuleName;
+    }
+
+    public String getAppSystemAbbrName() {
+        return appSystemAbbrName;
+    }
+
+    public void setAppSystemAbbrName(String appSystemAbbrName) {
+        this.appSystemAbbrName = appSystemAbbrName;
+    }
+
+    public String getAppModuleAbbrName() {
+        return appModuleAbbrName;
+    }
+
+    public void setAppModuleAbbrName(String appModuleAbbrName) {
+        this.appModuleAbbrName = appModuleAbbrName;
     }
 
     public Integer getIsFreeze() {

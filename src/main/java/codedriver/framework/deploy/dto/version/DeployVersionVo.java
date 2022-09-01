@@ -32,7 +32,7 @@ public class DeployVersionVo extends BaseEditorVo {
     private Long appSystemId;
     @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
+    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
     private String appSystemAbbrName;
     @EntityField(name = "应用模块id", type = ApiParamType.LONG)
     private Long appModuleId;

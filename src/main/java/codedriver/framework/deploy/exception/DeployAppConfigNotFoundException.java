@@ -12,6 +12,6 @@ public class DeployAppConfigNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = -977868275722986124L;
 
     public DeployAppConfigNotFoundException(Long id) {
-        super("应用”" + id + "“的流水线不存在");
+        super("应用“" + id + "”的流水线不存在");
     }
 }

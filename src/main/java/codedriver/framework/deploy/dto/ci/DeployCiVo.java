@@ -3,9 +3,12 @@ package codedriver.framework.deploy.dto.ci;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-
-import java.util.Date;
+import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class DeployCiVo {
 
@@ -16,9 +19,9 @@ public class DeployCiVo {
     @EntityField(name = "是否激活", type = ApiParamType.INTEGER)
     private Integer isActive;
     @EntityField(name = "系统id", type = ApiParamType.LONG)
-    private Integer appSystemId;
+    private Long appSystemId;
     @EntityField(name = "模块id", type = ApiParamType.LONG)
-    private Integer appModuleId;
+    private Long appModuleId;
     @EntityField(name = "仓库类型", type = ApiParamType.STRING)
     private String repoType;
     @EntityField(name = "仓库服务器地址", type = ApiParamType.STRING)
@@ -26,19 +29,26 @@ public class DeployCiVo {
     @EntityField(name = "仓库名称", type = ApiParamType.STRING)
     private String repoName;
     @EntityField(name = "分支", type = ApiParamType.JSONARRAY)
-    private String branch;
+    private JSONArray branches;
     @EntityField(name = "事件", type = ApiParamType.STRING)
     private String event;
     @EntityField(name = "动作类型", type = ApiParamType.STRING)
     private String action;
     @EntityField(name = "触发方式", type = ApiParamType.STRING)
     private String triggerType;
-    @EntityField(name = "触发时间", type = ApiParamType.LONG)
-    private Date triggerTime;
+    @EntityField(name = "触发时间", type = ApiParamType.STRING)
+    private String triggerTime;
     @EntityField(name = "版本号规则", type = ApiParamType.JSONOBJECT)
     private JSONObject versionRule;
     @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
-    private String config;
+    private JSONObject config;
+
+    @JSONField(serialize = false)
+    private String branchesStr;
+    @JSONField(serialize = false)
+    private String versionRuleStr;
+    @JSONField(serialize = false)
+    private String configStr;
 
     public DeployCiVo() {
     }
@@ -70,19 +80,19 @@ public class DeployCiVo {
         this.isActive = isActive;
     }
 
-    public Integer getAppSystemId() {
+    public Long getAppSystemId() {
         return appSystemId;
     }
 
-    public void setAppSystemId(Integer appSystemId) {
+    public void setAppSystemId(Long appSystemId) {
         this.appSystemId = appSystemId;
     }
 
-    public Integer getAppModuleId() {
+    public Long getAppModuleId() {
         return appModuleId;
     }
 
-    public void setAppModuleId(Integer appModuleId) {
+    public void setAppModuleId(Long appModuleId) {
         this.appModuleId = appModuleId;
     }
 
@@ -110,12 +120,15 @@ public class DeployCiVo {
         this.repoName = repoName;
     }
 
-    public String getBranch() {
-        return branch;
+    public JSONArray getBranches() {
+        if (CollectionUtils.isEmpty(branches) && StringUtils.isNotBlank(branchesStr)) {
+            branches = JSONArray.parseArray(branchesStr);
+        }
+        return branches;
     }
 
-    public void setBranch(String branch) {
-        this.branch = branch;
+    public void setBranches(JSONArray branches) {
+        this.branches = branches;
     }
 
     public String getEvent() {
@@ -142,15 +155,18 @@ public class DeployCiVo {
         this.triggerType = triggerType;
     }
 
-    public Date getTriggerTime() {
+    public String getTriggerTime() {
         return triggerTime;
     }
 
-    public void setTriggerTime(Date triggerTime) {
+    public void setTriggerTime(String triggerTime) {
         this.triggerTime = triggerTime;
     }
 
     public JSONObject getVersionRule() {
+        if (MapUtils.isEmpty(versionRule) && StringUtils.isNotBlank(versionRuleStr)) {
+            versionRule = JSONObject.parseObject(versionRuleStr);
+        }
         return versionRule;
     }
 
@@ -158,11 +174,35 @@ public class DeployCiVo {
         this.versionRule = versionRule;
     }
 
-    public String getConfig() {
+    public JSONObject getConfig() {
+        if (MapUtils.isEmpty(config) && StringUtils.isNotBlank(configStr)) {
+            config = JSONObject.parseObject(configStr);
+        }
         return config;
     }
 
-    public void setConfig(String config) {
+    public void setConfig(JSONObject config) {
         this.config = config;
+    }
+
+    public String getBranchesStr() {
+        if (StringUtils.isBlank(branchesStr) && CollectionUtils.isNotEmpty(branches)) {
+            branchesStr = branches.toJSONString();
+        }
+        return branchesStr;
+    }
+
+    public String getVersionRuleStr() {
+        if (StringUtils.isBlank(versionRuleStr) && MapUtils.isNotEmpty(versionRule)) {
+            versionRuleStr = versionRule.toJSONString();
+        }
+        return versionRuleStr;
+    }
+
+    public String getConfigStr() {
+        if (StringUtils.isBlank(configStr) && MapUtils.isNotEmpty(config)) {
+            configStr = config.toJSONString();
+        }
+        return configStr;
     }
 }

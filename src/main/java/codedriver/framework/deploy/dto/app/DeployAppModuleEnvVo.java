@@ -3,6 +3,7 @@ package codedriver.framework.deploy.dto.app;
 import codedriver.framework.cmdb.dto.resourcecenter.entity.AppEnvironmentVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
+import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.List;
 
@@ -16,6 +17,9 @@ public class DeployAppModuleEnvVo {
     private String abbrName;
     @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
     private List<AppEnvironmentVo> envList;
+
+    @JSONField(serialize = false)
+    private List<Long> envIdList;
 
     public Long getId() {
         return id;
@@ -47,5 +51,13 @@ public class DeployAppModuleEnvVo {
 
     public void setEnvList(List<AppEnvironmentVo> envList) {
         this.envList = envList;
+    }
+
+    public List<Long> getEnvIdList() {
+        return envIdList;
+    }
+
+    public void setEnvIdList(List<Long> envIdList) {
+        this.envIdList = envIdList;
     }
 }

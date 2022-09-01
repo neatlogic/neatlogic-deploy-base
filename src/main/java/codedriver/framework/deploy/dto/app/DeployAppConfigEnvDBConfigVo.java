@@ -8,8 +8,6 @@ import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
-
 /**
  * @author longrf
  * @date 2022/7/1 3:29 下午
@@ -37,8 +35,6 @@ public class DeployAppConfigEnvDBConfigVo {
     private String dbResourceName;
     @EntityField(name = "加密密码", type = ApiParamType.STRING)
     private String passwordCipher;
-    @EntityField(name = "执行用户列表", type = ApiParamType.JSONARRAY)
-    private List<DeployAppConfigEnvDBConfigAccountVo> accountList;
     @EntityField(name = "高级设置", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
     @JSONField(serialize = false)
@@ -58,6 +54,14 @@ public class DeployAppConfigEnvDBConfigVo {
         this.appModuleId = appModuleId;
         this.envId = envId;
         this.dbSchema = dbSchema;
+    }
+
+    public DeployAppConfigEnvDBConfigVo(Long appSystemId, Long appModuleId, Long envId, String dbSchema, JSONObject config) {
+        this.appSystemId = appSystemId;
+        this.appModuleId = appModuleId;
+        this.envId = envId;
+        this.dbSchema = dbSchema;
+        this.config = config;
     }
 
     public Long getAppSystemId() {
@@ -134,15 +138,6 @@ public class DeployAppConfigEnvDBConfigVo {
     public void setDbResourceName(String dbResourceName) {
         this.dbResourceName = dbResourceName;
     }
-
-    public List<DeployAppConfigEnvDBConfigAccountVo> getAccountList() {
-        return accountList;
-    }
-
-    public void setAccountList(List<DeployAppConfigEnvDBConfigAccountVo> accountList) {
-        this.accountList = accountList;
-    }
-
 
     public JSONObject getConfig() {
         if (MapUtils.isEmpty(config) && StringUtils.isNotBlank(configStr)) {

@@ -33,8 +33,12 @@ public class PipelineJobTemplateVo extends BasePageVo {
     private Long envId;
     @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
     private String appSystemName;
+    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    private String appSystemAbbrName;
     @EntityField(name = "应用系统模块名称", type = ApiParamType.STRING)
     private String appModuleName;
+    @EntityField(name = "系统系统模块简称", type = ApiParamType.STRING)
+    private String appModuleAbbrName;
     @EntityField(name = "环境名称", type = ApiParamType.STRING)
     private String envName;
     @JSONField(serialize = false)
@@ -134,6 +138,22 @@ public class PipelineJobTemplateVo extends BasePageVo {
 
     public void setAppModuleName(String appModuleName) {
         this.appModuleName = appModuleName;
+    }
+
+    public String getAppSystemAbbrName() {
+        return appSystemAbbrName;
+    }
+
+    public void setAppSystemAbbrName(String appSystemAbbrName) {
+        this.appSystemAbbrName = appSystemAbbrName;
+    }
+
+    public String getAppModuleAbbrName() {
+        return appModuleAbbrName;
+    }
+
+    public void setAppModuleAbbrName(String appModuleAbbrName) {
+        this.appModuleAbbrName = appModuleAbbrName;
     }
 
     public String getEnvName() {

@@ -1,6 +1,7 @@
 package codedriver.framework.deploy.dto.ci;
 
 import codedriver.framework.common.constvalue.ApiParamType;
+import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONArray;
@@ -10,7 +11,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
-public class DeployCiVo {
+public class DeployCiVo extends BaseEditorVo {
 
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
@@ -22,6 +23,10 @@ public class DeployCiVo {
     private Long appSystemId;
     @EntityField(name = "模块id", type = ApiParamType.LONG)
     private Long appModuleId;
+    @EntityField(name = "模块名称", type = ApiParamType.STRING)
+    private String appModuleName;
+    @EntityField(name = "模块简称", type = ApiParamType.STRING)
+    private String appModuleAbbrName;
     @EntityField(name = "仓库类型", type = ApiParamType.STRING)
     private String repoType;
     @EntityField(name = "仓库服务器地址", type = ApiParamType.STRING)
@@ -204,5 +209,21 @@ public class DeployCiVo {
             configStr = config.toJSONString();
         }
         return configStr;
+    }
+
+    public String getAppModuleName() {
+        return appModuleName;
+    }
+
+    public void setAppModuleName(String appModuleName) {
+        this.appModuleName = appModuleName;
+    }
+
+    public String getAppModuleAbbrName() {
+        return appModuleAbbrName;
+    }
+
+    public void setAppModuleAbbrName(String appModuleAbbrName) {
+        this.appModuleAbbrName = appModuleAbbrName;
     }
 }

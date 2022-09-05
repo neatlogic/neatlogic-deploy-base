@@ -4,10 +4,8 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
-import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -33,8 +31,8 @@ public class DeployCiVo extends BaseEditorVo {
     private String repoServerAddress;
     @EntityField(name = "仓库名称", type = ApiParamType.STRING)
     private String repoName;
-    @EntityField(name = "分支", type = ApiParamType.JSONARRAY)
-    private JSONArray branches;
+    @EntityField(name = "分支过滤", type = ApiParamType.STRING)
+    private String branchFilter;
     @EntityField(name = "事件", type = ApiParamType.STRING)
     private String event;
     @EntityField(name = "动作类型", type = ApiParamType.STRING)
@@ -48,8 +46,6 @@ public class DeployCiVo extends BaseEditorVo {
     @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
 
-    @JSONField(serialize = false)
-    private String branchesStr;
     @JSONField(serialize = false)
     private String versionRuleStr;
     @JSONField(serialize = false)
@@ -125,15 +121,12 @@ public class DeployCiVo extends BaseEditorVo {
         this.repoName = repoName;
     }
 
-    public JSONArray getBranches() {
-        if (CollectionUtils.isEmpty(branches) && StringUtils.isNotBlank(branchesStr)) {
-            branches = JSONArray.parseArray(branchesStr);
-        }
-        return branches;
+    public String getBranchFilter() {
+        return branchFilter;
     }
 
-    public void setBranches(JSONArray branches) {
-        this.branches = branches;
+    public void setBranchFilter(String branchFilter) {
+        this.branchFilter = branchFilter;
     }
 
     public String getEvent() {
@@ -188,13 +181,6 @@ public class DeployCiVo extends BaseEditorVo {
 
     public void setConfig(JSONObject config) {
         this.config = config;
-    }
-
-    public String getBranchesStr() {
-        if (StringUtils.isBlank(branchesStr) && CollectionUtils.isNotEmpty(branches)) {
-            branchesStr = branches.toJSONString();
-        }
-        return branchesStr;
     }
 
     public String getVersionRuleStr() {

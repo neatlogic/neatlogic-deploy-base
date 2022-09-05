@@ -9,6 +9,8 @@ public class DeployCiAuditVo extends BaseEditorVo {
 
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
+    @EntityField(name = "持续集成id", type = ApiParamType.LONG)
+    private Long ciId;
     @EntityField(name = "提交ID", type = ApiParamType.STRING)
     private String commitId;
     @EntityField(name = "动作", type = ApiParamType.STRING)
@@ -30,6 +32,14 @@ public class DeployCiAuditVo extends BaseEditorVo {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getCiId() {
+        return ciId;
+    }
+
+    public void setCiId(Long ciId) {
+        this.ciId = ciId;
     }
 
     public String getCommitId() {

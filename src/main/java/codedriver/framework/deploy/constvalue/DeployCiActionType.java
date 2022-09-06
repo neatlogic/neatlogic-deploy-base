@@ -11,15 +11,14 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
 
-public enum CiTriggerType implements IEnum {
-    MANUAL("manual", "手动触发"),
-    DELAY("delay", "定时触发"),
-    AUTO("auto", "立即触发"),
+public enum DeployCiActionType implements IEnum {
+    JOB("job", "作业"),
+    BATCHJOB("batchjob", "批量作业"),
     ;
     private final String value;
     private final String text;
 
-    CiTriggerType(String _value, String _text) {
+    DeployCiActionType(String _value, String _text) {
         this.value = _value;
         this.text = _text;
     }
@@ -27,7 +26,7 @@ public enum CiTriggerType implements IEnum {
     @Override
     public List getValueTextList() {
         JSONArray array = new JSONArray();
-        for (CiTriggerType type : values()) {
+        for (DeployCiActionType type : values()) {
             JSONObject json = new JSONObject();
             json.put("value", type.getValue());
             json.put("text", type.getText());

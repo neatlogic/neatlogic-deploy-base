@@ -11,20 +11,20 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
 
-public enum RepoEvent implements IEnum {
-    POSTRECEIVE("post-receive"),
-    POSTCOMMIT("post-commit"),
+public enum DeployCiRepoType implements IEnum {
+    GITLAB("gitlab"),
+    SVN("svn"),
     ;
     private final String value;
 
-    RepoEvent(String _value) {
+    DeployCiRepoType(String _value) {
         this.value = _value;
     }
 
     @Override
     public List getValueTextList() {
         JSONArray array = new JSONArray();
-        for (RepoEvent type : values()) {
+        for (DeployCiRepoType type : values()) {
             JSONObject json = new JSONObject();
             json.put("value", type.getValue());
             json.put("text", type.getValue());

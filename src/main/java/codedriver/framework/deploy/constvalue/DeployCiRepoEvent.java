@@ -11,25 +11,23 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
 
-public enum CiJobType implements IEnum {
-    JOB("job", "作业"),
-    BATCHJOB("batchjob", "批量作业"),
+public enum DeployCiRepoEvent implements IEnum {
+    POSTRECEIVE("post-receive"),
+    POSTCOMMIT("post-commit"),
     ;
     private final String value;
-    private final String text;
 
-    CiJobType(String _value, String _text) {
+    DeployCiRepoEvent(String _value) {
         this.value = _value;
-        this.text = _text;
     }
 
     @Override
     public List getValueTextList() {
         JSONArray array = new JSONArray();
-        for (CiJobType type : values()) {
+        for (DeployCiRepoEvent type : values()) {
             JSONObject json = new JSONObject();
             json.put("value", type.getValue());
-            json.put("text", type.getText());
+            json.put("text", type.getValue());
             array.add(json);
         }
         return array;
@@ -37,10 +35,6 @@ public enum CiJobType implements IEnum {
 
     public String getValue() {
         return value;
-    }
-
-    public String getText() {
-        return text;
     }
 
 

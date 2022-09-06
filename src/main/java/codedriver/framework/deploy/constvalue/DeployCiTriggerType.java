@@ -11,23 +11,26 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
 
-public enum RepoType implements IEnum {
-    GITLAB("gitlab"),
-    SVN("svn"),
+public enum DeployCiTriggerType implements IEnum {
+    MANUAL("manual", "手动触发"),
+    AUTO("auto", "定时触发"),
+    INSTANT("instant", "立即触发"),
     ;
     private final String value;
+    private final String text;
 
-    RepoType(String _value) {
+    DeployCiTriggerType(String _value, String _text) {
         this.value = _value;
+        this.text = _text;
     }
 
     @Override
     public List getValueTextList() {
         JSONArray array = new JSONArray();
-        for (RepoType type : values()) {
+        for (DeployCiTriggerType type : values()) {
             JSONObject json = new JSONObject();
             json.put("value", type.getValue());
-            json.put("text", type.getValue());
+            json.put("text", type.getText());
             array.add(json);
         }
         return array;
@@ -35,6 +38,10 @@ public enum RepoType implements IEnum {
 
     public String getValue() {
         return value;
+    }
+
+    public String getText() {
+        return text;
     }
 
 

@@ -45,6 +45,8 @@ public class DeployCiVo extends BaseEditorVo {
     private JSONObject versionRule;
     @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
+    @EntityField(name = "webhook id", type = ApiParamType.STRING)
+    private String hookId;
 
     @JSONField(serialize = false)
     private String versionRuleStr;
@@ -181,6 +183,14 @@ public class DeployCiVo extends BaseEditorVo {
 
     public void setConfig(JSONObject config) {
         this.config = config;
+    }
+
+    public String getHookId() {
+        return hookId;
+    }
+
+    public void setHookId(String hookId) {
+        this.hookId = hookId;
     }
 
     public String getVersionRuleStr() {

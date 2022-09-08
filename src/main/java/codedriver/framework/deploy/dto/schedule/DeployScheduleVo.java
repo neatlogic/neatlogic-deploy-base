@@ -45,10 +45,20 @@ public class DeployScheduleVo extends BaseEditorVo {
     private String typeName;
     @EntityField(name = "应用id", type = ApiParamType.LONG)
     private Long appSystemId;
+    @EntityField(name = "应用名称", type = ApiParamType.STRING)
+    private String appSystemName;
+    @EntityField(name = "应用简称", type = ApiParamType.STRING)
+    private String appSystemAbbrName;
     @EntityField(name = "模块id", type = ApiParamType.LONG)
     private Long appModuleId;
+    @EntityField(name = "模块名称", type = ApiParamType.STRING)
+    private String appModuleName;
+    @EntityField(name = "模块简称", type = ApiParamType.STRING)
+    private String appModuleAbbrName;
     @EntityField(name = "流水线id", type = ApiParamType.LONG)
     private Long pipelineId;
+    @EntityField(name = "流水线名称", type = ApiParamType.STRING)
+    private String pipelineName;
     @EntityField(name = "流水线类型", type = ApiParamType.STRING)
     private String pipelineType;
 
@@ -155,12 +165,44 @@ public class DeployScheduleVo extends BaseEditorVo {
         this.appSystemId = appSystemId;
     }
 
+    public String getAppSystemName() {
+        return appSystemName;
+    }
+
+    public void setAppSystemName(String appSystemName) {
+        this.appSystemName = appSystemName;
+    }
+
+    public String getAppSystemAbbrName() {
+        return appSystemAbbrName;
+    }
+
+    public void setAppSystemAbbrName(String appSystemAbbrName) {
+        this.appSystemAbbrName = appSystemAbbrName;
+    }
+
     public Long getAppModuleId() {
         return appModuleId;
     }
 
     public void setAppModuleId(Long appModuleId) {
         this.appModuleId = appModuleId;
+    }
+
+    public String getAppModuleName() {
+        return appModuleName;
+    }
+
+    public void setAppModuleName(String appModuleName) {
+        this.appModuleName = appModuleName;
+    }
+
+    public String getAppModuleAbbrName() {
+        return appModuleAbbrName;
+    }
+
+    public void setAppModuleAbbrName(String appModuleAbbrName) {
+        this.appModuleAbbrName = appModuleAbbrName;
     }
 
     public String getType() {
@@ -188,6 +230,14 @@ public class DeployScheduleVo extends BaseEditorVo {
 
     public void setPipelineId(Long pipelineId) {
         this.pipelineId = pipelineId;
+    }
+
+    public String getPipelineName() {
+        return pipelineName;
+    }
+
+    public void setPipelineName(String pipelineName) {
+        this.pipelineName = pipelineName;
     }
 
     public String getPipelineType() {

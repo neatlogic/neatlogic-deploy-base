@@ -12,8 +12,8 @@ import com.alibaba.fastjson.JSONObject;
 import java.util.List;
 
 public enum DeployCiActionType implements IEnum {
-    JOB("job", "作业"),
-    BATCHJOB("batchjob", "批量作业"),
+    CREATE_JOB("create_job", "创建作业"),
+    CREATE_BATCH_JOB("create_batch_job", "创建批量作业"),
     ;
     private final String value;
     private final String text;

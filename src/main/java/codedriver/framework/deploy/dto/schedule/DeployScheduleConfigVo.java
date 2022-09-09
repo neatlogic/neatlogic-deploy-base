@@ -5,12 +5,11 @@
 
 package codedriver.framework.deploy.dto.schedule;
 
-import codedriver.framework.autoexec.dto.AutoexecParamVo;
-import codedriver.framework.autoexec.dto.combop.ParamMappingVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.deploy.dto.job.DeployJobModuleVo;
 import codedriver.framework.deploy.dto.version.DeploySystemModuleVersionVo;
 import codedriver.framework.restful.annotation.EntityField;
+import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
 
@@ -26,8 +25,8 @@ public class DeployScheduleConfigVo {
     @EntityField(name = "分批数量", type = ApiParamType.INTEGER)
     private Integer roundCount;
 
-    @EntityField(name = "参数映射列表", type = ApiParamType.JSONARRAY)
-    private List<ParamMappingVo> paramMappingList;
+    @EntityField(name = "作业参数映射列表", type = ApiParamType.JSONOBJECT)
+    private JSONObject param;
     @EntityField(name = "模块列表", type = ApiParamType.JSONARRAY)
     private List<DeployJobModuleVo> moduleList;
 
@@ -73,12 +72,12 @@ public class DeployScheduleConfigVo {
         this.roundCount = roundCount;
     }
 
-    public List<ParamMappingVo> getParamMappingList() {
-        return paramMappingList;
+    public JSONObject getParam() {
+        return param;
     }
 
-    public void setParamMappingList(List<ParamMappingVo> paramMappingList) {
-        this.paramMappingList = paramMappingList;
+    public void setParam(JSONObject param) {
+        this.param = param;
     }
 
     public List<DeployJobModuleVo> getModuleList() {

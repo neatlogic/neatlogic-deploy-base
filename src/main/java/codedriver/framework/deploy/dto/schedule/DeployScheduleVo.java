@@ -61,6 +61,10 @@ public class DeployScheduleVo extends BaseEditorVo {
     private String pipelineName;
     @EntityField(name = "流水线类型", type = ApiParamType.STRING)
     private String pipelineType;
+    @EntityField(name = "是否可编辑", type = ApiParamType.INTEGER)
+    private Integer editable;
+    @EntityField(name = "是否可删除", type = ApiParamType.INTEGER)
+    private Integer deletable;
 
     public Long getId() {
         if (id == null) {
@@ -246,5 +250,21 @@ public class DeployScheduleVo extends BaseEditorVo {
 
     public void setPipelineType(String pipelineType) {
         this.pipelineType = pipelineType;
+    }
+
+    public Integer getEditable() {
+        return editable;
+    }
+
+    public void setEditable(Integer editable) {
+        this.editable = editable;
+    }
+
+    public Integer getDeletable() {
+        return deletable;
+    }
+
+    public void setDeletable(Integer deletable) {
+        this.deletable = deletable;
     }
 }

@@ -74,6 +74,7 @@ public class DeployJobVo extends AutoexecJobVo {
 
     @EntityField(name = "子作业列表", type = ApiParamType.JSONARRAY)
     private List<DeployJobVo> children;
+    private Integer isNeedNameAndAbbrName = 0;
 
     public DeployJobVo() {
         this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue()));
@@ -292,5 +293,13 @@ public class DeployJobVo extends AutoexecJobVo {
 
     public void setChildren(List<DeployJobVo> children) {
         this.children = children;
+    }
+
+    public Integer getIsNeedNameAndAbbrName() {
+        return isNeedNameAndAbbrName;
+    }
+
+    public void setIsNeedNameAndAbbrName(Integer isNeedNameAndAbbrName) {
+        this.isNeedNameAndAbbrName = isNeedNameAndAbbrName;
     }
 }

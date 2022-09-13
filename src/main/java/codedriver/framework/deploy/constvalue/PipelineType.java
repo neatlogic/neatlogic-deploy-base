@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSONObject;
 import java.util.List;
 
 public enum PipelineType implements IEnum {
-    APPSYSTEM("appSystem", "应用流水线"),
+    APPSYSTEM("appsystem", "应用流水线"),
     GLOBAL("global", "全局流水线");
 
     PipelineType(String value, String text) {
@@ -30,6 +30,15 @@ public enum PipelineType implements IEnum {
 
     public String getText() {
         return text;
+    }
+
+    public static String getText(String value) {
+        for (PipelineType e : values()) {
+            if (e.value.equals(value)) {
+                return e.text;
+            }
+        }
+        return "";
     }
 
     @Override

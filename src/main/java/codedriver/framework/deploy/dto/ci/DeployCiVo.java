@@ -228,10 +228,7 @@ public class DeployCiVo extends BaseEditorVo {
 
     public String getActionName() {
         if (StringUtils.isNotBlank(action) && StringUtils.isBlank(actionName)) {
-            DeployCiActionType actionType = DeployCiActionType.getDeployCiActionType(action);
-            if (actionType != null) {
-                actionName = actionType.getText();
-            }
+            actionName = DeployCiActionType.getDeployCiActionTypeText(action);
         }
         return actionName;
     }

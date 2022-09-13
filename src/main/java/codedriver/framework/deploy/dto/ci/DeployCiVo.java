@@ -2,6 +2,7 @@ package codedriver.framework.deploy.dto.ci;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
+import codedriver.framework.deploy.constvalue.DeployCiActionType;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
@@ -37,6 +38,8 @@ public class DeployCiVo extends BaseEditorVo {
     private String event;
     @EntityField(name = "动作类型", type = ApiParamType.STRING)
     private String action;
+    @EntityField(name = "动作类型名称", type = ApiParamType.STRING)
+    private String actionName;
     @EntityField(name = "触发方式", type = ApiParamType.STRING)
     private String triggerType;
     @EntityField(name = "触发时间", type = ApiParamType.STRING)
@@ -221,5 +224,15 @@ public class DeployCiVo extends BaseEditorVo {
 
     public void setAppModuleAbbrName(String appModuleAbbrName) {
         this.appModuleAbbrName = appModuleAbbrName;
+    }
+
+    public String getActionName() {
+        if (StringUtils.isNotBlank(action) && StringUtils.isBlank(actionName)) {
+            DeployCiActionType actionType = DeployCiActionType.getDeployCiActionType(action);
+            if (actionType != null) {
+                actionName = actionType.getText();
+            }
+        }
+        return actionName;
     }
 }

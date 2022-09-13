@@ -35,6 +35,15 @@ public enum DeployCiActionType implements IEnum {
         return array;
     }
 
+    public static DeployCiActionType getDeployCiActionType(String value) {
+        for (DeployCiActionType type : DeployCiActionType.values()) {
+            if (type.getValue().equals(value)) {
+                return type;
+            }
+        }
+        return null;
+    }
+
     public String getValue() {
         return value;
     }

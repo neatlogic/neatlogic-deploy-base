@@ -7,8 +7,10 @@ package codedriver.framework.deploy.dto.pipeline;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BasePageVo;
+import codedriver.framework.deploy.constvalue.PipelineType;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -20,6 +22,16 @@ public class PipelineVo extends BasePageVo {
     private String name;
     @EntityField(name = "是否激活", type = ApiParamType.INTEGER)
     private Integer isActive;
+    @EntityField(name = "类型", type = ApiParamType.STRING)
+    private String type;
+    @EntityField(name = "类型名", type = ApiParamType.STRING)
+    private String typeName;
+    @EntityField(name = "应用ID", type = ApiParamType.LONG)
+    private Long appSystemId;
+    @EntityField(name = "应用名称", type = ApiParamType.STRING)
+    private String appSystemName;
+    @EntityField(name = "应用简称", type = ApiParamType.STRING)
+    private String appSystemAbbrName;
     @EntityField(name = "创建时间", type = ApiParamType.LONG)
     private Date fcd;
     @EntityField(name = "创建用户", type = ApiParamType.STRING)
@@ -66,6 +78,49 @@ public class PipelineVo extends BasePageVo {
 
     public void setIsActive(Integer isActive) {
         this.isActive = isActive;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getTypeName() {
+        if (StringUtils.isBlank(typeName) && StringUtils.isNotBlank(type)) {
+            typeName = PipelineType.getText(type);
+        }
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
+    public Long getAppSystemId() {
+        return appSystemId;
+    }
+
+    public void setAppSystemId(Long appSystemId) {
+        this.appSystemId = appSystemId;
+    }
+
+    public String getAppSystemName() {
+        return appSystemName;
+    }
+
+    public void setAppSystemName(String appSystemName) {
+        this.appSystemName = appSystemName;
+    }
+
+    public String getAppSystemAbbrName() {
+        return appSystemAbbrName;
+    }
+
+    public void setAppSystemAbbrName(String appSystemAbbrName) {
+        this.appSystemAbbrName = appSystemAbbrName;
     }
 
     public Date getFcd() {

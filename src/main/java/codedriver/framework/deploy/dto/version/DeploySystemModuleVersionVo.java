@@ -7,9 +7,18 @@ package codedriver.framework.deploy.dto.version;
 
 public class DeploySystemModuleVersionVo {
 
+    private Long id;
     private Long appSystemId;
     private Long appModuleId;
     private Long versionId;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getAppSystemId() {
         return appSystemId;

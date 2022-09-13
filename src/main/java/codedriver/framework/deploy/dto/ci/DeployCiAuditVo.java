@@ -2,8 +2,10 @@ package codedriver.framework.deploy.dto.ci;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
+import codedriver.framework.deploy.constvalue.DeployCiActionType;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
+import org.apache.commons.lang3.StringUtils;
 
 public class DeployCiAuditVo extends BaseEditorVo {
 
@@ -15,6 +17,8 @@ public class DeployCiAuditVo extends BaseEditorVo {
     private String commitId;
     @EntityField(name = "动作", type = ApiParamType.STRING)
     private String action;
+    @EntityField(name = "动作类型名称", type = ApiParamType.STRING)
+    private String actionName;
     @EntityField(name = "状态", type = ApiParamType.STRING)
     private String status;
     @EntityField(name = "作业ID", type = ApiParamType.LONG)
@@ -82,5 +86,15 @@ public class DeployCiAuditVo extends BaseEditorVo {
 
     public void setJobName(String jobName) {
         this.jobName = jobName;
+    }
+
+    public String getActionName() {
+        if (StringUtils.isNotBlank(action) && StringUtils.isBlank(actionName)) {
+            DeployCiActionType actionType = DeployCiActionType.getDeployCiActionType(action);
+            if (actionType != null) {
+                actionName = actionType.getText();
+            }
+        }
+        return actionName;
     }
 }

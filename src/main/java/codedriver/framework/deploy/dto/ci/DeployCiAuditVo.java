@@ -19,6 +19,8 @@ public class DeployCiAuditVo extends BaseEditorVo {
     private String status;
     @EntityField(name = "作业ID", type = ApiParamType.LONG)
     private Long jobId;
+    @EntityField(name = "作业名称", type = ApiParamType.STRING)
+    private String jobName;
 
     public DeployCiAuditVo() {
     }
@@ -72,5 +74,13 @@ public class DeployCiAuditVo extends BaseEditorVo {
 
     public void setJobId(Long jobId) {
         this.jobId = jobId;
+    }
+
+    public String getJobName() {
+        return jobName;
+    }
+
+    public void setJobName(String jobName) {
+        this.jobName = jobName;
     }
 }

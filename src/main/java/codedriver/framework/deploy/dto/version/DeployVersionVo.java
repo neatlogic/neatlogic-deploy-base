@@ -101,6 +101,13 @@ public class DeployVersionVo extends BaseEditorVo {
         this.appModuleId = appModuleId;
     }
 
+    public DeployVersionVo(String version, Long appSystemId, Long appModuleId, Integer isFreeze) {
+        this.version = version;
+        this.appSystemId = appSystemId;
+        this.appModuleId = appModuleId;
+        this.isFreeze = isFreeze;
+    }
+
     public Long getId() {
         if (id == null) {
             id = SnowflakeUtil.uniqueLong();

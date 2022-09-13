@@ -27,6 +27,15 @@ public class DeployJobModuleVo implements Serializable {
     @EntityField(name = "目标发布节点", type = ApiParamType.JSONARRAY)
     private List<AutoexecNodeVo> selectNodeList;
 
+    public DeployJobModuleVo() {
+    }
+
+    public DeployJobModuleVo(Long id, String version, List<AutoexecNodeVo> selectNodeList) {
+        this.id = id;
+        this.version = version;
+        this.selectNodeList = selectNodeList;
+    }
+
     public Long getId() {
         return id;
     }

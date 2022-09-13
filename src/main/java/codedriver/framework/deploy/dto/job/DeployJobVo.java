@@ -72,6 +72,9 @@ public class DeployJobVo extends AutoexecJobVo {
     @JSONField(serialize = false)
     private List<DeployJobModuleVo> moduleList;
 
+    @EntityField(name = "子作业列表", type = ApiParamType.JSONARRAY)
+    private List<DeployJobVo> children;
+
     public DeployJobVo() {
         this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue()));
     }
@@ -281,5 +284,13 @@ public class DeployJobVo extends AutoexecJobVo {
             return appSystemAbbrName + "/" + appModuleAbbrName + "/" + envName + (StringUtils.isBlank(version) ? StringUtils.EMPTY : "/" + version);
         }
         return super.getName();
+    }
+
+    public List<DeployJobVo> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<DeployJobVo> children) {
+        this.children = children;
     }
 }

@@ -4,6 +4,7 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.deploy.constvalue.DeployCiActionType;
 import codedriver.framework.restful.annotation.EntityField;
+import codedriver.framework.restful.enums.ApiInvokedStatus;
 import codedriver.framework.util.SnowflakeUtil;
 import org.apache.commons.lang3.StringUtils;
 
@@ -21,6 +22,8 @@ public class DeployCiAuditVo extends BaseEditorVo {
     private String actionName;
     @EntityField(name = "状态", type = ApiParamType.STRING)
     private String status;
+    @EntityField(name = "状态名称", type = ApiParamType.STRING)
+    private String statusName;
     @EntityField(name = "作业ID", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "作业名称", type = ApiParamType.STRING)
@@ -93,5 +96,12 @@ public class DeployCiAuditVo extends BaseEditorVo {
             actionName = DeployCiActionType.getDeployCiActionTypeText(action);
         }
         return actionName;
+    }
+
+    public String getStatusName() {
+        if (StringUtils.isNotBlank(status) && StringUtils.isBlank(statusName)) {
+            statusName = ApiInvokedStatus.getApiInvokedStatusText(status);
+        }
+        return statusName;
     }
 }

@@ -10,6 +10,7 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeployJobModuleVo implements Serializable {
@@ -25,7 +26,7 @@ public class DeployJobModuleVo implements Serializable {
     @EntityField(name = "编译号", type = ApiParamType.INTEGER)
     private Integer buildNo;
     @EntityField(name = "目标发布节点", type = ApiParamType.JSONARRAY)
-    private List<AutoexecNodeVo> selectNodeList;
+    private List<AutoexecNodeVo> selectNodeList = new ArrayList<>();
 
     public DeployJobModuleVo() {
     }

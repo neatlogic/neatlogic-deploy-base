@@ -12,6 +12,7 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
 import codedriver.framework.deploy.constvalue.JobSource;
 import codedriver.framework.deploy.dto.app.DeployPipelineConfigVo;
+import codedriver.framework.deploy.dto.version.DeploySystemModuleVersionVo;
 import codedriver.framework.dto.AuthenticationInfoVo;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.JSONObject;
@@ -64,6 +65,8 @@ public class DeployJobVo extends AutoexecJobVo {
     @EntityField(name = "超级流水线id", type = ApiParamType.LONG)
     private Long pipelineId;
 
+    private List<DeploySystemModuleVersionVo> appSystemModuleVersionList;
+
     @JSONField(serialize = false)
     private Integer isHasAllAuthority; //是否拥有发布管理员权限
     @JSONField(serialize = false)
@@ -76,7 +79,7 @@ public class DeployJobVo extends AutoexecJobVo {
     private Integer isNeedNameAndAbbrName = 0; //创建批量作业时，需要从列表获取简称回显，等于1时才会join 视图
 
     public DeployJobVo() {
-        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue()));
+        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOYSCHEDULE.getValue()));
     }
 
     public List<DeployJobAuthVo> getAuthList() {
@@ -94,7 +97,7 @@ public class DeployJobVo extends AutoexecJobVo {
         envId = jsonObj.getLong("envId");
         version = jsonObj.getString("version");
         buildNo = jsonObj.getInteger("buildNo");
-        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue()));
+        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOYSCHEDULE.getValue()));
     }
 
     public DeployJobVo(Long appSystemId, Long scenarioId, Long envId, String triggerType, Date planStartTime, Integer roundCount, JSONObject param) {
@@ -294,6 +297,14 @@ public class DeployJobVo extends AutoexecJobVo {
             return appSystemAbbrName + "/" + appModuleAbbrName + "/" + envName + (StringUtils.isBlank(version) ? StringUtils.EMPTY : "/" + version);
         }
         return super.getName();
+    }
+
+    public List<DeploySystemModuleVersionVo> getAppSystemModuleVersionList() {
+        return appSystemModuleVersionList;
+    }
+
+    public void setAppSystemModuleVersionList(List<DeploySystemModuleVersionVo> appSystemModuleVersionList) {
+        this.appSystemModuleVersionList = appSystemModuleVersionList;
     }
 
     public Integer getIsNeedNameAndAbbrName() {

@@ -12,6 +12,7 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
 import codedriver.framework.deploy.constvalue.JobSource;
 import codedriver.framework.deploy.dto.app.DeployPipelineConfigVo;
+import codedriver.framework.deploy.dto.version.DeploySystemModuleVersionVo;
 import codedriver.framework.dto.AuthenticationInfoVo;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.JSONObject;
@@ -63,6 +64,8 @@ public class DeployJobVo extends AutoexecJobVo {
 
     @EntityField(name = "超级流水线id", type = ApiParamType.LONG)
     private Long pipelineId;
+
+    private List<DeploySystemModuleVersionVo> appSystemModuleVersionList;
 
     @JSONField(serialize = false)
     private Integer isHasAllAuthority; //是否拥有发布管理员权限
@@ -292,5 +295,13 @@ public class DeployJobVo extends AutoexecJobVo {
             return appSystemAbbrName + "/" + appModuleAbbrName + "/" + envName + (StringUtils.isBlank(version) ? StringUtils.EMPTY : "/" + version);
         }
         return super.getName();
+    }
+
+    public List<DeploySystemModuleVersionVo> getAppSystemModuleVersionList() {
+        return appSystemModuleVersionList;
+    }
+
+    public void setAppSystemModuleVersionList(List<DeploySystemModuleVersionVo> appSystemModuleVersionList) {
+        this.appSystemModuleVersionList = appSystemModuleVersionList;
     }
 }

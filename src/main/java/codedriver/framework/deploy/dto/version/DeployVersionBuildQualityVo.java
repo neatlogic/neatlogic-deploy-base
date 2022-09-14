@@ -37,11 +37,11 @@ public class DeployVersionBuildQualityVo {
     private Integer itCoveredConditionsByLine;
     private Integer itLineCoverage;
     private Integer itLinesToCover;
-    private Integer commentLinesDensity;
+    private Double commentLinesDensity;
     private Integer publicDocumentedApiDensity;
     private Integer duplicatedFiles;
     private Integer duplicatedLines;
-    private Integer duplicatedLinesDensity;
+    private Double duplicatedLinesDensity;
     private Integer newDuplicatedLines;
     private Integer newDuplicatedLinesDensity;
     private Integer duplicatedBlocks;
@@ -52,6 +52,52 @@ public class DeployVersionBuildQualityVo {
     private Integer vulnerabilities;//缺陷
     @EntityField(name = "代码异味数量", type = ApiParamType.INTEGER)
     private Integer codeSmells;//代码异味
+
+    private Integer newSecurityHotspots;
+    private String newSecurityRating;
+    private Integer newSecurityRemediationEffort;
+    private Integer newVulnerabilities;
+    private Integer securityHotspots;
+    private String securityRating;
+    private Integer securityRemediationEffort;
+    private Integer commentLines;
+    private String nclocLanguageDistribution;
+    private Integer newLines;
+    private Integer cognitiveComplexity;
+    private Integer conditionsToCover;
+    private Double coverage;
+    private Integer linesToCover;
+    private Integer newConditionsToCover;
+    private Double newCoverage;
+    private Integer newLinesToCover;
+    private Integer newUncoveredConditions;
+    private Integer newUncoveredLines;
+    private Integer uncoveredConditions;
+    private Integer uncoveredLines;
+    private Integer newBugs;
+    private String newReliabilityRating;
+    private String reliabilityRating;
+    private Integer newCodeSmells;
+    private Double newSqaleDebtRatio;
+    private Integer newTechnicalDebt;
+    private Double sqaleDebtRatio;
+    private String sqaleIndex;
+    private String sqaleRating;
+    private Integer confirmedIssues;
+    private Integer falsePositiveIssues;
+    private Integer infoViolations;
+    private Integer newBlockerViolations;
+    private Integer newCriticalViolations;
+    private Integer newInfoViolations;
+    private Integer newMajorViolations;
+    private Integer newMinorViolations;
+    private Integer newViolations;
+    private Integer openIssues;
+    private Integer reopenedIssues;
+    private Integer wontFixIssues;
+    private String alertStatus;
+    private String qualityGateDetails;
+    private String newMaintainabilityRating;
 
     @EntityField(name = "单元测试总数", type = ApiParamType.INTEGER)
     private Integer tests;
@@ -67,6 +113,8 @@ public class DeployVersionBuildQualityVo {
     private Integer lineCoverage;
     @EntityField(name = "增量行覆盖率", type = ApiParamType.INTEGER)
     private Integer newLineCoverage;
+    @EntityField(name = "漏洞阈值", type = ApiParamType.INTEGER)
+    private Integer threshold;
 
 
     public Integer getTests() {
@@ -341,11 +389,11 @@ public class DeployVersionBuildQualityVo {
         this.itLinesToCover = itLinesToCover;
     }
 
-    public Integer getCommentLinesDensity() {
+    public Double getCommentLinesDensity() {
         return commentLinesDensity;
     }
 
-    public void setCommentLinesDensity(Integer commentLinesDensity) {
+    public void setCommentLinesDensity(Double commentLinesDensity) {
         this.commentLinesDensity = commentLinesDensity;
     }
 
@@ -373,11 +421,11 @@ public class DeployVersionBuildQualityVo {
         this.duplicatedLines = duplicatedLines;
     }
 
-    public Integer getDuplicatedLinesDensity() {
+    public Double getDuplicatedLinesDensity() {
         return duplicatedLinesDensity;
     }
 
-    public void setDuplicatedLinesDensity(Integer duplicatedLinesDensity) {
+    public void setDuplicatedLinesDensity(Double duplicatedLinesDensity) {
         this.duplicatedLinesDensity = duplicatedLinesDensity;
     }
 
@@ -437,5 +485,371 @@ public class DeployVersionBuildQualityVo {
         this.codeSmells = codeSmells;
     }
 
+    public Integer getNewSecurityHotspots() {
+        return newSecurityHotspots;
+    }
 
+    public void setNewSecurityHotspots(Integer newSecurityHotspots) {
+        this.newSecurityHotspots = newSecurityHotspots;
+    }
+
+    public String getNewSecurityRating() {
+        return newSecurityRating;
+    }
+
+    public void setNewSecurityRating(String newSecurityRating) {
+        this.newSecurityRating = newSecurityRating;
+    }
+
+    public Integer getNewSecurityRemediationEffort() {
+        return newSecurityRemediationEffort;
+    }
+
+    public void setNewSecurityRemediationEffort(Integer newSecurityRemediationEffort) {
+        this.newSecurityRemediationEffort = newSecurityRemediationEffort;
+    }
+
+    public Integer getNewVulnerabilities() {
+        return newVulnerabilities;
+    }
+
+    public void setNewVulnerabilities(Integer newVulnerabilities) {
+        this.newVulnerabilities = newVulnerabilities;
+    }
+
+    public Integer getSecurityHotspots() {
+        return securityHotspots;
+    }
+
+    public void setSecurityHotspots(Integer securityHotspots) {
+        this.securityHotspots = securityHotspots;
+    }
+
+    public String getSecurityRating() {
+        return securityRating;
+    }
+
+    public void setSecurityRating(String securityRating) {
+        this.securityRating = securityRating;
+    }
+
+    public Integer getSecurityRemediationEffort() {
+        return securityRemediationEffort;
+    }
+
+    public void setSecurityRemediationEffort(Integer securityRemediationEffort) {
+        this.securityRemediationEffort = securityRemediationEffort;
+    }
+
+    public Integer getCommentLines() {
+        return commentLines;
+    }
+
+    public void setCommentLines(Integer commentLines) {
+        this.commentLines = commentLines;
+    }
+
+    public String getNclocLanguageDistribution() {
+        return nclocLanguageDistribution;
+    }
+
+    public void setNclocLanguageDistribution(String nclocLanguageDistribution) {
+        this.nclocLanguageDistribution = nclocLanguageDistribution;
+    }
+
+    public Integer getNewLines() {
+        return newLines;
+    }
+
+    public void setNewLines(Integer newLines) {
+        this.newLines = newLines;
+    }
+
+    public Integer getCognitiveComplexity() {
+        return cognitiveComplexity;
+    }
+
+    public void setCognitiveComplexity(Integer cognitiveComplexity) {
+        this.cognitiveComplexity = cognitiveComplexity;
+    }
+
+    public Integer getConditionsToCover() {
+        return conditionsToCover;
+    }
+
+    public void setConditionsToCover(Integer conditionsToCover) {
+        this.conditionsToCover = conditionsToCover;
+    }
+
+    public Double getCoverage() {
+        return coverage;
+    }
+
+    public void setCoverage(Double coverage) {
+        this.coverage = coverage;
+    }
+
+    public Integer getLinesToCover() {
+        return linesToCover;
+    }
+
+    public void setLinesToCover(Integer linesToCover) {
+        this.linesToCover = linesToCover;
+    }
+
+    public Integer getNewConditionsToCover() {
+        return newConditionsToCover;
+    }
+
+    public void setNewConditionsToCover(Integer newConditionsToCover) {
+        this.newConditionsToCover = newConditionsToCover;
+    }
+
+    public Double getNewCoverage() {
+        return newCoverage;
+    }
+
+    public void setNewCoverage(Double newCoverage) {
+        this.newCoverage = newCoverage;
+    }
+
+    public Integer getNewLinesToCover() {
+        return newLinesToCover;
+    }
+
+    public void setNewLinesToCover(Integer newLinesToCover) {
+        this.newLinesToCover = newLinesToCover;
+    }
+
+    public Integer getNewUncoveredConditions() {
+        return newUncoveredConditions;
+    }
+
+    public void setNewUncoveredConditions(Integer newUncoveredConditions) {
+        this.newUncoveredConditions = newUncoveredConditions;
+    }
+
+    public Integer getNewUncoveredLines() {
+        return newUncoveredLines;
+    }
+
+    public void setNewUncoveredLines(Integer newUncoveredLines) {
+        this.newUncoveredLines = newUncoveredLines;
+    }
+
+    public Integer getUncoveredConditions() {
+        return uncoveredConditions;
+    }
+
+    public void setUncoveredConditions(Integer uncoveredConditions) {
+        this.uncoveredConditions = uncoveredConditions;
+    }
+
+    public Integer getUncoveredLines() {
+        return uncoveredLines;
+    }
+
+    public void setUncoveredLines(Integer uncoveredLines) {
+        this.uncoveredLines = uncoveredLines;
+    }
+
+    public Integer getNewBugs() {
+        return newBugs;
+    }
+
+    public void setNewBugs(Integer newBugs) {
+        this.newBugs = newBugs;
+    }
+
+    public String getNewReliabilityRating() {
+        return newReliabilityRating;
+    }
+
+    public void setNewReliabilityRating(String newReliabilityRating) {
+        this.newReliabilityRating = newReliabilityRating;
+    }
+
+    public String getReliabilityRating() {
+        return reliabilityRating;
+    }
+
+    public void setReliabilityRating(String reliabilityRating) {
+        this.reliabilityRating = reliabilityRating;
+    }
+
+    public Integer getNewCodeSmells() {
+        return newCodeSmells;
+    }
+
+    public void setNewCodeSmells(Integer newCodeSmells) {
+        this.newCodeSmells = newCodeSmells;
+    }
+
+    public Double getNewSqaleDebtRatio() {
+        return newSqaleDebtRatio;
+    }
+
+    public void setNewSqaleDebtRatio(Double newSqaleDebtRatio) {
+        this.newSqaleDebtRatio = newSqaleDebtRatio;
+    }
+
+    public Integer getNewTechnicalDebt() {
+        return newTechnicalDebt;
+    }
+
+    public void setNewTechnicalDebt(Integer newTechnicalDebt) {
+        this.newTechnicalDebt = newTechnicalDebt;
+    }
+
+    public Double getSqaleDebtRatio() {
+        return sqaleDebtRatio;
+    }
+
+    public void setSqaleDebtRatio(Double sqaleDebtRatio) {
+        this.sqaleDebtRatio = sqaleDebtRatio;
+    }
+
+    public String getSqaleIndex() {
+        return sqaleIndex;
+    }
+
+    public void setSqaleIndex(String sqaleIndex) {
+        this.sqaleIndex = sqaleIndex;
+    }
+
+    public String getSqaleRating() {
+        return sqaleRating;
+    }
+
+    public void setSqaleRating(String sqaleRating) {
+        this.sqaleRating = sqaleRating;
+    }
+
+    public Integer getConfirmedIssues() {
+        return confirmedIssues;
+    }
+
+    public void setConfirmedIssues(Integer confirmedIssues) {
+        this.confirmedIssues = confirmedIssues;
+    }
+
+    public Integer getFalsePositiveIssues() {
+        return falsePositiveIssues;
+    }
+
+    public void setFalsePositiveIssues(Integer falsePositiveIssues) {
+        this.falsePositiveIssues = falsePositiveIssues;
+    }
+
+    public Integer getInfoViolations() {
+        return infoViolations;
+    }
+
+    public void setInfoViolations(Integer infoViolations) {
+        this.infoViolations = infoViolations;
+    }
+
+    public Integer getNewBlockerViolations() {
+        return newBlockerViolations;
+    }
+
+    public void setNewBlockerViolations(Integer newBlockerViolations) {
+        this.newBlockerViolations = newBlockerViolations;
+    }
+
+    public Integer getNewCriticalViolations() {
+        return newCriticalViolations;
+    }
+
+    public void setNewCriticalViolations(Integer newCriticalViolations) {
+        this.newCriticalViolations = newCriticalViolations;
+    }
+
+    public Integer getNewInfoViolations() {
+        return newInfoViolations;
+    }
+
+    public void setNewInfoViolations(Integer newInfoViolations) {
+        this.newInfoViolations = newInfoViolations;
+    }
+
+    public Integer getNewMajorViolations() {
+        return newMajorViolations;
+    }
+
+    public void setNewMajorViolations(Integer newMajorViolations) {
+        this.newMajorViolations = newMajorViolations;
+    }
+
+    public Integer getNewMinorViolations() {
+        return newMinorViolations;
+    }
+
+    public void setNewMinorViolations(Integer newMinorViolations) {
+        this.newMinorViolations = newMinorViolations;
+    }
+
+    public Integer getNewViolations() {
+        return newViolations;
+    }
+
+    public void setNewViolations(Integer newViolations) {
+        this.newViolations = newViolations;
+    }
+
+    public Integer getOpenIssues() {
+        return openIssues;
+    }
+
+    public void setOpenIssues(Integer openIssues) {
+        this.openIssues = openIssues;
+    }
+
+    public Integer getReopenedIssues() {
+        return reopenedIssues;
+    }
+
+    public void setReopenedIssues(Integer reopenedIssues) {
+        this.reopenedIssues = reopenedIssues;
+    }
+
+    public Integer getWontFixIssues() {
+        return wontFixIssues;
+    }
+
+    public void setWontFixIssues(Integer wontFixIssues) {
+        this.wontFixIssues = wontFixIssues;
+    }
+
+    public String getAlertStatus() {
+        return alertStatus;
+    }
+
+    public void setAlertStatus(String alertStatus) {
+        this.alertStatus = alertStatus;
+    }
+
+    public String getQualityGateDetails() {
+        return qualityGateDetails;
+    }
+
+    public void setQualityGateDetails(String qualityGateDetails) {
+        this.qualityGateDetails = qualityGateDetails;
+    }
+
+    public String getNewMaintainabilityRating() {
+        return newMaintainabilityRating;
+    }
+
+    public void setNewMaintainabilityRating(String newMaintainabilityRating) {
+        this.newMaintainabilityRating = newMaintainabilityRating;
+    }
+
+    public Integer getThreshold() {
+        return threshold;
+    }
+
+    public void setThreshold(Integer threshold) {
+        this.threshold = threshold;
+    }
 }

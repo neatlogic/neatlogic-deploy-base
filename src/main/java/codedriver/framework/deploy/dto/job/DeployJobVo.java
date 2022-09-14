@@ -21,6 +21,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class DeployJobVo extends AutoexecJobVo {
@@ -94,6 +95,16 @@ public class DeployJobVo extends AutoexecJobVo {
         version = jsonObj.getString("version");
         buildNo = jsonObj.getInteger("buildNo");
         this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue()));
+    }
+
+    public DeployJobVo(Long appSystemId, Long scenarioId, Long envId, String triggerType, Date planStartTime, Integer roundCount, JSONObject param) {
+        this.appSystemId = appSystemId;
+        super.setScenarioId(scenarioId);
+        this.envId = envId;
+        super.setTriggerType(triggerType);
+        super.setPlanStartTime(planStartTime);
+        super.setRoundCount(roundCount);
+        super.setParam(param);
     }
 
 

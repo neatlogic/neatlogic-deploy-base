@@ -76,6 +76,8 @@ public class DeployJobVo extends AutoexecJobVo {
     @JSONField(serialize = false)
     private List<DeployJobModuleVo> moduleList;
 
+    private Integer isNeedNameAndAbbrName = 0; //创建批量作业时，需要从列表获取简称回显，等于1时才会join 视图
+
     public DeployJobVo() {
         this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOYSCHEDULE.getValue()));
     }
@@ -303,5 +305,13 @@ public class DeployJobVo extends AutoexecJobVo {
 
     public void setAppSystemModuleVersionList(List<DeploySystemModuleVersionVo> appSystemModuleVersionList) {
         this.appSystemModuleVersionList = appSystemModuleVersionList;
+    }
+
+    public Integer getIsNeedNameAndAbbrName() {
+        return isNeedNameAndAbbrName;
+    }
+
+    public void setIsNeedNameAndAbbrName(Integer isNeedNameAndAbbrName) {
+        this.isNeedNameAndAbbrName = isNeedNameAndAbbrName;
     }
 }

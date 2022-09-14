@@ -77,7 +77,7 @@ public class DeployJobVo extends AutoexecJobVo {
     private List<DeployJobModuleVo> moduleList;
 
     public DeployJobVo() {
-        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue()));
+        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOYSCHEDULE.getValue()));
     }
 
     public List<DeployJobAuthVo> getAuthList() {
@@ -95,7 +95,7 @@ public class DeployJobVo extends AutoexecJobVo {
         envId = jsonObj.getLong("envId");
         version = jsonObj.getString("version");
         buildNo = jsonObj.getInteger("buildNo");
-        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue()));
+        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOYSCHEDULE.getValue()));
     }
 
     public DeployJobVo(Long appSystemId, Long scenarioId, Long envId, String triggerType, Date planStartTime, Integer roundCount, JSONObject param) {

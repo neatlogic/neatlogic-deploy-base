@@ -13,6 +13,7 @@ public enum DeployAppConfigAction {
     VIEW("view","查看作业/配置"),
     EDIT("edit","编辑配置"),
     VERSION_AND_PRODUCT_MANAGER("versionAndProductManager","版本&制品管理"),
+    PIPELINE("pipeline","超级流水线权限"),
     ;
 
     private final String value;

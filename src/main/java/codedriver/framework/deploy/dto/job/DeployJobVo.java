@@ -79,7 +79,7 @@ public class DeployJobVo extends AutoexecJobVo {
     private Integer isNeedNameAndAbbrName = 0; //创建批量作业时，需要从列表获取简称回显，等于1时才会join 视图
 
     public DeployJobVo() {
-        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOYSCHEDULE.getValue()));
+        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOY_SCHEDULE_GENERAL.getValue(), JobSource.DEPLOY_SCHEDULE_PIPELINE.getValue()));
     }
 
     public List<DeployJobAuthVo> getAuthList() {
@@ -91,13 +91,13 @@ public class DeployJobVo extends AutoexecJobVo {
     }
 
     public DeployJobVo(JSONObject jsonObj) {
+        this();
         appSystemId = jsonObj.getLong("appSystemId");
         appModuleId = jsonObj.getLong("appModuleId");
         super.setScenarioId(jsonObj.getLong("scenarioId"));
         envId = jsonObj.getLong("envId");
         version = jsonObj.getString("version");
         buildNo = jsonObj.getInteger("buildNo");
-        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOYSCHEDULE.getValue()));
     }
 
     public DeployJobVo(Long appSystemId, Long scenarioId, Long envId, String triggerType, Date planStartTime, Integer roundCount, JSONObject param) {

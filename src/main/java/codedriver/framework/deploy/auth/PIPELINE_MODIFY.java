@@ -7,6 +7,9 @@ package codedriver.framework.deploy.auth;
 
 import codedriver.framework.auth.core.AuthBase;
 
+import java.util.Collections;
+import java.util.List;
+
 public class PIPELINE_MODIFY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
@@ -26,5 +29,10 @@ public class PIPELINE_MODIFY extends AuthBase {
     @Override
     public Integer getSort() {
         return 5;
+    }
+
+    @Override
+    public List<Class<? extends AuthBase>> getIncludeAuths() {
+        return Collections.singletonList(DEPLOY_BASE.class);
     }
 }

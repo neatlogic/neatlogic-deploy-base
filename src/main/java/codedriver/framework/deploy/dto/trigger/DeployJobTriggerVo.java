@@ -6,13 +6,13 @@
 package codedriver.framework.deploy.dto.trigger;
 
 import codedriver.framework.autoexec.dto.job.AutoexecJobStatusVo;
-import codedriver.framework.cmdb.dto.resourcecenter.entity.AppEnvironmentVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -24,17 +24,18 @@ public class DeployJobTriggerVo extends BaseEditorVo {
     private String name;
     @EntityField(name = "是否激活", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "集成id", type = ApiParamType.STRING)
-    private String IntegrationUuid;
-    @EntityField(name = "配置", type = ApiParamType.JSONARRAY)
-    private List<DeployJobTriggerAppModuleVo> triggerAppModuleList;
+    @EntityField(name = "集成uuid", type = ApiParamType.STRING)
+    private String integrationUuid;
+    @EntityField(name = "作业类型", type = ApiParamType.STRING)
+    private String type;
+    @EntityField(name = "作业类型名", type = ApiParamType.STRING)
+    private String typeName;
+    @EntityField(name = "流水线类型", type = ApiParamType.STRING)
+    private String pipelineType;
     @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
     private DeployJobTriggerConfigVo config;
     @EntityField(name = "源环境范围集合", type = ApiParamType.JSONARRAY)
-    private List<AppEnvironmentVo> envList;
-    @EntityField(name = "源环境范围集合", type = ApiParamType.JSONARRAY)
     private List<AutoexecJobStatusVo> jobStatusList;
-
 
     @JSONField(serialize = false)
     private String configStr;
@@ -64,14 +65,17 @@ public class DeployJobTriggerVo extends BaseEditorVo {
     }
 
     public String getIntegrationUuid() {
-        return IntegrationUuid;
+        return integrationUuid;
     }
 
     public void setIntegrationUuid(String integrationUuid) {
-        IntegrationUuid = integrationUuid;
+        this.integrationUuid = integrationUuid;
     }
 
     public DeployJobTriggerConfigVo getConfig() {
+        if(StringUtils.isNotBlank(configStr)) {
+            config = JSONObject.parseObject(configStr,DeployJobTriggerConfigVo.class);
+        }
         return config;
     }
 
@@ -86,20 +90,28 @@ public class DeployJobTriggerVo extends BaseEditorVo {
         return configStr;
     }
 
-    public List<DeployJobTriggerAppModuleVo> getTriggerAppModuleList() {
-        return triggerAppModuleList;
+    public String getType() {
+        return type;
     }
 
-    public void setTriggerAppModuleList(List<DeployJobTriggerAppModuleVo> triggerAppModuleList) {
-        this.triggerAppModuleList = triggerAppModuleList;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public List<AppEnvironmentVo> getEnvList() {
-        return envList;
+    public String getTypeName() {
+        return typeName;
     }
 
-    public void setEnvList(List<AppEnvironmentVo> envList) {
-        this.envList = envList;
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
+    public String getPipelineType() {
+        return pipelineType;
+    }
+
+    public void setPipelineType(String pipelineType) {
+        this.pipelineType = pipelineType;
     }
 
     public List<AutoexecJobStatusVo> getJobStatusList() {

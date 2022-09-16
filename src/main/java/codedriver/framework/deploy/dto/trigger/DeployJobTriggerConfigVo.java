@@ -7,27 +7,29 @@ package codedriver.framework.deploy.dto.trigger;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
+import com.alibaba.fastjson.JSONObject;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class DeployJobTriggerConfigVo {
-    @EntityField(name = "源环境id集合", type = ApiParamType.JSONARRAY)
-    private List<Long> envIdList;
+public class DeployJobTriggerConfigVo implements Serializable {
+    private static final long serialVersionUID = 9213556846712167853L;
+    @EntityField(name = "源环境集合", type = ApiParamType.JSONARRAY)
+    private List<String> envNameList;
     @EntityField(name = "作业状态集合", type = ApiParamType.JSONARRAY)
     private List<String> jobStatusList;
-    @EntityField(name = "场景名", type = ApiParamType.STRING)
-    private String scenarioName;
-    @EntityField(name = "编译号", type = ApiParamType.INTEGER)
-    private Integer buildNo;
-    @EntityField(name = "目标环境名", type = ApiParamType.STRING)
-    private String targetEnvName;
+    @EntityField(name = "集成入参", type = ApiParamType.JSONOBJECT)
+    private JSONObject integrationInputParam;
+    @EntityField(name = "配置", type = ApiParamType.JSONARRAY)
+    private List<DeployJobTriggerAppModuleVo> triggerAppModuleList;
 
-    public List<Long> getEnvIdList() {
-        return envIdList;
+
+    public List<String> getEnvNameList() {
+        return envNameList;
     }
 
-    public void setEnvIdList(List<Long> envIdList) {
-        this.envIdList = envIdList;
+    public void setEnvNameList(List<String> envNameList) {
+        this.envNameList = envNameList;
     }
 
     public List<String> getJobStatusList() {
@@ -38,27 +40,19 @@ public class DeployJobTriggerConfigVo {
         this.jobStatusList = jobStatusList;
     }
 
-    public String getScenarioName() {
-        return scenarioName;
+    public List<DeployJobTriggerAppModuleVo> getTriggerAppModuleList() {
+        return triggerAppModuleList;
     }
 
-    public void setScenarioName(String scenarioName) {
-        this.scenarioName = scenarioName;
+    public void setTriggerAppModuleList(List<DeployJobTriggerAppModuleVo> triggerAppModuleList) {
+        this.triggerAppModuleList = triggerAppModuleList;
     }
 
-    public Integer getBuildNo() {
-        return buildNo;
+    public JSONObject getIntegrationInputParam() {
+        return integrationInputParam;
     }
 
-    public void setBuildNo(Integer buildNo) {
-        this.buildNo = buildNo;
-    }
-
-    public String getTargetEnvName() {
-        return targetEnvName;
-    }
-
-    public void setTargetEnvName(String targetEnvName) {
-        this.targetEnvName = targetEnvName;
+    public void setIntegrationInputParam(JSONObject integrationInputParam) {
+        this.integrationInputParam = integrationInputParam;
     }
 }

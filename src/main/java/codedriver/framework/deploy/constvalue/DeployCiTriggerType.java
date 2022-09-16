@@ -13,7 +13,7 @@ import java.util.List;
 
 public enum DeployCiTriggerType implements IEnum {
     MANUAL("manual", "手动触发"),
-    AUTO("auto", "定时触发"),
+    AUTO("auto", "自动触发"),
     INSTANT("instant", "立即触发"),
     ;
     private final String value;

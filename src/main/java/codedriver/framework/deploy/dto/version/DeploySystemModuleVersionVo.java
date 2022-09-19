@@ -12,6 +12,15 @@ public class DeploySystemModuleVersionVo {
     private Long appModuleId;
     private Long versionId;
 
+    public DeploySystemModuleVersionVo() {
+    }
+
+    public DeploySystemModuleVersionVo(Long appSystemId, Long appModuleId, Long versionId) {
+        this.appSystemId = appSystemId;
+        this.appModuleId = appModuleId;
+        this.versionId = versionId;
+    }
+
     public Long getId() {
         return id;
     }

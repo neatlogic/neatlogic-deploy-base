@@ -22,6 +22,9 @@ public class DeployJobTriggerConfigVo implements Serializable {
     private JSONObject integrationInputParam;
     @EntityField(name = "配置", type = ApiParamType.JSONARRAY)
     private List<DeployJobTriggerAppModuleVo> triggerAppModuleList;
+    @EntityField(name = "流水线id", type = ApiParamType.LONG)
+    private Long pipeLineId;
+
 
 
     public List<String> getEnvNameList() {
@@ -54,5 +57,13 @@ public class DeployJobTriggerConfigVo implements Serializable {
 
     public void setIntegrationInputParam(JSONObject integrationInputParam) {
         this.integrationInputParam = integrationInputParam;
+    }
+
+    public Long getPipeLineId() {
+        return pipeLineId;
+    }
+
+    public void setPipeLineId(Long pipeLineId) {
+        this.pipeLineId = pipeLineId;
     }
 }

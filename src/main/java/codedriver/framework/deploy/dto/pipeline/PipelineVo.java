@@ -44,6 +44,11 @@ public class PipelineVo extends BasePageVo {
     private List<PipelineLaneVo> laneList;
     @EntityField(name = "授权列表", type = ApiParamType.JSONARRAY)
     private List<PipelineAuthVo> authList;
+    //目前用于创建批量作业
+    @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
+    private int isHasBuildTypeTool = 0;
+    @EntityField(name = "是否拥有DEPLOY类型的工具库工具", type = ApiParamType.INTEGER)
+    private int isHasDeployTypeTool = 0;
 
     public Long getId() {
         if (id == null) {
@@ -161,5 +166,21 @@ public class PipelineVo extends BasePageVo {
 
     public void setAuthList(List<PipelineAuthVo> authList) {
         this.authList = authList;
+    }
+
+    public int getIsHasBuildTypeTool() {
+        return isHasBuildTypeTool;
+    }
+
+    public void setIsHasBuildTypeTool(int isHasBuildTypeTool) {
+        this.isHasBuildTypeTool = isHasBuildTypeTool;
+    }
+
+    public int getIsHasDeployTypeTool() {
+        return isHasDeployTypeTool;
+    }
+
+    public void setIsHasDeployTypeTool(int isHasDeployTypeTool) {
+        this.isHasDeployTypeTool = isHasDeployTypeTool;
     }
 }

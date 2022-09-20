@@ -75,6 +75,8 @@ public class DeployJobVo extends AutoexecJobVo {
     private List<String> authUuidList; //用户、分组、角色的uuid列表
     @JSONField(serialize = false)
     private List<DeployJobModuleVo> moduleList;
+    @JSONField(serialize = false)
+    private boolean isJobInitParam = false;//用于判断是否初始化过作业参数
 
     private Integer isNeedNameAndAbbrName = 0; //创建批量作业时，需要从列表获取简称回显，等于1时才会join 视图
 
@@ -313,5 +315,13 @@ public class DeployJobVo extends AutoexecJobVo {
 
     public void setIsNeedNameAndAbbrName(Integer isNeedNameAndAbbrName) {
         this.isNeedNameAndAbbrName = isNeedNameAndAbbrName;
+    }
+
+    public boolean getIsJobInitParam() {
+        return isJobInitParam;
+    }
+
+    public void setIsJobInitParam(boolean jobInitParam) {
+        isJobInitParam = jobInitParam;
     }
 }

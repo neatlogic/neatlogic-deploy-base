@@ -8,6 +8,7 @@ package codedriver.framework.deploy.dto.trigger;
 import codedriver.framework.autoexec.dto.job.AutoexecJobStatusVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
+import codedriver.framework.deploy.constvalue.DeployTriggerBuildNoPolicy;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
@@ -36,6 +37,8 @@ public class DeployJobTriggerVo extends BaseEditorVo {
     private DeployJobTriggerConfigVo config;
     @EntityField(name = "源环境范围集合", type = ApiParamType.JSONARRAY)
     private List<AutoexecJobStatusVo> jobStatusList;
+    @EntityField(name = "编译号策略", type = ApiParamType.ENUM ,member = DeployTriggerBuildNoPolicy.class)
+    private String buildNoPolicy;
 
     @JSONField(serialize = false)
     private String configStr;
@@ -120,5 +123,13 @@ public class DeployJobTriggerVo extends BaseEditorVo {
 
     public void setJobStatusList(List<AutoexecJobStatusVo> jobStatusList) {
         this.jobStatusList = jobStatusList;
+    }
+
+    public String getBuildNoPolicy() {
+        return buildNoPolicy;
+    }
+
+    public void setBuildNoPolicy(String buildNoPolicy) {
+        this.buildNoPolicy = buildNoPolicy;
     }
 }

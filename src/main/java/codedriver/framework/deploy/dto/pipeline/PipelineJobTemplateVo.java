@@ -7,6 +7,7 @@ package codedriver.framework.deploy.dto.pipeline;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BasePageVo;
+import codedriver.framework.deploy.dto.job.DeployJobVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
@@ -60,6 +61,16 @@ public class PipelineJobTemplateVo extends BasePageVo {
     private int isHasDeployTypeTool = 0;
     @EntityField(name = "场景列表")
     private List<PipelineEnvScenarioVo> envScenarioList;
+
+    public PipelineJobTemplateVo() {
+    }
+
+    public PipelineJobTemplateVo(DeployJobVo deployJobVo) {
+        this.appSystemId = deployJobVo.getAppSystemId();
+        this.appModuleId = deployJobVo.getAppModuleId();
+        this.envId = deployJobVo.getEnvId();
+        this.scenarioId = deployJobVo.getScenarioId();
+    }
 
     public void addEnvScenario(PipelineEnvScenarioVo envScenarioVo) {
         if (envScenarioList == null) {

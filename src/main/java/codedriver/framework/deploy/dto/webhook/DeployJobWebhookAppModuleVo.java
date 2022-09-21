@@ -3,14 +3,14 @@
  * 本内容仅限于深圳市赞悦科技有限公司内部传阅，禁止外泄以及用于其他的商业项目。
  */
 
-package codedriver.framework.deploy.dto.trigger;
+package codedriver.framework.deploy.dto.webhook;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 
-public class DeployJobTriggerAppModuleVo {
+public class DeployJobWebhookAppModuleVo {
     @EntityField(name = "触发器id", type = ApiParamType.LONG)
-    private Long triggerId;
+    private Long webhookId;
     @EntityField(name = "应用系统id", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
@@ -20,12 +20,12 @@ public class DeployJobTriggerAppModuleVo {
     @EntityField(name = "模块id", type = ApiParamType.LONG)
     private Long appModuleId;
 
-    public Long getTriggerId() {
-        return triggerId;
+    public Long getWebhookId() {
+        return webhookId;
     }
 
-    public void setTriggerId(Long triggerId) {
-        this.triggerId = triggerId;
+    public void setWebhookId(Long webhookId) {
+        this.webhookId = webhookId;
     }
 
     public Long getAppSystemId() {

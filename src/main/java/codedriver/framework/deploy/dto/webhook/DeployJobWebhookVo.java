@@ -3,13 +3,13 @@
  * 本内容仅限于深圳市赞悦科技有限公司内部传阅，禁止外泄以及用于其他的商业项目。
  */
 
-package codedriver.framework.deploy.dto.trigger;
+package codedriver.framework.deploy.dto.webhook;
 
 import codedriver.framework.autoexec.constvalue.JobStatus;
 import codedriver.framework.autoexec.dto.job.AutoexecJobStatusVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
-import codedriver.framework.deploy.constvalue.DeployTriggerBuildNoPolicy;
+import codedriver.framework.deploy.constvalue.DeployWebhookBuildNoPolicy;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
@@ -20,7 +20,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeployJobTriggerVo extends BaseEditorVo {
+public class DeployJobWebhookVo extends BaseEditorVo {
     private static final long serialVersionUID = -5715414967862953577L;
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
@@ -37,10 +37,10 @@ public class DeployJobTriggerVo extends BaseEditorVo {
     @EntityField(name = "流水线类型", type = ApiParamType.STRING)
     private String pipelineType;
     @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
-    private DeployJobTriggerConfigVo config;
+    private DeployJobWebhookConfigVo config;
     @EntityField(name = "作业状态集合", type = ApiParamType.JSONARRAY)
     private List<AutoexecJobStatusVo> jobStatusList;
-    @EntityField(name = "编译号策略", type = ApiParamType.ENUM, member = DeployTriggerBuildNoPolicy.class)
+    @EntityField(name = "编译号策略", type = ApiParamType.ENUM, member = DeployWebhookBuildNoPolicy.class)
     private String buildNoPolicy;
 
     @JSONField(serialize = false)
@@ -78,14 +78,14 @@ public class DeployJobTriggerVo extends BaseEditorVo {
         this.integrationUuid = integrationUuid;
     }
 
-    public DeployJobTriggerConfigVo getConfig() {
+    public DeployJobWebhookConfigVo getConfig() {
         if (StringUtils.isNotBlank(configStr)) {
-            config = JSONObject.parseObject(configStr, DeployJobTriggerConfigVo.class);
+            config = JSONObject.parseObject(configStr, DeployJobWebhookConfigVo.class);
         }
         return config;
     }
 
-    public void setConfig(DeployJobTriggerConfigVo config) {
+    public void setConfig(DeployJobWebhookConfigVo config) {
         this.config = config;
     }
 

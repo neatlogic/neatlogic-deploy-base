@@ -3,7 +3,7 @@
  * 本内容仅限于深圳市赞悦科技有限公司内部传阅，禁止外泄以及用于其他的商业项目。
  */
 
-package codedriver.framework.deploy.dto.trigger;
+package codedriver.framework.deploy.dto.webhook;
 
 import codedriver.framework.autoexec.constvalue.JobNodeStatus;
 import codedriver.framework.common.constvalue.ApiParamType;
@@ -14,12 +14,12 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
 
-public class DeployJobTriggerAuditVo extends BasePageVo {
+public class DeployJobWebhookAuditVo extends BasePageVo {
     private static final long serialVersionUID = -8243357692436223665L;
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "触发器id", type = ApiParamType.LONG)
-    private Long triggerId;
+    private Long webhookId;
     @EntityField(name = "记录名", type = ApiParamType.STRING)
     private String name;
     @EntityField(name = "状态", type = ApiParamType.STRING)
@@ -37,12 +37,12 @@ public class DeployJobTriggerAuditVo extends BasePageVo {
     @EntityField(name = "异常文件路径", type = ApiParamType.STRING)
     private String errorFilePath;
 
-    public DeployJobTriggerAuditVo() {
+    public DeployJobWebhookAuditVo() {
     }
 
-    public DeployJobTriggerAuditVo(String jobName, Long triggerId, Long auditId) {
+    public DeployJobWebhookAuditVo(String jobName, Long webhookId, Long auditId) {
         this.name = jobName;
-        this.triggerId = triggerId;
+        this.webhookId = webhookId;
         this.integrationAuditId = auditId;
     }
 
@@ -54,12 +54,12 @@ public class DeployJobTriggerAuditVo extends BasePageVo {
         return id;
     }
 
-    public Long getTriggerId() {
-        return triggerId;
+    public Long getWebhookId() {
+        return webhookId;
     }
 
-    public void setTriggerId(Long triggerId) {
-        this.triggerId = triggerId;
+    public void setWebhookId(Long webhookId) {
+        this.webhookId = webhookId;
     }
 
     public String getName() {

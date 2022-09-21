@@ -3,7 +3,7 @@
  * 本内容仅限于深圳市赞悦科技有限公司内部传阅，禁止外泄以及用于其他的商业项目。
  */
 
-package codedriver.framework.deploy.dto.trigger;
+package codedriver.framework.deploy.dto.webhook;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSONObject;
 import java.io.Serializable;
 import java.util.List;
 
-public class DeployJobTriggerConfigVo implements Serializable {
+public class DeployJobWebhookConfigVo implements Serializable {
     private static final long serialVersionUID = 9213556846712167853L;
     @EntityField(name = "源环境集合", type = ApiParamType.JSONARRAY)
     private List<String> envNameList;
@@ -21,7 +21,7 @@ public class DeployJobTriggerConfigVo implements Serializable {
     @EntityField(name = "集成入参", type = ApiParamType.JSONOBJECT)
     private JSONObject integrationInputParam;
     @EntityField(name = "配置", type = ApiParamType.JSONARRAY)
-    private List<DeployJobTriggerAppModuleVo> triggerAppModuleList;
+    private List<DeployJobWebhookAppModuleVo> webhookAppModuleList;
     @EntityField(name = "流水线id", type = ApiParamType.LONG)
     private Long pipeLineId;
 
@@ -43,12 +43,12 @@ public class DeployJobTriggerConfigVo implements Serializable {
         this.jobStatusList = jobStatusList;
     }
 
-    public List<DeployJobTriggerAppModuleVo> getTriggerAppModuleList() {
-        return triggerAppModuleList;
+    public List<DeployJobWebhookAppModuleVo> getWebhookAppModuleList() {
+        return webhookAppModuleList;
     }
 
-    public void setTriggerAppModuleList(List<DeployJobTriggerAppModuleVo> triggerAppModuleList) {
-        this.triggerAppModuleList = triggerAppModuleList;
+    public void setWebhookAppModuleList(List<DeployJobWebhookAppModuleVo> webhookAppModuleList) {
+        this.webhookAppModuleList = webhookAppModuleList;
     }
 
     public JSONObject getIntegrationInputParam() {

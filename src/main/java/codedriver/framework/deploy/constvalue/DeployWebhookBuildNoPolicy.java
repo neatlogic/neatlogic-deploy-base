@@ -11,14 +11,14 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
 
-public enum DeployTriggerBuildNoPolicy implements IEnum {
+public enum DeployWebhookBuildNoPolicy implements IEnum {
     THE_SAME("the_same", "与原作业一致"),
     NEW("new", "新建buildNo")
     ;
     private final String value;
     private final String text;
 
-    DeployTriggerBuildNoPolicy(String _value, String _text) {
+    DeployWebhookBuildNoPolicy(String _value, String _text) {
         this.value = _value;
         this.text = _text;
     }
@@ -26,7 +26,7 @@ public enum DeployTriggerBuildNoPolicy implements IEnum {
     @Override
     public List getValueTextList() {
         JSONArray array = new JSONArray();
-        for (DeployTriggerBuildNoPolicy type : values()) {
+        for (DeployWebhookBuildNoPolicy type : values()) {
             JSONObject json = new JSONObject();
             json.put("value", type.getValue());
             json.put("text", type.getText());
@@ -35,8 +35,8 @@ public enum DeployTriggerBuildNoPolicy implements IEnum {
         return array;
     }
 
-    public static DeployTriggerBuildNoPolicy getDeployTriggerBuildNoPolicy(String value) {
-        for (DeployTriggerBuildNoPolicy type : DeployTriggerBuildNoPolicy.values()) {
+    public static DeployWebhookBuildNoPolicy getDeployTriggerBuildNoPolicy(String value) {
+        for (DeployWebhookBuildNoPolicy type : DeployWebhookBuildNoPolicy.values()) {
             if (type.getValue().equals(value)) {
                 return type;
             }
@@ -45,7 +45,7 @@ public enum DeployTriggerBuildNoPolicy implements IEnum {
     }
 
     public static String getDeployTriggerBuildNoPolicyText(String value) {
-        for (DeployTriggerBuildNoPolicy type : DeployTriggerBuildNoPolicy.values()) {
+        for (DeployWebhookBuildNoPolicy type : DeployWebhookBuildNoPolicy.values()) {
             if (type.getValue().equals(value)) {
                 return type.getText();
             }

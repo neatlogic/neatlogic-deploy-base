@@ -5,6 +5,7 @@
 
 package codedriver.framework.deploy.dto.trigger;
 
+import codedriver.framework.autoexec.constvalue.JobStatus;
 import codedriver.framework.autoexec.dto.job.AutoexecJobStatusVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
@@ -13,8 +14,10 @@ import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeployJobTriggerVo extends BaseEditorVo {
@@ -35,9 +38,9 @@ public class DeployJobTriggerVo extends BaseEditorVo {
     private String pipelineType;
     @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
     private DeployJobTriggerConfigVo config;
-    @EntityField(name = "源环境范围集合", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "作业状态集合", type = ApiParamType.JSONARRAY)
     private List<AutoexecJobStatusVo> jobStatusList;
-    @EntityField(name = "编译号策略", type = ApiParamType.ENUM ,member = DeployTriggerBuildNoPolicy.class)
+    @EntityField(name = "编译号策略", type = ApiParamType.ENUM, member = DeployTriggerBuildNoPolicy.class)
     private String buildNoPolicy;
 
     @JSONField(serialize = false)
@@ -76,8 +79,8 @@ public class DeployJobTriggerVo extends BaseEditorVo {
     }
 
     public DeployJobTriggerConfigVo getConfig() {
-        if(StringUtils.isNotBlank(configStr)) {
-            config = JSONObject.parseObject(configStr,DeployJobTriggerConfigVo.class);
+        if (StringUtils.isNotBlank(configStr)) {
+            config = JSONObject.parseObject(configStr, DeployJobTriggerConfigVo.class);
         }
         return config;
     }
@@ -118,6 +121,13 @@ public class DeployJobTriggerVo extends BaseEditorVo {
     }
 
     public List<AutoexecJobStatusVo> getJobStatusList() {
+        if (CollectionUtils.isEmpty(jobStatusList) && config != null) {
+            jobStatusList = new ArrayList<>();
+            List<String> statusList = config.getJobStatusList();
+            for (String status : statusList) {
+                jobStatusList.add(JobStatus.getStatus(status));
+            }
+        }
         return jobStatusList;
     }
 

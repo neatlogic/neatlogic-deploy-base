@@ -1,5 +1,6 @@
 package codedriver.framework.deploy.dto.ci;
 
+import codedriver.framework.common.audit.AuditVoHandler;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.deploy.constvalue.DeployCiActionType;
@@ -8,7 +9,7 @@ import codedriver.framework.restful.enums.ApiInvokedStatus;
 import codedriver.framework.util.SnowflakeUtil;
 import org.apache.commons.lang3.StringUtils;
 
-public class DeployCiAuditVo extends BaseEditorVo {
+public class DeployCiAuditVo extends BaseEditorVo implements AuditVoHandler {
 
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
@@ -28,6 +29,19 @@ public class DeployCiAuditVo extends BaseEditorVo {
     private Long jobId;
     @EntityField(name = "作业名称", type = ApiParamType.STRING)
     private String jobName;
+
+    @EntityField(name = "请求参数", type = ApiParamType.STRING)
+    private String param;
+    @EntityField(name = "返回结果", type = ApiParamType.STRING)
+    private Object result;
+    @EntityField(name = "异常", type = ApiParamType.STRING)
+    private String error;
+    @EntityField(name = "参数内容文件路径", type = ApiParamType.STRING)
+    private String paramFilePath;
+    @EntityField(name = "结果内容文件路径", type = ApiParamType.STRING)
+    private String resultFilePath;
+    @EntityField(name = "错误内容文件路径", type = ApiParamType.STRING)
+    private String errorFilePath;
 
     public DeployCiAuditVo() {
     }
@@ -103,5 +117,65 @@ public class DeployCiAuditVo extends BaseEditorVo {
             statusName = ApiInvokedStatus.getApiInvokedStatusText(status);
         }
         return statusName;
+    }
+
+    @Override
+    public String getParam() {
+        return param;
+    }
+
+    @Override
+    public void setParam(String param) {
+        this.param = param;
+    }
+
+    @Override
+    public Object getResult() {
+        return result;
+    }
+
+    @Override
+    public void setResult(Object result) {
+        this.result = result;
+    }
+
+    @Override
+    public String getError() {
+        return error;
+    }
+
+    @Override
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    @Override
+    public String getParamFilePath() {
+        return paramFilePath;
+    }
+
+    @Override
+    public void setParamFilePath(String paramFilePath) {
+        this.paramFilePath = paramFilePath;
+    }
+
+    @Override
+    public String getResultFilePath() {
+        return resultFilePath;
+    }
+
+    @Override
+    public void setResultFilePath(String resultFilePath) {
+        this.resultFilePath = resultFilePath;
+    }
+
+    @Override
+    public String getErrorFilePath() {
+        return errorFilePath;
+    }
+
+    @Override
+    public void setErrorFilePath(String errorFilePath) {
+        this.errorFilePath = errorFilePath;
     }
 }

@@ -46,6 +46,13 @@ public class DeployCiAuditVo extends BaseEditorVo implements AuditVoHandler {
     public DeployCiAuditVo() {
     }
 
+    public DeployCiAuditVo(Long ciId, String commitId, String action, String param) {
+        this.ciId = ciId;
+        this.commitId = commitId;
+        this.action = action;
+        this.param = param;
+    }
+
     public Long getId() {
         if (id == null) {
             id = SnowflakeUtil.uniqueLong();

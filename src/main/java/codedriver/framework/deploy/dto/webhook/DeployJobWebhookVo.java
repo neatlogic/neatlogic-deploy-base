@@ -30,6 +30,8 @@ public class DeployJobWebhookVo extends BaseEditorVo {
     private Integer isActive;
     @EntityField(name = "集成uuid", type = ApiParamType.STRING)
     private String integrationUuid;
+    @EntityField(name = "集成名称", type = ApiParamType.STRING)
+    private String integrationName;
     @EntityField(name = "作业类型", type = ApiParamType.STRING)
     private String type;
     @EntityField(name = "作业类型名", type = ApiParamType.STRING)
@@ -76,6 +78,14 @@ public class DeployJobWebhookVo extends BaseEditorVo {
 
     public void setIntegrationUuid(String integrationUuid) {
         this.integrationUuid = integrationUuid;
+    }
+
+    public String getIntegrationName() {
+        return integrationName;
+    }
+
+    public void setIntegrationName(String integrationName) {
+        this.integrationName = integrationName;
     }
 
     public DeployJobWebhookConfigVo getConfig() {

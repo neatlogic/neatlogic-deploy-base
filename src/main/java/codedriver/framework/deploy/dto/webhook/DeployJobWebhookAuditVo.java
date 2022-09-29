@@ -36,14 +36,19 @@ public class DeployJobWebhookAuditVo extends BasePageVo {
     private String resultFilePath;
     @EntityField(name = "异常文件路径", type = ApiParamType.STRING)
     private String errorFilePath;
+    @EntityField(name = "来源作业id", type = ApiParamType.LONG)
+    private Long fromJobId;
+    @EntityField(name = "来源作业名", type = ApiParamType.STRING)
+    private Long fromJobName;
 
     public DeployJobWebhookAuditVo() {
     }
 
-    public DeployJobWebhookAuditVo(String jobName, Long webhookId, Long auditId) {
+    public DeployJobWebhookAuditVo(Long fromJobId, String jobName, Long webhookId, Long auditId) {
         this.name = jobName;
         this.webhookId = webhookId;
         this.integrationAuditId = auditId;
+        this.fromJobId = fromJobId;
     }
 
 
@@ -79,7 +84,7 @@ public class DeployJobWebhookAuditVo extends BasePageVo {
     }
 
     public String getStatusName() {
-        if(StringUtils.isNotBlank(status) && StringUtils.isBlank(statusName)){
+        if (StringUtils.isNotBlank(status) && StringUtils.isBlank(statusName)) {
             statusName = JobNodeStatus.getText(status);
         }
         return statusName;
@@ -123,5 +128,21 @@ public class DeployJobWebhookAuditVo extends BasePageVo {
 
     public void setErrorFilePath(String errorFilePath) {
         this.errorFilePath = errorFilePath;
+    }
+
+    public Long getFromJobId() {
+        return fromJobId;
+    }
+
+    public void setFromJobId(Long fromJobId) {
+        this.fromJobId = fromJobId;
+    }
+
+    public Long getFromJobName() {
+        return fromJobName;
+    }
+
+    public void setFromJobName(Long fromJobName) {
+        this.fromJobName = fromJobName;
     }
 }

@@ -2,20 +2,23 @@ package codedriver.framework.deploy.dto.version;
 
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
+import codedriver.framework.util.SnowflakeUtil;
 
 import java.util.Date;
 
 public class DeployVersionBuildQualityVo {
 
-    @EntityField(name = "应用模块ID", type = ApiParamType.LONG)
-    private Long appModuleId;
+    @EntityField(name = "id", type = ApiParamType.LONG)
+    private Long id;
     @EntityField(name = "版本ID", type = ApiParamType.LONG)
     private Long versionId;
     @EntityField(name = "构建时间", type = ApiParamType.LONG)
     private Date buildTime;
     private Integer files;
     private Integer classes;
+    @EntityField(name = "代码总行数", type = ApiParamType.INTEGER)
     private Integer lines;
+    @EntityField(name = "代码有效行", type = ApiParamType.INTEGER)
     private Integer ncloc;
     private Integer functions;
     private Integer statements;
@@ -37,7 +40,9 @@ public class DeployVersionBuildQualityVo {
     private Integer itCoveredConditionsByLine;
     private Integer itLineCoverage;
     private Integer itLinesToCover;
+    @EntityField(name = "行注释率", type = ApiParamType.DOUBLE)
     private Double commentLinesDensity;
+    @EntityField(name = "API注释率", type = ApiParamType.DOUBLE)
     private Integer publicDocumentedApiDensity;
     private Integer duplicatedFiles;
     private Integer duplicatedLines;
@@ -48,20 +53,24 @@ public class DeployVersionBuildQualityVo {
     private Integer newDuplicatedBlocks;
     @EntityField(name = "漏洞数量", type = ApiParamType.INTEGER)
     private Integer bugs;//漏洞
-    @EntityField(name = "缺陷数量", type = ApiParamType.INTEGER)
+    @EntityField(name = "总体漏洞", type = ApiParamType.INTEGER)
     private Integer vulnerabilities;//缺陷
-    @EntityField(name = "代码异味数量", type = ApiParamType.INTEGER)
+    @EntityField(name = "总体代码味道", type = ApiParamType.INTEGER)
     private Integer codeSmells;//代码异味
 
+    @EntityField(name = "新增安全热点", type = ApiParamType.INTEGER)
     private Integer newSecurityHotspots;
     private String newSecurityRating;
     private Integer newSecurityRemediationEffort;
+    @EntityField(name = "新增漏洞", type = ApiParamType.INTEGER)
     private Integer newVulnerabilities;
+    @EntityField(name = "总体安全热点", type = ApiParamType.INTEGER)
     private Integer securityHotspots;
     private String securityRating;
     private Integer securityRemediationEffort;
     private Integer commentLines;
     private String nclocLanguageDistribution;
+    @EntityField(name = "新增代码行数", type = ApiParamType.INTEGER)
     private Integer newLines;
     private Integer cognitiveComplexity;
     private Integer conditionsToCover;
@@ -74,14 +83,19 @@ public class DeployVersionBuildQualityVo {
     private Integer newUncoveredLines;
     private Integer uncoveredConditions;
     private Integer uncoveredLines;
+    @EntityField(name = "新增漏洞数量", type = ApiParamType.INTEGER)
     private Integer newBugs;
+    @EntityField(name = "新代码可靠率", type = ApiParamType.INTEGER)
     private String newReliabilityRating;
     private String reliabilityRating;
+    @EntityField(name = "新增代码异味", type = ApiParamType.INTEGER)
     private Integer newCodeSmells;
     private Double newSqaleDebtRatio;
+    @EntityField(name = "新增债务", type = ApiParamType.INTEGER)
     private Integer newTechnicalDebt;
     private Double sqaleDebtRatio;
-    private String sqaleIndex;
+    @EntityField(name = "债务", type = ApiParamType.INTEGER)
+    private Integer sqaleIndex;
     private String sqaleRating;
     private Integer confirmedIssues;
     private Integer falsePositiveIssues;
@@ -97,88 +111,20 @@ public class DeployVersionBuildQualityVo {
     private Integer wontFixIssues;
     private String alertStatus;
     private String qualityGateDetails;
+    @EntityField(name = "新代码可维护率", type = ApiParamType.INTEGER)
     private String newMaintainabilityRating;
-
-    @EntityField(name = "单元测试总数", type = ApiParamType.INTEGER)
-    private Integer tests;
-    @EntityField(name = "单元测试成功率", type = ApiParamType.INTEGER)
-    private Integer testSuccessDensity;
-    @EntityField(name = "单元测试失败数", type = ApiParamType.INTEGER)
-    private Integer testErrors;
-    @EntityField(name = "全量代码分支覆盖率", type = ApiParamType.INTEGER)
-    private Integer branchCoverage;
-    @EntityField(name = "增量代码分支覆盖率", type = ApiParamType.INTEGER)
-    private Integer newBranchCoverage;
-    @EntityField(name = "全量行覆盖率", type = ApiParamType.INTEGER)
-    private Integer lineCoverage;
-    @EntityField(name = "增量行覆盖率", type = ApiParamType.INTEGER)
-    private Integer newLineCoverage;
     @EntityField(name = "漏洞阈值", type = ApiParamType.INTEGER)
     private Integer threshold;
 
-
-    public Integer getTests() {
-        return tests;
+    public Long getId() {
+        if (id == null) {
+            id = SnowflakeUtil.uniqueLong();
+        }
+        return id;
     }
 
-    public void setTests(Integer tests) {
-        this.tests = tests;
-    }
-
-    public Integer getTestSuccessDensity() {
-        return testSuccessDensity;
-    }
-
-    public void setTestSuccessDensity(Integer testSuccessDensity) {
-        this.testSuccessDensity = testSuccessDensity;
-    }
-
-    public Integer getTestErrors() {
-        return testErrors;
-    }
-
-    public void setTestErrors(Integer testErrors) {
-        this.testErrors = testErrors;
-    }
-
-    public Integer getBranchCoverage() {
-        return branchCoverage;
-    }
-
-    public void setBranchCoverage(Integer branchCoverage) {
-        this.branchCoverage = branchCoverage;
-    }
-
-    public Integer getNewBranchCoverage() {
-        return newBranchCoverage;
-    }
-
-    public void setNewBranchCoverage(Integer newBranchCoverage) {
-        this.newBranchCoverage = newBranchCoverage;
-    }
-
-    public Integer getLineCoverage() {
-        return lineCoverage;
-    }
-
-    public void setLineCoverage(Integer lineCoverage) {
-        this.lineCoverage = lineCoverage;
-    }
-
-    public Integer getNewLineCoverage() {
-        return newLineCoverage;
-    }
-
-    public void setNewLineCoverage(Integer newLineCoverage) {
-        this.newLineCoverage = newLineCoverage;
-    }
-
-    public Long getAppModuleId() {
-        return appModuleId;
-    }
-
-    public void setAppModuleId(Long appModuleId) {
-        this.appModuleId = appModuleId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getVersionId() {
@@ -709,11 +655,11 @@ public class DeployVersionBuildQualityVo {
         this.sqaleDebtRatio = sqaleDebtRatio;
     }
 
-    public String getSqaleIndex() {
+    public Integer getSqaleIndex() {
         return sqaleIndex;
     }
 
-    public void setSqaleIndex(String sqaleIndex) {
+    public void setSqaleIndex(Integer sqaleIndex) {
         this.sqaleIndex = sqaleIndex;
     }
 

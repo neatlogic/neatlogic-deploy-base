@@ -10,11 +10,11 @@ import org.springframework.util.ClassUtils;
 public interface IDeployVersionChartHandler {
 
     /**
-     * 图表菜单
+     * 图表Tab名称
      *
      * @return
      */
-    String getMenu();
+    String getName();
 
     /**
      * 获取图表数据

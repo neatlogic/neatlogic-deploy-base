@@ -26,7 +26,7 @@ public class DeployVersionChartHandlerFactory extends ModuleInitializedListenerB
     public void onInitialized(CodedriverWebApplicationContext context) {
         Map<String, IDeployVersionChartHandler> map = context.getBeansOfType(IDeployVersionChartHandler.class);
         for (Entry<String, IDeployVersionChartHandler> entry : map.entrySet()) {
-            handlerMap.put(entry.getValue().getMenu(), entry.getValue());
+            handlerMap.put(entry.getValue().getName(), entry.getValue());
         }
     }
 

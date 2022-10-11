@@ -6,7 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
 
-public enum DeployVersionChartMenu implements IEnum {
+public enum DeployVersionChart implements IEnum {
     CODE_SCAN("code_scan", "代码扫描"),
     UNIT_TEST("unit_test", "单元测试"),
     ;
@@ -14,7 +14,7 @@ public enum DeployVersionChartMenu implements IEnum {
     private final String value;
     private final String text;
 
-    DeployVersionChartMenu(String value, String text) {
+    DeployVersionChart(String value, String text) {
         this.value = value;
         this.text = text;
     }
@@ -22,7 +22,7 @@ public enum DeployVersionChartMenu implements IEnum {
     @Override
     public List getValueTextList() {
         JSONArray array = new JSONArray();
-        for (DeployVersionChartMenu menu : DeployVersionChartMenu.values()) {
+        for (DeployVersionChart menu : DeployVersionChart.values()) {
             array.add(new JSONObject() {
                 {
                     this.put("value", menu.getValue());

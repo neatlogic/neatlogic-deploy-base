@@ -5,6 +5,8 @@
 
 package codedriver.framework.deploy.chart;
 
+import com.alibaba.fastjson.JSONObject;
+
 public abstract class DeployVersionChartHandlerBase implements IDeployVersionChartHandler {
 
     @Override
@@ -12,5 +14,5 @@ public abstract class DeployVersionChartHandlerBase implements IDeployVersionCha
         return myGetChartData(chartType, versionId);
     }
 
-    protected abstract Object myGetChartData(String chartType, Long versionId);
+    protected abstract JSONObject myGetChartData(String chartType, Long versionId);
 }

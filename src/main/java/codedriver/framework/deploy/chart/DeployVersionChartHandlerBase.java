@@ -10,8 +10,8 @@ import com.alibaba.fastjson.JSONObject;
 public abstract class DeployVersionChartHandlerBase implements IDeployVersionChartHandler {
 
     @Override
-    public Object getChartData(String chartType, Long versionId) {
-        return myGetChartData(chartType, versionId);
+    public Object getChartData(String chartName, Long versionId) {
+        return myGetChartData(chartName, versionId);
     }
 
     protected abstract JSONObject myGetChartData(String chartName, Long versionId);

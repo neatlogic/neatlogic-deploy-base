@@ -19,11 +19,11 @@ public interface IDeployVersionChartHandler {
     /**
      * 获取图表数据
      *
-     * @param chartType 图表类型
+     * @param chartName 图表名称
      * @param versionId 版本ID
      * @return
      */
-    Object getChartData(String chartType, Long versionId);
+    Object getChartData(String chartName, Long versionId);
 
     default String getClassName() {
         return ClassUtils.getUserClass(this.getClass()).getName();

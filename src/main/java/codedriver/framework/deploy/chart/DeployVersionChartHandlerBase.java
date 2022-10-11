@@ -14,5 +14,5 @@ public abstract class DeployVersionChartHandlerBase implements IDeployVersionCha
         return myGetChartData(chartType, versionId);
     }
 
-    protected abstract JSONObject myGetChartData(String chartType, Long versionId);
+    protected abstract JSONObject myGetChartData(String chartName, Long versionId);
 }

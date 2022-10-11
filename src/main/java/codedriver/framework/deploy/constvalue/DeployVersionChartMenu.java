@@ -1,17 +1,43 @@
 package codedriver.framework.deploy.constvalue;
 
-public enum DeployVersionChartMenu {
-    CODE_SCAN("code_scan"),
-    UNIT_TEST("unit_test"),
+import codedriver.framework.common.constvalue.IEnum;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.List;
+
+public enum DeployVersionChartMenu implements IEnum {
+    CODE_SCAN("code_scan", "代码扫描"),
+    UNIT_TEST("unit_test", "单元测试"),
     ;
 
     private final String value;
+    private final String text;
 
-    DeployVersionChartMenu(String value) {
+    DeployVersionChartMenu(String value, String text) {
         this.value = value;
+        this.text = text;
+    }
+
+    @Override
+    public List getValueTextList() {
+        JSONArray array = new JSONArray();
+        for (DeployVersionChartMenu menu : DeployVersionChartMenu.values()) {
+            array.add(new JSONObject() {
+                {
+                    this.put("value", menu.getValue());
+                    this.put("text", menu.getText());
+                }
+            });
+        }
+        return array;
     }
 
     public String getValue() {
         return value;
+    }
+
+    public String getText() {
+        return text;
     }
 }

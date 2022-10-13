@@ -1,6 +1,10 @@
 package codedriver.framework.deploy.auth;
 
 import codedriver.framework.auth.core.AuthBase;
+import codedriver.framework.cmdb.auth.label.CMDB;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author longrf
@@ -25,5 +29,10 @@ public class DEPLOY_BASE extends AuthBase {
     @Override
     public Integer getSort() {
         return 1;
+    }
+
+    @Override
+    public List<Class<? extends AuthBase>> getIncludeAuths() {
+        return Collections.singletonList(CMDB.class);
     }
 }

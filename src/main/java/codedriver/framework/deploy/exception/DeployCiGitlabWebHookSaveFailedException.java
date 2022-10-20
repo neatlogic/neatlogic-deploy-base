@@ -10,7 +10,7 @@ public class DeployCiGitlabWebHookSaveFailedException extends ApiRuntimeExceptio
 
     private static final long serialVersionUID = 1106736504402463949L;
 
-    public DeployCiGitlabWebHookSaveFailedException() {
-        super("gitlab webhook设置失败，请检查仓库服务器地址、仓库名、用户名、密码是否正确");
+    public DeployCiGitlabWebHookSaveFailedException(String error) {
+        super("gitlab webhook设置失败，错误：" + error);
     }
 }

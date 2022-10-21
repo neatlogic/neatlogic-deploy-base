@@ -10,7 +10,7 @@ public class DeployCiGitlabAccountLostException extends ApiRuntimeException {
 
     private static final long serialVersionUID = 3238618567460399200L;
 
-    public DeployCiGitlabAccountLostException() {
-        super("gitlab账号用户名与密码不能为空");
+    public DeployCiGitlabAccountLostException(String repoServerAddress, String repoName) {
+        super(repoServerAddress + "/" + repoName + "的gitlab账号用户名与密码不能为空");
     }
 }

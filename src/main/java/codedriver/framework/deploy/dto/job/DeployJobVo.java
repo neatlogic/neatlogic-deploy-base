@@ -10,7 +10,6 @@ import codedriver.framework.auth.core.AuthActionChecker;
 import codedriver.framework.autoexec.dto.job.AutoexecJobVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
-import codedriver.framework.deploy.constvalue.JobSource;
 import codedriver.framework.deploy.dto.app.DeployPipelineConfigVo;
 import codedriver.framework.deploy.dto.version.DeploySystemModuleVersionVo;
 import codedriver.framework.dto.AuthenticationInfoVo;
@@ -21,7 +20,6 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -81,7 +79,7 @@ public class DeployJobVo extends AutoexecJobVo {
     private Integer isNeedNameAndAbbrName = 0; //创建批量作业时，需要从列表获取简称回显，等于1时才会join 视图
 
     public DeployJobVo() {
-        this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOY_SCHEDULE_GENERAL.getValue(), JobSource.DEPLOY_SCHEDULE_PIPELINE.getValue()));
+        //this.setSourceList(Arrays.asList(JobSource.DEPLOY.getValue(), JobSource.BATCHDEPLOY.getValue(), JobSource.DEPLOY_SCHEDULE_GENERAL.getValue(), JobSource.DEPLOY_SCHEDULE_PIPELINE.getValue()));
     }
 
     public List<DeployJobAuthVo> getAuthList() {

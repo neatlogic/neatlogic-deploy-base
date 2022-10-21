@@ -44,6 +44,8 @@ public class DeployCiVo extends BaseEditorVo {
     private String triggerType;
     @EntityField(name = "触发时间", type = ApiParamType.STRING)
     private String triggerTime;
+    @EntityField(name = "延迟时间", type = ApiParamType.INTEGER)
+    private Integer delayTime;
     @EntityField(name = "版本号规则", type = ApiParamType.JSONOBJECT)
     private JSONObject versionRule;
     @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
@@ -231,5 +233,13 @@ public class DeployCiVo extends BaseEditorVo {
             actionName = DeployCiActionType.getDeployCiActionTypeText(action);
         }
         return actionName;
+    }
+
+    public Integer getDelayTime() {
+        return delayTime;
+    }
+
+    public void setDelayTime(Integer delayTime) {
+        this.delayTime = delayTime;
     }
 }

@@ -6,8 +6,8 @@ import codedriver.framework.deploy.constvalue.VersionEnvStatus;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
-import com.alibaba.nacos.common.utils.StringUtils;
 import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author longrf

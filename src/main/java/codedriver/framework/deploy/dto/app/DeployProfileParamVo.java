@@ -8,6 +8,7 @@ package codedriver.framework.deploy.dto.app;
 import codedriver.framework.autoexec.dto.AutoexecParamVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 
 public class DeployProfileParamVo extends AutoexecParamVo {
@@ -36,7 +37,7 @@ public class DeployProfileParamVo extends AutoexecParamVo {
         super.setOperationId(autoexecParamVo.getOperationId());
         super.setOperationType(autoexecParamVo.getOperationType());
         if (autoexecParamVo.getConfig() != null) {
-            super.setConfig(autoexecParamVo.getConfig().toJSONString());
+            super.setConfig(JSONObject.toJSONString(autoexecParamVo.getConfig()));
 
         }
         super.setArgumentCount(autoexecParamVo.getArgumentCount());

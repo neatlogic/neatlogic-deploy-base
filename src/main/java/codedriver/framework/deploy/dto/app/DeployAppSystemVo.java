@@ -41,9 +41,9 @@ public class DeployAppSystemVo extends BaseEditorVo {
     @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
     private List<DeployAppModuleVo> appModuleList;
     @EntityField(name = "状态id列表", type = ApiParamType.JSONARRAY)
-    private List<Long> stateIdList;
+    private List<Long> state;
     @EntityField(name = "负责人id列表", type = ApiParamType.JSONARRAY)
-    private List<Long> ownerIdList;
+    private List<Long> owner;
 
     @EntityField(name = "是否包含模块", type = ApiParamType.INTEGER)
     private Integer isHasModule = 0;
@@ -147,20 +147,20 @@ public class DeployAppSystemVo extends BaseEditorVo {
         this.appModuleList = appModuleList;
     }
 
-    public List<Long> getStateIdList() {
-        return stateIdList;
+    public List<Long> getState() {
+        return state;
     }
 
-    public void setStateIdList(List<Long> stateIdList) {
-        this.stateIdList = stateIdList;
+    public void setState(List<Long> state) {
+        this.state = state;
     }
 
-    public List<Long> getOwnerIdList() {
-        return ownerIdList;
+    public List<Long> getOwner() {
+        return owner;
     }
 
-    public void setOwnerIdList(List<Long> ownerIdList) {
-        this.ownerIdList = ownerIdList;
+    public void setOwner(List<Long> owner) {
+        this.owner = owner;
     }
 
     public Integer getIsHasModule() {

@@ -34,9 +34,9 @@ public class DeployAppModuleVo {
     @EntityField(name = "是否拥有DEPLOY类型的工具库工具", type = ApiParamType.INTEGER)
     private int isHasDeployTypeTool = 0;
     @EntityField(name = "状态id列表", type = ApiParamType.JSONARRAY)
-    private List<Long> stateIdList;
+    private List<Long> state;
     @EntityField(name = "负责人id列表", type = ApiParamType.JSONARRAY)
-    private List<Long> ownerIdList;
+    private List<Long> owner;
     @EntityField(name = "是否有配置执行器（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasRunner = 0;
 
@@ -142,20 +142,20 @@ public class DeployAppModuleVo {
         this.description = description;
     }
 
-    public List<Long> getStateIdList() {
-        return stateIdList;
+    public List<Long> getState() {
+        return state;
     }
 
-    public void setStateIdList(List<Long> stateIdList) {
-        this.stateIdList = stateIdList;
+    public void setState(List<Long> state) {
+        this.state = state;
     }
 
-    public List<Long> getOwnerIdList() {
-        return ownerIdList;
+    public List<Long> getOwner() {
+        return owner;
     }
 
-    public void setOwnerIdList(List<Long> ownerIdList) {
-        this.ownerIdList = ownerIdList;
+    public void setOwner(List<Long> owner) {
+        this.owner = owner;
     }
 
     public Integer getIsHasRunner() {

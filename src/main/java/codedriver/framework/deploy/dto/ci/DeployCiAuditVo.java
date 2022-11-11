@@ -1,12 +1,14 @@
 package codedriver.framework.deploy.dto.ci;
 
 import codedriver.framework.common.audit.AuditVoHandler;
+import codedriver.framework.common.config.Config;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.deploy.constvalue.DeployCiActionType;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.restful.enums.ApiInvokedStatus;
 import codedriver.framework.util.SnowflakeUtil;
+import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.StringUtils;
 
 public class DeployCiAuditVo extends BaseEditorVo implements AuditVoHandler {
@@ -42,6 +44,8 @@ public class DeployCiAuditVo extends BaseEditorVo implements AuditVoHandler {
     private String resultFilePath;
     @EntityField(name = "错误内容文件路径", type = ApiParamType.STRING)
     private String errorFilePath;
+    @JSONField(serialize = false)
+    private Integer serverId;
 
     public DeployCiAuditVo() {
     }
@@ -184,5 +188,16 @@ public class DeployCiAuditVo extends BaseEditorVo implements AuditVoHandler {
     @Override
     public void setErrorFilePath(String errorFilePath) {
         this.errorFilePath = errorFilePath;
+    }
+
+    public Integer getServerId() {
+        if (serverId == null) {
+            serverId = Config.SCHEDULE_SERVER_ID;
+        }
+        return serverId;
+    }
+
+    public void setServerId(Integer serverId) {
+        this.serverId = serverId;
     }
 }

@@ -21,7 +21,7 @@ public class DeployPipelineConfigVo implements Serializable {
     private List<DeployPipelinePhaseVo> combopPhaseList;
 
     @EntityField(name = "阶段组列表", type = ApiParamType.JSONARRAY)
-    private List<AutoexecCombopGroupVo> combopGroupList;
+    private List<DeployPipelineGroupVo> combopGroupList;
 
     @EntityField(name = "执行信息配置", type = ApiParamType.JSONOBJECT)
     private DeployPipelineExecuteConfigVo executeConfig;
@@ -52,11 +52,11 @@ public class DeployPipelineConfigVo implements Serializable {
         this.combopPhaseList = combopPhaseList;
     }
 
-    public List<AutoexecCombopGroupVo> getCombopGroupList() {
+    public List<DeployPipelineGroupVo> getCombopGroupList() {
         return combopGroupList;
     }
 
-    public void setCombopGroupList(List<AutoexecCombopGroupVo> combopGroupList) {
+    public void setCombopGroupList(List<DeployPipelineGroupVo> combopGroupList) {
         this.combopGroupList = combopGroupList;
     }
 
@@ -108,9 +108,16 @@ public class DeployPipelineConfigVo implements Serializable {
 
     public AutoexecCombopConfigVo getAutoexecCombopConfigVo() {
         autoexecCombopConfigVo = new AutoexecCombopConfigVo();
-        autoexecCombopConfigVo.setCombopGroupList(this.combopGroupList);
+//        autoexecCombopConfigVo.setCombopGroupList(this.combopGroupList);
         autoexecCombopConfigVo.setRuntimeParamList(this.runtimeParamList);
         autoexecCombopConfigVo.setScenarioList(this.scenarioList);
+        if (CollectionUtils.isNotEmpty(this.combopGroupList)) {
+            List<AutoexecCombopGroupVo> autoexecCombopGroupList = new ArrayList<>();
+            for (DeployPipelineGroupVo deployPipelineGroupVo : combopGroupList) {
+                autoexecCombopGroupList.add(deployPipelineGroupVo);
+            }
+            autoexecCombopConfigVo.setCombopGroupList(autoexecCombopGroupList);
+        }
         if (CollectionUtils.isNotEmpty(this.combopPhaseList)) {
             List<AutoexecCombopPhaseVo> autoexecCombopPhaseList = new ArrayList<>();
             for (DeployPipelinePhaseVo deployPipelinePhaseVo : combopPhaseList) {

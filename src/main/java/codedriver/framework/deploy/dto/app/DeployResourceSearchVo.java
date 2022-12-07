@@ -5,12 +5,10 @@ import codedriver.framework.auth.core.AuthActionChecker;
 import codedriver.framework.cmdb.dto.resourcecenter.ResourceSearchVo;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
-import codedriver.framework.dto.AuthenticationInfoVo;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.collections4.CollectionUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -100,15 +98,7 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
 
     public List<String> getAuthUuidList() {
         if (CollectionUtils.isEmpty(authUuidList)) {
-            authUuidList = new ArrayList<>();
-            AuthenticationInfoVo authInfo = UserContext.get().getAuthenticationInfoVo();
-            authUuidList.add(authInfo.getUserUuid());
-            if (CollectionUtils.isNotEmpty(authInfo.getTeamUuidList())) {
-                authUuidList.addAll(authInfo.getTeamUuidList());
-            }
-            if (CollectionUtils.isNotEmpty(authInfo.getRoleUuidList())) {
-                authUuidList.addAll(authInfo.getRoleUuidList());
-            }
+            authUuidList = UserContext.get().getUuidList();
         }
         return authUuidList;
     }

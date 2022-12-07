@@ -226,15 +226,7 @@ public class DeployJobVo extends AutoexecJobVo {
 
     public List<String> getAuthUuidList() {
         if (CollectionUtils.isEmpty(authUuidList)) {
-            authUuidList = new ArrayList<>();
-            AuthenticationInfoVo authInfo = UserContext.get().getAuthenticationInfoVo();
-            authUuidList.add(authInfo.getUserUuid());
-            if (CollectionUtils.isNotEmpty(authInfo.getTeamUuidList())) {
-                authUuidList.addAll(authInfo.getTeamUuidList());
-            }
-            if (CollectionUtils.isNotEmpty(authInfo.getRoleUuidList())) {
-                authUuidList.addAll(authInfo.getRoleUuidList());
-            }
+            authUuidList = UserContext.get().getUuidList();
         }
         return authUuidList;
     }

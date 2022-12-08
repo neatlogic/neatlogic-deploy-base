@@ -5,11 +5,9 @@
 
 package codedriver.framework.deploy.dto.schedule;
 
-import codedriver.framework.asynchronization.threadlocal.UserContext;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BasePageVo;
 import codedriver.framework.restful.annotation.EntityField;
-import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.List;
 
@@ -68,9 +66,6 @@ public class DeployScheduleSearchVo extends BasePageVo {
     }
 
     public List<String> getAuthUuidList() {
-        if (CollectionUtils.isEmpty(authUuidList)) {
-            authUuidList = UserContext.get().getUuidList();
-        }
         return authUuidList;
     }
 

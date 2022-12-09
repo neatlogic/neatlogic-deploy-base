@@ -5,17 +5,14 @@ import codedriver.framework.auth.core.AuthActionChecker;
 import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.common.dto.BaseEditorVo;
 import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
-import codedriver.framework.dto.AuthenticationInfoVo;
 import codedriver.framework.restful.annotation.EntityField;
 import codedriver.framework.util.SnowflakeUtil;
 import codedriver.framework.util.TimeUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
-import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -89,8 +86,6 @@ public class DeployVersionVo extends BaseEditorVo {
     private Integer isHasAllAuthority; //是否拥有发布管理员权限
     @JSONField(serialize = false)
     List<String> authorityActionList; //权限列表
-    @JSONField(serialize = false)
-    private List<String> authUuidList; //用户、分组、角色的uuid列表
 
     public DeployVersionVo() {
     }
@@ -370,22 +365,7 @@ public class DeployVersionVo extends BaseEditorVo {
     }
 
     public List<String> getAuthUuidList() {
-        if (CollectionUtils.isEmpty(authUuidList)) {
-            authUuidList = new ArrayList<>();
-            AuthenticationInfoVo authInfo = UserContext.get().getAuthenticationInfoVo();
-            authUuidList.add(authInfo.getUserUuid());
-            if (CollectionUtils.isNotEmpty(authInfo.getTeamUuidList())) {
-                authUuidList.addAll(authInfo.getTeamUuidList());
-            }
-            if (CollectionUtils.isNotEmpty(authInfo.getRoleUuidList())) {
-                authUuidList.addAll(authInfo.getRoleUuidList());
-            }
-        }
-        return authUuidList;
-    }
-
-    public void setAuthUuidList(List<String> authUuidList) {
-        this.authUuidList = authUuidList;
+        return UserContext.get().getUuidList();
     }
 
     public List<String> getAuthorityActionList() {

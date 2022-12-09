@@ -12,14 +12,11 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.deploy.auth.DEPLOY_MODIFY;
 import codedriver.framework.deploy.dto.app.DeployPipelineConfigVo;
 import codedriver.framework.deploy.dto.version.DeploySystemModuleVersionVo;
-import codedriver.framework.dto.AuthenticationInfoVo;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
-import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -69,8 +66,6 @@ public class DeployJobVo extends AutoexecJobVo {
     private Integer isHasAllAuthority; //是否拥有发布管理员权限
     @JSONField(serialize = false)
     List<String> authorityActionList; //权限列表
-    @JSONField(serialize = false)
-    private List<String> authUuidList; //用户、分组、角色的uuid列表
     @JSONField(serialize = false)
     private List<DeployJobModuleVo> moduleList;
     @JSONField(serialize = false)
@@ -225,22 +220,7 @@ public class DeployJobVo extends AutoexecJobVo {
     }
 
     public List<String> getAuthUuidList() {
-        if (CollectionUtils.isEmpty(authUuidList)) {
-            authUuidList = new ArrayList<>();
-            AuthenticationInfoVo authInfo = UserContext.get().getAuthenticationInfoVo();
-            authUuidList.add(authInfo.getUserUuid());
-            if (CollectionUtils.isNotEmpty(authInfo.getTeamUuidList())) {
-                authUuidList.addAll(authInfo.getTeamUuidList());
-            }
-            if (CollectionUtils.isNotEmpty(authInfo.getRoleUuidList())) {
-                authUuidList.addAll(authInfo.getRoleUuidList());
-            }
-        }
-        return authUuidList;
-    }
-
-    public void setAuthUuidList(List<String> authUuidList) {
-        this.authUuidList = authUuidList;
+        return UserContext.get().getUuidList();
     }
 
     public List<String> getAuthorityActionList() {

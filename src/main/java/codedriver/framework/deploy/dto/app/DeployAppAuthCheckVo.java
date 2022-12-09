@@ -5,7 +5,6 @@
 package codedriver.framework.deploy.dto.app;
 
 import codedriver.framework.asynchronization.threadlocal.UserContext;
-import codedriver.framework.dto.AuthenticationInfoVo;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
@@ -17,7 +16,6 @@ public class DeployAppAuthCheckVo {
 
     private Long appSystemId;
     private List<String> authorityActionList;
-    private List<String> authUuidList;
     private List<DeployAppConfigAuthorityActionVo> actionVoList;
 
     public DeployAppAuthCheckVo(Long appSystemId, Set<String> authorityActionList) {
@@ -41,22 +39,7 @@ public class DeployAppAuthCheckVo {
     }
 
     public List<String> getAuthUuidList() {
-        if (CollectionUtils.isEmpty(authUuidList)) {
-            authUuidList = new ArrayList<>();
-            AuthenticationInfoVo authInfo = UserContext.get().getAuthenticationInfoVo();
-            authUuidList.add(authInfo.getUserUuid());
-            if (CollectionUtils.isNotEmpty(authInfo.getTeamUuidList())) {
-                authUuidList.addAll(authInfo.getTeamUuidList());
-            }
-            if (CollectionUtils.isNotEmpty(authInfo.getRoleUuidList())) {
-                authUuidList.addAll(authInfo.getRoleUuidList());
-            }
-        }
-        return authUuidList;
-    }
-
-    public void setAuthUuidList(List<String> authUuidList) {
-        this.authUuidList = authUuidList;
+        return UserContext.get().getUuidList();
     }
 
     public List<String> getAuthorityActionList() {

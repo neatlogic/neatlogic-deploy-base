@@ -16,7 +16,6 @@ import com.alibaba.fastjson.JSONObject;
 public enum AutoexecType implements IAutoexecType {
 
     BUILD(9L, "BUILD", "编译打包"),
-    BIZ_JOBS(10L, "BIZ_JOBS", "作业调度"),
     DEPLOY(11L, "DEPLOY", "自动发布");
 
     private final Long id;

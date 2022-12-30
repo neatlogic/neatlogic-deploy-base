@@ -29,6 +29,11 @@ public class DeployAppEnvironmentVo {
     @JSONField(serialize = false)
     private List<DeployAppEnvAutoConfigKeyValueVo> autoCfgKeyValueList;
 
+    @EntityField(name = "流水线配置中是否存在禁用阶段", type = ApiParamType.INTEGER)
+    private Integer isActive;
+    @EntityField(name = "流水线配置中是否存在重载阶段", type = ApiParamType.INTEGER)
+    private Integer override;
+
     public DeployAppEnvironmentVo(Long id, String name) {
         this.id = id;
         this.name = name;
@@ -90,5 +95,21 @@ public class DeployAppEnvironmentVo {
 
     public void setAutoCfgKeyValueList(List<DeployAppEnvAutoConfigKeyValueVo> autoCfgKeyValueList) {
         this.autoCfgKeyValueList = autoCfgKeyValueList;
+    }
+
+    public Integer getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Integer isActive) {
+        this.isActive = isActive;
+    }
+
+    public Integer getOverride() {
+        return override;
+    }
+
+    public void setOverride(Integer override) {
+        this.override = override;
     }
 }

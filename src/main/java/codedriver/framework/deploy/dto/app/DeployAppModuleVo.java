@@ -4,13 +4,16 @@ import codedriver.framework.common.constvalue.ApiParamType;
 import codedriver.framework.restful.annotation.EntityField;
 import com.alibaba.fastjson.annotation.JSONField;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * @author longrf
  * @date 2022/6/23 3:41 下午
  */
-public class DeployAppModuleVo {
+public class DeployAppModuleVo implements Serializable {
+
+    private static final long serialVersionUID = 6551790567158160404L;
 
     @EntityField(name = "id", type = ApiParamType.LONG)
     private Long id;
@@ -40,10 +43,14 @@ public class DeployAppModuleVo {
     @EntityField(name = "是否有配置执行器（1：有，0：没有）", type = ApiParamType.INTEGER)
     private Integer isHasRunner = 0;
 
-    @JSONField(serialize = false)
     private List<DeployAppEnvironmentVo> envList;
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
+
+    @EntityField(name = "流水线配置中是否存在禁用阶段", type = ApiParamType.INTEGER)
+    private Integer isActive;
+    @EntityField(name = "流水线配置中是否存在重载阶段", type = ApiParamType.INTEGER)
+    private Integer override;
 
     public DeployAppModuleVo() {
     }
@@ -172,5 +179,21 @@ public class DeployAppModuleVo {
 
     public void setEnvList(List<DeployAppEnvironmentVo> envList) {
         this.envList = envList;
+    }
+
+    public Integer getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Integer isActive) {
+        this.isActive = isActive;
+    }
+
+    public Integer getOverride() {
+        return override;
+    }
+
+    public void setOverride(Integer override) {
+        this.override = override;
     }
 }

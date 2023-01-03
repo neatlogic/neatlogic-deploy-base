@@ -102,11 +102,11 @@ public class DeploySqlNodeDetailVo extends BaseEditorVo implements ISqlNodeDetai
         this.nodeName = (paramObj.getString("nodeName"));
         this.resourceId = (paramObj.getLong("resourceId"));
         this.runnerId = (paramObj.getLong("runnerId"));
-        if (!Objects.isNull(paramObj.getInteger("isModified"))) {
+        if (paramObj.getInteger("isModified") != null) {
             this.isModified = (paramObj.getInteger("isModified"));
 
         }
-        if (!Objects.isNull(paramObj.getInteger("warnCount"))) {
+        if (paramObj.getInteger("warnCount") != null) {
             this.warnCount = (paramObj.getInteger("warnCount"));
 
         }

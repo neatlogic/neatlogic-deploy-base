@@ -16,6 +16,7 @@ limitations under the License.
 
 package neatlogic.framework.deploy.dto.app;
 
+import neatlogic.framework.autoexec.dto.combop.ParamMappingVo;
 import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.restful.annotation.EntityField;
 

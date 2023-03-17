@@ -26,8 +26,8 @@ public class DeployPipelineExecuteConfigVo implements Serializable {
 
     @EntityField(name = "协议id", type = ApiParamType.LONG)
     private Long protocolId;
-    @EntityField(name = "执行用户", type = ApiParamType.STRING)
-    private String executeUser;
+    @EntityField(name = "执行用户", type = ApiParamType.JSONOBJECT)
+    private ParamMappingVo executeUser;
     @EntityField(name = "重载", type = ApiParamType.INTEGER)
     private Integer inherit;
 
@@ -39,11 +39,11 @@ public class DeployPipelineExecuteConfigVo implements Serializable {
         this.protocolId = protocolId;
     }
 
-    public String getExecuteUser() {
+    public ParamMappingVo getExecuteUser() {
         return executeUser;
     }
 
-    public void setExecuteUser(String executeUser) {
+    public void setExecuteUser(ParamMappingVo executeUser) {
         this.executeUser = executeUser;
     }
 

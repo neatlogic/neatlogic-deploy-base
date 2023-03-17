@@ -16,7 +16,6 @@ limitations under the License.
 
 package neatlogic.framework.deploy.dto.app;
 
-import neatlogic.framework.autoexec.constvalue.ParamMappingMode;
 import neatlogic.framework.autoexec.dto.AutoexecParamVo;
 import neatlogic.framework.autoexec.dto.combop.*;
 import neatlogic.framework.common.constvalue.ApiParamType;
@@ -139,10 +138,7 @@ public class DeployPipelineConfigVo implements Serializable {
         }
         if (this.executeConfig != null) {
             AutoexecCombopExecuteConfigVo executeConfigVo = new AutoexecCombopExecuteConfigVo();
-            ParamMappingVo paramMappingVo = new ParamMappingVo();
-            paramMappingVo.setMappingMode(ParamMappingMode.CONSTANT.getValue());
-            paramMappingVo.setValue(this.executeConfig.getExecuteUser());
-            executeConfigVo.setExecuteUser(paramMappingVo);
+            executeConfigVo.setExecuteUser(this.executeConfig.getExecuteUser());
             executeConfigVo.setProtocolId(this.executeConfig.getProtocolId());
             autoexecCombopConfigVo.setExecuteConfig(executeConfigVo);
         }

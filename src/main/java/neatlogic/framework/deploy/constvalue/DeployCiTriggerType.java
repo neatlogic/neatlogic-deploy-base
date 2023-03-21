@@ -19,6 +19,7 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.List;
 
@@ -56,10 +57,10 @@ public enum DeployCiTriggerType implements IEnum {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     public String getDescription() {
-        return description;
+        return I18nUtils.getMessage(description);
     }
 }

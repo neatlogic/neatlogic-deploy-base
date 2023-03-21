@@ -19,13 +19,14 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.List;
 import java.util.Objects;
 
 public enum ScheduleType implements IEnum {
-    GENERAL("general", "普通作业"),
-    PIPELINE("pipeline", "超级流水线");
+    GENERAL("general", "enum.deploy.scheduletype.general"),
+    PIPELINE("pipeline", "enum.deploy.scheduletype.pipeline");
 
     ScheduleType(String value, String text) {
         this.value = value;
@@ -41,7 +42,7 @@ public enum ScheduleType implements IEnum {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     public static String getText(String value) {

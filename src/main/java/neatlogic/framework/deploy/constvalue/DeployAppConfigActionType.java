@@ -3,6 +3,7 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.deploy.dto.app.DeployAppConfigAuthorityActionVo;
 import neatlogic.framework.deploy.exception.DeployAppAuthActionIrregularException;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -16,9 +17,9 @@ import java.util.Set;
  * @date 2022/05/24 4:16 下午
  */
 public enum DeployAppConfigActionType {
-    OPERATION("operation", "操作"),
-    SCENARIO("scenario", "场景"),
-    ENV("env", "环境");
+    OPERATION("operation", "enum.deploy.deployappconfigactiontype.operation"),
+    SCENARIO("scenario", "enum.deploy.deployappconfigactiontype.scenario"),
+    ENV("env", "enum.deploy.deployappconfigactiontype.env");
 
     private final String value;
     private final String text;
@@ -33,7 +34,7 @@ public enum DeployAppConfigActionType {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     public static List<JSONObject> getValueTextList() {

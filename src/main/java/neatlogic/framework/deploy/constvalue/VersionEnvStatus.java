@@ -3,6 +3,7 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.List;
 
@@ -11,10 +12,10 @@ import java.util.List;
  * @date 2022/7/11 6:36 下午
  */
 public enum VersionEnvStatus implements IEnum {
-    PENDING("pending", "待构建"),
-    RELEASING("releasing", "释放中"),
-    RELEASE_FAILED("release-failed", "释放失败"),
-    RELEASED("released", "已释放");
+    PENDING("pending", "enum.deploy.versionenvstatus.pending"),
+    RELEASING("releasing", "enum.deploy.versionenvstatus.releasing"),
+    RELEASE_FAILED("release-failed", "enum.deploy.versionenvstatus.release_failed"),
+    RELEASED("released", "enum.deploy.versionenvstatus.released");
 
     private final String status;
     private final String text;
@@ -29,7 +30,7 @@ public enum VersionEnvStatus implements IEnum {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     public static String getText(String _status) {

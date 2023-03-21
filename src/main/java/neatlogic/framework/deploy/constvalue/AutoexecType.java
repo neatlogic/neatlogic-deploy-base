@@ -18,6 +18,7 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.autoexec.type.IAutoexecType;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 /**
  * @author longrf
@@ -26,8 +27,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public enum AutoexecType implements IAutoexecType {
 
-    BUILD(9L, "BUILD", "编译打包"),
-    DEPLOY(11L, "DEPLOY", "自动发布");
+    BUILD(9L, "BUILD", "enum.deploy.autoexectype.build"),
+    DEPLOY(11L, "DEPLOY", "enum.deploy.autoexectype.deploy");
 
     private final Long id;
     private final String value;
@@ -48,7 +49,7 @@ public enum AutoexecType implements IAutoexecType {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     @Override

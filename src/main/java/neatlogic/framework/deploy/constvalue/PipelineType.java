@@ -19,12 +19,13 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.List;
 
 public enum PipelineType implements IEnum {
-    APPSYSTEM("appsystem", "应用流水线"),
-    GLOBAL("global", "全局流水线");
+    APPSYSTEM("appsystem", "enum.deploy.pipelinetype.appsystem"),
+    GLOBAL("global", "enum.deploy.pipelinetype.global");
 
     PipelineType(String value, String text) {
         this.value = value;
@@ -40,7 +41,7 @@ public enum PipelineType implements IEnum {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     public static String getText(String value) {

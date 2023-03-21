@@ -19,11 +19,14 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.List;
 
 public enum DeployCiAuditStatus implements IEnum {
-    SUCCEED("succeed", "成功"), FAILED("failed", "失败"), IGNORED("ignored", "已忽略");
+    SUCCEED("succeed", "enum.deploy.deployciauditstatus.succeed"),
+    FAILED("failed", "enum.deploy.deployciauditstatus.failed"),
+    IGNORED("ignored", "enum.deploy.deployciauditstatus.ignored");
     private final String value;
     private final String text;
 
@@ -37,7 +40,7 @@ public enum DeployCiAuditStatus implements IEnum {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     @Override

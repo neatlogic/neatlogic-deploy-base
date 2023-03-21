@@ -16,11 +16,13 @@ limitations under the License.
 
 package neatlogic.framework.deploy.constvalue;
 
+import neatlogic.framework.util.I18nUtils;
+
 /**
  * 组合工具操作类型
  **/
 public enum CombopOperationType {
-    PIPELINE("pipeline", "发布流水线");
+    PIPELINE("pipeline", "enum.deploy.combopoperationtype.pipeline");
 
     CombopOperationType(String value, String text) {
         this.value = value;
@@ -35,7 +37,7 @@ public enum CombopOperationType {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     public static String getText(String name) {

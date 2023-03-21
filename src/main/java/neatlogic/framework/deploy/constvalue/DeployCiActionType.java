@@ -19,12 +19,13 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.List;
 
 public enum DeployCiActionType implements IEnum {
-    CREATE_JOB("create_job", "创建作业"),
-    CREATE_BATCH_JOB("create_batch_job", "创建批量作业"),
+    CREATE_JOB("create_job", "enum.deploy.deployciactiontype.create_job"),
+    CREATE_BATCH_JOB("create_batch_job", "enum.deploy.deployciactiontype.create_batch_job"),
     ;
     private final String value;
     private final String text;
@@ -69,7 +70,7 @@ public enum DeployCiActionType implements IEnum {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
 

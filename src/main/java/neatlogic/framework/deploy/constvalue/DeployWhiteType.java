@@ -18,6 +18,7 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +30,12 @@ import java.util.List;
 
 public enum DeployWhiteType implements IEnum {
 
-    START_STOP( "START_STOP", "启停操作"),
-    NATIVE( "NATIVE", "调度器内置工具"),
-    BASIC("BASIC", "基础工具"),
-    BUILD("BUILD", "编译打包"),
-    DEPLOY( "DEPLOY", "自动发布"),
-    SQL_FILE("SQL_FILE", "SQL处理"),
+    START_STOP( "START_STOP", "enum.deploy.deploywhitetype.start_stop"),
+    NATIVE( "NATIVE", "enum.deploy.deploywhitetype.native"),
+    BASIC("BASIC", "enum.deploy.deploywhitetype.basic"),
+    BUILD("BUILD", "enum.deploy.deploywhitetype.build"),
+    DEPLOY( "DEPLOY", "enum.deploy.deploywhitetype.deploy"),
+    SQL_FILE("SQL_FILE", "enum.deploy.deploywhitetype.sql_file"),
     ;
 
 
@@ -51,7 +52,7 @@ public enum DeployWhiteType implements IEnum {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     @Override

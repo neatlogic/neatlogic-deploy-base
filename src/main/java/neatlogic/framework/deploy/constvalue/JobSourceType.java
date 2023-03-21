@@ -1,12 +1,14 @@
 package neatlogic.framework.deploy.constvalue;
 
+import neatlogic.framework.util.I18nUtils;
+
 /**
  * @author lvzk
  * @date 2022/04/28 4:16 下午
  */
 public enum JobSourceType {
-    DEPLOY("deploy", "发布"),
-    DEPLOY_VERSION_RESOURCE("deploy_version_resource", "版本中心制品"),
+    DEPLOY("deploy", "enum.deploy.jobsourcetype.deploy"),
+    DEPLOY_VERSION_RESOURCE("deploy_version_resource", "enum.deploy.jobsourcetype.deploy_version_resource"),
     ;
 
     private final String value;
@@ -22,6 +24,6 @@ public enum JobSourceType {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 }

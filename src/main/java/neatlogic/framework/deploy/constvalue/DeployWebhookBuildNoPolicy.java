@@ -19,12 +19,13 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.List;
 
 public enum DeployWebhookBuildNoPolicy implements IEnum {
-    THE_SAME("the_same", "与原作业一致"),
-    NEW("new", "新建buildNo")
+    THE_SAME("the_same", "enum.deploy.deploywebhookbuildnopolicy.the_same"),
+    NEW("new", "enum.deploy.deploywebhookbuildnopolicy.new")
     ;
     private final String value;
     private final String text;
@@ -69,7 +70,7 @@ public enum DeployWebhookBuildNoPolicy implements IEnum {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
 

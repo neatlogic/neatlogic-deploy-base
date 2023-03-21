@@ -23,10 +23,10 @@ import com.alibaba.fastjson.JSONObject;
 import java.util.List;
 
 public enum DeployCiTriggerType implements IEnum {
-    MANUAL("manual", "手动触发","立即自动创建作业，手动触发作业"),
-    AUTO("auto", "自动触发","立即自动创建作业，指定时间自动触发"),
-    INSTANT("instant", "立即触发","立即自动创建作业，立即触发"),
-    DELAY("delay", "延迟触发","立即自动创建作业，n秒内相同的集成触发将被忽略(不触发创建作业)")
+    MANUAL("manual", "enum.deploy.deploycitriggertype.manual","enum.deploy.deploycitriggertype.manual.1"),
+    AUTO("auto", "enum.deploy.deploycitriggertype.auto","enum.deploy.deploycitriggertype.auto.1"),
+    INSTANT("instant", "enum.deploy.deploycitriggertype.instant","enum.deploy.deploycitriggertype.instant.1"),
+    DELAY("delay", "enum.deploy.deploycitriggertype.delay","enum.deploy.deploycitriggertype.delay.1")
     ;
     private final String value;
     private final String text;

@@ -3,6 +3,7 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.List;
 
@@ -11,13 +12,13 @@ import java.util.List;
  * @date 2022/7/12 9:40 上午
  */
 public enum BuildNoStatus implements IEnum {
-    PENDING("pending", "待编译"),
-    COMPILING("compiling", " 编译中"),
-    COMPILED("compiled", "已编译"),
-    COMPILE_FAILED("compile-failed", "编译失败"),
-    RELEASING("releasing", "释放中"),
-    RELEASE_FAILED("release-failed", "释放失败"),
-    RELEASED("released", "已释放");
+    PENDING("pending", "enum.deploy.buildnostatus.pending"),
+    COMPILING("compiling", " enum.deploy.buildnostatus.compiling"),
+    COMPILED("compiled", "enum.deploy.buildnostatus.compiled"),
+    COMPILE_FAILED("compile-failed", "enum.deploy.buildnostatus.compile_failed"),
+    RELEASING("releasing", "enum.deploy.buildnostatus.releasing"),
+    RELEASE_FAILED("release-failed", "enum.deploy.buildnostatus.release_failed"),
+    RELEASED("released", "enum.deploy.buildnostatus.released");
 
     private final String status;
     private final String text;
@@ -32,7 +33,7 @@ public enum BuildNoStatus implements IEnum {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     public static String getText(String _status) {

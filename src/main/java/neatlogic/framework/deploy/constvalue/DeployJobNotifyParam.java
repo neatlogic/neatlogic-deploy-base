@@ -2,6 +2,7 @@ package neatlogic.framework.deploy.constvalue;
 
 import neatlogic.framework.common.constvalue.ParamType;
 import neatlogic.framework.notify.core.INotifyParam;
+import neatlogic.framework.util.I18nUtils;
 
 /**
  * @author longrf
@@ -9,16 +10,16 @@ import neatlogic.framework.notify.core.INotifyParam;
  */
 
 public enum DeployJobNotifyParam implements INotifyParam {
-    APPSYSTEMNAMEANDABBRNAME("appSystemNameAndAbbrName", "应用", ParamType.STRING),
-    APPMODULENAMEANDABBRNAME("appModuleNameAndAbbrName", "模块", ParamType.STRING),
-    ENVNAME("envName", "环境", ParamType.STRING),
-    VERSION("version", "版本号", ParamType.STRING),
-    SCENARIONAME("scenarioName", "场景", ParamType.STRING),
-    JOBID("deployJobId", "作业ID", ParamType.NUMBER),
-    JOBNAME("deployJobName", "作业名称", ParamType.STRING),
-    JOBSTATUS("deployJobStatus", "作业状态", ParamType.STRING),
-    JOBPHASELIST("deployJobPhaseList", "阶段列表", ParamType.ARRAY),
-    TRIGGERTYPENAME("deployTriggerTypeName", "触发方式", ParamType.STRING),
+    APPSYSTEMNAMEANDABBRNAME("appSystemNameAndAbbrName", "enum.deploy.deployjobnotifyparam.appsystemnameandabbrname", ParamType.STRING),
+    APPMODULENAMEANDABBRNAME("appModuleNameAndAbbrName", "enum.deploy.deployjobnotifyparam.appmodulenameandabbrname", ParamType.STRING),
+    ENVNAME("envName", "enum.deploy.deployjobnotifyparam.envname", ParamType.STRING),
+    VERSION("version", "enum.deploy.deployjobnotifyparam.version", ParamType.STRING),
+    SCENARIONAME("scenarioName", "enum.deploy.deployjobnotifyparam.scenarioname", ParamType.STRING),
+    JOBID("deployJobId", "enum.deploy.deployjobnotifyparam.jobid", ParamType.NUMBER),
+    JOBNAME("deployJobName", "enum.deploy.deployjobnotifyparam.jobname", ParamType.STRING),
+    JOBSTATUS("deployJobStatus", "enum.deploy.deployjobnotifyparam.jobstatus", ParamType.STRING),
+    JOBPHASELIST("deployJobPhaseList", "enum.deploy.deployjobnotifyparam.jobphaselist", ParamType.ARRAY),
+    TRIGGERTYPENAME("deployTriggerTypeName", "enum.deploy.deployjobnotifyparam.triggertypename", ParamType.STRING),
     ;
     private final String value;
     private final String text;
@@ -37,7 +38,7 @@ public enum DeployJobNotifyParam implements INotifyParam {
 
     @Override
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     @Override

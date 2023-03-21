@@ -24,7 +24,7 @@ import neatlogic.framework.notify.core.INotifyTriggerType;
 
 public enum DeployJobNotifyTriggerType implements INotifyTriggerType {
 
-    FAILED("failed", "作业失败", "作业失败时触发通知"),
+    FAILED("failed", "enum.deploy.deployjobnotifytriggertype.failed", "enum.deploy.deployjobnotifytriggertype.failed.1"),
     ;
 
     private final String trigger;

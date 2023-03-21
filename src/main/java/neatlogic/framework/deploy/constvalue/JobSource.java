@@ -18,6 +18,7 @@ package neatlogic.framework.deploy.constvalue;
 
 import neatlogic.framework.autoexec.dto.AutoexecJobSourceVo;
 import neatlogic.framework.autoexec.source.IAutoexecJobSource;
+import neatlogic.framework.util.I18nUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,12 +28,12 @@ import java.util.List;
  * @date 2022/5/5 5:20 下午
  */
 public enum JobSource implements IAutoexecJobSource {
-    DEPLOY("一键发布", "deploy"),
-    BATCHDEPLOY("批量发布", "batchdeploy"),
-    DEPLOY_SCHEDULE_GENERAL("发布定时普通作业", "deployschedulegeneral"),
-    DEPLOY_SCHEDULE_PIPELINE("发布定时超级流水线", "deployschedulepipeline"),
-    PIPELINE("发布超级流水线", "pipeline"),
-    DEPLOY_CI("发布持续集成", "deployci");
+    DEPLOY("enum.deploy.jobsource.deploy", "deploy"),
+    BATCHDEPLOY("enum.deploy.jobsource.batchdeploy", "batchdeploy"),
+    DEPLOY_SCHEDULE_GENERAL("enum.deploy.jobsource.deploy_schedule_general", "deployschedulegeneral"),
+    DEPLOY_SCHEDULE_PIPELINE("enum.deploy.jobsource.deploy_schedule_pipeline", "deployschedulepipeline"),
+    PIPELINE("enum.deploy.jobsource.pipeline", "pipeline"),
+    DEPLOY_CI("enum.deploy.jobsource.deploy_ci", "deployci");
     private final String text;
     private final String value;
 
@@ -46,7 +47,7 @@ public enum JobSource implements IAutoexecJobSource {
     }
 
     public String getText() {
-        return text;
+        return I18nUtils.getMessage(text);
     }
 
     public static String getText(String _status) {

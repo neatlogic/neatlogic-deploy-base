@@ -1,8 +1,9 @@
 package neatlogic.framework.deploy.constvalue;
 
-import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import neatlogic.framework.common.constvalue.IEnum;
+import neatlogic.framework.util.I18n;
 import neatlogic.framework.util.I18nUtils;
 
 import java.util.List;
@@ -12,18 +13,18 @@ import java.util.List;
  * @date 2022/7/12 9:40 上午
  */
 public enum BuildNoStatus implements IEnum {
-    PENDING("pending", "enum.deploy.buildnostatus.pending"),
-    COMPILING("compiling", " enum.deploy.buildnostatus.compiling"),
-    COMPILED("compiled", "enum.deploy.buildnostatus.compiled"),
-    COMPILE_FAILED("compile-failed", "enum.deploy.buildnostatus.compile_failed"),
-    RELEASING("releasing", "enum.deploy.buildnostatus.releasing"),
-    RELEASE_FAILED("release-failed", "enum.deploy.buildnostatus.release_failed"),
-    RELEASED("released", "enum.deploy.buildnostatus.released");
+    PENDING("pending", new I18n("enum.deploy.buildnostatus.pending")),
+    COMPILING("compiling", new I18n("enum.deploy.buildnostatus.compiling")),
+    COMPILED("compiled", new I18n("enum.deploy.buildnostatus.compiled")),
+    COMPILE_FAILED("compile-failed", new I18n("enum.deploy.buildnostatus.compile_failed")),
+    RELEASING("releasing", new I18n("enum.deploy.buildnostatus.releasing")),
+    RELEASE_FAILED("release-failed", new I18n("enum.deploy.buildnostatus.release_failed")),
+    RELEASED("released", new I18n("enum.deploy.buildnostatus.released"));
 
     private final String status;
-    private final String text;
+    private final I18n text;
 
-    BuildNoStatus(String status, String text) {
+    BuildNoStatus(String status, I18n text) {
         this.status = status;
         this.text = text;
     }
@@ -33,7 +34,7 @@ public enum BuildNoStatus implements IEnum {
     }
 
     public String getText() {
-        return I18nUtils.getMessage(text);
+        return I18nUtils.getMessage(text.toString());
     }
 
     public static String getText(String _status) {

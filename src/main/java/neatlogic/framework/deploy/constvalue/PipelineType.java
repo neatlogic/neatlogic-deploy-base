@@ -47,7 +47,7 @@ public enum PipelineType implements IEnum {
     public static String getText(String value) {
         for (PipelineType e : values()) {
             if (e.value.equals(value)) {
-                return e.text;
+                return e.getText();
             }
         }
         return "";

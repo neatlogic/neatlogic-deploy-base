@@ -16,8 +16,10 @@ limitations under the License.
 
 package neatlogic.framework.deploy.notify;
 
+import neatlogic.framework.deploy.constvalue.DeployJobNotifyTriggerType;
 import neatlogic.framework.deploy.dto.job.DeployJobVo;
 import neatlogic.framework.notify.core.INotifyParamHandler;
+import neatlogic.framework.notify.core.INotifyTriggerType;
 
 /**
  * @author laiwt
@@ -26,8 +28,8 @@ import neatlogic.framework.notify.core.INotifyParamHandler;
 public abstract class DeployJobNotifyParamHandlerBase implements INotifyParamHandler {
 
     @Override
-    public Object getText(Object object) {
-        if (object instanceof DeployJobVo) {
+    public Object getText(Object object, INotifyTriggerType notifyTriggerType) {
+        if (notifyTriggerType instanceof DeployJobNotifyTriggerType && object instanceof DeployJobVo) {
             return getMyText((DeployJobVo) object);
         }
         return null;

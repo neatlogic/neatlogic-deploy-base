@@ -16,7 +16,7 @@
 package neatlogic.framework.deploy.constvalue;
 
 import neatlogic.framework.notify.core.INotifyTriggerType;
-import neatlogic.framework.util.I18nUtils;
+import neatlogic.framework.util.I18n;
 
 /**
  * @author longrf
@@ -25,14 +25,14 @@ import neatlogic.framework.util.I18nUtils;
 
 public enum DeployJobNotifyTriggerType implements INotifyTriggerType {
 
-    FAILED("failed", "enum.deploy.deployjobnotifytriggertype.failed", "enum.deploy.deployjobnotifytriggertype.failed.1"),
+    FAILED("failed", new I18n("enum.deploy.deployjobnotifytriggertype.failed"), new I18n("enum.deploy.deployjobnotifytriggertype.failed.1")),
     ;
 
     private final String trigger;
-    private final String text;
-    private final String description;
+    private final I18n text;
+    private final I18n description;
 
-    DeployJobNotifyTriggerType(String _trigger, String _text, String _description) {
+    DeployJobNotifyTriggerType(String _trigger, I18n _text, I18n _description) {
         this.trigger = _trigger;
         this.text = _text;
         this.description = _description;
@@ -45,12 +45,12 @@ public enum DeployJobNotifyTriggerType implements INotifyTriggerType {
 
     @Override
     public String getText() {
-        return I18nUtils.getMessage(text);
+        return text.toString();
     }
 
     @Override
     public String getDescription() {
-        return I18nUtils.getMessage(description);
+        return description.toString();
     }
 
     public static String getText(String trigger) {

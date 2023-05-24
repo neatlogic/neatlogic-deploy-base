@@ -72,11 +72,7 @@ public class DeployAppConfigVo extends BaseEditorVo {
         this.envId = envId;
     }
     public DeployAppConfigVo(Long appSystemId, Long moduleId, DeployPipelineConfigVo config) {
-        this.appSystemId = appSystemId;
-        this.appModuleId = moduleId;
-        this.config = config;
-        this.setFcu(UserContext.get().getUserUuid());
-        this.setLcu(UserContext.get().getUserUuid());
+        this(appSystemId, moduleId, null, config);
     }
 
     public DeployAppConfigVo(Long appSystemId, Long moduleId, Long envId, DeployPipelineConfigVo config) {

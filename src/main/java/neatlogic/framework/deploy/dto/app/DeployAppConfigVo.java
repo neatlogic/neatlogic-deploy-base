@@ -16,6 +16,7 @@ limitations under the License.
 
 package neatlogic.framework.deploy.dto.app;
 
+import neatlogic.framework.asynchronization.threadlocal.UserContext;
 import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.common.dto.BaseEditorVo;
 import neatlogic.framework.restful.annotation.EntityField;
@@ -71,9 +72,7 @@ public class DeployAppConfigVo extends BaseEditorVo {
         this.envId = envId;
     }
     public DeployAppConfigVo(Long appSystemId, Long moduleId, DeployPipelineConfigVo config) {
-        this.appSystemId = appSystemId;
-        this.appModuleId = moduleId;
-        this.config = config;
+        this(appSystemId, moduleId, null, config);
     }
 
     public DeployAppConfigVo(Long appSystemId, Long moduleId, Long envId, DeployPipelineConfigVo config) {
@@ -81,6 +80,8 @@ public class DeployAppConfigVo extends BaseEditorVo {
         this.appModuleId = moduleId;
         this.envId = envId;
         this.config = config;
+        this.setFcu(UserContext.get().getUserUuid());
+        this.setLcu(UserContext.get().getUserUuid());
     }
 
     public Long getId() {

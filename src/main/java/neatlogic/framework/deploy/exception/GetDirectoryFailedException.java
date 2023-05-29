@@ -10,6 +10,6 @@ public class GetDirectoryFailedException extends ApiRuntimeException {
     private static final long serialVersionUID = -1446535816055079448L;
 
     public GetDirectoryFailedException(String error) {
-        super("exception.deploy.getdirectoryfailedexception" + error);
+        super("exception.deploy.getdirectoryfailedexception", error);
     }
 }

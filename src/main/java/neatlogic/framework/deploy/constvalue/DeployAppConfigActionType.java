@@ -17,9 +17,9 @@ import java.util.Set;
  * @date 2022/05/24 4:16 下午
  */
 public enum DeployAppConfigActionType {
-    OPERATION("operation", "enum.deploy.deployappconfigactiontype.operation"),
-    SCENARIO("scenario", "enum.deploy.deployappconfigactiontype.scenario"),
-    ENV("env", "enum.deploy.deployappconfigactiontype.env");
+    OPERATION("operation", "common.operation"),
+    SCENARIO("scenario", "common.scene"),
+    ENV("env", "common.environment");
 
     private final String value;
     private final String text;

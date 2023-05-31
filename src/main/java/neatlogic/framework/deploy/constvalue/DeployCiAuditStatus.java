@@ -24,9 +24,9 @@ import neatlogic.framework.util.I18nUtils;
 import java.util.List;
 
 public enum DeployCiAuditStatus implements IEnum {
-    SUCCEED("succeed", "enum.deploy.deployciauditstatus.succeed"),
-    FAILED("failed", "enum.deploy.deployciauditstatus.failed"),
-    IGNORED("ignored", "enum.deploy.deployciauditstatus.ignored");
+    SUCCEED("succeed", "common.success"),
+    FAILED("failed", "common.fail"),
+    IGNORED("ignored", "common.ignored");
     private final String value;
     private final String text;
 

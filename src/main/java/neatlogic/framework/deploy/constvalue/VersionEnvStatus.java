@@ -13,9 +13,9 @@ import java.util.List;
  */
 public enum VersionEnvStatus implements IEnum {
     PENDING("pending", "enum.deploy.versionenvstatus.pending"),
-    RELEASING("releasing", "enum.deploy.versionenvstatus.releasing"),
-    RELEASE_FAILED("release-failed", "enum.deploy.versionenvstatus.release_failed"),
-    RELEASED("released", "enum.deploy.versionenvstatus.released");
+    RELEASING("releasing", "common.releasing"),
+    RELEASE_FAILED("release-failed", "common.releasedfailed"),
+    RELEASED("released", "common.released");
 
     private final String status;
     private final String text;

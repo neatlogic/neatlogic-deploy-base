@@ -30,12 +30,12 @@ import java.util.List;
 
 public enum DeployWhiteType implements IEnum {
 
-    START_STOP( "START_STOP", "enum.deploy.deploywhitetype.start_stop"),
-    NATIVE( "NATIVE", "enum.deploy.deploywhitetype.native"),
-    BASIC("BASIC", "enum.deploy.deploywhitetype.basic"),
-    BUILD("BUILD", "enum.deploy.deploywhitetype.build"),
-    DEPLOY( "DEPLOY", "enum.deploy.deploywhitetype.deploy"),
-    SQL_FILE("SQL_FILE", "enum.deploy.deploywhitetype.sql_file"),
+    START_STOP( "START_STOP", "common.startstop"),
+    NATIVE( "NATIVE", "common.schedulerbuiltintools"),
+    BASIC("BASIC", "common.basictool"),
+    BUILD("BUILD", "common.compileandpackage"),
+    DEPLOY( "DEPLOY", "common.automaticrelease"),
+    SQL_FILE("SQL_FILE", "common.sqlfile"),
     ;
 
 

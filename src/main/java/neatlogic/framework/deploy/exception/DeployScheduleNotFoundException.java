@@ -26,10 +26,10 @@ public class DeployScheduleNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = -977863275722446183L;
 
     public DeployScheduleNotFoundException(String uuid) {
-        super("exception.deploy.deployschedulenotfoundexception", uuid);
+        super("exception.schedulenotfound", uuid);
     }
 
     public DeployScheduleNotFoundException(Long id) {
-        super("exception.deploy.deployschedulenotfoundexception", id);
+        super("exception.schedulenotfound", id);
     }
 }

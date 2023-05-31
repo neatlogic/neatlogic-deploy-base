@@ -17,9 +17,9 @@ public enum BuildNoStatus implements IEnum {
     COMPILING("compiling", new I18n("enum.deploy.buildnostatus.compiling")),
     COMPILED("compiled", new I18n("enum.deploy.buildnostatus.compiled")),
     COMPILE_FAILED("compile-failed", new I18n("enum.deploy.buildnostatus.compile_failed")),
-    RELEASING("releasing", new I18n("enum.deploy.buildnostatus.releasing")),
-    RELEASE_FAILED("release-failed", new I18n("enum.deploy.buildnostatus.release_failed")),
-    RELEASED("released", new I18n("enum.deploy.buildnostatus.released"));
+    RELEASING("releasing", new I18n("common.releasing")),
+    RELEASE_FAILED("release-failed", new I18n("common.releasedfailed")),
+    RELEASED("released", new I18n("common.released"));
 
     private final String status;
     private final I18n text;

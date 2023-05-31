@@ -27,8 +27,8 @@ import neatlogic.framework.util.I18nUtils;
 
 public enum AutoexecType implements IAutoexecType {
 
-    BUILD(9L, "BUILD", "enum.deploy.autoexectype.build"),
-    DEPLOY(11L, "DEPLOY", "enum.deploy.autoexectype.deploy");
+    BUILD(9L, "BUILD", "common.compileandpackage"),
+    DEPLOY(11L, "DEPLOY", "common.automaticrelease");
 
     private final Long id;
     private final String value;

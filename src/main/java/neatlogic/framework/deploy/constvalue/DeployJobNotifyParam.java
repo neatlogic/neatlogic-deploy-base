@@ -10,15 +10,15 @@ import neatlogic.framework.util.I18nUtils;
  */
 
 public enum DeployJobNotifyParam implements INotifyParam {
-    APPSYSTEMNAMEANDABBRNAME("appSystemNameAndAbbrName", "enum.deploy.deployjobnotifyparam.appsystemnameandabbrname", ParamType.STRING),
+    APPSYSTEMNAMEANDABBRNAME("appSystemNameAndAbbrName", "common.app", ParamType.STRING),
     APPMODULENAMEANDABBRNAME("appModuleNameAndAbbrName", "enum.deploy.deployjobnotifyparam.appmodulenameandabbrname", ParamType.STRING),
-    ENVNAME("envName", "enum.deploy.deployjobnotifyparam.envname", ParamType.STRING),
+    ENVNAME("envName", "common.environment", ParamType.STRING),
     VERSION("version", "enum.deploy.deployjobnotifyparam.version", ParamType.STRING),
-    SCENARIONAME("scenarioName", "enum.deploy.deployjobnotifyparam.scenarioname", ParamType.STRING),
-    JOBID("deployJobId", "enum.deploy.deployjobnotifyparam.jobid", ParamType.NUMBER),
-    JOBNAME("deployJobName", "enum.deploy.deployjobnotifyparam.jobname", ParamType.STRING),
-    JOBSTATUS("deployJobStatus", "enum.deploy.deployjobnotifyparam.jobstatus", ParamType.STRING),
-    JOBPHASELIST("deployJobPhaseList", "enum.deploy.deployjobnotifyparam.jobphaselist", ParamType.ARRAY),
+    SCENARIONAME("scenarioName", "common.scene", ParamType.STRING),
+    JOBID("deployJobId", "common.jobid", ParamType.NUMBER),
+    JOBNAME("deployJobName", "common.jobname", ParamType.STRING),
+    JOBSTATUS("deployJobStatus", "common.jobstatus", ParamType.STRING),
+    JOBPHASELIST("deployJobPhaseList", "common.phaselist", ParamType.ARRAY),
     TRIGGERTYPENAME("deployTriggerTypeName", "enum.deploy.deployjobnotifyparam.triggertypename", ParamType.STRING),
     ;
     private final String value;

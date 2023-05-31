@@ -25,7 +25,7 @@ import neatlogic.framework.util.I18n;
 
 public enum DeployJobNotifyTriggerType implements INotifyTriggerType {
 
-    FAILED("failed", new I18n("enum.deploy.deployjobnotifytriggertype.failed.a"), new I18n("enum.deploy.deployjobnotifytriggertype.failed.b")),
+    FAILED("failed", new I18n("common.jobfailed"), new I18n("common.jobfailedtriggernotify")),
     ;
 
     private final String trigger;

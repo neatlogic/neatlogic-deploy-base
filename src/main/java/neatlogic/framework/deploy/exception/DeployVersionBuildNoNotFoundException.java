@@ -11,10 +11,10 @@ public class DeployVersionBuildNoNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = -1986418233980948539L;
 
     public DeployVersionBuildNoNotFoundException(String versionName, Integer buildNo) {
-        super("exception.deploy.deployversionbuildnonotfoundexception.1", versionName, buildNo);
+        super("exception.deploy.deployversionbuildnonotfoundexception.b", versionName, buildNo);
     }
 
     public DeployVersionBuildNoNotFoundException(Integer buildNo) {
-        super("exception.deploy.deployversionbuildnonotfoundexception.2", buildNo);
+        super("exception.deploy.deployversionbuildnonotfoundexception.c", buildNo);
     }
 }

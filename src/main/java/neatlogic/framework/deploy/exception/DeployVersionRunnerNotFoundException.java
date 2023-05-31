@@ -11,14 +11,14 @@ public class DeployVersionRunnerNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = -881044150035926493L;
 
     public DeployVersionRunnerNotFoundException(String versionName) {
-        super("exception.deploy.deployversionrunnernotfoundexception", versionName);
+        super("exception.deploy.deployversionrunnernotfoundexception.a", versionName);
     }
 
     public DeployVersionRunnerNotFoundException(String versionName, Integer buildNo) {
-        super("exception.deploy.deployversionrunnernotfoundexception.1", versionName, buildNo);
+        super("exception.deploy.deployversionrunnernotfoundexception.b", versionName, buildNo);
     }
 
     public DeployVersionRunnerNotFoundException(String versionName, String envName) {
-        super("exception.deploy.deployversionrunnernotfoundexception.2", versionName, envName);
+        super("exception.deploy.deployversionrunnernotfoundexception.c", versionName, envName);
     }
 }

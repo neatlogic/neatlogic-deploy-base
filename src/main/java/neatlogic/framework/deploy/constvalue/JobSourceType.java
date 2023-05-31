@@ -7,7 +7,7 @@ import neatlogic.framework.util.I18nUtils;
  * @date 2022/04/28 4:16 下午
  */
 public enum JobSourceType {
-    DEPLOY("deploy", "enum.deploy.jobsourcetype.deploy"),
+    DEPLOY("deploy", "enum.deploy.jobsourcetype.deploy.a"),
     DEPLOY_VERSION_RESOURCE("deploy_version_resource", "enum.deploy.jobsourcetype.deploy_version_resource"),
     ;
 

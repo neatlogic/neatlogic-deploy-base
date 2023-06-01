@@ -11,10 +11,10 @@ public class DeployBatchJobNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = 3138988475130730714L;
 
     public DeployBatchJobNotFoundException(Long id) {
-        super("exception.deploy.deploybatchjobnotfoundexception.b", id);
+        super("批量发布作业：“{0}” 不存在", id);
     }
 
     public DeployBatchJobNotFoundException() {
-        super("exception.deploy.deploybatchjobnotfoundexception.c");
+        super("该组的批量发布作业不存在");
     }
 }

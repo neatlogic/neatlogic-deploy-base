@@ -11,6 +11,6 @@ public class CopyFileFailedException extends ApiRuntimeException {
     private static final long serialVersionUID = -5812477063108418570L;
 
     public CopyFileFailedException(String error) {
-        super("exception.deploy.copyfilefailedexception" , error);
+        super("复制文件失败，错误：{0}" , error);
     }
 }

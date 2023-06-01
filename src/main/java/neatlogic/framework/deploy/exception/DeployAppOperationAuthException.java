@@ -21,6 +21,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployAppOperationAuthException extends ApiRuntimeException {
     public DeployAppOperationAuthException(CiEntityVo appSystemCiEntity, DeployAppConfigAction action) {
-        super("exception.deploy.deployappoperationauthexception", appSystemCiEntity.getName(), appSystemCiEntity.getId(), action.getText());
+        super("您没有系统：{0}({1})下的：{2}的【操作权限】", appSystemCiEntity.getName(), appSystemCiEntity.getId(), action.getText());
     }
 }

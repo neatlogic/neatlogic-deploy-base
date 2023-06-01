@@ -20,6 +20,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiScenarioIdLostException extends ApiRuntimeException {
 
     public DeployCiScenarioIdLostException() {
-        super("exception.deploy.deployciscenarioidlostexception");
+        super("持续集成配置缺少场景配置");
     }
 }

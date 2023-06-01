@@ -11,6 +11,6 @@ public class DeployEnvVersionNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = 3395061883354029849L;
 
     public DeployEnvVersionNotFoundException(String envName) {
-        super("exception.deploy.deployenvversionnotfoundexception", envName);
+        super("没有找到环境：{0}的当前版本", envName);
     }
 }

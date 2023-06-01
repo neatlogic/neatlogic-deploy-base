@@ -20,6 +20,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployAppEnvAuthException extends ApiRuntimeException {
     public DeployAppEnvAuthException(CiEntityVo appSystemCiEntity, CiEntityVo envCiEntity) {
-        super("exception.deploy.deployappenvauthexception", appSystemCiEntity.getName(), appSystemCiEntity.getId(), envCiEntity.getName(), envCiEntity.getId());
+        super("您没有系统：{0}({1})下的环境：{2}({3})的【环境权限】", appSystemCiEntity.getName(), appSystemCiEntity.getId(), envCiEntity.getName(), envCiEntity.getId());
     }
 }

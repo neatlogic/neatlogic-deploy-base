@@ -10,16 +10,16 @@ import neatlogic.framework.util.I18nUtils;
  */
 
 public enum DeployJobNotifyParam implements INotifyParam {
-    APPSYSTEMNAMEANDABBRNAME("appSystemNameAndAbbrName", "common.app", ParamType.STRING),
-    APPMODULENAMEANDABBRNAME("appModuleNameAndAbbrName", "enum.deploy.deployjobnotifyparam.appmodulenameandabbrname", ParamType.STRING),
-    ENVNAME("envName", "common.environment", ParamType.STRING),
-    VERSION("version", "enum.deploy.deployjobnotifyparam.version", ParamType.STRING),
-    SCENARIONAME("scenarioName", "common.scene", ParamType.STRING),
-    JOBID("deployJobId", "common.jobid", ParamType.NUMBER),
-    JOBNAME("deployJobName", "common.jobname", ParamType.STRING),
-    JOBSTATUS("deployJobStatus", "common.jobstatus", ParamType.STRING),
-    JOBPHASELIST("deployJobPhaseList", "common.phaselist", ParamType.ARRAY),
-    TRIGGERTYPENAME("deployTriggerTypeName", "enum.deploy.deployjobnotifyparam.triggertypename", ParamType.STRING),
+    APPSYSTEMNAMEANDABBRNAME("appSystemNameAndAbbrName", "应用", ParamType.STRING),
+    APPMODULENAMEANDABBRNAME("appModuleNameAndAbbrName", "模块", ParamType.STRING),
+    ENVNAME("envName", "环境", ParamType.STRING),
+    VERSION("version", "版本号", ParamType.STRING),
+    SCENARIONAME("scenarioName", "场景", ParamType.STRING),
+    JOBID("deployJobId", "作业ID", ParamType.NUMBER),
+    JOBNAME("deployJobName", "作业名称", ParamType.STRING),
+    JOBSTATUS("deployJobStatus", "作业状态", ParamType.STRING),
+    JOBPHASELIST("deployJobPhaseList", "阶段列表", ParamType.ARRAY),
+    TRIGGERTYPENAME("deployTriggerTypeName", "触发方式", ParamType.STRING),
     ;
     private final String value;
     private final String text;

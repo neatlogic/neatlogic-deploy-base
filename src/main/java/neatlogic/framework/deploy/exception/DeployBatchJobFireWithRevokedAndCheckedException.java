@@ -27,6 +27,6 @@ public class DeployBatchJobFireWithRevokedAndCheckedException extends ApiRuntime
     private static final long serialVersionUID = 2949252138258270630L;
 
     public DeployBatchJobFireWithRevokedAndCheckedException() {
-        super("exception.deploy.deploybatchjobfirewithrevokedandcheckedexception");
+        super("无法执行，批量执行的作业都是'已撤销'或'已验证'的作业");
     }
 }

@@ -19,6 +19,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployGitlabWebHookCallbackHostIlegalException extends ApiRuntimeException {
     public DeployGitlabWebHookCallbackHostIlegalException() {
-        super("exception.deploy.deploygitlabwebhookcallbackhostilegalexception");
+        super("初始化配置“gitlabWebHookCallbackHost“格式非法，请联系管理员处理");
     }
 }

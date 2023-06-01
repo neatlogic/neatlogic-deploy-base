@@ -19,6 +19,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployAppAuthActionIrregularException extends ApiRuntimeException {
     public DeployAppAuthActionIrregularException(String action) {
-        super("exception.deploy.deployappauthactionirregularexception", action);
+        super("校验数据权限的入参({0})不合法", action);
     }
 }

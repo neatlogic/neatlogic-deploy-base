@@ -20,6 +20,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiVersionRegexIllegalException extends ApiRuntimeException {
 
     public DeployCiVersionRegexIllegalException() {
-        super("exception.deploy.deployciversionregexillegalexception");
+        super("持续集成配置的版本号截取规则格式不正确");
     }
 }

@@ -11,7 +11,7 @@ public class DeployBuildNoNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = 4672351140551885969L;
 
     public DeployBuildNoNotFoundException(String appSystemName, String appModuleName, String version) {
-        super("exception.deploy.deploybuildnonotfoundexception", appSystemName, appModuleName, version);
+        super("{0}/{1}/{2} buildNo 不存在", appSystemName, appModuleName, version);
     }
 
 }

@@ -20,6 +20,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiGitlabCallbackCommitIdLostException extends ApiRuntimeException {
 
     public DeployCiGitlabCallbackCommitIdLostException() {
-        super("exception.deploy.deploycigitlabcallbackcommitidlostexception");
+        super("Gitlab回调参数缺少commitId");
     }
 }

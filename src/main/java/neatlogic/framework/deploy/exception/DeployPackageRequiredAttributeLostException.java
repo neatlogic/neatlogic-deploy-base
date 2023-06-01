@@ -11,7 +11,7 @@ public class DeployPackageRequiredAttributeLostException extends ApiRuntimeExcep
     private static final long serialVersionUID = -4092425927248172614L;
 
     public DeployPackageRequiredAttributeLostException(int index) {
-        super("exception.deploy.deploypackagerequiredattributelostexception", index);
+        super("第：{0}个依赖缺少groupId|artifactIDeployInstanceInEnvNotFoundExceptiond|version属性", index);
     }
 
 }

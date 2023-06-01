@@ -11,6 +11,6 @@ public class DeployCiGitlabWebHookDeleteFailedException extends ApiRuntimeExcept
     private static final long serialVersionUID = 9060379251793437357L;
 
     public DeployCiGitlabWebHookDeleteFailedException(String repoServerAddress, String repoName) {
-        super("exception.deploy.deploycigitlabwebhookdeletefailedexception", repoServerAddress, repoName);
+        super("{0}/{1}的gitlab webhook删除失败", repoServerAddress, repoName);
     }
 }

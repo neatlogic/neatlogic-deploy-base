@@ -27,6 +27,6 @@ public class DeployBatchJobGroupFireWithInvalidStatusException extends ApiRuntim
     private static final long serialVersionUID = 6337592134611821983L;
 
     public DeployBatchJobGroupFireWithInvalidStatusException(String status) {
-        super("exception.deploy.deploybatchjobgroupfirewithinvalidstatusexception", status);
+        super("不能执行状态为：{0}的分组", status);
     }
 }

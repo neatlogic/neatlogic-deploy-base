@@ -24,6 +24,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployGitlabHookLessRepoNameException extends ApiRuntimeException {
     public DeployGitlabHookLessRepoNameException(int i) {
-        super("exception.deploy.deploygitlabhooklessreponameexception", i);
+        super("第：{0}个缺少repoName", i);
     }
 }

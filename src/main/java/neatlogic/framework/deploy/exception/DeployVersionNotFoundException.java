@@ -10,14 +10,14 @@ public class DeployVersionNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = -7486968237057414228L;
 
     public DeployVersionNotFoundException(Long versionId) {
-        super("exception.deploy.deployversionnotfoundexception.a", versionId);
+        super("发布版本“{0}”不存在", versionId);
     }
 
     public DeployVersionNotFoundException(String version) {
-        super("exception.deploy.deployversionnotfoundexception.a", version);
+        super("发布版本“{0}”不存在", version);
     }
 
     public DeployVersionNotFoundException(String sysName, String moduleName, String version) {
-        super("exception.deploy.deployversionnotfoundexception.b", sysName, moduleName, version);
+        super("发布 “{0}/{1}/{2}” 不存在", sysName, moduleName, version);
     }
 }

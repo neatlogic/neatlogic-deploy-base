@@ -24,12 +24,12 @@ import java.util.List;
 public class PIPELINE_MODIFY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "auth.deploy.pipelinemodify.name";
+        return "超级流水线管理权限";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "auth.deploy.pipelinemodify.introduction";
+        return "创建、维护和删除超级流水线";
     }
 
     @Override

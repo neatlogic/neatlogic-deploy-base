@@ -14,14 +14,14 @@ import java.util.List;
  * @date 2022/06/29 4:16 下午
  */
 public enum DeployResourceType implements IEnum {
-    BUILD_PRODUCT("build_product", "enum.deploy.deployresourcetype.build_product", "app"),
-    BUILD_SQL_SCRIPT("build_sql_script", "common.sqlscript", "db"),
-    ENV_PRODUCT("env_product", "enum.deploy.deployresourcetype.env_product", "app"),
-    ENV_DIFF_DIRECTORY("env_diff_directory", "enum.deploy.deployresourcetype.env_diff_directory", "app.ins"),
-    ENV_SQL_SCRIPT("env_sql_script", "common.sqlscript", "db"),
-    MIRROR_PRODUCT("mirror_product", "enum.deploy.deployresourcetype.mirror_product", "app"),
-    MIRROR_DIFF("mirror_diff", "enum.deploy.deployresourcetype.mirror_diff", "app.ins"),
-    WORKSPACE("workspace", "enum.deploy.deployresourcetype.workspace", "workspace"),
+    BUILD_PRODUCT("build_product", "版本制品", "app"),
+    BUILD_SQL_SCRIPT("build_sql_script", "SQL脚本", "db"),
+    ENV_PRODUCT("env_product", "环境制品", "app"),
+    ENV_DIFF_DIRECTORY("env_diff_directory", "差异目录", "app.ins"),
+    ENV_SQL_SCRIPT("env_sql_script", "SQL脚本", "db"),
+    MIRROR_PRODUCT("mirror_product", "镜像制品", "app"),
+    MIRROR_DIFF("mirror_diff", "镜像差异", "app.ins"),
+    WORKSPACE("workspace", "工程目录", "workspace"),
     ;
 
     private final String value;

@@ -10,6 +10,6 @@ public class DeployVersionResourceTypeNotFoundException extends ApiRuntimeExcept
     private static final long serialVersionUID = 1723831179942798814L;
 
     public DeployVersionResourceTypeNotFoundException(String type) {
-        super("exception.deploy.deployversionresourcetypenotfoundexception", type);
+        super("制品类型“{0}”不存在", type);
     }
 }

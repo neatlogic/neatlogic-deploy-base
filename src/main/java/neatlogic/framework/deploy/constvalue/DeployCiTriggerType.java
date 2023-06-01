@@ -24,10 +24,10 @@ import neatlogic.framework.util.I18nUtils;
 import java.util.List;
 
 public enum DeployCiTriggerType implements IEnum {
-    MANUAL("manual", "enum.deploy.deploycitriggertype.manual.a","enum.deploy.deploycitriggertype.manual.b"),
-    AUTO("auto", "enum.deploy.deploycitriggertype.auto.a","enum.deploy.deploycitriggertype.auto.b"),
-    INSTANT("instant", "enum.deploy.deploycitriggertype.instant.a","enum.deploy.deploycitriggertype.instant.b"),
-    DELAY("delay", "enum.deploy.deploycitriggertype.delay.a","enum.deploy.deploycitriggertype.delay.b")
+    MANUAL("manual", "手动触发","立即自动创建作业，手动触发作业"),
+    AUTO("auto", "自动触发","立即自动创建作业，指定时间自动触发"),
+    INSTANT("instant", "立即触发","立即自动创建作业，立即触发"),
+    DELAY("delay", "延迟触发","立即自动创建作业，n秒内相同的集成触发将被忽略(不触发创建作业)")
     ;
     private final String value;
     private final String text;

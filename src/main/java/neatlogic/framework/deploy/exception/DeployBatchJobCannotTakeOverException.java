@@ -11,6 +11,6 @@ public class DeployBatchJobCannotTakeOverException extends ApiRuntimeException {
     private static final long serialVersionUID = -6814489211544097125L;
 
     public DeployBatchJobCannotTakeOverException() {
-        super("exception.deploy.deploybatchjobcannottakeoverexception" );
+        super("无法接管，请联系管理员" );
     }
 }

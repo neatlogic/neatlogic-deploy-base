@@ -19,6 +19,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployJobParamIrregularException extends ApiRuntimeException {
     public DeployJobParamIrregularException(String paramName) {
-        super("exception.deploy.deployjobparamirregularexception", paramName);
+        super("参数“{0}”不能为空", paramName);
     }
 }

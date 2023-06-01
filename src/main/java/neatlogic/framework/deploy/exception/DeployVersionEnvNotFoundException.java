@@ -10,14 +10,14 @@ public class DeployVersionEnvNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = -1562312611391613513L;
 
     public DeployVersionEnvNotFoundException(String versionName, Long envId) {
-        super("exception.deploy.deployversionenvnotfoundexception.b", versionName, envId);
+        super("版本“{0}”的{1}环境不存在", versionName, envId);
     }
 
     public DeployVersionEnvNotFoundException(Long envId) {
-        super("exception.deploy.deployversionenvnotfoundexception.c", envId);
+        super("环境id:{0}不存在", envId);
     }
 
     public DeployVersionEnvNotFoundException(String sysName, String moduleName, String envName, String version) {
-        super("exception.deploy.deployversionenvnotfoundexception.d", sysName, moduleName, version, envName);
+        super("{0}/{1}/{3} 环境:{2} 不存在", sysName, moduleName, version, envName);
     }
 }

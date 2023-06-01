@@ -19,6 +19,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployJobHasParentException extends ApiRuntimeException {
     public DeployJobHasParentException(String jobName) {
-        super("exception.deploy.deployjobhasparentexception", jobName);
+        super("作业“{0}”已存在父作业", jobName);
     }
 }

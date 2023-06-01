@@ -24,8 +24,8 @@ import neatlogic.framework.util.I18nUtils;
 import java.util.List;
 
 public enum DeployCiActionType implements IEnum {
-    CREATE_JOB("create_job", "enum.deploy.deployciactiontype.create_job"),
-    CREATE_BATCH_JOB("create_batch_job", "enum.deploy.deployciactiontype.create_batch_job"),
+    CREATE_JOB("create_job", "创建作业"),
+    CREATE_BATCH_JOB("create_batch_job", "创建批量作业"),
     ;
     private final String value;
     private final String text;

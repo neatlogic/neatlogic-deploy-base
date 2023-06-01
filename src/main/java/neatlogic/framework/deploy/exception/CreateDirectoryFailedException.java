@@ -11,6 +11,6 @@ public class CreateDirectoryFailedException extends ApiRuntimeException {
     private static final long serialVersionUID = 2758560181351338670L;
 
     public CreateDirectoryFailedException(String error) {
-        super("exception.deploy.createdirectoryfailedexception", error);
+        super("新建目录失败，错误：{0}", error);
     }
 }

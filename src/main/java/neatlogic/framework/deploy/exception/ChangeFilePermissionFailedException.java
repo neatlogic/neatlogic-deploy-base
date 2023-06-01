@@ -11,6 +11,6 @@ public class ChangeFilePermissionFailedException extends ApiRuntimeException {
     private static final long serialVersionUID = -6955100823785381175L;
 
     public ChangeFilePermissionFailedException(String error) {
-        super("exception.deploy.changefilepermissionfailedexception", error);
+        super("修改权限失败，错误：{0}", error);
     }
 }

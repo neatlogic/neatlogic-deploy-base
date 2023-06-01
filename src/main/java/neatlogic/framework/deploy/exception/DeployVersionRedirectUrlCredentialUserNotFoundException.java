@@ -11,7 +11,7 @@ public class DeployVersionRedirectUrlCredentialUserNotFoundException extends Api
     private static final long serialVersionUID = 8963497592790439405L;
 
     public DeployVersionRedirectUrlCredentialUserNotFoundException(String userUuid) {
-        super("exception.deploy.deployversionredirecturlcredentialusernotfoundexception", userUuid);
+        super("发布跳转url对应验权用户 “{0}” 不存在", userUuid);
     }
 
 }

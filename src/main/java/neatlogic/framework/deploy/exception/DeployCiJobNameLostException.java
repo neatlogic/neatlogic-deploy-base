@@ -20,6 +20,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiJobNameLostException extends ApiRuntimeException {
 
     public DeployCiJobNameLostException() {
-        super("exception.deploy.deploycijobnamelostexception");
+        super("持续集成配置缺少作业名称配置");
     }
 }

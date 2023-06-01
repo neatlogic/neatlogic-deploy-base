@@ -13,12 +13,12 @@ import java.util.List;
 public class DEPLOY_BASE extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "auth.deploy.deploybase.name";
+        return "发布基础权限";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "auth.deploy.deploybase.introduction";
+        return "查看发布模块";
     }
 
     @Override

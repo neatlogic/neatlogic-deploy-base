@@ -24,6 +24,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployGitlabHookRepoNameUnknownActionException extends ApiRuntimeException {
     public DeployGitlabHookRepoNameUnknownActionException(String repoName, String action) {
-        super("exception.deploy.deploygitlabhookreponameunknownactionexception", repoName, action);
+        super("{0}未知的action：{1}", repoName, action);
     }
 }

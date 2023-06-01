@@ -22,6 +22,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployAppScenarioAuthException extends ApiRuntimeException {
 
     public DeployAppScenarioAuthException(CiEntityVo appSystemCiEntity, AutoexecScenarioVo scenarioVo) {
-        super("exception.deploy.deployappscenarioauthexception", appSystemCiEntity.getName(), appSystemCiEntity.getId(), scenarioVo.getName(), scenarioVo.getId());
+        super("您没有系统：{0}({1})下的场景：{2}({3})的【场景权限】", appSystemCiEntity.getName(), appSystemCiEntity.getId(), scenarioVo.getName(), scenarioVo.getId());
     }
 }

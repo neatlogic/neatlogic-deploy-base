@@ -22,7 +22,7 @@ import neatlogic.framework.util.I18nUtils;
  * 组合工具操作类型
  **/
 public enum CombopOperationType {
-    PIPELINE("pipeline", "enum.deploy.combopoperationtype.pipeline");
+    PIPELINE("pipeline", "发布流水线");
 
     CombopOperationType(String value, String text) {
         this.value = value;

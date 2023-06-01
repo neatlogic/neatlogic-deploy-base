@@ -23,6 +23,6 @@ public class DeployJobLaneNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = -8233080516066557555L;
 
     public DeployJobLaneNotFoundException(String name, Long id) {
-        super("exception.deploy.deployjoblanenotfoundexception", name, id);
+        super("批量发布 {0}({1}) 不存在泳道", name, id);
     }
 }

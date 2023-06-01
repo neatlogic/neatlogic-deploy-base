@@ -29,12 +29,12 @@ public class DEPLOY_MODIFY extends AuthBase {
 
     @Override
     public String getAuthDisplayName() {
-        return "auth.deploy.deploymodify.name";
+        return "自动发布管理权限";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "auth.deploy.deploymodify.introduction";
+        return "自动发布全局参数管理、场景定义";
     }
 
     @Override

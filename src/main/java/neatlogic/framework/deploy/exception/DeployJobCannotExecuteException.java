@@ -13,6 +13,6 @@ public class DeployJobCannotExecuteException extends ApiRuntimeException {
     private static final long serialVersionUID = -6988752668439074063L;
 
     public DeployJobCannotExecuteException(DeployJobVo deployJobVo) {
-        super("exception.deploy.deployjobcannotexecuteexception", deployJobVo.getAppSystemName(), deployJobVo.getAppSystemId(), deployJobVo.getEnvName(), deployJobVo.getEnvId(), deployJobVo.getScenarioName(), deployJobVo.getScenarioId());
+        super("无法执行，当前用户没有当前应用系统/环境/场景 {0}({1})/{2}({3})/{4}({5}) 权限", deployJobVo.getAppSystemName(), deployJobVo.getAppSystemId(), deployJobVo.getEnvName(), deployJobVo.getEnvId(), deployJobVo.getScenarioName(), deployJobVo.getScenarioId());
     }
 }

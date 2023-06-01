@@ -28,12 +28,12 @@ import java.util.List;
 public class BATCHDEPLOY_VERIFY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "auth.deploy.batchdeployverify.name";
+        return "批量发布审核权限";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "auth.deploy.batchdeployverify.introduction";
+        return "审核待审核的批量发布作业，拥有此权限的用户创建的作业自动通过审核";
     }
 
     @Override

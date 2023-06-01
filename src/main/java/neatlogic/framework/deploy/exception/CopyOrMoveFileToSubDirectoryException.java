@@ -11,6 +11,6 @@ public class CopyOrMoveFileToSubDirectoryException extends ApiRuntimeException {
     private static final long serialVersionUID = -5564588450510859134L;
 
     public CopyOrMoveFileToSubDirectoryException() {
-        super("exception.deploy.copyormovefiletosubdirectoryexception");
+        super("禁止复制或移动到自身的子目录");
     }
 }

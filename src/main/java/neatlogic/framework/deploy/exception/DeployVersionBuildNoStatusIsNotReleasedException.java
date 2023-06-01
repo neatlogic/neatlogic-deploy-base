@@ -11,6 +11,6 @@ public class DeployVersionBuildNoStatusIsNotReleasedException extends ApiRuntime
     private static final long serialVersionUID = 2734267695520966092L;
 
     public DeployVersionBuildNoStatusIsNotReleasedException(String sysName, String moduleName, String envName, String version, Integer buildNo, String status) {
-        super("exception.deploy.deployversionbuildnostatusisnotreleasedexception", sysName, moduleName, envName, version, buildNo, status);
+        super("{0}/{1}/{2} 版本:{3} buildNo:{4} 状态不是released,而是{5}", sysName, moduleName, envName, version, buildNo, status);
     }
 }

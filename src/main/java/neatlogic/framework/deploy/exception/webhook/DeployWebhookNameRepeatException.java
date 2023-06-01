@@ -26,6 +26,6 @@ public class DeployWebhookNameRepeatException extends ApiRuntimeException {
     private static final long serialVersionUID = -6790462444407653692L;
 
     public DeployWebhookNameRepeatException(String name) {
-        super("exception.deploy.deploywebhooknamerepeatexception", name);
+        super("触发器名称 “{0}” 已存在", name);
     }
 }

@@ -11,6 +11,6 @@ public class DeployBatchJobCannotExecuteException extends ApiRuntimeException {
     private static final long serialVersionUID = -968102062963735436L;
 
     public DeployBatchJobCannotExecuteException() {
-        super("exception.deploy.deploybatchjobcannotexecuteexception");
+        super("非当前批量发布执行人，无法执行，请先保存或接管");
     }
 }

@@ -11,6 +11,6 @@ public class DeleteFileFailedException extends ApiRuntimeException {
     private static final long serialVersionUID = -4331461538518639541L;
 
     public DeleteFileFailedException(String error) {
-        super("exception.deploy.deletefilefailedexception", error);
+        super("删除文件失败，错误：{0}", error);
     }
 }

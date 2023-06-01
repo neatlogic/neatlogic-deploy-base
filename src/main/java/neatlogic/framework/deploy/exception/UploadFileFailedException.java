@@ -11,6 +11,6 @@ public class UploadFileFailedException extends ApiRuntimeException {
     private static final long serialVersionUID = -258088119518145858L;
 
     public UploadFileFailedException(String error) {
-        super("exception.deploy.uploadfilefailedexception", error);
+        super("上传文件失败，错误：{0}", error);
     }
 }

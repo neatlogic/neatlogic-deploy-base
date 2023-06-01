@@ -20,6 +20,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiTriggerTypeLostException extends ApiRuntimeException {
 
     public DeployCiTriggerTypeLostException() {
-        super("exception.deploy.deploycitriggertypelostexception");
+        super("持续集成配置缺少触发类型配置");
     }
 }

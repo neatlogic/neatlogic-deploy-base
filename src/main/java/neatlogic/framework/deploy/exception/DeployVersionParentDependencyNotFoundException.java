@@ -12,7 +12,7 @@ public class DeployVersionParentDependencyNotFoundException extends ApiRuntimeEx
     private static final long serialVersionUID = 7241640577800154347L;
 
     public DeployVersionParentDependencyNotFoundException(DeployPackageVo packageVo) {
-        super("exception.deploy.deployversionparentdependencynotfoundexception", packageVo.getGroupId(), packageVo.getArtifactId(), packageVo.getVersion());
+        super("父依赖：{0}->{1}->{2}不存在", packageVo.getGroupId(), packageVo.getArtifactId(), packageVo.getVersion());
     }
 
 }

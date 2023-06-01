@@ -20,6 +20,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiIsRepeatException extends ApiRuntimeException {
 
     public DeployCiIsRepeatException(String name) {
-        super("exception.deploy.deployciisrepeatexception", name);
+        super("持续集成配置：{0}已存在", name);
     }
 }

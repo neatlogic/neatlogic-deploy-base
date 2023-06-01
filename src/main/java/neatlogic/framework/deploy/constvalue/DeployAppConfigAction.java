@@ -11,10 +11,10 @@ import java.util.List;
  * @date 2022/05/24 4:16 下午
  */
 public enum DeployAppConfigAction {
-    VIEW("view","enum.deploy.deployappconfigaction.view"),
-    EDIT("edit","enum.deploy.deployappconfigaction.edit"),
-    VERSION_AND_PRODUCT_MANAGER("versionAndProductManager","enum.deploy.deployappconfigaction.version_and_product_manager"),
-    PIPELINE("pipeline","enum.deploy.deployappconfigaction.pipeline"),
+    VIEW("view","查看作业/配置"),
+    EDIT("edit","编辑配置"),
+    VERSION_AND_PRODUCT_MANAGER("versionAndProductManager","版本&制品管理"),
+    PIPELINE("pipeline","超级流水线权限"),
     ;
 
     private final String value;

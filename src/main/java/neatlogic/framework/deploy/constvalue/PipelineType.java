@@ -24,8 +24,8 @@ import neatlogic.framework.util.I18nUtils;
 import java.util.List;
 
 public enum PipelineType implements IEnum {
-    APPSYSTEM("appsystem", "enum.deploy.pipelinetype.appsystem"),
-    GLOBAL("global", "enum.deploy.pipelinetype.global");
+    APPSYSTEM("appsystem", "应用流水线"),
+    GLOBAL("global", "全局流水线");
 
     PipelineType(String value, String text) {
         this.value = value;

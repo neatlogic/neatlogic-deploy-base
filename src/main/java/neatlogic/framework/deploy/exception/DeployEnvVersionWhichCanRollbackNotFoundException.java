@@ -11,6 +11,6 @@ public class DeployEnvVersionWhichCanRollbackNotFoundException extends ApiRuntim
     private static final long serialVersionUID = 4737429531340859128L;
 
     public DeployEnvVersionWhichCanRollbackNotFoundException(String envName) {
-        super("exception.deploy.deployenvversionwhichcanrollbacknotfoundexception", envName);
+        super("没有找到环境：{0}的可回退版本", envName);
     }
 }

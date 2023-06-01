@@ -24,12 +24,12 @@ import neatlogic.framework.util.I18nUtils;
  * @date 2022/5/5 5:20 下午
  */
 public enum JobSource implements IAutoexecJobSource {
-    DEPLOY("enum.deploy.jobsource.deploy.a", "deploy"),
-    BATCHDEPLOY("enum.deploy.jobsource.batchdeploy", "batchdeploy"),
-    DEPLOY_SCHEDULE_GENERAL("enum.deploy.jobsource.deploy_schedule_general", "deployschedulegeneral"),
-    DEPLOY_SCHEDULE_PIPELINE("enum.deploy.jobsource.deploy_schedule_pipeline", "deployschedulepipeline"),
-    PIPELINE("enum.deploy.jobsource.pipeline", "pipeline"),
-    DEPLOY_CI("enum.deploy.jobsource.deploy_ci", "deployci");
+    DEPLOY("一键发布", "deploy"),
+    BATCHDEPLOY("批量发布", "batchdeploy"),
+    DEPLOY_SCHEDULE_GENERAL("发布定时普通作业", "deployschedulegeneral"),
+    DEPLOY_SCHEDULE_PIPELINE("发布定时超级流水线", "deployschedulepipeline"),
+    PIPELINE("发布超级流水线", "pipeline"),
+    DEPLOY_CI("发布持续集成", "deployci");
     private final String text;
     private final String value;
 

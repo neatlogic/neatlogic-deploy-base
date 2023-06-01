@@ -23,7 +23,7 @@ public class DeployInstanceInEnvNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = -3351840493487328267L;
 
     public DeployInstanceInEnvNotFoundException(String systemName, String moduleName, String envName, Long instanceId) {
-        super("exception.deploy.deployinstanceinenvnotfoundexception", systemName, moduleName, envName, instanceId);
+        super("{0}->{1}->{2}下的实例：{3}不存在", systemName, moduleName, envName, instanceId);
     }
 
 }

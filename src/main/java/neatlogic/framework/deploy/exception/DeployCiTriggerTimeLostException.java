@@ -20,6 +20,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiTriggerTimeLostException extends ApiRuntimeException {
 
     public DeployCiTriggerTimeLostException() {
-        super("exception.deploy.deploycitriggertimelostexception");
+        super("持续集成配置缺少触发时间配置");
     }
 }

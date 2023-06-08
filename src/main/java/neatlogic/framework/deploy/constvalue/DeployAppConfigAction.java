@@ -1,7 +1,7 @@
 package neatlogic.framework.deploy.constvalue;
 
 import com.alibaba.fastjson.JSONObject;
-import neatlogic.framework.util.I18nUtils;
+import neatlogic.framework.util.$;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public enum DeployAppConfigAction {
     }
 
     public String getText() {
-        return I18nUtils.getMessage(text);
+        return $.t(text);
     }
 
     public static List<JSONObject> getValueTextList() {

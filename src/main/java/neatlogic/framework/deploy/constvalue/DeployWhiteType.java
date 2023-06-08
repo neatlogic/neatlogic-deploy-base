@@ -15,10 +15,10 @@
  */
 package neatlogic.framework.deploy.constvalue;
 
-import neatlogic.framework.common.constvalue.IEnum;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import neatlogic.framework.util.I18nUtils;
+import neatlogic.framework.common.constvalue.IEnum;
+import neatlogic.framework.util.$;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +52,7 @@ public enum DeployWhiteType implements IEnum {
     }
 
     public String getText() {
-        return I18nUtils.getMessage(text);
+        return $.t(text);
     }
 
     @Override

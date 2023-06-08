@@ -15,10 +15,10 @@
  */
 package neatlogic.framework.deploy.constvalue;
 
-import neatlogic.framework.autoexec.type.IAutoexecType;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import neatlogic.framework.util.I18nUtils;
+import neatlogic.framework.autoexec.type.IAutoexecType;
+import neatlogic.framework.util.$;
 
 /**
  * @author longrf
@@ -49,7 +49,7 @@ public enum AutoexecType implements IAutoexecType {
     }
 
     public String getText() {
-        return I18nUtils.getMessage(text);
+        return $.t(text);
     }
 
     @Override

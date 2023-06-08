@@ -17,7 +17,7 @@
 package neatlogic.framework.deploy.constvalue;
 
 import neatlogic.framework.autoexec.source.IAutoexecJobSource;
-import neatlogic.framework.util.I18nUtils;
+import neatlogic.framework.util.$;
 
 /**
  * @author longrf
@@ -43,7 +43,7 @@ public enum JobSource implements IAutoexecJobSource {
     }
 
     public String getText() {
-        return I18nUtils.getMessage(text);
+        return $.t(text);
     }
 
     public static String getText(String _status) {

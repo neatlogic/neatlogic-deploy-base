@@ -1,9 +1,9 @@
 package neatlogic.framework.deploy.constvalue;
 
+import com.alibaba.fastjson.JSONObject;
 import neatlogic.framework.deploy.dto.app.DeployAppConfigAuthorityActionVo;
 import neatlogic.framework.deploy.exception.DeployAppAuthActionIrregularException;
-import com.alibaba.fastjson.JSONObject;
-import neatlogic.framework.util.I18nUtils;
+import neatlogic.framework.util.$;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -34,7 +34,7 @@ public enum DeployAppConfigActionType {
     }
 
     public String getText() {
-        return I18nUtils.getMessage(text);
+        return $.t(text);
     }
 
     public static List<JSONObject> getValueTextList() {

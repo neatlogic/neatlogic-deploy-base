@@ -18,23 +18,18 @@ package neatlogic.framework.deploy.auth;
 
 import neatlogic.framework.auth.core.AuthBase;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-/**
- * @author longrf
- * @date 2022/4/15 5:09 下午
- */
-public class DEPLOY_MODIFY extends AuthBase {
-
+public class APP_CONFIG_MODIFY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "nfda.deploy_modify.getauthdisplayname";
+        return "nfda.app_config_modify.getauthdisplayname";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "nfda.deploy_modify.getauthintroduction";
+        return "nfda.app_config_modify.getauthintroduction";
     }
 
     @Override
@@ -44,11 +39,11 @@ public class DEPLOY_MODIFY extends AuthBase {
 
     @Override
     public Integer getSort() {
-        return 4;
+        return 6;
     }
 
     @Override
     public List<Class<? extends AuthBase>> getIncludeAuths() {
-        return Arrays.asList(BATCHDEPLOY_VERIFY.class, APP_CONFIG_MODIFY.class);
+        return Collections.singletonList(DEPLOY_BASE.class);
     }
 }

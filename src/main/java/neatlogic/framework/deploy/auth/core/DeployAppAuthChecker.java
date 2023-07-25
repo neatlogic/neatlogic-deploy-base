@@ -185,9 +185,9 @@ public class DeployAppAuthChecker {
         }
         IDeployAppConfigCrossoverMapper deployAppConfigCrossoverMapper = CrossoverServiceFactory.getApi(IDeployAppConfigCrossoverMapper.class);
         List<DeployAppConfigAuthorityVo> appSystemAuthList = deployAppConfigCrossoverMapper.getAppConfigAuthorityListByAppSystemId(appSystemId);
-        /*如果当前系统没有配置权限，则所有人均拥有所有权限*/
+        /*如果当前系统没有配置权限，则所有人均没有权限*/
         if (CollectionUtils.isEmpty(appSystemAuthList)) {
-            return DeployAppConfigActionType.getActionList(typeActionList);
+            return new HashSet<>();
         }
 
         return getHasAuthoritySet(typeActionList, appSystemAuthList);
@@ -247,9 +247,9 @@ public class DeployAppAuthChecker {
             return DeployAppConfigActionType.getActionList(needCheckTypeActionList);
         }
 
-        /*如果当前系统没有配置权限，则所有人均拥有所有权限*/
+        /*如果当前系统没有配置权限，则所有人均没有权限*/
         if (CollectionUtils.isEmpty(nowAppSystemAuthList)) {
-            return DeployAppConfigActionType.getActionList(needCheckTypeActionList);
+            return new HashSet<>();
         }
 
         //分组角色信息

@@ -18,15 +18,11 @@ package neatlogic.framework.deploy.exception.job;
 
 import neatlogic.framework.exception.core.NotFoundEditTargetException;
 
-/**
- * @author lvzk
- * @date 2022/8/04 9:55 上午
- */
 public class DeployBatchJobNotFoundEditTargetException extends NotFoundEditTargetException {
 
     private static final long serialVersionUID = 3138988475130730715L;
 
     public DeployBatchJobNotFoundEditTargetException(Long id) {
-        super("批量发布作业：“{0}” 不存在", id);
+        super("nfdej.deploybatchjobnotfoundedittargetexception.deploybatchjobnotfoundedittargetexception", id);
     }
 }

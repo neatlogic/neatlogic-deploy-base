@@ -16,20 +16,16 @@
 
 package neatlogic.framework.deploy.exception.schedule;
 
-import neatlogic.framework.exception.core.ApiRuntimeException;
+import neatlogic.framework.exception.core.NotFoundEditTargetException;
 
 /**
  * @author linbq
  * @since 2021/9/29 18:11
  **/
-public class DeployScheduleNotFoundEditTargetException extends ApiRuntimeException {
-    private static final long serialVersionUID = -977863275722446183L;
-
-    public DeployScheduleNotFoundEditTargetException(String uuid) {
-        super("定时作业：“{0}”不存在", uuid);
-    }
+public class DeployScheduleNotFoundEditTargetException extends NotFoundEditTargetException {
+    private static final long serialVersionUID = -977863275722446182L;
 
     public DeployScheduleNotFoundEditTargetException(Long id) {
-        super("定时作业：“{0}”不存在", id);
+        super("nfaes.autoexecschedulenotfoundedittargetexception.autoexecschedulenotfoundedittargetexception", id);
     }
 }

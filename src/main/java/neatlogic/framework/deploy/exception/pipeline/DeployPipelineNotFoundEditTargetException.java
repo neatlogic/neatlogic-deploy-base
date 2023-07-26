@@ -16,14 +16,14 @@
 
 package neatlogic.framework.deploy.exception.pipeline;
 
-import neatlogic.framework.exception.core.ApiRuntimeException;
+import neatlogic.framework.exception.core.NotFoundEditTargetException;
 
-public class DeployPipelineNotFoundEditTargetException extends ApiRuntimeException {
+public class DeployPipelineNotFoundEditTargetException extends NotFoundEditTargetException {
 
     private static final long serialVersionUID = 3138988475130730712L;
 
     public DeployPipelineNotFoundEditTargetException(Long id) {
-        super("id为{0}的流水线不存在", id);
+        super("nfdep.deploypipelinenotfoundedittargetexception.deploypipelinenotfoundedittargetexception", id);
     }
 
 }

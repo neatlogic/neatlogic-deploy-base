@@ -34,6 +34,9 @@ public class DeployAppEnvironmentVo {
     @EntityField(name = "流水线配置中是否存在重载阶段", type = ApiParamType.INTEGER)
     private Integer override;
 
+    @EntityField(name = "前端展示时是否可选", type = ApiParamType.BOOLEAN)
+    private Boolean isEnable;
+
     public DeployAppEnvironmentVo(Long id, String name) {
         this.id = id;
         this.name = name;
@@ -111,5 +114,13 @@ public class DeployAppEnvironmentVo {
 
     public void setOverride(Integer override) {
         this.override = override;
+    }
+
+    public Boolean getIsEnable() {
+        return isEnable;
+    }
+
+    public void setIsEnable(Boolean isEnable) {
+        this.isEnable = isEnable;
     }
 }

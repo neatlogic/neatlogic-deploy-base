@@ -87,6 +87,22 @@ public class DeployVersionVo extends BaseEditorVo {
     @JSONField(serialize = false)
     List<String> authorityActionList; //权限列表
 
+    @EntityField(name = "文件增加数", type = ApiParamType.INTEGER)
+    private Integer fileAddCount;
+
+    @EntityField(name = "文件删除数", type = ApiParamType.INTEGER)
+    private Integer fileDeleteCount;
+
+    @EntityField(name = "文件修改数", type = ApiParamType.INTEGER)
+    private Integer fileModifyCount;
+
+
+    @EntityField(name = "代码行减少数", type = ApiParamType.INTEGER)
+    private Integer lineDeleteCount;
+
+    @EntityField(name = "代码行增加数", type = ApiParamType.INTEGER)
+    private Integer lineAddCount;
+
     public DeployVersionVo() {
     }
 
@@ -374,5 +390,45 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setAuthorityActionList(List<String> authorityActionList) {
         this.authorityActionList = authorityActionList;
+    }
+
+    public Integer getFileAddCount() {
+        return fileAddCount;
+    }
+
+    public void setFileAddCount(Integer fileAddCount) {
+        this.fileAddCount = fileAddCount;
+    }
+
+    public Integer getFileDeleteCount() {
+        return fileDeleteCount;
+    }
+
+    public void setFileDeleteCount(Integer fileDeleteCount) {
+        this.fileDeleteCount = fileDeleteCount;
+    }
+
+    public Integer getFileModifyCount() {
+        return fileModifyCount;
+    }
+
+    public void setFileModifyCount(Integer fileModifyCount) {
+        this.fileModifyCount = fileModifyCount;
+    }
+
+    public Integer getLineDeleteCount() {
+        return lineDeleteCount;
+    }
+
+    public void setLineDeleteCount(Integer lineDeleteCount) {
+        this.lineDeleteCount = lineDeleteCount;
+    }
+
+    public Integer getLineAddCount() {
+        return lineAddCount;
+    }
+
+    public void setLineAddCount(Integer lineAddCount) {
+        this.lineAddCount = lineAddCount;
     }
 }

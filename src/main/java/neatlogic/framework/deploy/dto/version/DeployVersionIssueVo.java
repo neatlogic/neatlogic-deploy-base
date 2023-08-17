@@ -63,11 +63,6 @@ public class DeployVersionIssueVo extends BasePageVo {
     @EntityField(name = "nfddv.deployversionissuevo.issuetype.name", type = ApiParamType.STRING)
     private String type;
 
-    /**
-     * type
-     */
-    @EntityField(name = "nfddv.deployversionissuevo.isvalid.name", type = ApiParamType.BOOLEAN)
-    private Boolean isValid = false;
 
     /**
      * status
@@ -153,8 +148,6 @@ public class DeployVersionIssueVo extends BasePageVo {
     @EntityField(name = "nfddv.deployversionissuevo.lcu.name", type = ApiParamType.STRING)
     private String lcu;
 
-    @EntityField(name = "nfddv.deployversionissuevo.sortcloumn.name", type = ApiParamType.STRING)
-    private String sortColumn;
 
      @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
@@ -210,14 +203,6 @@ public class DeployVersionIssueVo extends BasePageVo {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public Boolean getIsValid() {
-        return isValid;
-    }
-
-    public void setIsValid(Boolean isValid) {
-        this.isValid = isValid;
     }
 
     public String getStatus() {
@@ -331,16 +316,7 @@ public class DeployVersionIssueVo extends BasePageVo {
     public void setLcu(String lcu) {
         this.lcu = lcu;
     }
-
-    public String getSortColumn() {
-        return sortColumn;
-    }
-
-    public void setSortColumn(String sortColumn) {
-        this.sortColumn = sortColumn;
-    }
-
-
+    
     public Long getVersionId() {
         return versionId;
     }
@@ -358,7 +334,6 @@ public class DeployVersionIssueVo extends BasePageVo {
                 ", no='" + no + '\'' +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
-                ", isValid=" + isValid +
                 ", status='" + status + '\'' +
                 ", description='" + description + '\'' +
                 ", handleUserId='" + handleUserId + '\'' +
@@ -373,7 +348,6 @@ public class DeployVersionIssueVo extends BasePageVo {
                 ", fcu='" + fcu + '\'' +
                 ", lcd=" + lcd +
                 ", lcu='" + lcu + '\'' +
-                ", sortColumn='" + sortColumn + '\'' +
                 ", versionId=" + versionId +
                 '}';
     }

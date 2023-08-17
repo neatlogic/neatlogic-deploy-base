@@ -102,6 +102,9 @@ public class DeployVersionVo extends BaseEditorVo {
 
     @EntityField(name = "代码行增加数", type = ApiParamType.INTEGER)
     private Integer lineAddCount;
+    
+    @EntityField(name = "需求数", type = ApiParamType.INTEGER)
+    private Integer issueCount;
 
     public DeployVersionVo() {
     }
@@ -430,5 +433,13 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setLineAddCount(Integer lineAddCount) {
         this.lineAddCount = lineAddCount;
+    }
+
+    public Integer getIssueCount() {
+        return issueCount;
+    }
+
+    public void setIssueCount(Integer issueCount) {
+        this.issueCount = issueCount;
     }
 }

@@ -125,10 +125,6 @@ public class DeployJobVo extends AutoexecJobVo {
         this.appSystemName = appSystemName;
     }
 
-    public void setSysName(String sysName) {
-        this.appSystemName = sysName;
-    }
-
     public String getAppModuleName() {
         return appModuleName;
     }

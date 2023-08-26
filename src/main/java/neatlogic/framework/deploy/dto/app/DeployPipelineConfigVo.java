@@ -35,7 +35,7 @@ public class DeployPipelineConfigVo implements Serializable {
     private List<DeployPipelinePhaseVo> overridePhaseList;
     @EntityField(name = "重载阶段组列表", type = ApiParamType.JSONARRAY)
     private List<DeployPipelineGroupVo> overrideGroupList;
-    @EntityField(name = "执行信息配置", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "重载执行信息配置", type = ApiParamType.JSONOBJECT)
     private DeployPipelineExecuteConfigVo overrideExecuteConfig;
 
     @EntityField(name = "阶段列表", type = ApiParamType.JSONARRAY)

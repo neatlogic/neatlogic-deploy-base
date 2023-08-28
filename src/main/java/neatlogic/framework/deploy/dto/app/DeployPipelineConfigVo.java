@@ -28,6 +28,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeployPipelineConfigVo implements Serializable {
+
+    @EntityField(name = "禁用阶段ID列表", type = ApiParamType.JSONARRAY)
+    private List<Long> disabledPhaseIdList;
+
     @EntityField(name = "阶段列表", type = ApiParamType.JSONARRAY)
     private List<DeployPipelinePhaseVo> combopPhaseList;
 
@@ -152,4 +156,13 @@ public class DeployPipelineConfigVo implements Serializable {
     public void setModuleRunnerGroupList(List<DeployAppModuleRunnerGroupVo> moduleRunnerGroupList) {
         this.moduleRunnerGroupList = moduleRunnerGroupList;
     }
+
+    public List<Long> getDisabledPhaseIdList() {
+        return disabledPhaseIdList;
+    }
+
+    public void setDisabledPhaseIdList(List<Long> disabledPhaseIdList) {
+        this.disabledPhaseIdList = disabledPhaseIdList;
+    }
+
 }

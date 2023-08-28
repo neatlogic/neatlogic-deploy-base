@@ -31,12 +31,6 @@ public class DeployPipelineConfigVo implements Serializable {
 
     @EntityField(name = "禁用阶段ID列表", type = ApiParamType.JSONARRAY)
     private List<Long> disabledPhaseIdList;
-    @EntityField(name = "重载阶段列表", type = ApiParamType.JSONARRAY)
-    private List<DeployPipelinePhaseVo> overridePhaseList;
-    @EntityField(name = "重载阶段组列表", type = ApiParamType.JSONARRAY)
-    private List<DeployPipelineGroupVo> overrideGroupList;
-    @EntityField(name = "重载执行信息配置", type = ApiParamType.JSONOBJECT)
-    private DeployPipelineExecuteConfigVo overrideExecuteConfig;
 
     @EntityField(name = "阶段列表", type = ApiParamType.JSONARRAY)
     private List<DeployPipelinePhaseVo> combopPhaseList;
@@ -171,27 +165,4 @@ public class DeployPipelineConfigVo implements Serializable {
         this.disabledPhaseIdList = disabledPhaseIdList;
     }
 
-    public List<DeployPipelinePhaseVo> getOverridePhaseList() {
-        return overridePhaseList;
-    }
-
-    public void setOverridePhaseList(List<DeployPipelinePhaseVo> overridePhaseList) {
-        this.overridePhaseList = overridePhaseList;
-    }
-
-    public List<DeployPipelineGroupVo> getOverrideGroupList() {
-        return overrideGroupList;
-    }
-
-    public void setOverrideGroupList(List<DeployPipelineGroupVo> overrideGroupList) {
-        this.overrideGroupList = overrideGroupList;
-    }
-
-    public DeployPipelineExecuteConfigVo getOverrideExecuteConfig() {
-        return overrideExecuteConfig;
-    }
-
-    public void setOverrideExecuteConfig(DeployPipelineExecuteConfigVo overrideExecuteConfig) {
-        this.overrideExecuteConfig = overrideExecuteConfig;
-    }
 }

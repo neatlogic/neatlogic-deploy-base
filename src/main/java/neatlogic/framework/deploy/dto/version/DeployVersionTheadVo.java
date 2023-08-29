@@ -9,22 +9,11 @@ import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
 public class DeployVersionTheadVo {
-    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
-    private Long versionId;
-
     @EntityField(name = "common.config", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
 
     @JSONField(serialize = false)
     private String configStr;
-
-    public Long getVersionId() {
-        return versionId;
-    }
-
-    public void setVersionId(Long versionId) {
-        this.versionId = versionId;
-    }
 
     public JSONObject getConfig() {
         if(MapUtils.isEmpty(config) && StringUtils.isNotBlank(configStr)) {

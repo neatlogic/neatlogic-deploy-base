@@ -21,6 +21,8 @@ import neatlogic.framework.common.dto.BasePageVo;
 import neatlogic.framework.restful.annotation.EntityField;
 import neatlogic.framework.util.SnowflakeUtil;
 
+import java.util.List;
+
 public class DeployVersionCveVo extends BasePageVo {
     @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
@@ -28,8 +30,8 @@ public class DeployVersionCveVo extends BasePageVo {
     private Long versionId;
     @EntityField(name = "common.dependency", type = ApiParamType.STRING)
     private String dependency;
-    @EntityField(name = "term.deploy.vulnerabilityids", type = ApiParamType.STRING)
-    private String vulnerabilityIds;
+    @EntityField(name = "term.deploy.vulnerabilityids", type = ApiParamType.JSONARRAY)
+    private List<DeployVersionCveVulnerabilityVo> vulnerabilityIds;
     @EntityField(name = "common.packagename", type = ApiParamType.STRING)
     private String packageName;
     @EntityField(name = "term.deploy.highestseverity", type = ApiParamType.STRING)
@@ -68,11 +70,11 @@ public class DeployVersionCveVo extends BasePageVo {
         this.dependency = dependency;
     }
 
-    public String getVulnerabilityIds() {
+    public List<DeployVersionCveVulnerabilityVo> getVulnerabilityIds() {
         return vulnerabilityIds;
     }
 
-    public void setVulnerabilityIds(String vulnerabilityIds) {
+    public void setVulnerabilityIds(List<DeployVersionCveVulnerabilityVo> vulnerabilityIds) {
         this.vulnerabilityIds = vulnerabilityIds;
     }
 

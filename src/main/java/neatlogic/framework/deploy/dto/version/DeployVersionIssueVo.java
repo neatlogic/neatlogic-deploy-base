@@ -18,12 +18,12 @@ package neatlogic.framework.deploy.dto.version;
 
 import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.common.dto.BasePageVo;
-import neatlogic.framework.deploy.dto.codehub.CommitVo;
+import neatlogic.framework.exception.util.FreemarkerTransformException;
 import neatlogic.framework.restful.annotation.EntityField;
+import neatlogic.framework.util.FreemarkerUtil;
 import neatlogic.framework.util.SnowflakeUtil;
 
 import java.util.Date;
-import java.util.List;
 
 public class DeployVersionIssueVo extends BasePageVo {
     /**
@@ -149,9 +149,11 @@ public class DeployVersionIssueVo extends BasePageVo {
     private String lcu;
 
 
-     @EntityField(name = "common.versionid", type = ApiParamType.LONG)
+    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
 
+    @EntityField(name = "nfddv.deployversionissuevo.browseurl.name", type = ApiParamType.LONG)
+    private String browseUrl;
 
 
     public Long getId() {
@@ -316,13 +318,28 @@ public class DeployVersionIssueVo extends BasePageVo {
     public void setLcu(String lcu) {
         this.lcu = lcu;
     }
-    
+
     public Long getVersionId() {
         return versionId;
     }
 
     public void setVersionId(Long versionId) {
         this.versionId = versionId;
+    }
+
+    public String getBrowseUrl() {
+        // neatlogic/framework/dependency/dto/DependencyInfoVo.java.getUrl()
+        if (browseUrl != null) {
+            try {
+                browseUrl = FreemarkerUtil.transform(this, browseUrl);
+            } catch (FreemarkerTransformException e) {
+            }
+        }
+        return browseUrl;
+    }
+
+    public void setBrowseUrl(String browseUrl) {
+        this.browseUrl = browseUrl;
     }
 
     @Override

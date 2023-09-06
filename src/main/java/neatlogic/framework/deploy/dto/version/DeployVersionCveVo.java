@@ -32,8 +32,8 @@ public class DeployVersionCveVo extends BasePageVo {
     private String dependency;
     @EntityField(name = "term.deploy.vulnerabilityids", type = ApiParamType.JSONARRAY)
     private List<DeployVersionCveVulnerabilityVo> vulnerabilityIds;
-    @EntityField(name = "common.packagename", type = ApiParamType.STRING)
-    private String packageName;
+    @EntityField(name = "common.packagename", type = ApiParamType.JSONARRAY)
+    private List<DeployVersionCvePackageVo> packageList;
     @EntityField(name = "term.deploy.highestseverity", type = ApiParamType.STRING)
     private String highestSeverity;
     @EntityField(name = "term.deploy.cvecount", type = ApiParamType.INTEGER)
@@ -78,12 +78,12 @@ public class DeployVersionCveVo extends BasePageVo {
         this.vulnerabilityIds = vulnerabilityIds;
     }
 
-    public String getPackageName() {
-        return packageName;
+    public List<DeployVersionCvePackageVo> getPackageList() {
+        return packageList;
     }
 
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
+    public void setPackageList(List<DeployVersionCvePackageVo> packageList) {
+        this.packageList = packageList;
     }
 
     public String getHighestSeverity() {

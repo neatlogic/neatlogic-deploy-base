@@ -19,7 +19,7 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.importexport.core.ImportExportHandlerType;
 
 public enum DeployImportExportHandlerType implements ImportExportHandlerType {
-    APP_PIPELINE("appPipeline", "发布应用流水线"),
+    APP_PIPELINE("appPipeline", "term.deploy.apppipeline"),
     ;
 
     private String value;

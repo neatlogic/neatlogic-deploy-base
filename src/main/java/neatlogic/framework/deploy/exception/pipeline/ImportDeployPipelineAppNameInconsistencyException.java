@@ -23,6 +23,6 @@ public class ImportDeployPipelineAppNameInconsistencyException extends ApiRuntim
     private static final long serialVersionUID = 8277880771507334466L;
 
     public ImportDeployPipelineAppNameInconsistencyException(String sourceName, String targetName) {
-        super("导入失败，导入包中的应用名称与当前应用名称不一致，不支持将{0}应用的流水线配置导入{1}应用", sourceName, targetName);
+        super("nfdep.importdeploypipelineappnameinconsistencyexception.importdeploypipelineappnameinconsistencyexception", sourceName, targetName);
     }
 }

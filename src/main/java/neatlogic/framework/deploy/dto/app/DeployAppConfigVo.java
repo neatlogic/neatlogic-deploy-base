@@ -72,7 +72,7 @@ public class DeployAppConfigVo extends BaseEditorVo {
         this.envId = envId;
     }
     public DeployAppConfigVo(Long appSystemId, Long moduleId, DeployPipelineConfigVo config) {
-        this(appSystemId, moduleId, null, config);
+        this(appSystemId, moduleId, 0L, config);
     }
 
     public DeployAppConfigVo(Long appSystemId, Long moduleId, Long envId, DeployPipelineConfigVo config) {

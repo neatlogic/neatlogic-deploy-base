@@ -17,6 +17,7 @@
 package neatlogic.framework.deploy.constvalue;
 
 import neatlogic.framework.importexport.core.ImportExportHandlerType;
+import neatlogic.framework.util.$;
 
 public enum DeployImportExportHandlerType implements ImportExportHandlerType {
     APP_PIPELINE("appPipeline", "term.deploy.apppipeline"),
@@ -36,6 +37,6 @@ public enum DeployImportExportHandlerType implements ImportExportHandlerType {
 
     @Override
     public String getText() {
-        return this.text;
+        return $.t(this.text);
     }
 }

@@ -16,13 +16,21 @@ limitations under the License.
 
 package neatlogic.framework.deploy.dto.app;
 
+import neatlogic.framework.autoexec.constvalue.ParamType;
 import neatlogic.framework.common.constvalue.ApiParamType;
+import neatlogic.framework.common.util.RC4Util;
 import neatlogic.framework.restful.annotation.EntityField;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Objects;
 
 public class DeployAppEnvAutoConfigKeyValueVo {
-    @EntityField(name = "key", type = ApiParamType.LONG)
+    @EntityField(name = "common.key", type = ApiParamType.LONG)
     private String key;
-    @EntityField(name = "值", type = ApiParamType.LONG)
+
+    @EntityField(name = "common.type", type = ApiParamType.LONG)
+    private String type;
+    @EntityField(name = "common.value", type = ApiParamType.LONG)
     private String value;
 
     public DeployAppEnvAutoConfigKeyValueVo() {
@@ -41,10 +49,32 @@ public class DeployAppEnvAutoConfigKeyValueVo {
     }
 
     public String getValue() {
+        if(StringUtils.isNotBlank(getType())&& Objects.equals(getType(),ParamType.PASSWORD.getValue())){
+            return RC4Util.encrypt(value);
+        }
         return value;
     }
 
     public void setValue(String value) {
         this.value = value;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getTypeText() {
+        if (StringUtils.isNotBlank(this.type)) {
+            ParamType paramType = ParamType.getParamType(type);
+            if (paramType != null) {
+                return paramType.getText();
+            }
+        }
+        return StringUtils.EMPTY;
+    }
+
 }

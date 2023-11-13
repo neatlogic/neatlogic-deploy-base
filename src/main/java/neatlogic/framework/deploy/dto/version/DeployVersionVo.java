@@ -21,49 +21,49 @@ import java.util.List;
  */
 public class DeployVersionVo extends BaseEditorVo {
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "版本", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.version", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemname", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemabbrname", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "应用模块id", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "应用模块名称", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmodulename", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "应用模块简称", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmoduleabbrname", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "是否封版", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.deploy.isfreeze", type = ApiParamType.INTEGER)
     private Integer isFreeze;
-    @EntityField(name = "备注", type = ApiParamType.STRING)
+    @EntityField(name = "common.description", type = ApiParamType.STRING)
     private String description;
-    @EntityField(name = "仓库类型", type = ApiParamType.STRING)
+    @EntityField(name = "nmdac.savedeployciapi.input.param.desc.repotype", type = ApiParamType.STRING)
     private String repoType;
-    @EntityField(name = "仓库地址", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.repo", type = ApiParamType.STRING)
     private String repo;
-    @EntityField(name = "主干", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.trunk", type = ApiParamType.STRING)
     private String trunk;
-    @EntityField(name = "分支", type = ApiParamType.STRING)
+    @EntityField(name = "common.branch", type = ApiParamType.STRING)
     private String branch;
-    @EntityField(name = "标签", type = ApiParamType.STRING)
+    @EntityField(name = "common.tag", type = ApiParamType.STRING)
     private String tag;
-    @EntityField(name = "标签目录", type = ApiParamType.STRING)
+    @EntityField(name = "common.tagsdir", type = ApiParamType.STRING)
     private String tagsDir;
-    @EntityField(name = "开始Rev号", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.startdev", type = ApiParamType.STRING)
     private String startRev;
-    @EntityField(name = "结束Rev号", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.endrev", type = ApiParamType.STRING)
     private String endRev;
-    @EntityField(name = "应用系统id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.appsystemidlist", type = ApiParamType.JSONARRAY)
     private List<Long> appSystemIdList;
-    @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.cmdb.appmoduleidlist", type = ApiParamType.JSONARRAY)
     private List<Long> appModuleIdList;
-    @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.cmdb.envlist", type = ApiParamType.JSONARRAY)
     private List<DeployVersionEnvVo> envList;
-    @EntityField(name = "编译号列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.deploy.buildnolist", type = ApiParamType.JSONARRAY)
     private List<DeployVersionBuildNoVo> buildNoList;
     @JSONField(serialize = false)
     private JSONObject startTimeRange;
@@ -73,11 +73,11 @@ public class DeployVersionVo extends BaseEditorVo {
     private JSONObject runnerGroup;
     @JSONField(serialize = false)
     private String runnerGroupStr;
-    @EntityField(name = "编译次数", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.deploy.compilecount", type = ApiParamType.INTEGER)
     private Integer compileCount = 0;
-    @EntityField(name = "编译成功次数", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.deploy.compilesuccesscount", type = ApiParamType.INTEGER)
     private Integer compileSuccessCount = 0;
-    @EntityField(name = "编译失败次数", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.deploy.compilefailcount", type = ApiParamType.INTEGER)
     private Integer compileFailCount = 0;
     @JSONField(serialize = false)
     private Integer isCompiled; // 是否编译成功
@@ -87,24 +87,33 @@ public class DeployVersionVo extends BaseEditorVo {
     @JSONField(serialize = false)
     List<String> authorityActionList; //权限列表
 
-    @EntityField(name = "文件增加数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nmdav.savedeployversioncommitanalyzeapi.input.param.desc.fileaddcount", type = ApiParamType.INTEGER)
     private Integer fileAddCount;
 
-    @EntityField(name = "文件删除数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nmdav.savedeployversioncommitanalyzeapi.input.param.desc.filedeletecount", type = ApiParamType.INTEGER)
     private Integer fileDeleteCount;
 
-    @EntityField(name = "文件修改数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nmdav.savedeployversioncommitanalyzeapi.input.param.desc.filemodifycount", type = ApiParamType.INTEGER)
     private Integer fileModifyCount;
 
 
-    @EntityField(name = "代码行减少数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nmdav.savedeployversioncommitanalyzeapi.input.param.desc.linedeletecount", type = ApiParamType.INTEGER)
     private Integer lineDeleteCount;
 
-    @EntityField(name = "代码行增加数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nmdav.savedeployversioncommitanalyzeapi.input.param.desc.lineaddcount", type = ApiParamType.INTEGER)
     private Integer lineAddCount;
     
-    @EntityField(name = "需求数", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.deploy.issuecount", type = ApiParamType.INTEGER)
     private Integer issueCount;
+
+    @EntityField(name = "term.deploy.highcvecount", type = ApiParamType.LONG)
+    private Long highCveCount;
+
+    @EntityField(name = "term.deploy.criticalcvecount", type = ApiParamType.LONG)
+    private Long criticalCveCount;
+
+    @EntityField(name = "term.deploy.criticalstarcvecount", type = ApiParamType.LONG)
+    private Long criticalStarCveCount;
 
     public DeployVersionVo() {
     }
@@ -441,5 +450,29 @@ public class DeployVersionVo extends BaseEditorVo {
 
     public void setIssueCount(Integer issueCount) {
         this.issueCount = issueCount;
+    }
+
+    public Long getHighCveCount() {
+        return highCveCount;
+    }
+
+    public void setHighCveCount(Long highCveCount) {
+        this.highCveCount = highCveCount;
+    }
+
+    public Long getCriticalCveCount() {
+        return criticalCveCount;
+    }
+
+    public void setCriticalCveCount(Long criticalCveCount) {
+        this.criticalCveCount = criticalCveCount;
+    }
+
+    public Long getCriticalStarCveCount() {
+        return criticalStarCveCount;
+    }
+
+    public void setCriticalStarCveCount(Long criticalStarCveCount) {
+        this.criticalStarCveCount = criticalStarCveCount;
     }
 }

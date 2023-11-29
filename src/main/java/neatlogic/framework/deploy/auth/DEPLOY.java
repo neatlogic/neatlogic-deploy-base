@@ -3,17 +3,17 @@ package neatlogic.framework.deploy.auth;
 import neatlogic.framework.auth.core.AuthBase;
 import neatlogic.framework.cmdb.auth.label.CMDB;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
- * @author longrf
- * @date 2022/3/23 10:52 上午
+ * @author lvzk
+ * @since  2023/11/29 10:52 上午
  */
-public class DEPLOY_BASE extends AuthBase {
+public class DEPLOY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "发布基础权限";
+        return "发布基础权限(接口)";
     }
 
     @Override
@@ -33,6 +33,6 @@ public class DEPLOY_BASE extends AuthBase {
 
     @Override
     public List<Class<? extends AuthBase>> getIncludeAuths() {
-        return Arrays.asList(CMDB.class, DEPLOY.class);
+        return Collections.singletonList(CMDB.class);
     }
 }

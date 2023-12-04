@@ -13,12 +13,12 @@ import java.util.List;
 public class DEPLOY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "发布基础权限(接口)";
+        return "nfda.deploy.getauthdisplayname";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "查看发布模块";
+        return "nfda.deploy.getauthintroduction";
     }
 
     @Override
@@ -34,5 +34,10 @@ public class DEPLOY extends AuthBase {
     @Override
     public List<Class<? extends AuthBase>> getIncludeAuths() {
         return Collections.singletonList(CMDB.class);
+    }
+
+    @Override
+    public boolean isShow() {
+        return false;
     }
 }

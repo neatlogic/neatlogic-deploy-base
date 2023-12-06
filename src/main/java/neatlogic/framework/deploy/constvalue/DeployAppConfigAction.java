@@ -1,6 +1,8 @@
 package neatlogic.framework.deploy.constvalue;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.nacos.common.utils.CollectionUtils;
 import neatlogic.framework.util.$;
 
 import java.util.ArrayList;
@@ -11,10 +13,10 @@ import java.util.List;
  * @date 2022/05/24 4:16 下午
  */
 public enum DeployAppConfigAction {
-    VIEW("view","查看作业/配置"),
-    EDIT("edit","编辑配置"),
-    VERSION_AND_PRODUCT_MANAGER("versionAndProductManager","版本&制品管理"),
-    PIPELINE("pipeline","超级流水线权限"),
+    VIEW("view", "查看作业/配置"),
+    EDIT("edit", "编辑配置"),
+    VERSION_AND_PRODUCT_MANAGER("versionAndProductManager", "版本&制品管理"),
+    PIPELINE("pipeline", "超级流水线权限"),
     ;
 
     private final String value;
@@ -42,6 +44,28 @@ public enum DeployAppConfigAction {
                 {
                     this.put("value", action.getValue());
                     this.put("text", action.getText());
+                }
+            });
+        }
+        return returnList;
+    }
+
+    /**
+     * 只获取需要的actionValueText
+     *
+     * @param authActionArray 需要的action入参
+     */
+    public static List<JSONObject> getValueTextList(JSONArray authActionArray) {
+        List<JSONObject> returnList = new ArrayList<>();
+        for (DeployAppConfigAction action : DeployAppConfigAction.values()) {
+            returnList.add(new JSONObject() {
+                private static final long serialVersionUID = 1670544546905960015L;
+
+                {
+                    if (CollectionUtils.isEmpty(authActionArray) || authActionArray.contains(action.getValue())) {
+                        this.put("value", action.getValue());
+                        this.put("text", action.getText());
+                    }
                 }
             });
         }

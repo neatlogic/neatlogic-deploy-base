@@ -58,16 +58,15 @@ public enum DeployAppConfigAction {
     public static List<JSONObject> getValueTextList(JSONArray authActionArray) {
         List<JSONObject> returnList = new ArrayList<>();
         for (DeployAppConfigAction action : DeployAppConfigAction.values()) {
-            returnList.add(new JSONObject() {
-                private static final long serialVersionUID = 1670544546905960015L;
-
-                {
-                    if (CollectionUtils.isEmpty(authActionArray) || authActionArray.contains(action.getValue())) {
+            if (CollectionUtils.isEmpty(authActionArray) || authActionArray.contains(action.getValue())) {
+                returnList.add(new JSONObject() {
+                    private static final long serialVersionUID = 1670544546905960015L;
+                    {
                         this.put("value", action.getValue());
                         this.put("text", action.getText());
                     }
-                }
-            });
+                });
+            }
         }
         return returnList;
     }

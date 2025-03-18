@@ -242,7 +242,7 @@ public class DeployAppAuthChecker {
 
 
         /*发布管理员拥有所有权限*/
-        if (AuthActionChecker.check(DEPLOY_MODIFY.class)) {
+        if (Boolean.TRUE.equals(AuthActionChecker.check(DEPLOY_MODIFY.class))) {
             return DeployAppConfigActionType.getActionList(needCheckTypeActionList);
         }
 

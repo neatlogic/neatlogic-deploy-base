@@ -18,6 +18,6 @@ public class DeployVersionEnvNotFoundException extends ApiRuntimeException {
     }
 
     public DeployVersionEnvNotFoundException(String sysName, String moduleName, String envName, String version) {
-        super("{0}/{1}/{3} 环境:{2} 不存在", sysName, moduleName, version, envName);
+        super("{0}/{1}/{3} 版本:{2} 不存在", sysName, moduleName, version, envName);
     }
 }

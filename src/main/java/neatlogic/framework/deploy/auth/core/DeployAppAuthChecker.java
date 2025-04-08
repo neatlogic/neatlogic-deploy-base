@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
 public class DeployAppAuthChecker {
     
     //权限类型
-    private final static List<String> actionTypeList = DeployAppConfigActionType.getValueList();
+    private static final List<String> actionTypeList = DeployAppConfigActionType.getValueList();
 
     /**
      * 校验单个系统权限的构造方法

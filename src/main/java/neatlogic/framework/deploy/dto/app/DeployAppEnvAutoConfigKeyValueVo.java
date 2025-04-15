@@ -29,6 +29,10 @@ public class DeployAppEnvAutoConfigKeyValueVo {
 
     @EntityField(name = "common.type", type = ApiParamType.LONG)
     private String type;
+
+    @EntityField(name = "是否为空", type = ApiParamType.INTEGER)
+    private Integer isEmpty;
+
     @EntityField(name = "common.value", type = ApiParamType.LONG)
     private String value;
 
@@ -37,6 +41,7 @@ public class DeployAppEnvAutoConfigKeyValueVo {
 
     public DeployAppEnvAutoConfigKeyValueVo(String key) {
         this.key = key;
+        this.isEmpty = 0;
     }
 
     public String getKey() {
@@ -76,4 +81,11 @@ public class DeployAppEnvAutoConfigKeyValueVo {
         return StringUtils.EMPTY;
     }
 
+    public Integer getIsEmpty() {
+        return isEmpty;
+    }
+
+    public void setIsEmpty(Integer isEmpty) {
+        this.isEmpty = isEmpty;
+    }
 }

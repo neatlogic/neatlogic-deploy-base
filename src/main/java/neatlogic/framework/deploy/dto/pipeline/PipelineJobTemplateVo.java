@@ -275,6 +275,6 @@ public class PipelineJobTemplateVo extends BasePageVo {
     }
 
     public String getUuid() {
-        return Md5Util.encryptMD5(String.valueOf(id));
+        return Md5Util.encryptMD5(String.valueOf(getId()));
     }
 }

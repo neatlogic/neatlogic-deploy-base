@@ -21,6 +21,7 @@ import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.common.dto.BasePageVo;
 import neatlogic.framework.deploy.dto.job.DeployJobVo;
 import neatlogic.framework.restful.annotation.EntityField;
+import neatlogic.framework.util.Md5Util;
 import neatlogic.framework.util.SnowflakeUtil;
 import org.apache.commons.lang3.StringUtils;
 
@@ -271,5 +272,9 @@ public class PipelineJobTemplateVo extends BasePageVo {
 
     public void setEnvScenarioList(List<PipelineEnvScenarioVo> envScenarioList) {
         this.envScenarioList = envScenarioList;
+    }
+
+    public String getUuid() {
+        return Md5Util.encryptMD5(String.valueOf(id));
     }
 }

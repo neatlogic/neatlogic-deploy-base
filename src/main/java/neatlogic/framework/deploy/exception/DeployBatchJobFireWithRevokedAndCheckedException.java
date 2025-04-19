@@ -15,6 +15,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
 package neatlogic.framework.deploy.exception;
 
+import neatlogic.framework.deploy.dto.job.DeployJobVo;
 import neatlogic.framework.exception.core.ApiRuntimeException;
 
 /**
@@ -25,7 +26,7 @@ public class DeployBatchJobFireWithRevokedAndCheckedException extends ApiRuntime
 
     private static final long serialVersionUID = 2949252138258270630L;
 
-    public DeployBatchJobFireWithRevokedAndCheckedException() {
-        super("无法执行，批量执行的作业都是'已撤销'或'已验证'的作业");
+    public DeployBatchJobFireWithRevokedAndCheckedException(DeployJobVo deployJobVo) {
+        super("nfde.deploybatchjobfirewithrevokedandcheckedexception.deploybatchjobfirewithrevokedandcheckedexception", deployJobVo.getName(), deployJobVo.getId());
     }
 }

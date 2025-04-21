@@ -21,7 +21,7 @@ import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.common.dto.BaseEditorVo;
 import neatlogic.framework.restful.annotation.EntityField;
 
-public class DeployJobPhaseNodeBlueGreenVo extends BaseEditorVo {
+public class DeployJobResourceBlueGreenVo extends BaseEditorVo {
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "资产id", type = ApiParamType.LONG)

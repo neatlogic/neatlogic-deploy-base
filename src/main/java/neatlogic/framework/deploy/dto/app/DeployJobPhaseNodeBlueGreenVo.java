@@ -24,10 +24,8 @@ import neatlogic.framework.restful.annotation.EntityField;
 public class DeployJobPhaseNodeBlueGreenVo extends BaseEditorVo {
     @EntityField(name = "作业id", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "作业阶段id", type = ApiParamType.LONG)
-    private Long jobPhaseId;
-    @EntityField(name = "作业节点id", type = ApiParamType.LONG)
-    private Long jobPhaseNodeId;
+    @EntityField(name = "资产id", type = ApiParamType.LONG)
+    private Long resourceId;
     @EntityField(name = "蓝绿id", type = ApiParamType.LONG)
     private Long blueGreenId;
     @EntityField(name = "跟新标记", type = ApiParamType.LONG)
@@ -44,20 +42,12 @@ public class DeployJobPhaseNodeBlueGreenVo extends BaseEditorVo {
         this.jobId = jobId;
     }
 
-    public Long getJobPhaseId() {
-        return jobPhaseId;
+    public Long getResourceId() {
+        return resourceId;
     }
 
-    public void setJobPhaseId(Long jobPhaseId) {
-        this.jobPhaseId = jobPhaseId;
-    }
-
-    public Long getJobPhaseNodeId() {
-        return jobPhaseNodeId;
-    }
-
-    public void setJobPhaseNodeId(Long jobPhaseNodeId) {
-        this.jobPhaseNodeId = jobPhaseNodeId;
+    public void setResourceId(Long resourceId) {
+        this.resourceId = resourceId;
     }
 
     public Long getBlueGreenId() {

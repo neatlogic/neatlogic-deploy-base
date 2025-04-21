@@ -32,7 +32,10 @@ public class DeployJobPhaseNodeBlueGreenVo extends BaseEditorVo {
     private Long blueGreenId;
     @EntityField(name = "跟新标记", type = ApiParamType.LONG)
     private Long updateTag;
-
+    @EntityField(name = "蓝绿名", type = ApiParamType.STRING)
+    private String blueGreenName;
+    @EntityField(name = "蓝绿排序", type = ApiParamType.STRING)
+    private String blueGreenSort;
     public Long getJobId() {
         return jobId;
     }
@@ -71,5 +74,21 @@ public class DeployJobPhaseNodeBlueGreenVo extends BaseEditorVo {
 
     public void setUpdateTag(Long updateTag) {
         this.updateTag = updateTag;
+    }
+
+    public String getBlueGreenName() {
+        return blueGreenName;
+    }
+
+    public void setBlueGreenName(String blueGreenName) {
+        this.blueGreenName = blueGreenName;
+    }
+
+    public String getBlueGreenSort() {
+        return blueGreenSort;
+    }
+
+    public void setBlueGreenSort(String blueGreenSort) {
+        this.blueGreenSort = blueGreenSort;
     }
 }

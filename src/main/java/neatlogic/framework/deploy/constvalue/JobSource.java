@@ -23,8 +23,8 @@ import neatlogic.framework.util.$;
  * @date 2022/5/5 5:20 下午
  */
 public enum JobSource implements IAutoexecJobSource {
-    DEPLOY("一键发布", "deploy"),
-    BATCHDEPLOY("批量发布", "batchdeploy"),
+    DEPLOY("发布作业", "deploy"),
+    BATCHDEPLOY("批量发布作业", "batchdeploy"),
     DEPLOY_SCHEDULE_GENERAL("发布定时普通作业", "deployschedulegeneral"),
     DEPLOY_SCHEDULE_PIPELINE("发布定时超级流水线", "deployschedulepipeline"),
     PIPELINE("发布超级流水线", "pipeline"),

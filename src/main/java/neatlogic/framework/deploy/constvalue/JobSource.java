@@ -27,7 +27,6 @@ public enum JobSource implements IAutoexecJobSource {
     BATCHDEPLOY("批量发布作业", "batchdeploy"),
     DEPLOY_SCHEDULE_GENERAL("发布定时普通作业", "deployschedulegeneral"),
     DEPLOY_SCHEDULE_PIPELINE("发布定时超级流水线", "deployschedulepipeline"),
-    PIPELINE("发布超级流水线", "pipeline"),
     DEPLOY_CI("发布持续集成", "deployci");
     private final String text;
     private final String value;

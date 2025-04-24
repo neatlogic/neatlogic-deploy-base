@@ -15,6 +15,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
 package neatlogic.framework.deploy.dto.pipeline;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import neatlogic.framework.common.constvalue.ApiParamType;
@@ -188,11 +189,7 @@ public class PipelineJobTemplateVo extends BasePageVo {
 
     public JSONObject getConfig() {
         if (config == null && StringUtils.isNotBlank(configStr)) {
-            try {
-                config = JSONObject.parseObject(configStr);
-            } catch (Exception ignored) {
-
-            }
+            config = JSON.parseObject(configStr);
         }
         return config;
     }

@@ -62,6 +62,7 @@ public class DeployJobVo extends AutoexecJobVo {
     private DeployPipelineConfigVo pipeLineConfig;
     @EntityField(name = "是否有执行组权限", type = ApiParamType.INTEGER)
     private Integer isCanGroupExecute = 0;
+    private Integer isCanAbort = 0;
     @EntityField(name = "泳道列表", type = ApiParamType.JSONARRAY)
     private List<LaneVo> laneList;
     @EntityField(name = "授权列表", type = ApiParamType.JSONARRAY)
@@ -307,5 +308,13 @@ public class DeployJobVo extends AutoexecJobVo {
 
     public void setIsJobInitParam(boolean jobInitParam) {
         isJobInitParam = jobInitParam;
+    }
+
+    public Integer getIsCanAbort() {
+        return isCanAbort;
+    }
+
+    public void setIsCanAbort(Integer isCanAbort) {
+        this.isCanAbort = isCanAbort;
     }
 }

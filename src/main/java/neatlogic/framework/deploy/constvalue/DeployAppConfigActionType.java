@@ -17,16 +17,24 @@ import java.util.Set;
  * @date 2022/05/24 4:16 下午
  */
 public enum DeployAppConfigActionType {
-    OPERATION("operation", "操作"),
-    SCENARIO("scenario", "场景"),
-    ENV("env", "环境");
+    OPERATION("operation", "nfdc.deployappconfigactiontype.operation.text"),
+    SCENARIO("scenario", "term.autoexec.scenario"),
+    ENV("env", "nfdc.deployappconfigactiontype.env.text", "nfdc.deployappconfigactiontype.env.description");
 
     private final String value;
     private final String text;
+    private final String description;
 
     DeployAppConfigActionType(String value, String text) {
         this.value = value;
         this.text = text;
+        this.description = StringUtils.EMPTY;
+    }
+
+    DeployAppConfigActionType(String value, String text, String description) {
+        this.value = value;
+        this.text = text;
+        this.description = description;
     }
 
     public String getValue() {
@@ -35,6 +43,10 @@ public enum DeployAppConfigActionType {
 
     public String getText() {
         return $.t(text);
+    }
+
+    public String getDescription() {
+        return $.t(description);
     }
 
     public static List<JSONObject> getValueTextList() {

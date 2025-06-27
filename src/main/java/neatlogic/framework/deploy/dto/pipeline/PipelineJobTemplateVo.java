@@ -18,6 +18,7 @@ package neatlogic.framework.deploy.dto.pipeline;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import neatlogic.framework.autoexec.constvalue.AutoexecParallelPolicy;
 import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.common.dto.BasePageVo;
 import neatlogic.framework.deploy.dto.job.DeployJobVo;
@@ -65,6 +66,10 @@ public class PipelineJobTemplateVo extends BasePageVo {
     private String scenarioName;
     @EntityField(name = "分批数量", type = ApiParamType.INTEGER)
     private Integer roundCount;
+    @EntityField(name = "并发数量", type = ApiParamType.INTEGER)
+    private Integer parallelCount;
+    @EntityField(name = "并发策略", type = ApiParamType.STRING)
+    private String parallelPolicy;
     @EntityField(name = "排序", type = ApiParamType.INTEGER)
     private Integer sort;
     @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
@@ -273,5 +278,25 @@ public class PipelineJobTemplateVo extends BasePageVo {
 
     public String getUuid() {
         return Md5Util.encryptMD5(String.valueOf(getId()));
+    }
+
+    public Integer getParallelCount() {
+        return parallelCount;
+    }
+
+    public void setParallelCount(Integer parallelCount) {
+        this.parallelCount = parallelCount;
+    }
+
+    public String getParallelPolicy() {
+        //兼容老数据
+        if (StringUtils.isBlank(parallelPolicy) && roundCount != null) {
+            parallelPolicy = AutoexecParallelPolicy.ROUND_COUNT.getValue();
+        }
+        return parallelPolicy;
+    }
+
+    public void setParallelPolicy(String parallelPolicy) {
+        this.parallelPolicy = parallelPolicy;
     }
 }

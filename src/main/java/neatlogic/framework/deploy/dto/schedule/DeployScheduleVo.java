@@ -76,8 +76,6 @@ public class DeployScheduleVo extends BaseEditorVo {
     private Integer editable = 0;
     @EntityField(name = "是否可删除", type = ApiParamType.INTEGER)
     private Integer deletable = 0;
-    @EntityField(name = "是否已加载", type = ApiParamType.INTEGER)
-    private Integer isLoad;
 
     private JobStatusVo jobStatus;
 
@@ -281,14 +279,6 @@ public class DeployScheduleVo extends BaseEditorVo {
 
     public void setDeletable(Integer deletable) {
         this.deletable = deletable;
-    }
-
-    public Integer getIsLoad() {
-        return isLoad;
-    }
-
-    public void setIsLoad(Integer isLoad) {
-        this.isLoad = isLoad;
     }
 
     public JobStatusVo getJobStatus() {

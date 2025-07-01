@@ -21,6 +21,7 @@ import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.common.dto.BaseEditorVo;
 import neatlogic.framework.deploy.constvalue.ScheduleType;
 import neatlogic.framework.restful.annotation.EntityField;
+import neatlogic.framework.scheduler.dto.JobStatusVo;
 import neatlogic.framework.util.SnowflakeUtil;
 import org.apache.commons.lang3.StringUtils;
 
@@ -75,6 +76,8 @@ public class DeployScheduleVo extends BaseEditorVo {
     private Integer editable = 0;
     @EntityField(name = "是否可删除", type = ApiParamType.INTEGER)
     private Integer deletable = 0;
+
+    private JobStatusVo jobStatus;
 
     public Long getId() {
         if (id == null) {
@@ -276,5 +279,13 @@ public class DeployScheduleVo extends BaseEditorVo {
 
     public void setDeletable(Integer deletable) {
         this.deletable = deletable;
+    }
+
+    public JobStatusVo getJobStatus() {
+        return jobStatus;
+    }
+
+    public void setJobStatus(JobStatusVo jobStatus) {
+        this.jobStatus = jobStatus;
     }
 }

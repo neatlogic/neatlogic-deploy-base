@@ -128,6 +128,14 @@ public class DeploySqlNodeDetailVo extends BaseEditorVo implements ISqlNodeDetai
         this.version = version;
     }
 
+    public DeploySqlNodeDetailVo(String jobPhaseName,Long sysId, Long moduleId, Long envId, String version) {
+        this.sysId = sysId;
+        this.moduleId = moduleId;
+        this.envId = envId;
+        this.version = version;
+        this.phaseName = jobPhaseName;
+    }
+
     public DeploySqlNodeDetailVo() {
     }
 

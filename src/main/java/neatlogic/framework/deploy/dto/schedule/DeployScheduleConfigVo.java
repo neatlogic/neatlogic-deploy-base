@@ -34,6 +34,10 @@ public class DeployScheduleConfigVo {
     private String envName;
     @EntityField(name = "分批数量", type = ApiParamType.INTEGER)
     private Integer roundCount;
+    @EntityField(name = "并发数量", type = ApiParamType.INTEGER)
+    private Integer parallelCount;
+    @EntityField(name = "并发策略", type = ApiParamType.STRING)
+    private String parallelPolicy;
 
     @EntityField(name = "作业参数映射列表", type = ApiParamType.JSONOBJECT)
     private JSONObject param;
@@ -104,5 +108,21 @@ public class DeployScheduleConfigVo {
 
     public void setAppSystemModuleVersionList(List<DeploySystemModuleVersionVo> appSystemModuleVersionList) {
         this.appSystemModuleVersionList = appSystemModuleVersionList;
+    }
+
+    public Integer getParallelCount() {
+        return parallelCount;
+    }
+
+    public void setParallelCount(Integer parallelCount) {
+        this.parallelCount = parallelCount;
+    }
+
+    public String getParallelPolicy() {
+        return parallelPolicy;
+    }
+
+    public void setParallelPolicy(String parallelPolicy) {
+        this.parallelPolicy = parallelPolicy;
     }
 }

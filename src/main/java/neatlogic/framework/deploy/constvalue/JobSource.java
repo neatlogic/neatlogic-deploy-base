@@ -18,6 +18,9 @@ package neatlogic.framework.deploy.constvalue;
 import neatlogic.framework.autoexec.source.IAutoexecJobSource;
 import neatlogic.framework.util.$;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author longrf
  * @date 2022/5/5 5:20 下午
@@ -27,7 +30,8 @@ public enum JobSource implements IAutoexecJobSource {
     BATCHDEPLOY("一键发布+批量作业", "batchdeploy"),
     DEPLOY_SCHEDULE_GENERAL("发布定时作业", "deployschedulegeneral"),
     DEPLOY_SCHEDULE_PIPELINE("发布定时批量作业", "deployschedulepipeline"),
-    DEPLOY_CI("发布持续集成", "deployci");
+    DEPLOY_CI("发布持续集成", "deployci"),
+    DEPLOY_CI_PIPELINE("发布持续集成批量作业", "deploycipipeline");
     private final String text;
     private final String value;
 
@@ -35,6 +39,8 @@ public enum JobSource implements IAutoexecJobSource {
         this.text = _text;
         this.value = _value;
     }
+
+    private static final List<String> batchJob = Arrays.asList(BATCHDEPLOY.getValue(),DEPLOY_SCHEDULE_PIPELINE.getValue(),DEPLOY_CI_PIPELINE.getValue());
 
     public String getValue() {
         return value;
@@ -56,6 +62,10 @@ public enum JobSource implements IAutoexecJobSource {
     @Override
     public String getType() {
         return JobSourceType.DEPLOY.getValue();
+    }
+
+    public static boolean isBatch(String source){
+        return batchJob.contains(source);
     }
 
 }

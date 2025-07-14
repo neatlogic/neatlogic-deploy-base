@@ -18,7 +18,7 @@ public enum DeployAppConfigAction {
     EXECUTE("execute", "nfdc.deployappconfigaction.execute","nfdc.deployappconfigaction.executedesc"),
     AUTH("auth", "nfdc.deployappconfigaction.auth","nfdc.deployappconfigaction.authdesc"),
     VERSION_AND_PRODUCT_MANAGER("versionAndProductManager", "nfdc.deployappconfigaction.versionandproductmanager","nfdc.deployappconfigaction.versionandproductmanagerdesc"),
-    PIPELINE("pipeline", "nfdc.deployappconfigaction.pipeline","")
+    PIPELINE("pipeline", "nfdc.deployappconfigaction.pipeline","nfdc.deployappconfigaction.pipelinedesc")
     ;
 
     private final String value;

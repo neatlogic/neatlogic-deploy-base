@@ -14,18 +14,17 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 package neatlogic.framework.deploy.exception;
 
-import neatlogic.framework.autoexec.dto.scenario.AutoexecScenarioVo;
-import neatlogic.framework.cmdb.dto.cientity.CiEntityVo;
 import neatlogic.framework.cmdb.dto.resourcecenter.entity.AppSystemVo;
+import neatlogic.framework.deploy.dto.pipeline.PipelineVo;
 import neatlogic.framework.exception.core.ApiRuntimeException;
 
-public class DeployAppScenarioAuthException extends ApiRuntimeException {
+public class DeployAppPipelineAuthException extends ApiRuntimeException {
 
-    public DeployAppScenarioAuthException(CiEntityVo appSystemCiEntity, AutoexecScenarioVo scenarioVo) {
-        super("nfde.deployappscenarioauthexception.deployappscenarioauthexception", appSystemCiEntity.getName(), appSystemCiEntity.getId(), scenarioVo.getName(), scenarioVo.getId());
+    public DeployAppPipelineAuthException(AppSystemVo appSystemVo, PipelineVo pipelineVo) {
+        super("nfde.deployapppipelineauthexception.deployapppipelineauthexceptiona", pipelineVo.getName(), pipelineVo.getId(), appSystemVo.getName(), appSystemVo.getAbbrName());
     }
 
-    public DeployAppScenarioAuthException(AppSystemVo appSystemVo, AutoexecScenarioVo scenarioVo) {
-        super("nfde.deployappscenarioauthexception.deployappscenarioauthexception", appSystemVo.getName(), appSystemVo.getAbbrName(), scenarioVo.getName(), scenarioVo.getId());
+    public DeployAppPipelineAuthException(PipelineVo pipelineVo) {
+        super("nfde.deployapppipelineauthexception.deployapppipelineauthexceptionb", pipelineVo.getName(), pipelineVo.getId());
     }
 }

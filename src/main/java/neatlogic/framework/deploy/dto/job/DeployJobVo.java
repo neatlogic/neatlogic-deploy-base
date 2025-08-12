@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import neatlogic.framework.asynchronization.threadlocal.UserContext;
 import neatlogic.framework.auth.core.AuthActionChecker;
+import neatlogic.framework.autoexec.constvalue.AutoexecParallelPolicy;
 import neatlogic.framework.autoexec.dto.job.AutoexecJobVo;
 import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.deploy.auth.DEPLOY_MODIFY;
@@ -29,6 +30,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class DeployJobVo extends AutoexecJobVo {
 
@@ -106,14 +108,27 @@ public class DeployJobVo extends AutoexecJobVo {
         buildNo = jsonObj.getInteger("buildNo");
     }
 
-    public DeployJobVo(Long appSystemId, Long scenarioId, Long envId, String triggerType, Date planStartTime, Integer roundCount, JSONObject param) {
+    public DeployJobVo(Long appSystemId, Long scenarioId, Long envId, String triggerType, Date planStartTime, JSONObject config) {
         this.appSystemId = appSystemId;
         super.setScenarioId(scenarioId);
         this.envId = envId;
         super.setTriggerType(triggerType);
         super.setPlanStartTime(planStartTime);
-        super.setRoundCount(roundCount);
-        super.setParam(param);
+        String parallelPolicy = config.getString("parallelPolicy");
+        Integer roundCount = config.getInteger("roundCount");
+        //兼容老数据
+        if (StringUtils.isBlank(parallelPolicy) && roundCount != null) {
+            parallelPolicy = AutoexecParallelPolicy.ROUND_COUNT.getValue();
+        }
+        if (StringUtils.isNotBlank(parallelPolicy)) {
+            super.setParallelPolicy(parallelPolicy);
+            if (Objects.equals(parallelPolicy, AutoexecParallelPolicy.ROUND_COUNT.getValue())) {
+                super.setRoundCount(roundCount);
+            } else {
+                super.setParallelCount(config.getInteger("parallelCount"));
+            }
+        }
+        super.setParam(config.getJSONObject("config"));
     }
 
 

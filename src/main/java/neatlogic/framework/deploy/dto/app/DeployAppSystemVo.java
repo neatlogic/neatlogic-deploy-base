@@ -65,7 +65,8 @@ public class DeployAppSystemVo extends BaseEditorVo {
     private Integer isHasAllAuthority;
     @EntityField(name = "是否拥有资源锁", type = ApiParamType.INTEGER)
     private Integer isHasResourceLock = 0;
-
+    @EntityField(name = "是否拥有应用超级流水线授权", type = ApiParamType.INTEGER)
+    private Integer isHasAuthPipeline = 0;
 
     @JSONField(serialize = false)
     private List<DeployAppConfigAuthorityVo> authList;
@@ -283,5 +284,13 @@ public class DeployAppSystemVo extends BaseEditorVo {
 
     public void setIsHasResourceLock(Integer isHasResourceLock) {
         this.isHasResourceLock = isHasResourceLock;
+    }
+
+    public Integer getIsHasAuthPipeline() {
+        return isHasAuthPipeline;
+    }
+
+    public void setIsHasAuthPipeline(Integer isHasAuthPipeline) {
+        this.isHasAuthPipeline = isHasAuthPipeline;
     }
 }

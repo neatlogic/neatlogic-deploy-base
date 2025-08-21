@@ -97,6 +97,10 @@ public class DeployResourceSearchVo extends ResourceSearchVo {
         return UserContext.get().getUuidList();
     }
 
+    public String getAuthUuid() {
+        return UserContext.get().getUserUuid();
+    }
+
     public List<String> getAuthorityActionList() {
         return authorityActionList;
     }

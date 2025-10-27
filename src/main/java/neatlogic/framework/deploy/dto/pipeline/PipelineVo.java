@@ -17,6 +17,7 @@ package neatlogic.framework.deploy.dto.pipeline;
 
 import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.deploy.constvalue.PipelineType;
+import neatlogic.framework.deploy.dto.app.DeployAppConfigVo;
 import neatlogic.framework.restful.annotation.EntityField;
 import neatlogic.framework.util.SnowflakeUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -58,6 +59,8 @@ public class PipelineVo {
     private int isHasBuildTypeTool = 0;
     @EntityField(name = "是否拥有DEPLOY类型的工具库工具", type = ApiParamType.INTEGER)
     private int isHasDeployTypeTool = 0;
+    @EntityField(name = "应用流水线列表", type = ApiParamType.JSONARRAY)
+    private List<DeployAppConfigVo> appConfigList;
 
     public Long getId() {
         if (id == null) {
@@ -191,5 +194,13 @@ public class PipelineVo {
 
     public void setIsHasDeployTypeTool(int isHasDeployTypeTool) {
         this.isHasDeployTypeTool = isHasDeployTypeTool;
+    }
+
+    public List<DeployAppConfigVo> getAppConfigList() {
+        return appConfigList;
+    }
+
+    public void setAppConfigList(List<DeployAppConfigVo> appConfigList) {
+        this.appConfigList = appConfigList;
     }
 }

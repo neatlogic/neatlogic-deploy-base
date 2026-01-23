@@ -58,6 +58,8 @@ public class PipelineVo {
     private int isHasDeployTypeTool = 0;
     @EntityField(name = "应用流水线列表", type = ApiParamType.JSONARRAY)
     private List<DeployAppConfigVo> appConfigList;
+    @EntityField(name = "默认版本", type = ApiParamType.STRING)
+    private String  defaultVersion;
 
     public Long getId() {
         if (id == null) {
@@ -199,5 +201,13 @@ public class PipelineVo {
 
     public void setAppConfigList(List<DeployAppConfigVo> appConfigList) {
         this.appConfigList = appConfigList;
+    }
+
+    public String getDefaultVersion() {
+        return defaultVersion;
+    }
+
+    public void setDefaultVersion(String defaultVersion) {
+        this.defaultVersion = defaultVersion;
     }
 }

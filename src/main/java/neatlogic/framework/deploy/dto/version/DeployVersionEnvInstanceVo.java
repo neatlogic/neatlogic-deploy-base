@@ -15,6 +15,8 @@ public class DeployVersionEnvInstanceVo {
     private Long resourceId;
     @EntityField(name = "版本id", type = ApiParamType.LONG)
     private Long versionId;
+    @EntityField(name = "版本", type = ApiParamType.STRING)
+    private String version;
     @EntityField(name = "环境id", type = ApiParamType.LONG)
     private Long envId;
 
@@ -74,6 +76,14 @@ public class DeployVersionEnvInstanceVo {
 
     public void setVersionId(Long versionId) {
         this.versionId = versionId;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 
     public Long getEnvId() {

@@ -44,4 +44,9 @@ public enum DeployTenantConfig implements ITenantConfig {
     public String getDescription() {
         return $.t(description);
     }
+
+    @Override
+    public String getModuleGroup() {
+        return "deploy";
+    }
 }

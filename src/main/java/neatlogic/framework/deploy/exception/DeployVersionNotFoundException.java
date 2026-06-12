@@ -19,6 +19,10 @@ public class DeployVersionNotFoundException extends ApiRuntimeException {
         super("发布版本“{0}”不存在", version);
     }
 
+    public DeployVersionNotFoundException(String sysName, String moduleName, String version) {
+        super("发布 “{0}/{1}/{2}” 不存在", sysName, moduleName, version);
+    }
+
     public DeployVersionNotFoundException(DeployJobVo deployJobParam, String from) {
         super("发布版本 “{6}-{0}({1})/{2}({3})/{4}({5})” 不存在", deployJobParam.getAppSystemAbbrName(), deployJobParam.getAppSystemId(), deployJobParam.getAppModuleName(), deployJobParam.getAppModuleId(), deployJobParam.getVersion(), deployJobParam.getVersionId(), from);
     }

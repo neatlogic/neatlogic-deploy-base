@@ -32,6 +32,8 @@ public class DeployScheduleSearchVo extends BasePageVo {
     @EntityField(name = "用户、分组、角色的uuid列表", type = ApiParamType.JSONARRAY)
     private List<String> authUuidList;
 
+    private String sourceServerGroup;
+
     public Integer getIsActive() {
         return isActive;
     }
@@ -78,5 +80,13 @@ public class DeployScheduleSearchVo extends BasePageVo {
 
     public void setAuthUuidList(List<String> authUuidList) {
         this.authUuidList = authUuidList;
+    }
+
+    public String getSourceServerGroup() {
+        return sourceServerGroup;
+    }
+
+    public void setSourceServerGroup(String sourceServerGroup) {
+        this.sourceServerGroup = sourceServerGroup;
     }
 }

@@ -10,17 +10,17 @@ import java.util.Date;
 import java.util.Objects;
 
 public class DeployVersionDependencyVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversiondependencyvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "发布版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversiondependencyvo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "依赖包id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversiondependencyvo.packageid.name", type = ApiParamType.LONG)
     private Long packageId;
-    @EntityField(name = "依赖作用域", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversiondependencyvo.scope.name", type = ApiParamType.STRING)
     private String scope = "compile";
-    @EntityField(name = "父依赖id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversiondependencyvo.parentid.name", type = ApiParamType.LONG)
     private Long parentId;
-    @EntityField(name = "编译时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversiondependencyvo.buildtime.name", type = ApiParamType.LONG)
     private Date buildTime;
 
     private String version;

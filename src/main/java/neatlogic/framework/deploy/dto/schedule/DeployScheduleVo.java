@@ -29,52 +29,52 @@ import java.util.Date;
 import java.util.UUID;
 
 public class DeployScheduleVo extends BaseEditorVo {
-    @EntityField(name = "定时作业id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deployschedulevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "定时作业uuid", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.uuid.name", type = ApiParamType.STRING)
     private String uuid;
-    @EntityField(name = "定时作业名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "开始时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deployschedulevo.begintime.name", type = ApiParamType.LONG)
     private Date beginTime;
-    @EntityField(name = "结束时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deployschedulevo.endtime.name", type = ApiParamType.LONG)
     private Date endTime;
-    @EntityField(name = "cron表达式", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.cron.name", type = ApiParamType.STRING)
     private String cron;
-    @EntityField(name = "状态(0:禁用，1：启用)", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deployschedulevo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "执行配置信息", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfdds.deployschedulevo.config.name", type = ApiParamType.JSONOBJECT)
     private DeployScheduleConfigVo config;
     @JSONField(serialize = false)
     private String configStr;
 
-    @EntityField(name = "执行次数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deployschedulevo.execcount.name", type = ApiParamType.INTEGER)
     private Integer execCount;
-    @EntityField(name = "作业类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.type.name", type = ApiParamType.STRING)
     private String type;
-    @EntityField(name = "作业类型名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.typename.name", type = ApiParamType.STRING)
     private String typeName;
-    @EntityField(name = "应用id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deployschedulevo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.appsystemname.name", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "应用简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.appsystemabbrname.name", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deployschedulevo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "模块名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.appmodulename.name", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "模块简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.appmoduleabbrname.name", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "流水线id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deployschedulevo.pipelineid.name", type = ApiParamType.LONG)
     private Long pipelineId;
-    @EntityField(name = "流水线名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.pipelinename.name", type = ApiParamType.STRING)
     private String pipelineName;
-    @EntityField(name = "流水线类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployschedulevo.pipelinetype.name", type = ApiParamType.STRING)
     private String pipelineType;
-    @EntityField(name = "是否可编辑", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deployschedulevo.editable.name", type = ApiParamType.INTEGER)
     private Integer editable = 0;
-    @EntityField(name = "是否可删除", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deployschedulevo.deletable.name", type = ApiParamType.INTEGER)
     private Integer deletable = 0;
 
     private JobStatusVo jobStatus;

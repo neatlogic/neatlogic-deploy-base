@@ -16,6 +16,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiGitlabCallbackBranchNameLostException extends ApiRuntimeException {
 
     public DeployCiGitlabCallbackBranchNameLostException() {
-        super("Gitlab回调参数缺少分支名称");
+        super("nfde.deploycigitlabcallbackbranchnamelostexception.deploycigitlabcallbackbranchnamelostexception");
     }
 }

@@ -14,88 +14,88 @@ public class RepositoryVo extends BaseEditorVo implements Serializable {
     /**
      * id
      */
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.repositoryvo.id.name", type = ApiParamType.LONG)
     private Long id;
 
     /**
      * repo_service_id
      */
-    @EntityField(name = "关联代码库服务的id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.repositoryvo.reposerviceid.name", type = ApiParamType.LONG)
     private Long repoServiceId;
 
     /**
      * name
      */
-    @EntityField(name = "仓库名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.name.name", type = ApiParamType.STRING)
     private String name;
 
-    @EntityField(name = "仓库类型，git、gitlab、svn", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.type.name", type = ApiParamType.STRING)
     private String type;
     
     /**
      * address
      */
-    @EntityField(name = "仓库地址", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.address.name", type = ApiParamType.STRING)
     private String address;
 
     /**
      * main_branch
      */
-    @EntityField(name = "主干分支 ，git仓库默认master，svn仓库默认为空", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.mainbranch.name", type = ApiParamType.STRING)
     private String mainBranch;
     
     /**
      * default_branch
      */
-    @EntityField(name = "默认分支 ，git仓库默认master，svn仓库不支持此字段", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.defaultbranch.name", type = ApiParamType.STRING)
     private String defaultBranch;
     
-    @EntityField(name = "分支路径", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.branchespath.name", type = ApiParamType.STRING)
     private String branchesPath;
     
-    @EntityField(name = "标签路径", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.tagspath.name", type = ApiParamType.STRING)
     private String tagsPath;
 
     /**
      * app_mopdule_id
      */
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.repositoryvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
 
     /**
      * create_mode
      */
-    @EntityField(name = "import：导入，manual：手动创建...[import,manual]", type = ApiParamType.ENUM)
+    @EntityField(name = "nfddc.repositoryvo.createmode.name", type = ApiParamType.ENUM)
     private String createMode;
 
     /**
      * description
      */
-    @EntityField(name = "仓库描述", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.description.name", type = ApiParamType.STRING)
     private String description;
 
     /**
      * sync_status
      */
-    @EntityField(name = "同步状态，success：成功，failed：失败...[success,failed,none]", type = ApiParamType.ENUM)
+    @EntityField(name = "nfddc.repositoryvo.syncstatus.name", type = ApiParamType.ENUM)
     private String syncStatus;
 
     /**
      * sync_time
      */
-    @EntityField(name = "最后同步时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.repositoryvo.synctime.name", type = ApiParamType.LONG)
     private Date syncTime;
     
-    @EntityField(name = "排序规则, 如: repository.lcd DESC", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.sortcolumn.name", type = ApiParamType.STRING)
     private String sortColumn;
     
-    @EntityField(name = "系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.repositoryvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
 
-    @EntityField(name = "仓库服务对象", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddc.repositoryvo.repositoryservicevo.name", type = ApiParamType.JSONOBJECT)
     private RepositoryServiceVo repositoryServiceVo;
     
-    @EntityField(name = "节点名", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryvo.runnername.name", type = ApiParamType.STRING)
     private String runnerName;
     private Long runnerId;
     
@@ -103,11 +103,11 @@ public class RepositoryVo extends BaseEditorVo implements Serializable {
     private Boolean delegation = false;
 
 
-    @EntityField(name = "是否拥有发布管理员权限", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddc.repositoryvo.ishasallauthority.name", type = ApiParamType.INTEGER)
     private Integer isHasAllAuthority;
-    @EntityField(name = "权限列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddc.repositoryvo.authorityactionlist.name", type = ApiParamType.JSONARRAY)
     List<String> authorityActionList;
-    @EntityField(name = "用户、分组、角色的uuid列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddc.repositoryvo.authuuidlist.name", type = ApiParamType.JSONARRAY)
     private List<String> authUuidList;
 
     public String getBranchesPath() {

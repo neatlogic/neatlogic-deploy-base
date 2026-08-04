@@ -16,6 +16,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiEnvIdLostException extends ApiRuntimeException {
 
     public DeployCiEnvIdLostException() {
-        super("持续集成配置缺少环境配置");
+        super("nfde.deploycienvidlostexception.deploycienvidlostexception");
     }
 }

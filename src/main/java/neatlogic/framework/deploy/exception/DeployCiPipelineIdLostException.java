@@ -16,6 +16,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiPipelineIdLostException extends ApiRuntimeException {
 
     public DeployCiPipelineIdLostException() {
-        super("持续集成配置缺少超级流水线配置");
+        super("nfde.deploycipipelineidlostexception.deploycipipelineidlostexception");
     }
 }

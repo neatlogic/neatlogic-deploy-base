@@ -7,8 +7,8 @@ import neatlogic.framework.util.$;
  * @date 2022/04/28 4:16 下午
  */
 public enum JobSourceType {
-    DEPLOY("deploy", "发布"),
-    DEPLOY_VERSION_RESOURCE("deploy_version_resource", "版本中心制品"),
+    DEPLOY("deploy", "nfdc.jobsourcetype.text.deploy"),
+    DEPLOY_VERSION_RESOURCE("deploy_version_resource", "nfdc.jobsourcetype.text.deploy_version_resource"),
     ;
 
     private final String value;

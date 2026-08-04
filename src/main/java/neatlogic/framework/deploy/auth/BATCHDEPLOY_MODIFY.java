@@ -24,12 +24,12 @@ import java.util.List;
 public class BATCHDEPLOY_MODIFY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "批量发布管理权限";
+        return "nfda.batchdeploy_modify.getauthdisplayname";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "创建、删除批量发布，允许执行已审核的批量发布作业";
+        return "nfda.batchdeploy_modify.getauthintroduction";
     }
 
     @Override

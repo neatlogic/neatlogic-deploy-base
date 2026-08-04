@@ -29,27 +29,27 @@ import java.util.List;
 
 public class DeployJobWebhookVo extends BaseEditorVo {
     private static final long serialVersionUID = -5715414967862953577L;
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookvo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "是否激活", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddw.deployjobwebhookvo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "集成uuid", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookvo.integrationuuid.name", type = ApiParamType.STRING)
     private String integrationUuid;
-    @EntityField(name = "集成名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookvo.integrationname.name", type = ApiParamType.STRING)
     private String integrationName;
-    @EntityField(name = "作业类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookvo.type.name", type = ApiParamType.STRING)
     private String type;
-    @EntityField(name = "作业类型名", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookvo.typename.name", type = ApiParamType.STRING)
     private String typeName;
-    @EntityField(name = "流水线类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookvo.pipelinetype.name", type = ApiParamType.STRING)
     private String pipelineType;
-    @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddw.deployjobwebhookvo.config.name", type = ApiParamType.JSONOBJECT)
     private DeployJobWebhookConfigVo config;
-    @EntityField(name = "作业状态集合", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddw.deployjobwebhookvo.jobstatuslist.name", type = ApiParamType.JSONARRAY)
     private List<AutoexecJobStatusVo> jobStatusList;
-    @EntityField(name = "编译号策略", type = ApiParamType.ENUM, member = DeployWebhookBuildNoPolicy.class)
+    @EntityField(name = "nfddw.deployjobwebhookvo.buildnopolicy.name", type = ApiParamType.ENUM, member = DeployWebhookBuildNoPolicy.class)
     private String buildNoPolicy;
 
     @JSONField(serialize = false)

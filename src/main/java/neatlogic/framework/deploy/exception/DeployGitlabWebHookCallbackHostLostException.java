@@ -15,6 +15,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployGitlabWebHookCallbackHostLostException extends ApiRuntimeException {
     public DeployGitlabWebHookCallbackHostLostException() {
-        super("缺失初始化配置“gitlabWebHookCallbackHost“，请联系管理员处理");
+        super("nfde.deploygitlabwebhookcallbackhostlostexception.deploygitlabwebhookcallbackhostlostexception");
     }
 }

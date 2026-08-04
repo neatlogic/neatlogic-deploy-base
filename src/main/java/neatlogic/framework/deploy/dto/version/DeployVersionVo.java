@@ -67,9 +67,9 @@ public class DeployVersionVo extends BaseEditorVo {
     private List<DeployVersionBuildNoVo> buildNoList;
     @JSONField(serialize = false)
     private JSONObject startTimeRange;
-    @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionvo.runnermapid.name", type = ApiParamType.LONG)
     private Long runnerMapId;
-    @EntityField(name = "runnerGroup", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddv.deployversionvo.runnergroup.name", type = ApiParamType.JSONOBJECT)
     private JSONObject runnerGroup;
     @JSONField(serialize = false)
     private String runnerGroupStr;
@@ -115,10 +115,10 @@ public class DeployVersionVo extends BaseEditorVo {
     @EntityField(name = "term.deploy.criticalstarcvecount", type = ApiParamType.LONG)
     private Long criticalStarCveCount;
 
-    @EntityField(name = "环境Id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
 
-    @EntityField(name = "当前环境BuildNo", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionvo.currentenvbuildno.name", type = ApiParamType.INTEGER)
     private Integer currentEnvBuildNo;
 
     public DeployVersionVo() {

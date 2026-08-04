@@ -14,12 +14,12 @@ import java.util.List;
 public class DEPLOY_BASE extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "发布基础权限";
+        return "nfda.deploy_base.getauthdisplayname";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "查看发布模块";
+        return "nfda.deploy_base.getauthintroduction";
     }
 
     @Override

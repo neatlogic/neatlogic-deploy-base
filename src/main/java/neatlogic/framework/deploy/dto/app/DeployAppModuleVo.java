@@ -15,41 +15,41 @@ public class DeployAppModuleVo implements Serializable {
 
     private static final long serialVersionUID = 6551790567158160404L;
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappmodulevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappmodulevo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappmodulevo.abbrname.name", type = ApiParamType.STRING)
     private String abbrName;
-    @EntityField(name = "维护窗口", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappmodulevo.maintenancewindow.name", type = ApiParamType.STRING)
     private List<String> maintenanceWindow;
-    @EntityField(name = "备注", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappmodulevo.description.name", type = ApiParamType.STRING)
     private String description;
-    @EntityField(name = "是否有环境（1：有，0：没有）", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappmodulevo.ishasenv.name", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
-    @EntityField(name = "是否有配置（1：有，0：没有）", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappmodulevo.isconfig.name", type = ApiParamType.INTEGER)
     private Integer isConfig;
-    @EntityField(name = "系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappmodulevo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
     //发布作业：当前场景是否有BUILD分类的工具，前端需要根据此标识调用 不同的选择版本下拉接口
-    @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappmodulevo.ishasbuildtypetool.name", type = ApiParamType.INTEGER)
     private int isHasBuildTypeTool = 0;
-    @EntityField(name = "是否拥有DEPLOY类型的工具库工具", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappmodulevo.ishasdeploytypetool.name", type = ApiParamType.INTEGER)
     private int isHasDeployTypeTool = 0;
-    @EntityField(name = "状态id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deployappmodulevo.state.name", type = ApiParamType.JSONARRAY)
     private List<Long> state;
-    @EntityField(name = "负责人id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deployappmodulevo.owner.name", type = ApiParamType.JSONARRAY)
     private List<Long> owner;
-    @EntityField(name = "是否有配置执行器（1：有，0：没有）", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappmodulevo.ishasrunner.name", type = ApiParamType.INTEGER)
     private Integer isHasRunner = 0;
 
     private List<DeployAppEnvironmentVo> envList;
 
     private List<DeployAppConfigInstanceVo> instanceVoList;
 
-    @EntityField(name = "流水线配置中是否存在禁用阶段", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappmodulevo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "流水线配置中是否存在重载阶段", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappmodulevo.override.name", type = ApiParamType.INTEGER)
     private Integer override;
 
     public DeployAppModuleVo() {

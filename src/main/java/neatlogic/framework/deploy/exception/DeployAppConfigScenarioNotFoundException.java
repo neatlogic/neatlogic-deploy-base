@@ -9,6 +9,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployAppConfigScenarioNotFoundException extends ApiRuntimeException {
 
     public DeployAppConfigScenarioNotFoundException() {
-        super("当前流水线没有配置场景");
+        super("nfde.deployappconfigscenarionotfoundexception.deployappconfigscenarionotfoundexception");
     }
 }

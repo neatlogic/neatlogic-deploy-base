@@ -18,13 +18,13 @@ import neatlogic.framework.restful.annotation.EntityField;
 import neatlogic.framework.util.SnowflakeUtil;
 
 public class DeployBlueGreenVo extends BaseEditorVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deploybluegreenvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deploybluegreenvo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "排序", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deploybluegreenvo.sort.name", type = ApiParamType.INTEGER)
     private Integer sort;
-    @EntityField(name = "是否激活", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deploybluegreenvo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
 
     public Long getId() {

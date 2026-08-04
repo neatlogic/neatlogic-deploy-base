@@ -27,27 +27,27 @@ import java.util.List;
 
 public class DeployAppConfigVo extends BaseEditorVo {
     private static final long serialVersionUID = -4457900289777364590L;
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "应用系统ID", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用系统名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigvo.appsystemname.name", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigvo.appsystemabbrname.name", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "模块ID", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId = 0L;
-    @EntityField(name = "模块名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigvo.appmodulename.name", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "模块简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigvo.appmoduleabbrname.name", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "环境ID", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigvo.envid.name", type = ApiParamType.LONG)
     private Long envId = 0L;
-    @EntityField(name = "环境名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigvo.envname.name", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "路径", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigvo.path.name", type = ApiParamType.STRING)
     private String path;
-    @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfdda.deployappconfigvo.config.name", type = ApiParamType.JSONOBJECT)
     private DeployPipelineConfigVo config;
 
     @JSONField(serialize = false)

@@ -17,6 +17,6 @@ public class DeployAppModuleEnvInstanceNotFoundException extends ApiRuntimeExcep
     private static final long serialVersionUID = 8025596450720197831L;
 
     public DeployAppModuleEnvInstanceNotFoundException(String sysName, String moduleName, String envName) {
-        super("发布 “{0}/{1}/{2}” 找不到节点", sysName, moduleName, envName);
+        super("nfde.deployappmoduleenvinstancenotfoundexception.deployappmoduleenvinstancenotfoundexception", sysName, moduleName, envName);
     }
 }

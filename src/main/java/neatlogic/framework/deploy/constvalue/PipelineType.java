@@ -20,8 +20,8 @@ import neatlogic.framework.util.$;
 import java.util.List;
 
 public enum PipelineType implements IEnum {
-    APPSYSTEM("appsystem", "应用流水线"),
-    GLOBAL("global", "全局流水线");
+    APPSYSTEM("appsystem", "nfdc.pipelinetype.text.appsystem"),
+    GLOBAL("global", "nfdc.pipelinetype.text.global");
 
     PipelineType(String value, String text) {
         this.value = value;

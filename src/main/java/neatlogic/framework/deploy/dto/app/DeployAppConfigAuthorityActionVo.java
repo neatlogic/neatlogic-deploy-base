@@ -17,9 +17,9 @@ import neatlogic.framework.restful.annotation.EntityField;
 public class DeployAppConfigAuthorityActionVo {
     private static final long serialVersionUID = 3794860793315891800L;
 
-    @EntityField(name = "授权操作", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigauthorityactionvo.action.name", type = ApiParamType.STRING)
     private String action;
-    @EntityField(name = "授权操作类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigauthorityactionvo.type.name", type = ApiParamType.STRING)
     private String type;
 
     public DeployAppConfigAuthorityActionVo(String action, String type) {

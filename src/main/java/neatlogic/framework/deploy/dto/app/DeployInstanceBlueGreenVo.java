@@ -17,19 +17,19 @@ import neatlogic.framework.common.dto.BaseEditorVo;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployInstanceBlueGreenVo extends BaseEditorVo {
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployinstancebluegreenvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployinstancebluegreenvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployinstancebluegreenvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "实例id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployinstancebluegreenvo.resourceid.name", type = ApiParamType.LONG)
     private Long resourceId;
-    @EntityField(name = "蓝绿id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployinstancebluegreenvo.bluegreenid.name", type = ApiParamType.LONG)
     private Long blueGreenId;
-    @EntityField(name = "蓝绿名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployinstancebluegreenvo.bluegreenname.name", type = ApiParamType.STRING)
     private String blueGreenName;
-    @EntityField(name = "蓝绿排序", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployinstancebluegreenvo.bluegreensort.name", type = ApiParamType.STRING)
     private String blueGreenSort;
 
     public Long getAppSystemId() {

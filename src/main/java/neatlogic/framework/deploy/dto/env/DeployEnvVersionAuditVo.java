@@ -7,27 +7,27 @@ import neatlogic.framework.restful.annotation.EntityField;
 import neatlogic.framework.util.SnowflakeUtil;
 
 public class DeployEnvVersionAuditVo extends BaseEditorVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionauditvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionauditvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionauditvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionauditvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "新版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionauditvo.newversionid.name", type = ApiParamType.LONG)
     private Long newVersionId;
-    @EntityField(name = "新版本号", type = ApiParamType.STRING)
+    @EntityField(name = "nfdde.deployenvversionauditvo.newversion.name", type = ApiParamType.STRING)
     private String newVersion;
-    @EntityField(name = "旧版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionauditvo.oldversionid.name", type = ApiParamType.LONG)
     private Long oldVersionId;
-    @EntityField(name = "旧版本号", type = ApiParamType.STRING)
+    @EntityField(name = "nfdde.deployenvversionauditvo.oldversion.name", type = ApiParamType.STRING)
     private String oldVersion;
-    @EntityField(name = "新编译号", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdde.deployenvversionauditvo.newbuildno.name", type = ApiParamType.INTEGER)
     private Integer newBuildNo;
-    @EntityField(name = "旧编译号", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdde.deployenvversionauditvo.oldbuildno.name", type = ApiParamType.INTEGER)
     private Integer oldBuildNo;
-    @EntityField(name = "方向", type = ApiParamType.ENUM, member = VersionDirection.class)
+    @EntityField(name = "nfdde.deployenvversionauditvo.direction.name", type = ApiParamType.ENUM, member = VersionDirection.class)
     private String direction;
 
     public DeployEnvVersionAuditVo() {

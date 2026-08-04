@@ -17,7 +17,7 @@ import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployPipelineGroupVo extends AutoexecCombopGroupVo {
-    @EntityField(name = "重载", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deploypipelinegroupvo.inherit.name", type = ApiParamType.INTEGER)
     private Integer inherit;
 
     public Integer getInherit() {

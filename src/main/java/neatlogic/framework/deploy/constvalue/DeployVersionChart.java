@@ -8,8 +8,8 @@ import neatlogic.framework.util.$;
 import java.util.List;
 
 public enum DeployVersionChart implements IEnum {
-    CODE_SCAN("code_scan", "代码扫描"),
-    UNIT_TEST("unit_test", "单元测试"),
+    CODE_SCAN("code_scan", "nfdc.deployversionchart.text.code_scan"),
+    UNIT_TEST("unit_test", "nfdc.deployversionchart.text.unit_test"),
     ;
 
     private final String value;

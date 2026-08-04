@@ -20,25 +20,25 @@ import neatlogic.framework.util.SnowflakeUtil;
 import java.util.List;
 
 public class LaneGroupVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.lanegroupvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "通道id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.lanegroupvo.laneid.name", type = ApiParamType.LONG)
     private Long laneId;
-    @EntityField(name = "是否需要等待", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddj.lanegroupvo.needwait.name", type = ApiParamType.INTEGER)
     private Integer needWait = 0;
-    @EntityField(name = "执行完当前组是否停止不继续执行后续组，但仍受needWait约束，1：是，0：否", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddj.lanegroupvo.isgoon.name", type = ApiParamType.INTEGER)
     private Integer isGoon = 1;
-    @EntityField(name = "是否是强行执行组，1：是，0：否", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddj.lanegroupvo.isgrouprun.name", type = ApiParamType.INTEGER)
     private Integer isGroupRun = 0;
-    @EntityField(name = "状态", type = ApiParamType.ENUM, member = JobStatus.class)
+    @EntityField(name = "nfddj.lanegroupvo.status.name", type = ApiParamType.ENUM, member = JobStatus.class)
     private String status;
-    @EntityField(name = "作业列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddj.lanegroupvo.joblist.name", type = ApiParamType.JSONARRAY)
     private List<DeployJobVo> jobList;
-    @EntityField(name = "批量作业执行策略，refire：跳过所有已完成的子作业；reset_refire:执行所有子作业", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.lanegroupvo.batchjobaction.name", type = ApiParamType.STRING)
     private String batchJobAction;
-    @EntityField(name = "子作业执行策略，refire：跳过所有已完成、已忽略的节点；reset_refire:执行所有节点", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.lanegroupvo.jobaction.name", type = ApiParamType.STRING)
     private String jobAction;
-    @EntityField(name = "排序", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddj.lanegroupvo.sort.name", type = ApiParamType.INTEGER)
     private Integer sort;
 
     public LaneGroupVo() {

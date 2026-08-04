@@ -20,8 +20,8 @@ import neatlogic.framework.util.$;
 import java.util.List;
 
 public enum DeployWebhookBuildNoPolicy implements IEnum {
-    THE_SAME("the_same", "与原作业一致"),
-    NEW("new", "新建buildNo")
+    THE_SAME("the_same", "nfdc.deploywebhookbuildnopolicy.text.the_same"),
+    NEW("new", "nfdc.deploywebhookbuildnopolicy.text.new")
     ;
     private final String value;
     private final String text;

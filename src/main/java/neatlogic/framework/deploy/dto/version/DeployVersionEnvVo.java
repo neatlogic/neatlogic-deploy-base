@@ -17,25 +17,25 @@ public class DeployVersionEnvVo extends BaseEditorVo {
 
     private static final long serialVersionUID = -5292013432947748975L;
 
-    @EntityField(name = "版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionenvvo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionenvvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "环境名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionenvvo.envname.name", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "作业id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionenvvo.jobid.name", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "状态", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionenvvo.status.name", type = ApiParamType.STRING)
     private String status = "pending";
-    @EntityField(name = "状态名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionenvvo.statusname.name", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionenvvo.runnermapid.name", type = ApiParamType.LONG)
     private Long runnerMapId;
-    @EntityField(name = "runnerGroup", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddv.deployversionenvvo.runnergroup.name", type = ApiParamType.JSONOBJECT)
     private JSONObject runnerGroup;
-    @EntityField(name = "buildNo", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionenvvo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;
-    @EntityField(name = "是否镜像发布", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionenvvo.ismirror.name", type = ApiParamType.INTEGER)
     private Integer isMirror;
     @JSONField(serialize = false)
     private String runnerGroupStr;

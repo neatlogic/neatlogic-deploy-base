@@ -26,29 +26,29 @@ import java.util.Date;
 
 public class DeployJobWebhookAuditVo extends BasePageVo {
     private static final long serialVersionUID = -8243357692436223665L;
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "触发器id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.webhookid.name", type = ApiParamType.LONG)
     private Long webhookId;
-    @EntityField(name = "记录名", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "状态", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.status.name", type = ApiParamType.STRING)
     private String status;
-    @EntityField(name = "状态名", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.statusname.name", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "集成记录id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.integrationauditid.name", type = ApiParamType.LONG)
     private Long integrationAuditId;
-    @EntityField(name = "触发时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.lcd.name", type = ApiParamType.LONG)
     private Date lcd;
-    @EntityField(name = "入参文件路径", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.paramfilepath.name", type = ApiParamType.STRING)
     private String paramFilePath;
-    @EntityField(name = "结果文件路径", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.resultfilepath.name", type = ApiParamType.STRING)
     private String resultFilePath;
-    @EntityField(name = "异常文件路径", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.errorfilepath.name", type = ApiParamType.STRING)
     private String errorFilePath;
-    @EntityField(name = "来源作业id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.fromjobid.name", type = ApiParamType.LONG)
     private Long fromJobId;
-    @EntityField(name = "来源作业名", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookauditvo.fromjobname.name", type = ApiParamType.STRING)
     private Long fromJobName;
 
     public DeployJobWebhookAuditVo() {

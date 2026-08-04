@@ -12,45 +12,45 @@ import org.apache.commons.lang3.StringUtils;
 
 public class DeployCiVo extends BaseEditorVo {
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.deploycivo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "是否激活", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddc.deploycivo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.deploycivo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.deploycivo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "模块名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.appmodulename.name", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "模块简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.appmoduleabbrname.name", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "仓库类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.repotype.name", type = ApiParamType.STRING)
     private String repoType;
-    @EntityField(name = "仓库服务器地址", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.reposerveraddress.name", type = ApiParamType.STRING)
     private String repoServerAddress;
-    @EntityField(name = "仓库名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.reponame.name", type = ApiParamType.STRING)
     private String repoName;
-    @EntityField(name = "分支过滤", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.branchfilter.name", type = ApiParamType.STRING)
     private String branchFilter;
-    @EntityField(name = "事件", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.event.name", type = ApiParamType.STRING)
     private String event;
-    @EntityField(name = "动作类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.action.name", type = ApiParamType.STRING)
     private String action;
-    @EntityField(name = "动作类型名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.actionname.name", type = ApiParamType.STRING)
     private String actionName;
-    @EntityField(name = "触发方式", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.triggertype.name", type = ApiParamType.STRING)
     private String triggerType;
-    @EntityField(name = "触发时间", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.triggertime.name", type = ApiParamType.STRING)
     private String triggerTime;
-    @EntityField(name = "延迟时间", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddc.deploycivo.delaytime.name", type = ApiParamType.INTEGER)
     private Integer delayTime;
-    @EntityField(name = "版本号规则", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddc.deploycivo.versionrule.name", type = ApiParamType.JSONOBJECT)
     private JSONObject versionRule;
-    @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddc.deploycivo.config.name", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
-    @EntityField(name = "webhook id", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deploycivo.hookid.name", type = ApiParamType.STRING)
     private String hookId;
 
     @JSONField(serialize = false)

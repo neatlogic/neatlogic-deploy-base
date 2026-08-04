@@ -21,13 +21,13 @@ import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployPipelinePhaseVo extends AutoexecCombopPhaseVo {
 
-    @EntityField(name = "父级启用", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deploypipelinephasevo.parentisactive.name", type = ApiParamType.INTEGER)
     private Integer parentIsActive;
-    @EntityField(name = "启用", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deploypipelinephasevo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "重载", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deploypipelinephasevo.override.name", type = ApiParamType.INTEGER)
     private Integer override;
-    @EntityField(name = "来源", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deploypipelinephasevo.source.name", type = ApiParamType.STRING)
     private String source;
 
     public Integer getParentIsActive() {

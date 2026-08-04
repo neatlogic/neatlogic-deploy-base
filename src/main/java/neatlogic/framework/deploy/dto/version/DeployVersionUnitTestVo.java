@@ -8,25 +8,25 @@ import java.util.Date;
 
 public class DeployVersionUnitTestVo {
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionunittestvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "版本ID", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionunittestvo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "构建时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionunittestvo.buildtime.name", type = ApiParamType.LONG)
     private Date buildTime;
-    @EntityField(name = "单元测试总数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionunittestvo.tests.name", type = ApiParamType.INTEGER)
     private Integer tests;
-    @EntityField(name = "单元测试成功率", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionunittestvo.testsuccessdensity.name", type = ApiParamType.INTEGER)
     private Integer testSuccessDensity;
-    @EntityField(name = "单元测试失败数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionunittestvo.testerrors.name", type = ApiParamType.INTEGER)
     private Integer testErrors;
-    @EntityField(name = "全量代码分支覆盖率", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionunittestvo.branchcoverage.name", type = ApiParamType.INTEGER)
     private Integer branchCoverage;
-    @EntityField(name = "增量代码分支覆盖率", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionunittestvo.newbranchcoverage.name", type = ApiParamType.INTEGER)
     private Integer newBranchCoverage;
-    @EntityField(name = "全量行覆盖率", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionunittestvo.linecoverage.name", type = ApiParamType.INTEGER)
     private Integer lineCoverage;
-    @EntityField(name = "增量行覆盖率", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionunittestvo.newlinecoverage.name", type = ApiParamType.INTEGER)
     private Integer newLineCoverage;
 
     public Long getId() {

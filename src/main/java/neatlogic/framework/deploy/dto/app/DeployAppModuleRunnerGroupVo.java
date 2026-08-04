@@ -16,11 +16,11 @@ import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployAppModuleRunnerGroupVo {
 
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappmodulerunnergroupvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappmodulerunnergroupvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "runner组id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappmodulerunnergroupvo.runnergroupid.name", type = ApiParamType.LONG)
     private Long runnerGroupId;
 
     public Long getAppSystemId() {

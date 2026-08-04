@@ -16,15 +16,15 @@ import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployJobWebhookAppModuleVo {
-    @EntityField(name = "触发器id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookappmodulevo.webhookid.name", type = ApiParamType.LONG)
     private Long webhookId;
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookappmodulevo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookappmodulevo.appsystemabbrname.name", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddw.deployjobwebhookappmodulevo.appmoduleabbrname.name", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookappmodulevo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
 
     public Long getWebhookId() {

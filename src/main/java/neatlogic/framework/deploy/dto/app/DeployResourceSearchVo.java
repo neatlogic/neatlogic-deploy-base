@@ -16,13 +16,13 @@ import java.util.List;
  * @date 2022/6/23 5:33 下午
  */
 public class DeployResourceSearchVo extends ResourceSearchVo {
-    @EntityField(name = "是否已配置（1：已配置，0：未配置）", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployresourcesearchvo.isconfig.name", type = ApiParamType.INTEGER)
     private Integer isConfig;
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployresourcesearchvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployresourcesearchvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployresourcesearchvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
 
     @JSONField(serialize = false)

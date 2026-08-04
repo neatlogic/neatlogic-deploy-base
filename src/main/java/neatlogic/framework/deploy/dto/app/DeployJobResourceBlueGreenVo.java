@@ -17,17 +17,17 @@ import neatlogic.framework.common.dto.BaseEditorVo;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployJobResourceBlueGreenVo extends BaseEditorVo {
-    @EntityField(name = "作业id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployjobresourcebluegreenvo.jobid.name", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "资产id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployjobresourcebluegreenvo.resourceid.name", type = ApiParamType.LONG)
     private Long resourceId;
-    @EntityField(name = "蓝绿id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployjobresourcebluegreenvo.bluegreenid.name", type = ApiParamType.LONG)
     private Long blueGreenId;
-    @EntityField(name = "跟新标记", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployjobresourcebluegreenvo.updatetag.name", type = ApiParamType.LONG)
     private Long updateTag;
-    @EntityField(name = "蓝绿名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployjobresourcebluegreenvo.bluegreenname.name", type = ApiParamType.STRING)
     private String blueGreenName;
-    @EntityField(name = "蓝绿排序", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployjobresourcebluegreenvo.bluegreensort.name", type = ApiParamType.STRING)
     private String blueGreenSort;
     public Long getJobId() {
         return jobId;

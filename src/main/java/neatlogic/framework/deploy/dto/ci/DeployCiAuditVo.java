@@ -13,36 +13,36 @@ import org.apache.commons.lang3.StringUtils;
 
 public class DeployCiAuditVo extends BaseEditorVo implements AuditVoHandler {
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.deployciauditvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "持续集成id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.deployciauditvo.ciid.name", type = ApiParamType.LONG)
     private Long ciId;
-    @EntityField(name = "提交ID", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.commitid.name", type = ApiParamType.STRING)
     private String commitId;
-    @EntityField(name = "动作", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.action.name", type = ApiParamType.STRING)
     private String action;
-    @EntityField(name = "动作类型名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.actionname.name", type = ApiParamType.STRING)
     private String actionName;
-    @EntityField(name = "状态", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.status.name", type = ApiParamType.STRING)
     private String status;
-    @EntityField(name = "状态名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.statusname.name", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "作业ID", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.deployciauditvo.jobid.name", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "作业名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.jobname.name", type = ApiParamType.STRING)
     private String jobName;
 
-    @EntityField(name = "请求参数", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.param.name", type = ApiParamType.STRING)
     private String param;
-    @EntityField(name = "返回结果", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.result.name", type = ApiParamType.STRING)
     private Object result;
-    @EntityField(name = "异常", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.error.name", type = ApiParamType.STRING)
     private String error;
-    @EntityField(name = "参数内容文件路径", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.paramfilepath.name", type = ApiParamType.STRING)
     private String paramFilePath;
-    @EntityField(name = "结果内容文件路径", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.resultfilepath.name", type = ApiParamType.STRING)
     private String resultFilePath;
-    @EntityField(name = "错误内容文件路径", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.deployciauditvo.errorfilepath.name", type = ApiParamType.STRING)
     private String errorFilePath;
     @JSONField(serialize = false)
     private Integer serverId;

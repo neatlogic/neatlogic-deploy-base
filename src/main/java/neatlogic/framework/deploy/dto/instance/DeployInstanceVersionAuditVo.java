@@ -7,25 +7,25 @@ import neatlogic.framework.restful.annotation.EntityField;
 import neatlogic.framework.util.SnowflakeUtil;
 
 public class DeployInstanceVersionAuditVo extends BaseEditorVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "实例id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.resourceid.name", type = ApiParamType.LONG)
     private Long resourceId;
-    @EntityField(name = "新版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.newversionid.name", type = ApiParamType.LONG)
     private Long newVersionId;
-    @EntityField(name = "旧版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.oldversionid.name", type = ApiParamType.LONG)
     private Long oldVersionId;
-    @EntityField(name = "新编译号", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.newbuildno.name", type = ApiParamType.INTEGER)
     private Integer newBuildNo;
-    @EntityField(name = "旧编译号", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.oldbuildno.name", type = ApiParamType.INTEGER)
     private Integer oldBuildNo;
-    @EntityField(name = "方向", type = ApiParamType.ENUM, member = VersionDirection.class)
+    @EntityField(name = "nfddi.deployinstanceversionauditvo.direction.name", type = ApiParamType.ENUM, member = VersionDirection.class)
     private String direction;
 
     public DeployInstanceVersionAuditVo() {

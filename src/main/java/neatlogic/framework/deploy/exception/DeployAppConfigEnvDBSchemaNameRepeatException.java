@@ -8,6 +8,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
  */
 public class DeployAppConfigEnvDBSchemaNameRepeatException extends ApiRuntimeException {
     public DeployAppConfigEnvDBSchemaNameRepeatException(String dbSchema) {
-        super("数据库schema“{0}”已存在", dbSchema);
+        super("nfde.deployappconfigenvdbschemanamerepeatexception.deployappconfigenvdbschemanamerepeatexception", dbSchema);
     }
 }

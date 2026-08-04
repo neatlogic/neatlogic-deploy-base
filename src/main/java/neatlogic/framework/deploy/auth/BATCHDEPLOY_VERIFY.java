@@ -24,12 +24,12 @@ import java.util.List;
 public class BATCHDEPLOY_VERIFY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "批量发布审核权限";
+        return "nfda.batchdeploy_verify.getauthdisplayname";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "审核待审核的批量发布作业，拥有此权限的用户创建的作业自动通过审核";
+        return "nfda.batchdeploy_verify.getauthintroduction";
     }
 
     @Override

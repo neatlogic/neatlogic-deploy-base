@@ -8,21 +8,21 @@ import java.util.List;
 
 public class DeployModuleActiveVersionVo {
 
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appsystemabbrname.name", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appsystemname.name", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "应用模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "应用模块简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appmoduleabbrname.name", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "应用模块名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appmodulename.name", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddv.deploymoduleactiveversionvo.envlist.name", type = ApiParamType.JSONARRAY)
     private List<DeployEnvVersionVo> envList;
-    @EntityField(name = "版本列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddv.deploymoduleactiveversionvo.versionlist.name", type = ApiParamType.JSONARRAY)
     private List<DeployActiveVersionVo> versionList;
 
     public DeployModuleActiveVersionVo() {

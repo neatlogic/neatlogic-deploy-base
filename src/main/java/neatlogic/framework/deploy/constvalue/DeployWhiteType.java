@@ -26,12 +26,12 @@ import java.util.List;
 
 public enum DeployWhiteType implements IEnum {
 
-    START_STOP( "START_STOP", "启停操作"),
-    NATIVE( "NATIVE", "调度器内置工具"),
-    BASIC("BASIC", "基础工具"),
-    BUILD("BUILD", "编译打包"),
-    DEPLOY( "DEPLOY", "自动发布"),
-    SQL_FILE("SQL_FILE", "SQL处理"),
+    START_STOP( "START_STOP", "nfdc.deploywhitetype.text.start_stop"),
+    NATIVE( "NATIVE", "nfdc.deploywhitetype.text.native"),
+    BASIC("BASIC", "nfdc.deploywhitetype.text.basic"),
+    BUILD("BUILD", "nfdc.deploywhitetype.text.build"),
+    DEPLOY( "DEPLOY", "nfdc.deploywhitetype.text.deploy"),
+    SQL_FILE("SQL_FILE", "nfdc.deploywhitetype.text.sql_file"),
     ;
 
 

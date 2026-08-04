@@ -18,96 +18,96 @@ public class CommitVo extends BasePageVo implements Serializable {
     /**
      * commit_id
      */
-    @EntityField(name = "commid id", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.commitid.name", type = ApiParamType.STRING)
     private String commitId;
 
     /**
      * mrId
      */
-    @EntityField(name = "mr id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.commitvo.mrid.name", type = ApiParamType.LONG)
     private Long mrId;
     
     /**
      * repositoryId
      */
-    @EntityField(name = "仓库id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.commitvo.repositoryid.name", type = ApiParamType.LONG)
     private Long repositoryId;
 
     /**
      * author
      */
-    @EntityField(name = "作者", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.author.name", type = ApiParamType.STRING)
     private String author;
 
     /**
      * author_email
      */
-    @EntityField(name = "作者邮箱", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.authoremail.name", type = ApiParamType.STRING)
     private String authorEmail;
 
     /**
      * author_date
      */
-    @EntityField(name = "作者编写时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.commitvo.authordate.name", type = ApiParamType.LONG)
     private Date authorDate;
 
     /**
      * committer
      */
-    @EntityField(name = "提交者", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.committer.name", type = ApiParamType.STRING)
     private String committer;
 
     /**
      * committer_email
      */
-    @EntityField(name = "提交者邮箱", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.committeremail.name", type = ApiParamType.STRING)
     private String committerEmail;
 
     /**
      * committer_date
      */
-    @EntityField(name = "提交者编写时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.commitvo.committerdate.name", type = ApiParamType.LONG)
     private Date committerDate;
 
     /**
      * message
      */
-    @EntityField(name = "commit消息", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.message.name", type = ApiParamType.STRING)
     private String message;
 
-    @EntityField(name = "排序规则", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.sortcolumn.name", type = ApiParamType.STRING)
     private String sortColumn;
 
-    @EntityField(name = "所属分支列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddc.commitvo.branchlist.name", type = ApiParamType.JSONARRAY)
     private List<String> branchList;
     
-    @EntityField(name = "需求号", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.issueno.name", type = ApiParamType.STRING)
     private String issueNo;
     
 
-    @EntityField(name = "分支名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.branchname.name", type = ApiParamType.STRING)
     private String branchName;
     
-    @EntityField(name = "Json字符串存储的文件变更记录", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.filepaths.name", type = ApiParamType.STRING)
     private String filePaths;
     
     
 
-    @EntityField(name = "Commit的合并状态", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.commitvo.mergestatus.name", type = ApiParamType.STRING)
     private String mergeStatus;
     
-    @EntityField(name = "本次mr合并的commit，该值为 1", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddc.commitvo.isnew.name", type = ApiParamType.INTEGER)
     private Integer isNew;
 
-    @EntityField(name = "文件添加计数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddc.commitvo.fileaddcount.name", type = ApiParamType.INTEGER)
     private Integer fileAddCount;
-    @EntityField(name = "文件修改计数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddc.commitvo.filemodifycount.name", type = ApiParamType.INTEGER)
     private Integer fileModifyCount;
-    @EntityField(name = "文件删除计数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddc.commitvo.filedeletecount.name", type = ApiParamType.INTEGER)
     private Integer fileDeleteCount;
-    @EntityField(name = "行添加计数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddc.commitvo.lineaddcount.name", type = ApiParamType.INTEGER)
     private Integer lineAddCount;
-    @EntityField(name = "行删除计数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddc.commitvo.linedeletecount.name", type = ApiParamType.INTEGER)
     private Integer lineDeleteCount;
 
     private static final long serialVersionUID = 1L;

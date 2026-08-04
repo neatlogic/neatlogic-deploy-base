@@ -21,15 +21,15 @@ import java.util.List;
 
 public class DeployJobWebhookConfigVo implements Serializable {
     private static final long serialVersionUID = 9213556846712167853L;
-    @EntityField(name = "源环境集合", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddw.deployjobwebhookconfigvo.envnamelist.name", type = ApiParamType.JSONARRAY)
     private List<String> envNameList;
-    @EntityField(name = "作业状态集合", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddw.deployjobwebhookconfigvo.jobstatuslist.name", type = ApiParamType.JSONARRAY)
     private List<String> jobStatusList;
-    @EntityField(name = "集成入参", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddw.deployjobwebhookconfigvo.integrationinputparam.name", type = ApiParamType.JSONOBJECT)
     private JSONObject integrationInputParam;
-    @EntityField(name = "配置", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddw.deployjobwebhookconfigvo.webhookappmodulelist.name", type = ApiParamType.JSONARRAY)
     private List<DeployJobWebhookAppModuleVo> webhookAppModuleList;
-    @EntityField(name = "流水线id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddw.deployjobwebhookconfigvo.pipelineid.name", type = ApiParamType.LONG)
     private Long pipeLineId;
 
 

@@ -19,16 +19,16 @@ import neatlogic.framework.util.SnowflakeUtil;
 import java.util.List;
 
 public class PipelineGroupVo {
-    @EntityField(name = "泳道id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinegroupvo.laneid.name", type = ApiParamType.LONG)
     private Long laneId;
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinegroupvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "是否需要等待", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinegroupvo.needwait.name", type = ApiParamType.INTEGER)
     private Integer needWait;
-    @EntityField(name = "排序", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinegroupvo.sort.name", type = ApiParamType.INTEGER)
     private int sort;
 
-    @EntityField(name = "作业模板列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddp.pipelinegroupvo.jobtemplatelist.name", type = ApiParamType.JSONARRAY)
     private List<PipelineJobTemplateVo> jobTemplateList;
 
     public Long getLaneId() {

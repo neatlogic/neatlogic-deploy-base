@@ -16,6 +16,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployAppConfigEnvAutoConfigKeyIrregularException extends ApiRuntimeException {
     public DeployAppConfigEnvAutoConfigKeyIrregularException(String key) {
-        super("变量名称：{0}不合法", key);
+        super("nfde.deployappconfigenvautoconfigkeyirregularexception.deployappconfigenvautoconfigkeyirregularexception", key);
     }
 }

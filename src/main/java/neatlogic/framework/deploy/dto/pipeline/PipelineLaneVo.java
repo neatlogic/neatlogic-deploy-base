@@ -19,11 +19,11 @@ import neatlogic.framework.util.SnowflakeUtil;
 import java.util.List;
 
 public class PipelineLaneVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinelanevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "流水线id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinelanevo.pipelineid.name", type = ApiParamType.LONG)
     private Long pipelineId;
-    @EntityField(name = "培训", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinelanevo.sort.name", type = ApiParamType.INTEGER)
     private int sort;
 
     private List<PipelineGroupVo> groupList;

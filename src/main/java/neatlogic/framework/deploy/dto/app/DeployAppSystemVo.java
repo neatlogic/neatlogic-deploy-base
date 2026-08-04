@@ -34,38 +34,38 @@ import java.util.stream.Collectors;
  */
 public class DeployAppSystemVo extends BaseEditorVo {
     private static final long serialVersionUID = 3794860793337591800L;
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappsystemvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappsystemvo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappsystemvo.abbrname.name", type = ApiParamType.STRING)
     private String abbrName;
-    @EntityField(name = "维护窗口", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappsystemvo.maintenancewindow.name", type = ApiParamType.STRING)
     private List<String> maintenanceWindow;
-    @EntityField(name = "备注", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappsystemvo.description.name", type = ApiParamType.STRING)
     private String description;
-    @EntityField(name = "是否被收藏（1：收藏，0：取消收藏）", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappsystemvo.isfavorite.name", type = ApiParamType.INTEGER)
     private Integer isFavorite;
-    @EntityField(name = "是否已配置（1：已配置，0：未配置）", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappsystemvo.isconfig.name", type = ApiParamType.INTEGER)
     private Integer isConfig;
-    @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deployappsystemvo.appmodulelist.name", type = ApiParamType.JSONARRAY)
     private List<DeployAppModuleVo> appModuleList;
-    @EntityField(name = "状态id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deployappsystemvo.state.name", type = ApiParamType.JSONARRAY)
     private List<Long> state;
-    @EntityField(name = "负责人id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deployappsystemvo.owner.name", type = ApiParamType.JSONARRAY)
     private List<Long> owner;
 
-    @EntityField(name = "是否包含模块", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappsystemvo.ishasmodule.name", type = ApiParamType.INTEGER)
     private Integer isHasModule = 0;
-    @EntityField(name = "是否包含环境", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappsystemvo.ishasenv.name", type = ApiParamType.INTEGER)
     private Integer isHasEnv = 0;
-    @EntityField(name = "是否配置权限", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappsystemvo.isconfigauthority.name", type = ApiParamType.INTEGER)
     private Integer isConfigAuthority = 0;
-    @EntityField(name = "是否拥有所有数据权限", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappsystemvo.ishasallauthority.name", type = ApiParamType.INTEGER)
     private Integer isHasAllAuthority;
-    @EntityField(name = "是否拥有资源锁", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappsystemvo.ishasresourcelock.name", type = ApiParamType.INTEGER)
     private Integer isHasResourceLock = 0;
-    @EntityField(name = "是否拥有应用超级流水线授权", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappsystemvo.ishasauthpipeline.name", type = ApiParamType.INTEGER)
     private Integer isHasAuthPipeline = 0;
 
     @JSONField(serialize = false)
@@ -76,7 +76,7 @@ public class DeployAppSystemVo extends BaseEditorVo {
     @JSONField(serialize = false)
     private List<Long> envIdList;
 
-    @EntityField(name = "权限动作列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deployappsystemvo.authactionset.name", type = ApiParamType.JSONARRAY)
     Set<String> authActionSet;
 
     public DeployAppSystemVo() {

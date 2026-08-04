@@ -27,17 +27,17 @@ import java.util.List;
 
 public class DeployAppConfigAuthorityVo extends BaseEditorVo {
     private static final long serialVersionUID = -8106352774339841203L;
-    @EntityField(name = "应用资产id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigauthorityvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "环境资产id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigauthorityvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "授权对象类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigauthorityvo.authtype.name", type = ApiParamType.STRING)
     private String authType;
-    @EntityField(name = "授权对象", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigauthorityvo.authuuid.name", type = ApiParamType.STRING)
     private String authUuid;
-    @EntityField(name = "授权操作", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigauthorityvo.action.name", type = ApiParamType.STRING)
     private String action;
-    @EntityField(name = "授权操作类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigauthorityvo.authorityactiontype.name", type = ApiParamType.STRING)
     private String authorityActionType;
 
     @JSONField(serialize = false)

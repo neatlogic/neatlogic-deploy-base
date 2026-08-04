@@ -8,13 +8,13 @@ import java.util.List;
 
 public class DeploySystemActiveVersionVo extends BasePageVo {
 
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deploysystemactiveversionvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deploysystemactiveversionvo.appsystemabbrname.name", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deploysystemactiveversionvo.appsystemname.name", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "模块列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddv.deploysystemactiveversionvo.modulelist.name", type = ApiParamType.JSONARRAY)
     private List<DeployModuleActiveVersionVo> moduleList;
 
     public DeploySystemActiveVersionVo() {

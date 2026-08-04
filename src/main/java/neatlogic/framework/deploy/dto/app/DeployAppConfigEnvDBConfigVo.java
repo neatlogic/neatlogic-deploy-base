@@ -27,27 +27,27 @@ import org.apache.commons.lang3.StringUtils;
 public class DeployAppConfigEnvDBConfigVo {
 
     private static final long serialVersionUID = -1948079786425118588L;
-    @EntityField(name = "应用id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "数据库schema", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.dbschema.name", type = ApiParamType.STRING)
     private String dbSchema;
-    @EntityField(name = "数据库资产id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.dbresourceid.name", type = ApiParamType.LONG)
     private Long dbResourceId;
-    @EntityField(name = "账号id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.accountid.name", type = ApiParamType.LONG)
     private Long accountId;
-    @EntityField(name = "账号", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.account.name", type = ApiParamType.STRING)
     private String account;
-    @EntityField(name = "数据库名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.dbresourcename.name", type = ApiParamType.STRING)
     private String dbResourceName;
-    @EntityField(name = "加密密码", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.passwordcipher.name", type = ApiParamType.STRING)
     private String passwordCipher;
-    @EntityField(name = "高级设置", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfdda.deployappconfigenvdbconfigvo.config.name", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
     @JSONField(serialize = false)
     private String configStr;

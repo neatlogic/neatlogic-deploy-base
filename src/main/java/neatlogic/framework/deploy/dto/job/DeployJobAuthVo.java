@@ -16,11 +16,11 @@ import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployJobAuthVo {
-    @EntityField(name = "作业id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.deployjobauthvo.jobid.name", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "授权类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobauthvo.type.name", type = ApiParamType.STRING)
     private String type;
-    @EntityField(name = "授权对象", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobauthvo.authuuid.name", type = ApiParamType.STRING)
     private String authUuid;
 
     public Long getJobId() {

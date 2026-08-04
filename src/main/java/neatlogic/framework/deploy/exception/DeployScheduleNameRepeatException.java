@@ -23,6 +23,6 @@ public class DeployScheduleNameRepeatException extends ApiRuntimeException {
     private static final long serialVersionUID = -977867974799886184L;
 
     public DeployScheduleNameRepeatException(String name) {
-        super("定时作业名称 “{0}” 已存在", name);
+        super("nfde.deployschedulenamerepeatexception.deployschedulenamerepeatexception", name);
     }
 }

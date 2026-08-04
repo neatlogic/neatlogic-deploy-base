@@ -23,6 +23,6 @@ public class DeployBatchJobGroupNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = 9159259200526197969L;
 
     public DeployBatchJobGroupNotFoundException(Long id) {
-        super("批量发布分组：{0}不存在", id);
+        super("nfde.deploybatchjobgroupnotfoundexception.deploybatchjobgroupnotfoundexception", id);
     }
 }

@@ -9,13 +9,13 @@ import java.util.List;
 
 public class DeployAppModuleEnvVo {
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappmoduleenvvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappmoduleenvvo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappmoduleenvvo.abbrname.name", type = ApiParamType.STRING)
     private String abbrName;
-    @EntityField(name = "环境列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deployappmoduleenvvo.envlist.name", type = ApiParamType.JSONARRAY)
     private List<AppEnvironmentVo> envList;
 
     @JSONField(serialize = false)

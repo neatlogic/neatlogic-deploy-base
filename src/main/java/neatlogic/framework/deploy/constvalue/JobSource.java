@@ -23,12 +23,12 @@ import java.util.List;
  * @date 2022/5/5 5:20 下午
  */
 public enum JobSource implements IAutoexecJobSource {
-    DEPLOY("一键发布+作业", "deploy"),
-    BATCHDEPLOY("一键发布+批量作业", "batchdeploy"),
-    DEPLOY_SCHEDULE_GENERAL("发布定时作业", "deployschedulegeneral"),
-    DEPLOY_SCHEDULE_PIPELINE("发布定时批量作业", "deployschedulepipeline"),
-    DEPLOY_CI("发布持续集成", "deployci"),
-    DEPLOY_CI_PIPELINE("发布持续集成批量作业", "deploycipipeline");
+    DEPLOY("nfdc.jobsource.text.deploy", "deploy"),
+    BATCHDEPLOY("nfdc.jobsource.text.batchdeploy", "batchdeploy"),
+    DEPLOY_SCHEDULE_GENERAL("nfdc.jobsource.text.deploy_schedule_general", "deployschedulegeneral"),
+    DEPLOY_SCHEDULE_PIPELINE("nfdc.jobsource.text.deploy_schedule_pipeline", "deployschedulepipeline"),
+    DEPLOY_CI("nfdc.jobsource.text.deploy_ci", "deployci"),
+    DEPLOY_CI_PIPELINE("nfdc.jobsource.text.deploy_ci_pipeline", "deploycipipeline");
     private final String text;
     private final String value;
 

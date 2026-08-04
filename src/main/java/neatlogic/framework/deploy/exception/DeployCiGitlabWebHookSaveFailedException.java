@@ -11,6 +11,6 @@ public class DeployCiGitlabWebHookSaveFailedException extends ApiRuntimeExceptio
     private static final long serialVersionUID = 1106736504402463949L;
 
     public DeployCiGitlabWebHookSaveFailedException(String error) {
-        super("gitlab webhook设置失败，错误：{0}", error);
+        super("nfde.deploycigitlabwebhooksavefailedexception.deploycigitlabwebhooksavefailedexception", error);
     }
 }

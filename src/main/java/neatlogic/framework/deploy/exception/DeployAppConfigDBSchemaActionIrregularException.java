@@ -17,6 +17,6 @@ import java.util.List;
 
 public class DeployAppConfigDBSchemaActionIrregularException extends ApiRuntimeException {
     public DeployAppConfigDBSchemaActionIrregularException(List<String> schemaList) {
-        super("以下schema输入格式不规范，请输入：dbname.username。不规范schema：", schemaList.toString());
+        super("nfde.deployappconfigdbschemaactionirregularexception.deployappconfigdbschemaactionirregularexception", schemaList.toString());
     }
 }

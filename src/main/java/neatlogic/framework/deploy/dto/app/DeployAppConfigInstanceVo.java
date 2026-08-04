@@ -10,19 +10,19 @@ import neatlogic.framework.restful.annotation.EntityField;
  */
 public class DeployAppConfigInstanceVo extends BaseEditorVo {
     private static final long serialVersionUID = 2764705905637129693L;
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfiginstancevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "ip", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfiginstancevo.ip.name", type = ApiParamType.STRING)
     private String ip;
-    @EntityField(name = "端口", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappconfiginstancevo.port.name", type = ApiParamType.INTEGER)
     private Integer port;
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfiginstancevo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfiginstancevo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappconfiginstancevo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "实例名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappconfiginstancevo.name.name", type = ApiParamType.STRING)
     private String name;
 
     public Long getId() {

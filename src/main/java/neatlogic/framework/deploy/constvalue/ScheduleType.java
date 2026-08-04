@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.Objects;
 
 public enum ScheduleType implements IEnum {
-    GENERAL("general", "普通作业"),
-    PIPELINE("pipeline", "超级流水线");
+    GENERAL("general", "nfdc.scheduletype.text.general"),
+    PIPELINE("pipeline", "nfdc.scheduletype.text.pipeline");
 
     ScheduleType(String value, String text) {
         this.value = value;

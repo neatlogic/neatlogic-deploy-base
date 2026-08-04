@@ -21,11 +21,11 @@ import java.io.Serial;
 public class PipelineJobTemplateVersionVo extends BasePageVo {
     @Serial
     private static final long serialVersionUID = -3571592250877314328L;
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinejobtemplateversionvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "版本 Id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinejobtemplateversionvo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "版本名", type = ApiParamType. STRING)
+    @EntityField(name = "nfddp.pipelinejobtemplateversionvo.versionname.name", type = ApiParamType. STRING)
     private Long versionName;
 
     public Long getId() {

@@ -8,17 +8,17 @@ import java.util.Date;
 
 public class DeployVersionBuildQualityVo {
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "版本ID", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "构建时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.buildtime.name", type = ApiParamType.LONG)
     private Date buildTime;
     private Integer files;
     private Integer classes;
-    @EntityField(name = "代码总行数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.lines.name", type = ApiParamType.INTEGER)
     private Integer lines;
-    @EntityField(name = "代码有效行", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.ncloc.name", type = ApiParamType.INTEGER)
     private Integer ncloc;
     private Integer functions;
     private Integer statements;
@@ -40,9 +40,9 @@ public class DeployVersionBuildQualityVo {
     private Integer itCoveredConditionsByLine;
     private Integer itLineCoverage;
     private Integer itLinesToCover;
-    @EntityField(name = "行注释率", type = ApiParamType.DOUBLE)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.commentlinesdensity.name", type = ApiParamType.DOUBLE)
     private Double commentLinesDensity;
-    @EntityField(name = "API注释率", type = ApiParamType.DOUBLE)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.publicdocumentedapidensity.name", type = ApiParamType.DOUBLE)
     private Integer publicDocumentedApiDensity;
     private Integer duplicatedFiles;
     private Integer duplicatedLines;
@@ -51,26 +51,26 @@ public class DeployVersionBuildQualityVo {
     private Integer newDuplicatedLinesDensity;
     private Integer duplicatedBlocks;
     private Integer newDuplicatedBlocks;
-    @EntityField(name = "漏洞数量", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.bugs.name", type = ApiParamType.INTEGER)
     private Integer bugs;//漏洞
-    @EntityField(name = "总体漏洞", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.vulnerabilities.name", type = ApiParamType.INTEGER)
     private Integer vulnerabilities;//缺陷
-    @EntityField(name = "总体代码味道", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.codesmells.name", type = ApiParamType.INTEGER)
     private Integer codeSmells;//代码异味
 
-    @EntityField(name = "新增安全热点", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.newsecurityhotspots.name", type = ApiParamType.INTEGER)
     private Integer newSecurityHotspots;
     private String newSecurityRating;
     private Integer newSecurityRemediationEffort;
-    @EntityField(name = "新增漏洞", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.newvulnerabilities.name", type = ApiParamType.INTEGER)
     private Integer newVulnerabilities;
-    @EntityField(name = "总体安全热点", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.securityhotspots.name", type = ApiParamType.INTEGER)
     private Integer securityHotspots;
     private String securityRating;
     private Integer securityRemediationEffort;
     private Integer commentLines;
     private String nclocLanguageDistribution;
-    @EntityField(name = "新增代码行数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.newlines.name", type = ApiParamType.INTEGER)
     private Integer newLines;
     private Integer cognitiveComplexity;
     private Integer conditionsToCover;
@@ -83,18 +83,18 @@ public class DeployVersionBuildQualityVo {
     private Integer newUncoveredLines;
     private Integer uncoveredConditions;
     private Integer uncoveredLines;
-    @EntityField(name = "新增漏洞数量", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.newbugs.name", type = ApiParamType.INTEGER)
     private Integer newBugs;
-    @EntityField(name = "新代码可靠率", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.newreliabilityrating.name", type = ApiParamType.INTEGER)
     private String newReliabilityRating;
     private String reliabilityRating;
-    @EntityField(name = "新增代码异味", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.newcodesmells.name", type = ApiParamType.INTEGER)
     private Integer newCodeSmells;
     private Double newSqaleDebtRatio;
-    @EntityField(name = "新增债务", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.newtechnicaldebt.name", type = ApiParamType.INTEGER)
     private Integer newTechnicalDebt;
     private Double sqaleDebtRatio;
-    @EntityField(name = "债务", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.sqaleindex.name", type = ApiParamType.INTEGER)
     private Integer sqaleIndex;
     private String sqaleRating;
     private Integer confirmedIssues;
@@ -111,9 +111,9 @@ public class DeployVersionBuildQualityVo {
     private Integer wontFixIssues;
     private String alertStatus;
     private String qualityGateDetails;
-    @EntityField(name = "新代码可维护率", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.newmaintainabilityrating.name", type = ApiParamType.INTEGER)
     private String newMaintainabilityRating;
-    @EntityField(name = "漏洞阈值", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildqualityvo.threshold.name", type = ApiParamType.INTEGER)
     private Integer threshold;
 
     public Long getId() {

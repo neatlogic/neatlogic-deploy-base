@@ -23,8 +23,8 @@ import neatlogic.framework.util.$;
 
 public enum AutoexecType implements IAutoexecType {
 
-    BUILD(9L, "BUILD", "编译打包"),
-    DEPLOY(11L, "DEPLOY", "自动发布");
+    BUILD(9L, "BUILD", "nfdc.autoexectype.text.build"),
+    DEPLOY(11L, "DEPLOY", "nfdc.autoexectype.text.deploy");
 
     private final Long id;
     private final String value;

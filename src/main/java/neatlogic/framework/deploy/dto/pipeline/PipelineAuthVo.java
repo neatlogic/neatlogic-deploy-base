@@ -16,11 +16,11 @@ import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class PipelineAuthVo {
-    @EntityField(name = "流水线id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelineauthvo.pipelineid.name", type = ApiParamType.LONG)
     private Long pipelineId;
-    @EntityField(name = "授权类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelineauthvo.type.name", type = ApiParamType.STRING)
     private String type;
-    @EntityField(name = "授权对象", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelineauthvo.authuuid.name", type = ApiParamType.STRING)
     private String authUuid;
 
     public Long getPipelineId() {

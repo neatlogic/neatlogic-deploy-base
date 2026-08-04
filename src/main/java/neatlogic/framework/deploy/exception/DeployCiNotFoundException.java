@@ -16,6 +16,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployCiNotFoundException extends ApiRuntimeException {
 
     public DeployCiNotFoundException(Long id) {
-        super("持续集成配置：{0}不存在", id);
+        super("nfde.deploycinotfoundexception.deploycinotfoundexception", id);
     }
 }

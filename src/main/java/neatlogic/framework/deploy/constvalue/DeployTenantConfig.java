@@ -17,7 +17,7 @@ import neatlogic.framework.util.$;
 
 public enum DeployTenantConfig implements ITenantConfig {
     GITLAB_WEB_HOOK_CALLBACK_HOST("gitlabWebHookCallbackHost", null, "nfdc.deploytenantconfig.gitlabwebhookcallbackhost"),
-    IS_PIPELINE_NEED_DEFAULT_VERSION("is.pipeline.need.default.version", "0", "超级流水线是否需要默认版本，默认不需要。0：不需要，1：需要"),
+    IS_PIPELINE_NEED_DEFAULT_VERSION("is.pipeline.need.default.version", "0", "nfdc.deploytenantconfig.text.is_pipeline_need_default_version"),
     ;
 
     String key;

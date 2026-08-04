@@ -8,6 +8,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
  */
 public class DeployVersionIsRepeatException extends ApiRuntimeException {
     public DeployVersionIsRepeatException(String version) {
-        super("当前模块存在重复版本号“{0}”，请修改版本号后重新保存", version);
+        super("nfde.deployversionisrepeatexception.deployversionisrepeatexception", version);
     }
 }

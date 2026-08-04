@@ -20,12 +20,12 @@ import java.util.List;
 public class DEPLOY_SCHEDULE_MODIFY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "发布定时管理权限";
+        return "nfda.deploy_schedule_modify.getauthdisplayname";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "发布定时作业管理";
+        return "nfda.deploy_schedule_modify.getauthintroduction";
     }
 
     @Override

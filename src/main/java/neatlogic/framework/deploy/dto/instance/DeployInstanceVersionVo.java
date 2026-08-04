@@ -13,13 +13,13 @@ public class DeployInstanceVersionVo extends BaseEditorVo {
     private Long appModuleId;
     @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "实例id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddi.deployinstanceversionvo.resourceid.name", type = ApiParamType.LONG)
     private Long resourceId;
     @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
     @EntityField(name = "term.deploy.version", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "编译号", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddi.deployinstanceversionvo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;
 
     public DeployInstanceVersionVo() {

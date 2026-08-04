@@ -22,7 +22,7 @@ import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployTypeVo extends AutoexecTypeVo {
 
-    @EntityField(name = "是否激活(0:禁用，1：激活)", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddt.deploytypevo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
 
     public Integer getIsActive() {

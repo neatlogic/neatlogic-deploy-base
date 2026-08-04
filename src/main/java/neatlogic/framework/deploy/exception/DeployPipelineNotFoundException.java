@@ -17,7 +17,7 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployPipelineNotFoundException extends ApiRuntimeException {
 
     public DeployPipelineNotFoundException(Long id) {
-        super("id为“{0}”的流水线不存在", id);
+        super("nfde.deploypipelinenotfoundexception.deploypipelinenotfoundexception", id);
     }
 
 }

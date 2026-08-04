@@ -29,15 +29,15 @@ public class DeployAppEnvAutoConfigAuditVo extends BaseEditorVo {
     private static final long serialVersionUID = -1948079785908118588L;
     @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "应用id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappenvautoconfigauditvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappenvautoconfigauditvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappenvautoconfigauditvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "实例id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappenvautoconfigauditvo.instanceid.name", type = ApiParamType.LONG)
     private Long instanceId = 0L;
-    @EntityField(name = "修改记录", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfdda.deployappenvautoconfigauditvo.config.name", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
     @JSONField(serialize = false)
     private String configStr;

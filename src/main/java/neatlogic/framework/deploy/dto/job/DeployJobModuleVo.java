@@ -25,17 +25,17 @@ import java.util.List;
 
 public class DeployJobModuleVo implements Serializable {
     private static final long serialVersionUID = -7339135202416138484L;
-    @EntityField(name = "模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.deployjobmodulevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "模块名", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobmodulevo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "模块简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobmodulevo.abbrname.name", type = ApiParamType.STRING)
     private String abbrName;
-    @EntityField(name = "版本", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobmodulevo.version.name", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "编译号", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddj.deployjobmodulevo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;
-    @EntityField(name = "目标发布节点", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddj.deployjobmodulevo.selectnodelist.name", type = ApiParamType.JSONARRAY)
     private List<AutoexecNodeVo> selectNodeList = new ArrayList<>();
 
     public DeployJobModuleVo() {

@@ -33,41 +33,41 @@ public class DeployJobVo extends AutoexecJobVo {
 
     private static final long serialVersionUID = 7515358153391228987L;
 
-    @EntityField(name = "应用资产id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.deployjobvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用资产名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobvo.appsystemname.name", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "应用资产简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobvo.appsystemabbrname.name", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "系统模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.deployjobvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "系统模块名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobvo.appmodulename.name", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "系统模块简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobvo.appmoduleabbrname.name", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "环境资产id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.deployjobvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "环境资产名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobvo.envname.name", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "版本", type = ApiParamType.STRING)
+    @EntityField(name = "nfddj.deployjobvo.version.name", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "版本Id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.deployjobvo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "编译号", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddj.deployjobvo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;
-    @EntityField(name = "编译|构造的runner_id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.deployjobvo.runnermapid.name", type = ApiParamType.LONG)
     private Long runnerMapId;
-    @EntityField(name = "流水线配置信息", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddj.deployjobvo.pipelineconfig.name", type = ApiParamType.JSONOBJECT)
     private DeployPipelineConfigVo pipeLineConfig;
-    @EntityField(name = "是否有执行组权限", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddj.deployjobvo.iscangroupexecute.name", type = ApiParamType.INTEGER)
     private Integer isCanGroupExecute = 0;
     private Integer isCanAbort = 0;
-    @EntityField(name = "泳道列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddj.deployjobvo.lanelist.name", type = ApiParamType.JSONARRAY)
     private List<LaneVo> laneList;
-    @EntityField(name = "授权列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddj.deployjobvo.authlist.name", type = ApiParamType.JSONARRAY)
     private List<DeployJobAuthVo> authList;
 
-    @EntityField(name = "超级流水线id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.deployjobvo.pipelineid.name", type = ApiParamType.LONG)
     private Long pipelineId;
 
     private List<DeploySystemModuleVersionVo> appSystemModuleVersionList;

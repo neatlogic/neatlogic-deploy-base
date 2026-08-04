@@ -11,6 +11,6 @@ public class DeployInstanceVersionNotFoundException extends ApiRuntimeException 
     private static final long serialVersionUID = 7632161527724040451L;
 
     public DeployInstanceVersionNotFoundException(Long instanceId) {
-        super("没有找到实例：{0}的当前版本", instanceId);
+        super("nfde.deployinstanceversionnotfoundexception.deployinstanceversionnotfoundexception", instanceId);
     }
 }

@@ -30,7 +30,7 @@ public class DeployAppEnvAutoConfigKeyValueVo {
     @EntityField(name = "common.type", type = ApiParamType.LONG)
     private String type;
 
-    @EntityField(name = "是否为空", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappenvautoconfigkeyvaluevo.isempty.name", type = ApiParamType.INTEGER)
     private Integer isEmpty;
 
     @EntityField(name = "common.value", type = ApiParamType.LONG)

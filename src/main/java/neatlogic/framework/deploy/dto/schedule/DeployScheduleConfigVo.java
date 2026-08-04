@@ -21,24 +21,24 @@ import neatlogic.framework.restful.annotation.EntityField;
 import java.util.List;
 
 public class DeployScheduleConfigVo {
-    @EntityField(name = "场景id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deployscheduleconfigvo.scenarioid.name", type = ApiParamType.LONG)
     private Long scenarioId;
-    @EntityField(name = "场景名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployscheduleconfigvo.scenarioname.name", type = ApiParamType.STRING)
     private String scenarioName;
-    @EntityField(name = "环境资产id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deployscheduleconfigvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "环境资产名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployscheduleconfigvo.envname.name", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "分批数量", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deployscheduleconfigvo.roundcount.name", type = ApiParamType.INTEGER)
     private Integer roundCount;
-    @EntityField(name = "并发数量", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deployscheduleconfigvo.parallelcount.name", type = ApiParamType.INTEGER)
     private Integer parallelCount;
-    @EntityField(name = "并发策略", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deployscheduleconfigvo.parallelpolicy.name", type = ApiParamType.STRING)
     private String parallelPolicy;
 
-    @EntityField(name = "作业参数映射列表", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfdds.deployscheduleconfigvo.param.name", type = ApiParamType.JSONOBJECT)
     private JSONObject param;
-    @EntityField(name = "模块列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdds.deployscheduleconfigvo.modulelist.name", type = ApiParamType.JSONARRAY)
     private List<DeployJobModuleVo> moduleList;
 
     private List<DeploySystemModuleVersionVo> appSystemModuleVersionList;

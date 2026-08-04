@@ -24,50 +24,50 @@ public class RepositoryServiceVo extends BaseEditorVo implements Serializable {
     /**
      * id
      */
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.repositoryservicevo.id.name", type = ApiParamType.LONG)
     private Long id;
 
     /**
      * name
      */
-    @EntityField(name = "服务名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryservicevo.name.name", type = ApiParamType.STRING)
     private String name;
 
     /**
      * type
      */
-    @EntityField(name = "仓库类型...[gitlab,svn]", type = ApiParamType.ENUM)
+    @EntityField(name = "nfddc.repositoryservicevo.type.name", type = ApiParamType.ENUM)
     private String type;
 
     /**
      * address
      */
-    @EntityField(name = "服务地址", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryservicevo.address.name", type = ApiParamType.STRING)
     private String address;
 
     /**
      * username
      */
-    @EntityField(name = "用户名", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryservicevo.username.name", type = ApiParamType.STRING)
     private String username;
 
     /**
      * password
      */
-    @EntityField(name = "密码", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryservicevo.password.name", type = ApiParamType.STRING)
     private String password;
 
     /**
      * status
      */
-    @EntityField(name = "同步状态，success：成功，failed：失败...[success,failed]", type = ApiParamType.ENUM)
+    @EntityField(name = "nfddc.repositoryservicevo.status.name", type = ApiParamType.ENUM)
     private String status;
     
     
-    @EntityField(name = "排序规则,如: lcd ASC", type = ApiParamType.STRING)
+    @EntityField(name = "nfddc.repositoryservicevo.sortcolumn.name", type = ApiParamType.STRING)
     private String sortColumn;
 
-    @EntityField(name = "服务代理id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddc.repositoryservicevo.codehubagentid.name", type = ApiParamType.LONG)
     private Long codehubAgentId;
 
     private Boolean delegation = false;

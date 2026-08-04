@@ -15,6 +15,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployAppConfigDbConfigNotFoundException extends ApiRuntimeException {
     public DeployAppConfigDbConfigNotFoundException(Long id) {
-        super("db配置id（{0}）不存在", id);
+        super("nfde.deployappconfigdbconfignotfoundexception.deployappconfigdbconfignotfoundexception", id);
     }
 }

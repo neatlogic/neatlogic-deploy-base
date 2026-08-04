@@ -23,11 +23,11 @@ import java.io.Serializable;
 
 public class DeployPipelineExecuteConfigVo implements Serializable {
 
-    @EntityField(name = "协议id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deploypipelineexecuteconfigvo.protocolid.name", type = ApiParamType.LONG)
     private Long protocolId;
-    @EntityField(name = "执行用户", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfdda.deploypipelineexecuteconfigvo.executeuser.name", type = ApiParamType.JSONOBJECT)
     private ParamMappingVo executeUser;
-    @EntityField(name = "重载", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deploypipelineexecuteconfigvo.inherit.name", type = ApiParamType.INTEGER)
     private Integer inherit;
 
     public Long getProtocolId() {

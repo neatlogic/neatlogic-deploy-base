@@ -28,52 +28,52 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PipelineJobTemplateVo extends BasePageVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "作业id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.idlist.name", type = ApiParamType.JSONARRAY)
     private List<Long> idList;
-    @EntityField(name = "排除作业id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.excludeidlist.name", type = ApiParamType.JSONARRAY)
     private List<Long> excludeIdList;
-    @EntityField(name = "泳道分组id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.groupid.name", type = ApiParamType.LONG)
     private Long groupId;
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用系统模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "应用系统名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.appsystemname.name", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "应用系统简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.appsystemabbrname.name", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "应用系统模块名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.appmodulename.name", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "系统系统模块简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.appmoduleabbrname.name", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "环境名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.envname.name", type = ApiParamType.STRING)
     private String envName;
     @JSONField(serialize = false)
     private String configStr;
-    @EntityField(name = "配置", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.config.name", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
-    @EntityField(name = "场景id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.scenarioid.name", type = ApiParamType.LONG)
     private Long scenarioId;
 
-    @EntityField(name = "场景名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.scenarioname.name", type = ApiParamType.STRING)
     private String scenarioName;
-    @EntityField(name = "分批数量", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.roundcount.name", type = ApiParamType.INTEGER)
     private Integer roundCount;
-    @EntityField(name = "并发数量", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.parallelcount.name", type = ApiParamType.INTEGER)
     private Integer parallelCount;
-    @EntityField(name = "并发策略", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.parallelpolicy.name", type = ApiParamType.STRING)
     private String parallelPolicy;
-    @EntityField(name = "排序", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.sort.name", type = ApiParamType.INTEGER)
     private Integer sort;
-    @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.ishasbuildtypetool.name", type = ApiParamType.INTEGER)
     private int isHasBuildTypeTool = 0;
-    @EntityField(name = "是否拥有DEPLOY类型的工具库工具", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.ishasdeploytypetool.name", type = ApiParamType.INTEGER)
     private int isHasDeployTypeTool = 0;
-    @EntityField(name = "场景列表")
+    @EntityField(name = "nfddp.pipelinejobtemplatevo.envscenariolist.name")
     private List<PipelineEnvScenarioVo> envScenarioList;
 
     public PipelineJobTemplateVo() {

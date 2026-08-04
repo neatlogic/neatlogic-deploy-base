@@ -21,38 +21,38 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
 
     private static final long serialVersionUID = -1948071236425118588L;
 
-    @EntityField(name = "版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionbuildnovo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "版本", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionbuildnovo.version.name", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "版本是否封版", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildnovo.versionisfreeze.name", type = ApiParamType.INTEGER)
     private Integer versionIsFreeze;
-    @EntityField(name = "编译号", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionbuildnovo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;
-    @EntityField(name = "作业id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionbuildnovo.jobid.name", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "编译状态", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionbuildnovo.status.name", type = ApiParamType.STRING)
     private String status;
-    @EntityField(name = "编译状态名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionbuildnovo.statusname.name", type = ApiParamType.STRING)
     private String statusName;
     @JSONField(serialize = false)
     private JSONObject startTimeRange;
-    @EntityField(name = "编译开始时间", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionbuildnovo.compilestarttime.name", type = ApiParamType.STRING)
     private Date compileStartTime;
-    @EntityField(name = "编译结束时间", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionbuildnovo.compileendtime.name", type = ApiParamType.STRING)
     private Date compileEndTime;
-    @EntityField(name = "runnerMapId", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionbuildnovo.runnermapid.name", type = ApiParamType.LONG)
     private Long runnerMapId;
-    @EntityField(name = "runnerGroup", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddv.deployversionbuildnovo.runnergroup.name", type = ApiParamType.JSONOBJECT)
     private JSONObject runnerGroup;
     @JSONField(serialize = false)
     private String runnerGroupStr;
-    @EntityField(name = "结束Rev号", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionbuildnovo.endrev.name", type = ApiParamType.STRING)
     private String endRev;
 
-    @EntityField(name = "应用系统id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddv.deployversionbuildnovo.appsystemidlist.name", type = ApiParamType.JSONARRAY)
     private List<Long> appSystemIdList;
-    @EntityField(name = "应用模块id列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddv.deployversionbuildnovo.appmoduleidlist.name", type = ApiParamType.JSONARRAY)
     private List<Long> appModuleIdList;
 
     public DeployVersionBuildNoVo() {

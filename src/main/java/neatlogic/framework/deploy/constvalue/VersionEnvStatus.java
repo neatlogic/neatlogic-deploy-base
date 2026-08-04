@@ -12,10 +12,10 @@ import java.util.List;
  * @date 2022/7/11 6:36 下午
  */
 public enum VersionEnvStatus implements IEnum {
-    PENDING("pending", "待构建"),
-    RELEASING("releasing", "释放中"),
-    RELEASE_FAILED("release-failed", "释放失败"),
-    RELEASED("released", "已释放");
+    PENDING("pending", "nfdc.versionenvstatus.text.pending"),
+    RELEASING("releasing", "nfdc.versionenvstatus.text.releasing"),
+    RELEASE_FAILED("release-failed", "nfdc.versionenvstatus.text.release_failed"),
+    RELEASED("released", "nfdc.versionenvstatus.text.released");
 
     private final String status;
     private final String text;

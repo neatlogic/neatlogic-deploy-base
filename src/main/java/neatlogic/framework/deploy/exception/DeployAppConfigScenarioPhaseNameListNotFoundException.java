@@ -9,6 +9,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployAppConfigScenarioPhaseNameListNotFoundException extends ApiRuntimeException {
 
     public DeployAppConfigScenarioPhaseNameListNotFoundException() {
-        super("当前流水线的场景没有绑定阶段");
+        super("nfde.deployappconfigscenariophasenamelistnotfoundexception.deployappconfigscenariophasenamelistnotfoundexception");
     }
 }

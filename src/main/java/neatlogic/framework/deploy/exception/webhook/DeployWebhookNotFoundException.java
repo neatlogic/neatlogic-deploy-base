@@ -23,6 +23,6 @@ public class DeployWebhookNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = 449494603488752065L;
 
     public DeployWebhookNotFoundException(Long id) {
-        super("触发器id “{0}” 不存在", id);
+        super("nfdew.deploywebhooknotfoundexception.deploywebhooknotfoundexception", id);
     }
 }

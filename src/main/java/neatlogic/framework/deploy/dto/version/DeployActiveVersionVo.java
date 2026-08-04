@@ -8,17 +8,17 @@ import java.util.List;
 
 public class DeployActiveVersionVo {
 
-    @EntityField(name = "版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployactiveversionvo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "版本号", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployactiveversionvo.version.name", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "编译次数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployactiveversionvo.compilecount.name", type = ApiParamType.INTEGER)
     private Integer compileCount = 0;
-    @EntityField(name = "编译成功次数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployactiveversionvo.compilesuccesscount.name", type = ApiParamType.INTEGER)
     private Integer compileSuccessCount = 0;
-    @EntityField(name = "编译失败次数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployactiveversionvo.compilefailcount.name", type = ApiParamType.INTEGER)
     private Integer compileFailCount = 0;
-    @EntityField(name = "发布环境列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddv.deployactiveversionvo.envlist.name", type = ApiParamType.JSONARRAY)
     List<DeployEnvVersionVo> envList;
 
     public DeployActiveVersionVo() {

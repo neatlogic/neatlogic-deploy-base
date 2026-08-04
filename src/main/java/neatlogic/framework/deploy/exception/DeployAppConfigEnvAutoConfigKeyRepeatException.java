@@ -17,6 +17,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 public class DeployAppConfigEnvAutoConfigKeyRepeatException extends ApiRuntimeException {
 
     public DeployAppConfigEnvAutoConfigKeyRepeatException(String key) {
-        super("变量名称：{0}重复", key);
+        super("nfde.deployappconfigenvautoconfigkeyrepeatexception.deployappconfigenvautoconfigkeyrepeatexception", key);
     }
 }

@@ -17,15 +17,15 @@ import neatlogic.framework.common.dto.BasePageVo;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class PipelineSearchVo extends BasePageVo {
-    @EntityField(name = "类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinesearchvo.type.name", type = ApiParamType.STRING)
     private String type;
-    @EntityField(name = "应用ID", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinesearchvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "是否需要验证权限", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinesearchvo.needverifyauth.name", type = ApiParamType.INTEGER)
     private Integer needVerifyAuth;
-    @EntityField(name = "是否拥有所有权限", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinesearchvo.ishasallauthority.name", type = ApiParamType.INTEGER)
     private Integer isHasAllAuthority;
-    @EntityField(name = "用户uuid", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinesearchvo.authuuid.name", type = ApiParamType.STRING)
     private String authUuid;
 
     public String getType() {

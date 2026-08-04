@@ -25,28 +25,28 @@ import java.util.List;
 
 public class DeployPipelineConfigVo implements Serializable {
 
-    @EntityField(name = "禁用阶段ID列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deploypipelineconfigvo.disabledphaseidlist.name", type = ApiParamType.JSONARRAY)
     private List<Long> disabledPhaseIdList;
 
-    @EntityField(name = "阶段列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deploypipelineconfigvo.combopphaselist.name", type = ApiParamType.JSONARRAY)
     private List<DeployPipelinePhaseVo> combopPhaseList;
 
-    @EntityField(name = "阶段组列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deploypipelineconfigvo.combopgrouplist.name", type = ApiParamType.JSONARRAY)
     private List<DeployPipelineGroupVo> combopGroupList;
 
-    @EntityField(name = "执行信息配置", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfdda.deploypipelineconfigvo.executeconfig.name", type = ApiParamType.JSONOBJECT)
     private DeployPipelineExecuteConfigVo executeConfig;
 
-    @EntityField(name = "场景列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deploypipelineconfigvo.scenariolist.name", type = ApiParamType.JSONARRAY)
     private List<AutoexecCombopScenarioVo> scenarioList;
 
-    @EntityField(name = "默认场景id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deploypipelineconfigvo.defaultscenarioid.name", type = ApiParamType.LONG)
     private Long defaultScenarioId;
 
-    @EntityField(name = "运行时参数列表", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deploypipelineconfigvo.runtimeparamlist.name", type = ApiParamType.INTEGER)
     private List<AutoexecParamVo> runtimeParamList;
 
-    @EntityField(name = "重载预置参数集列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deploypipelineconfigvo.overrideprofilelist.name", type = ApiParamType.JSONARRAY)
     private List<DeployProfileVo> overrideProfileList;
 
     @JSONField(serialize = false)

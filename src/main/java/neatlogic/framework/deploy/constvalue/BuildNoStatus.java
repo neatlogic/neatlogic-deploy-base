@@ -13,13 +13,13 @@ import java.util.List;
  * @date 2022/7/12 9:40 上午
  */
 public enum BuildNoStatus implements IEnum {
-    PENDING("pending", new I18n("待编译")),
-    COMPILING("compiling", new I18n("编译中")),
-    COMPILED("compiled", new I18n("已编译")),
-    COMPILE_FAILED("compile-failed", new I18n("编译失败")),
-    RELEASING("releasing", new I18n("释放中")),
-    RELEASE_FAILED("release-failed", new I18n("释放失败")),
-    RELEASED("released", new I18n("已释放"));
+    PENDING("pending", new I18n("nfdc.buildnostatus.text.pending")),
+    COMPILING("compiling", new I18n("nfdc.buildnostatus.text.compiling")),
+    COMPILED("compiled", new I18n("nfdc.buildnostatus.text.compiled")),
+    COMPILE_FAILED("compile-failed", new I18n("nfdc.buildnostatus.text.compile_failed")),
+    RELEASING("releasing", new I18n("nfdc.buildnostatus.text.releasing")),
+    RELEASE_FAILED("release-failed", new I18n("nfdc.buildnostatus.text.release_failed")),
+    RELEASED("released", new I18n("nfdc.buildnostatus.text.released"));
 
     private final String status;
     private final I18n text;

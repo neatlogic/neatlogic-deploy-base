@@ -20,15 +20,15 @@ import neatlogic.framework.util.SnowflakeUtil;
 import java.util.List;
 
 public class LaneVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.lanevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "状态", type = ApiParamType.ENUM, member = JobStatus.class)
+    @EntityField(name = "nfddj.lanevo.status.name", type = ApiParamType.ENUM, member = JobStatus.class)
     private String status;
-    @EntityField(name = "批量作业id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddj.lanevo.batchjobid.name", type = ApiParamType.LONG)
     private Long batchJobId;
-    @EntityField(name = "组列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddj.lanevo.grouplist.name", type = ApiParamType.JSONARRAY)
     private List<LaneGroupVo> groupList;
-    @EntityField(name = "排序", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddj.lanevo.sort.name", type = ApiParamType.INTEGER)
     private Integer sort;
 
     public Long getId() {

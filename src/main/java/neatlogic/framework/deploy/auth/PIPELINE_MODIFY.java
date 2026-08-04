@@ -20,12 +20,12 @@ import java.util.List;
 public class PIPELINE_MODIFY extends AuthBase {
     @Override
     public String getAuthDisplayName() {
-        return "超级流水线管理权限";
+        return "nfda.pipeline_modify.getauthdisplayname";
     }
 
     @Override
     public String getAuthIntroduction() {
-        return "创建、维护和删除超级流水线";
+        return "nfda.pipeline_modify.getauthintroduction";
     }
 
     @Override

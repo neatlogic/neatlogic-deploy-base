@@ -23,42 +23,42 @@ import java.util.Date;
 import java.util.List;
 
 public class PipelineVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinevo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "是否激活", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinevo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinevo.type.name", type = ApiParamType.STRING)
     private String type;
-    @EntityField(name = "类型名", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinevo.typename.name", type = ApiParamType.STRING)
     private String typeName;
-    @EntityField(name = "应用ID", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinevo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinevo.appsystemname.name", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "应用简称", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinevo.appsystemabbrname.name", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "创建时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinevo.fcd.name", type = ApiParamType.LONG)
     private Date fcd;
-    @EntityField(name = "创建用户", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinevo.fcu.name", type = ApiParamType.STRING)
     private String fcu;
-    @EntityField(name = "修改时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddp.pipelinevo.lcd.name", type = ApiParamType.LONG)
     private Date lcd;
-    @EntityField(name = "修改用户", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinevo.lcu.name", type = ApiParamType.STRING)
     private String lcu;
-    @EntityField(name = "通道列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddp.pipelinevo.lanelist.name", type = ApiParamType.JSONARRAY)
     private List<PipelineLaneVo> laneList;
-    @EntityField(name = "授权列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddp.pipelinevo.authlist.name", type = ApiParamType.JSONARRAY)
     private List<PipelineAuthVo> authList;
     //目前用于创建批量作业
-    @EntityField(name = "是否拥有BUILD类型的工具库工具", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinevo.ishasbuildtypetool.name", type = ApiParamType.INTEGER)
     private int isHasBuildTypeTool = 0;
-    @EntityField(name = "是否拥有DEPLOY类型的工具库工具", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddp.pipelinevo.ishasdeploytypetool.name", type = ApiParamType.INTEGER)
     private int isHasDeployTypeTool = 0;
-    @EntityField(name = "应用流水线列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfddp.pipelinevo.appconfiglist.name", type = ApiParamType.JSONARRAY)
     private List<DeployAppConfigVo> appConfigList;
-    @EntityField(name = "默认版本", type = ApiParamType.STRING)
+    @EntityField(name = "nfddp.pipelinevo.defaultversion.name", type = ApiParamType.STRING)
     private String  defaultVersion;
 
     public Long getId() {

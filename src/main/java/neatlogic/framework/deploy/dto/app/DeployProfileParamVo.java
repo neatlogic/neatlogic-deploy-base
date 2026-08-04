@@ -21,9 +21,9 @@ import neatlogic.framework.restful.annotation.EntityField;
 public class DeployProfileParamVo extends AutoexecParamVo {
 
     @JSONField(serialize = false)
-    @EntityField(name = "来源", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployprofileparamvo.source.name", type = ApiParamType.STRING)
     private String source;
-    @EntityField(name = "继承", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployprofileparamvo.inherit.name", type = ApiParamType.INTEGER)
     private Integer inherit;
 
     public DeployProfileParamVo() {

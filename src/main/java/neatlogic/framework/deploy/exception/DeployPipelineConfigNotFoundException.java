@@ -19,6 +19,6 @@ public class DeployPipelineConfigNotFoundException extends ApiRuntimeException {
     private static final long serialVersionUID = 7358357393598874016L;
 
     public DeployPipelineConfigNotFoundException(){
-        super("该应用系统的流水线不存在");
+        super("nfde.deploypipelineconfignotfoundexception.deploypipelineconfignotfoundexception");
     }
 }

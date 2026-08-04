@@ -9,29 +9,29 @@ import java.util.Date;
 
 public class DeployVersionEnvInstanceVo {
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "实例id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.resourceid.name", type = ApiParamType.LONG)
     private Long resourceId;
-    @EntityField(name = "版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "版本", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.version.name", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.envid.name", type = ApiParamType.LONG)
     private Long envId;
 
-    @EntityField(name = "实例名", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.resourcename.name", type = ApiParamType.STRING)
     private String resourceName;
-    @EntityField(name = "ip", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.ip.name", type = ApiParamType.STRING)
     private String ip;
 
-    @EntityField(name = "发布用户uuid", type = ApiParamType.STRING)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.deployuser.name", type = ApiParamType.STRING)
     private String deployUser;
-    @EntityField(name = "发布时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.deploytime.name", type = ApiParamType.LONG)
     private Date deployTime;
-    @EntityField(name = "是否发布", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.status.name", type = ApiParamType.INTEGER)
     private Integer status = 0;
-    @EntityField(name = "发布用户", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "nfddv.deployversionenvinstancevo.deployuservo.name", type = ApiParamType.JSONOBJECT)
     private UserVo deployUserVo;
 
     public DeployVersionEnvInstanceVo() {

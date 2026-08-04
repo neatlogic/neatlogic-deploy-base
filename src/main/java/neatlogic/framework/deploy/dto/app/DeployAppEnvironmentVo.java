@@ -13,15 +13,15 @@ import java.util.List;
  */
 public class DeployAppEnvironmentVo {
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdda.deployappenvironmentvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdda.deployappenvironmentvo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "应用模块列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdda.deployappenvironmentvo.appmodulelist.name", type = ApiParamType.JSONARRAY)
     private List<AppModuleVo> appModuleList;
-    @EntityField(name = "是否可删除", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappenvironmentvo.isdeletable.name", type = ApiParamType.INTEGER)
     private Integer isDeletable;
-    @EntityField(name = "是否配置", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappenvironmentvo.isconfig.name", type = ApiParamType.INTEGER)
     private Integer isConfig;
 
     @JSONField(serialize = false)
@@ -29,12 +29,12 @@ public class DeployAppEnvironmentVo {
     @JSONField(serialize = false)
     private List<DeployAppEnvAutoConfigKeyValueVo> autoCfgKeyValueList;
 
-    @EntityField(name = "流水线配置中是否存在禁用阶段", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappenvironmentvo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "流水线配置中是否存在重载阶段", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdda.deployappenvironmentvo.override.name", type = ApiParamType.INTEGER)
     private Integer override;
 
-    @EntityField(name = "前端展示时是否可选", type = ApiParamType.BOOLEAN)
+    @EntityField(name = "nfdda.deployappenvironmentvo.isenable.name", type = ApiParamType.BOOLEAN)
     private Boolean isEnable;
 
     public DeployAppEnvironmentVo(Long id, String name) {

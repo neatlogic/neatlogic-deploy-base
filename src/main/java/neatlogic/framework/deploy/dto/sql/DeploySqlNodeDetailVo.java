@@ -22,68 +22,68 @@ public class DeploySqlNodeDetailVo extends BaseEditorVo implements ISqlNodeDetai
 
     private static final long serialVersionUID = -3906325036032471623L;
 
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "资源id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.resourceid.name", type = ApiParamType.LONG)
     private Long resourceId;
-    @EntityField(name = "runner id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.runnerid.name", type = ApiParamType.LONG)
     private Long runnerId;
-    @EntityField(name = "runner ip", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.runnerhost.name", type = ApiParamType.STRING)
     private String runnerHost;
-    @EntityField(name = "runner 端口", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.runnerport.name", type = ApiParamType.INTEGER)
     private Integer runnerPort;
-    @EntityField(name = "runner url", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.runnerurl.name", type = ApiParamType.STRING)
     private String runnerUrl;
-    @EntityField(name = "sysId", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.sysid.name", type = ApiParamType.LONG)
     private Long sysId;
-    @EntityField(name = "moduleId", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.moduleid.name", type = ApiParamType.LONG)
     private Long moduleId;
-    @EntityField(name = "envId", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "version", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.version.name", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "sql文件名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.sqlfile.name", type = ApiParamType.STRING)
     private String sqlFile;
-    @EntityField(name = "作业节点名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.nodename.name", type = ApiParamType.STRING)
     private String nodeName;
-    @EntityField(name = "ip", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.host.name", type = ApiParamType.STRING)
     private String host;
-    @EntityField(name = "端口", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.port.name", type = ApiParamType.INTEGER)
     private Integer port;
-    @EntityField(name = "用户名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.username.name", type = ApiParamType.STRING)
     private String username;
-    @EntityField(name = "服务地址", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.serviceaddr.name", type = ApiParamType.STRING)
     private String serviceAddr;
-    @EntityField(name = "节点类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.nodetype.name", type = ApiParamType.STRING)
     private String nodeType;
-    @EntityField(name = "状态", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.status.name", type = ApiParamType.STRING)
     private String status;
-    @EntityField(name = "状态名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.statusname.name", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "完成率", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.completionrate.name", type = ApiParamType.INTEGER)
     private Integer completionRate = 0;
-    @EntityField(name = "md5", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.md5.name", type = ApiParamType.STRING)
     private String md5;
-    @EntityField(name = "作业id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.jobid.name", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "作业剧本名", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.phasename.name", type = ApiParamType.STRING)
     private String phaseName;
-    @EntityField(name = "是否已经被删除", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.isdelete.name", type = ApiParamType.INTEGER)
     private Integer isDelete = 0;
-    @EntityField(name = "开始时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.starttime.name", type = ApiParamType.LONG)
     private Date startTime;
-    @EntityField(name = "结束时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.endtime.name", type = ApiParamType.LONG)
     private Date endTime;
-    @EntityField(name = "耗时", type = ApiParamType.STRING)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.costtime.name", type = ApiParamType.STRING)
     private String costTime;
-    @EntityField(name = "sql排序", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.sort.name", type = ApiParamType.INTEGER)
     private Integer sort;
-    @EntityField(name = "是否改动", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.ismodified.name", type = ApiParamType.INTEGER)
     private Integer isModified;
-    @EntityField(name = "告警个数", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.warncount.name", type = ApiParamType.INTEGER)
     private Integer warnCount;
 
-    @EntityField(name = "sql文件名列表", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "nfdds.deploysqlnodedetailvo.sqlfiles.name", type = ApiParamType.JSONARRAY)
     private List<String> sqlFiles;
 
 

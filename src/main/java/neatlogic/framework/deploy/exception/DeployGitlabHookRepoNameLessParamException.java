@@ -20,6 +20,6 @@ import neatlogic.framework.exception.core.ApiRuntimeException;
 
 public class DeployGitlabHookRepoNameLessParamException extends ApiRuntimeException {
     public DeployGitlabHookRepoNameLessParamException(String repoName, String param) {
-        super("{0}缺少{1}", repoName, param);
+        super("nfde.deploygitlabhookreponamelessparamexception.deploygitlabhookreponamelessparamexception", repoName, param);
     }
 }

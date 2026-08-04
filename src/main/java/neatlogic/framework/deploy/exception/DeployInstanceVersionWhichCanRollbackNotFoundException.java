@@ -11,6 +11,6 @@ public class DeployInstanceVersionWhichCanRollbackNotFoundException extends ApiR
     private static final long serialVersionUID = -7928742271799411171L;
 
     public DeployInstanceVersionWhichCanRollbackNotFoundException(Long resourceId) {
-        super("没有找到实例：{0}的可回退版本", resourceId);
+        super("nfde.deployinstanceversionwhichcanrollbacknotfoundexception.deployinstanceversionwhichcanrollbacknotfoundexception", resourceId);
     }
 }

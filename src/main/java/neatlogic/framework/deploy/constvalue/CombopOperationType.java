@@ -21,7 +21,7 @@ import neatlogic.framework.util.$;
  * 组合工具操作类型
  **/
 public enum CombopOperationType {
-    PIPELINE("pipeline", "发布流水线");
+    PIPELINE("pipeline", "nfdc.combopoperationtype.text.pipeline");
 
     CombopOperationType(String value, String text) {
         this.value = value;

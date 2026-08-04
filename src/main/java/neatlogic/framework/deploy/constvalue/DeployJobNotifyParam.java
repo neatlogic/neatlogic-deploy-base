@@ -10,19 +10,19 @@ import neatlogic.framework.util.$;
  */
 
 public enum DeployJobNotifyParam implements INotifyParam {
-    APPSYSTEMNAMEANDABBRNAME("appSystemNameAndAbbrName", "应用", ParamType.STRING),
-    APPMODULENAMEANDABBRNAME("appModuleNameAndAbbrName", "模块", ParamType.STRING),
-    ENVNAME("envName", "环境", ParamType.STRING),
-    VERSION("version", "版本号", ParamType.STRING),
-    SCENARIONAME("scenarioName", "场景", ParamType.STRING),
-    JOBID("deployJobId", "作业ID", ParamType.NUMBER),
-    JOBNAME("deployJobName", "作业名称", ParamType.STRING),
-    JOBSTATUS("deployJobStatus", "作业状态", ParamType.STRING),
-    JOBSTATUSNAME("deployJobStatusName", "作业状态名", ParamType.STRING),
-    JOBPHASELIST("deployJobPhaseList", "阶段列表", ParamType.ARRAY),
-    TRIGGERTYPENAME("deployTriggerTypeName", "触发方式", ParamType.STRING),
-    DEPLOYJOBSTARTTIME("deployJobStartTime", "作业开始时间", ParamType.STRING),
-    DEPLOYJOBENDTIME("deployJobEndTime", "作业结束时间", ParamType.STRING),
+    APPSYSTEMNAMEANDABBRNAME("appSystemNameAndAbbrName", "nfdc.deployjobnotifyparam.text.appsystemnameandabbrname", ParamType.STRING),
+    APPMODULENAMEANDABBRNAME("appModuleNameAndAbbrName", "nfdc.deployjobnotifyparam.text.appmodulenameandabbrname", ParamType.STRING),
+    ENVNAME("envName", "nfdc.deployjobnotifyparam.text.envname", ParamType.STRING),
+    VERSION("version", "nfdc.deployjobnotifyparam.text.version", ParamType.STRING),
+    SCENARIONAME("scenarioName", "nfdc.deployjobnotifyparam.text.scenarioname", ParamType.STRING),
+    JOBID("deployJobId", "nfdc.deployjobnotifyparam.text.jobid", ParamType.NUMBER),
+    JOBNAME("deployJobName", "nfdc.deployjobnotifyparam.text.jobname", ParamType.STRING),
+    JOBSTATUS("deployJobStatus", "nfdc.deployjobnotifyparam.text.jobstatus", ParamType.STRING),
+    JOBSTATUSNAME("deployJobStatusName", "nfdc.deployjobnotifyparam.text.jobstatusname", ParamType.STRING),
+    JOBPHASELIST("deployJobPhaseList", "nfdc.deployjobnotifyparam.text.jobphaselist", ParamType.ARRAY),
+    TRIGGERTYPENAME("deployTriggerTypeName", "nfdc.deployjobnotifyparam.text.triggertypename", ParamType.STRING),
+    DEPLOYJOBSTARTTIME("deployJobStartTime", "nfdc.deployjobnotifyparam.text.deployjobstarttime", ParamType.STRING),
+    DEPLOYJOBENDTIME("deployJobEndTime", "nfdc.deployjobnotifyparam.text.deployjobendtime", ParamType.STRING),
     ;
     private final String value;
     private final String text;

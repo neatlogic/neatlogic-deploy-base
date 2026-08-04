@@ -6,19 +6,19 @@ import neatlogic.framework.util.SnowflakeUtil;
 import org.apache.commons.lang3.StringUtils;
 
 public class DeployPackageVo {
-    @EntityField(name = "id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdd.deploypackagevo.id.name", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "工程组标识", type = ApiParamType.STRING)
+    @EntityField(name = "nfdd.deploypackagevo.groupid.name", type = ApiParamType.STRING)
     private String groupId;
-    @EntityField(name = "工程标识", type = ApiParamType.STRING)
+    @EntityField(name = "nfdd.deploypackagevo.artifactid.name", type = ApiParamType.STRING)
     private String artifactId;
-    @EntityField(name = "工程版本号", type = ApiParamType.STRING)
+    @EntityField(name = "nfdd.deploypackagevo.version.name", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "包类型", type = ApiParamType.STRING)
+    @EntityField(name = "nfdd.deploypackagevo.type.name", type = ApiParamType.STRING)
     private String type = "jar";
-    @EntityField(name = "版权许可、开源协议", type = ApiParamType.STRING)
+    @EntityField(name = "nfdd.deploypackagevo.license.name", type = ApiParamType.STRING)
     private String license;
-    @EntityField(name = "包在maven仓库中的地址", type = ApiParamType.STRING)
+    @EntityField(name = "nfdd.deploypackagevo.url.name", type = ApiParamType.STRING)
     private String url;
 
     public DeployPackageVo(String groupId, String artifactId, String version, String license, String url, String type) {

@@ -7,25 +7,25 @@ import neatlogic.framework.restful.annotation.EntityField;
 import java.util.Date;
 
 public class DeployEnvVersionVo extends BaseEditorVo {
-    @EntityField(name = "应用系统id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionvo.appsystemid.name", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "应用模块id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionvo.appmoduleid.name", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "环境id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionvo.envid.name", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "环境名称", type = ApiParamType.STRING)
+    @EntityField(name = "nfdde.deployenvversionvo.envname.name", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "版本id", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionvo.versionid.name", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "版本", type = ApiParamType.STRING)
+    @EntityField(name = "nfdde.deployenvversionvo.version.name", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "编译号", type = ApiParamType.INTEGER)
+    @EntityField(name = "nfdde.deployenvversionvo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;
-    @EntityField(name = "发布状态", type = ApiParamType.STRING)
+    @EntityField(name = "nfdde.deployenvversionvo.status.name", type = ApiParamType.STRING)
     private String status;
-    @EntityField(name = "发布时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionvo.deploytime.name", type = ApiParamType.LONG)
     private Date deployTime;
-    @EntityField(name = "回滚时间", type = ApiParamType.LONG)
+    @EntityField(name = "nfdde.deployenvversionvo.rollbacktime.name", type = ApiParamType.LONG)
     private Date rollbackTime;
 
     public DeployEnvVersionVo() {

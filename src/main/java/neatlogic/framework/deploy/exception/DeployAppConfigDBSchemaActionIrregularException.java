@@ -17,6 +17,6 @@ import java.util.List;
 
 public class DeployAppConfigDBSchemaActionIrregularException extends ApiRuntimeException {
     public DeployAppConfigDBSchemaActionIrregularException(List<String> schemaList) {
-        super("nfde.deployappconfigdbschemaactionirregularexception.deployappconfigdbschemaactionirregularexception", schemaList.toString());
+        super("nfde.deployappconfigdbschemaactionirregularexception.deployappconfigdbschemaactionirregularexceptionwithlist", schemaList.toString());
     }
 }

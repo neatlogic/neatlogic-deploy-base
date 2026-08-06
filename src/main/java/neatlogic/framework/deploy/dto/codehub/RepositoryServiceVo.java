@@ -24,7 +24,7 @@ public class RepositoryServiceVo extends BaseEditorVo implements Serializable {
     /**
      * id
      */
-    @EntityField(name = "nfddc.repositoryservicevo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
 
     /**
@@ -48,13 +48,13 @@ public class RepositoryServiceVo extends BaseEditorVo implements Serializable {
     /**
      * username
      */
-    @EntityField(name = "nfddc.repositoryservicevo.username.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.username", type = ApiParamType.STRING)
     private String username;
 
     /**
      * password
      */
-    @EntityField(name = "nfddc.repositoryservicevo.password.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.password", type = ApiParamType.STRING)
     private String password;
 
     /**

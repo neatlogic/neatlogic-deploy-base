@@ -8,9 +8,9 @@ import java.util.Date;
 
 public class DeployVersionBuildQualityVo {
 
-    @EntityField(name = "nfddv.deployversionbuildqualityvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfddv.deployversionbuildqualityvo.versionid.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
     @EntityField(name = "nfddv.deployversionbuildqualityvo.buildtime.name", type = ApiParamType.LONG)
     private Date buildTime;

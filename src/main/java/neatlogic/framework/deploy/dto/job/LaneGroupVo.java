@@ -20,7 +20,7 @@ import neatlogic.framework.util.SnowflakeUtil;
 import java.util.List;
 
 public class LaneGroupVo {
-    @EntityField(name = "nfddj.lanegroupvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "nfddj.lanegroupvo.laneid.name", type = ApiParamType.LONG)
     private Long laneId;
@@ -30,7 +30,7 @@ public class LaneGroupVo {
     private Integer isGoon = 1;
     @EntityField(name = "nfddj.lanegroupvo.isgrouprun.name", type = ApiParamType.INTEGER)
     private Integer isGroupRun = 0;
-    @EntityField(name = "nfddj.lanegroupvo.status.name", type = ApiParamType.ENUM, member = JobStatus.class)
+    @EntityField(name = "common.status", type = ApiParamType.ENUM, member = JobStatus.class)
     private String status;
     @EntityField(name = "nfddj.lanegroupvo.joblist.name", type = ApiParamType.JSONARRAY)
     private List<DeployJobVo> jobList;
@@ -38,7 +38,7 @@ public class LaneGroupVo {
     private String batchJobAction;
     @EntityField(name = "nfddj.lanegroupvo.jobaction.name", type = ApiParamType.STRING)
     private String jobAction;
-    @EntityField(name = "nfddj.lanegroupvo.sort.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "common.sort", type = ApiParamType.INTEGER)
     private Integer sort;
 
     public LaneGroupVo() {

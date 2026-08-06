@@ -27,23 +27,23 @@ import java.util.List;
 
 public class DeployAppConfigVo extends BaseEditorVo {
     private static final long serialVersionUID = -4457900289777364590L;
-    @EntityField(name = "nfdda.deployappconfigvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfdda.deployappconfigvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdda.deployappconfigvo.appsystemname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemname", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "nfdda.deployappconfigvo.appsystemabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemabbrname", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "nfdda.deployappconfigvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId = 0L;
-    @EntityField(name = "nfdda.deployappconfigvo.appmodulename.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmodulename", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "nfdda.deployappconfigvo.appmoduleabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmoduleabbrname", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "nfdda.deployappconfigvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId = 0L;
-    @EntityField(name = "nfdda.deployappconfigvo.envname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.envname", type = ApiParamType.STRING)
     private String envName;
     @EntityField(name = "nfdda.deployappconfigvo.path.name", type = ApiParamType.STRING)
     private String path;

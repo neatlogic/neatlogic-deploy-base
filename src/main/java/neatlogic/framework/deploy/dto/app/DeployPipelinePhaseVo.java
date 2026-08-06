@@ -27,7 +27,7 @@ public class DeployPipelinePhaseVo extends AutoexecCombopPhaseVo {
     private Integer isActive;
     @EntityField(name = "nfdda.deploypipelinephasevo.override.name", type = ApiParamType.INTEGER)
     private Integer override;
-    @EntityField(name = "nfdda.deploypipelinephasevo.source.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.source", type = ApiParamType.STRING)
     private String source;
 
     public Integer getParentIsActive() {

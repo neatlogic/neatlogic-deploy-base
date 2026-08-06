@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PipelineJobTemplateVo extends BasePageVo {
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "nfddp.pipelinejobtemplatevo.idlist.name", type = ApiParamType.JSONARRAY)
     private List<Long> idList;
@@ -36,38 +36,38 @@ public class PipelineJobTemplateVo extends BasePageVo {
     private List<Long> excludeIdList;
     @EntityField(name = "nfddp.pipelinejobtemplatevo.groupid.name", type = ApiParamType.LONG)
     private Long groupId;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.appsystemname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemname", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.appsystemabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemabbrname", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.appmodulename.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmodulename", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.appmoduleabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmoduleabbrname", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.envname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.envname", type = ApiParamType.STRING)
     private String envName;
     @JSONField(serialize = false)
     private String configStr;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.config.name", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "common.config", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.scenarioid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.scenarioid", type = ApiParamType.LONG)
     private Long scenarioId;
 
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.scenarioname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.autoexec.scenarioname", type = ApiParamType.STRING)
     private String scenarioName;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.roundcount.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.autoexec.roundcount", type = ApiParamType.INTEGER)
     private Integer roundCount;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.parallelcount.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.autoexec.parallelcount", type = ApiParamType.INTEGER)
     private Integer parallelCount;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.parallelpolicy.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.autoexec.parallelpolicy", type = ApiParamType.STRING)
     private String parallelPolicy;
-    @EntityField(name = "nfddp.pipelinejobtemplatevo.sort.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "common.sort", type = ApiParamType.INTEGER)
     private Integer sort;
     @EntityField(name = "nfddp.pipelinejobtemplatevo.ishasbuildtypetool.name", type = ApiParamType.INTEGER)
     private int isHasBuildTypeTool = 0;

@@ -17,13 +17,13 @@ import neatlogic.framework.common.dto.BaseEditorVo;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployInstanceBlueGreenVo extends BaseEditorVo {
-    @EntityField(name = "nfdda.deployinstancebluegreenvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdda.deployinstancebluegreenvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfdda.deployinstancebluegreenvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfdda.deployinstancebluegreenvo.resourceid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.resourceid", type = ApiParamType.LONG)
     private Long resourceId;
     @EntityField(name = "nfdda.deployinstancebluegreenvo.bluegreenid.name", type = ApiParamType.LONG)
     private Long blueGreenId;

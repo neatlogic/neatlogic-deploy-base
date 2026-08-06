@@ -29,11 +29,11 @@ import java.util.List;
 
 public class DeployJobWebhookVo extends BaseEditorVo {
     private static final long serialVersionUID = -5715414967862953577L;
-    @EntityField(name = "nfddw.deployjobwebhookvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfddw.deployjobwebhookvo.name.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "nfddw.deployjobwebhookvo.isactive.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "common.isactive", type = ApiParamType.INTEGER)
     private Integer isActive;
     @EntityField(name = "nfddw.deployjobwebhookvo.integrationuuid.name", type = ApiParamType.STRING)
     private String integrationUuid;
@@ -45,9 +45,9 @@ public class DeployJobWebhookVo extends BaseEditorVo {
     private String typeName;
     @EntityField(name = "nfddw.deployjobwebhookvo.pipelinetype.name", type = ApiParamType.STRING)
     private String pipelineType;
-    @EntityField(name = "nfddw.deployjobwebhookvo.config.name", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "common.config", type = ApiParamType.JSONOBJECT)
     private DeployJobWebhookConfigVo config;
-    @EntityField(name = "nfddw.deployjobwebhookvo.jobstatuslist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.autoexec.jobstatuslist", type = ApiParamType.JSONARRAY)
     private List<AutoexecJobStatusVo> jobStatusList;
     @EntityField(name = "nfddw.deployjobwebhookvo.buildnopolicy.name", type = ApiParamType.ENUM, member = DeployWebhookBuildNoPolicy.class)
     private String buildNoPolicy;

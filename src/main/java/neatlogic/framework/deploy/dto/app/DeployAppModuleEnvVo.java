@@ -9,13 +9,13 @@ import java.util.List;
 
 public class DeployAppModuleEnvVo {
 
-    @EntityField(name = "nfdda.deployappmoduleenvvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfdda.deployappmoduleenvvo.name.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.name", type = ApiParamType.STRING)
     private String name;
     @EntityField(name = "nfdda.deployappmoduleenvvo.abbrname.name", type = ApiParamType.STRING)
     private String abbrName;
-    @EntityField(name = "nfdda.deployappmoduleenvvo.envlist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.cmdb.envlist", type = ApiParamType.JSONARRAY)
     private List<AppEnvironmentVo> envList;
 
     @JSONField(serialize = false)

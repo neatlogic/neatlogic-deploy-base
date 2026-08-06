@@ -8,19 +8,19 @@ import java.util.List;
 
 public class DeployModuleActiveVersionVo {
 
-    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appsystemabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemabbrname", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appsystemname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemname", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appmoduleabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmoduleabbrname", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "nfddv.deploymoduleactiveversionvo.appmodulename.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmodulename", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "nfddv.deploymoduleactiveversionvo.envlist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.cmdb.envlist", type = ApiParamType.JSONARRAY)
     private List<DeployEnvVersionVo> envList;
     @EntityField(name = "nfddv.deploymoduleactiveversionvo.versionlist.name", type = ApiParamType.JSONARRAY)
     private List<DeployActiveVersionVo> versionList;

@@ -15,13 +15,13 @@ public class DeployAppModuleVo implements Serializable {
 
     private static final long serialVersionUID = 6551790567158160404L;
 
-    @EntityField(name = "nfdda.deployappmodulevo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfdda.deployappmodulevo.name.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.name", type = ApiParamType.STRING)
     private String name;
     @EntityField(name = "nfdda.deployappmodulevo.abbrname.name", type = ApiParamType.STRING)
     private String abbrName;
-    @EntityField(name = "nfdda.deployappmodulevo.maintenancewindow.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.maintenancewindow", type = ApiParamType.STRING)
     private List<String> maintenanceWindow;
     @EntityField(name = "nfdda.deployappmodulevo.description.name", type = ApiParamType.STRING)
     private String description;
@@ -29,7 +29,7 @@ public class DeployAppModuleVo implements Serializable {
     private Integer isHasEnv = 0;
     @EntityField(name = "nfdda.deployappmodulevo.isconfig.name", type = ApiParamType.INTEGER)
     private Integer isConfig;
-    @EntityField(name = "nfdda.deployappmodulevo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
     //发布作业：当前场景是否有BUILD分类的工具，前端需要根据此标识调用 不同的选择版本下拉接口
     @EntityField(name = "nfdda.deployappmodulevo.ishasbuildtypetool.name", type = ApiParamType.INTEGER)

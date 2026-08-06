@@ -16,9 +16,9 @@ import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployAppModuleRunnerGroupVo {
 
-    @EntityField(name = "nfdda.deployappmodulerunnergroupvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdda.deployappmodulerunnergroupvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
     @EntityField(name = "nfdda.deployappmodulerunnergroupvo.runnergroupid.name", type = ApiParamType.LONG)
     private Long runnerGroupId;

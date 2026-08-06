@@ -10,17 +10,17 @@ import neatlogic.framework.restful.annotation.EntityField;
  */
 public class DeployAppConfigInstanceVo extends BaseEditorVo {
     private static final long serialVersionUID = 2764705905637129693L;
-    @EntityField(name = "nfdda.deployappconfiginstancevo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfdda.deployappconfiginstancevo.ip.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.ip", type = ApiParamType.STRING)
     private String ip;
     @EntityField(name = "nfdda.deployappconfiginstancevo.port.name", type = ApiParamType.INTEGER)
     private Integer port;
-    @EntityField(name = "nfdda.deployappconfiginstancevo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdda.deployappconfiginstancevo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfdda.deployappconfiginstancevo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
     @EntityField(name = "nfdda.deployappconfiginstancevo.name.name", type = ApiParamType.STRING)
     private String name;

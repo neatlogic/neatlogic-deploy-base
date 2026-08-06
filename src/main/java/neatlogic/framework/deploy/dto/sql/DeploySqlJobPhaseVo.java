@@ -13,13 +13,13 @@ import java.io.Serializable;
 public class DeploySqlJobPhaseVo implements Serializable {
     private static final long serialVersionUID = -3975625036003451623L;
 
-    @EntityField(name = "nfdds.deploysqljobphasevo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfdds.deploysqljobphasevo.jobid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.jobid", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "nfdds.deploysqljobphasevo.phaseid.name", type = ApiParamType.LONG)
     private Long phaseId;
-    @EntityField(name = "nfdds.deploysqljobphasevo.phasename.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.autoexec.phasename", type = ApiParamType.STRING)
     private String phaseName;
     @EntityField(name = "nfdds.deploysqljobphasevo.sqlid.name", type = ApiParamType.LONG)
     private Long sqlId;

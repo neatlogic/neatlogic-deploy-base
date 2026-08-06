@@ -24,11 +24,11 @@ import java.util.List;
 
 public class DeployAppConfigEnvAttrVo extends BaseEditorVo {
     private static final long serialVersionUID = -1948079785908118588L;
-    @EntityField(name = "nfdda.deployappconfigenvattrvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdda.deployappconfigenvattrvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfdda.deployappconfigenvattrvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
     @JSONField(serialize = false)
     private List<String> keyList;

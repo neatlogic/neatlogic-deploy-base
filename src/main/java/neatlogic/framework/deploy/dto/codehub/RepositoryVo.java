@@ -14,7 +14,7 @@ public class RepositoryVo extends BaseEditorVo implements Serializable {
     /**
      * id
      */
-    @EntityField(name = "nfddc.repositoryvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
 
     /**
@@ -35,7 +35,7 @@ public class RepositoryVo extends BaseEditorVo implements Serializable {
     /**
      * address
      */
-    @EntityField(name = "nfddc.repositoryvo.address.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.repo", type = ApiParamType.STRING)
     private String address;
 
     /**
@@ -59,7 +59,7 @@ public class RepositoryVo extends BaseEditorVo implements Serializable {
     /**
      * app_mopdule_id
      */
-    @EntityField(name = "nfddc.repositoryvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
 
     /**
@@ -89,7 +89,7 @@ public class RepositoryVo extends BaseEditorVo implements Serializable {
     @EntityField(name = "nfddc.repositoryvo.sortcolumn.name", type = ApiParamType.STRING)
     private String sortColumn;
     
-    @EntityField(name = "nfddc.repositoryvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
 
     @EntityField(name = "nfddc.repositoryvo.repositoryservicevo.name", type = ApiParamType.JSONOBJECT)

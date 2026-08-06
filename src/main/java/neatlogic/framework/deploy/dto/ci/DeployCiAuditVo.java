@@ -13,21 +13,21 @@ import org.apache.commons.lang3.StringUtils;
 
 public class DeployCiAuditVo extends BaseEditorVo implements AuditVoHandler {
 
-    @EntityField(name = "nfddc.deployciauditvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfddc.deployciauditvo.ciid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.deploy.ciid", type = ApiParamType.LONG)
     private Long ciId;
     @EntityField(name = "nfddc.deployciauditvo.commitid.name", type = ApiParamType.STRING)
     private String commitId;
-    @EntityField(name = "nfddc.deployciauditvo.action.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.action", type = ApiParamType.STRING)
     private String action;
     @EntityField(name = "nfddc.deployciauditvo.actionname.name", type = ApiParamType.STRING)
     private String actionName;
-    @EntityField(name = "nfddc.deployciauditvo.status.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.status", type = ApiParamType.STRING)
     private String status;
-    @EntityField(name = "nfddc.deployciauditvo.statusname.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.statusname", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "nfddc.deployciauditvo.jobid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.jobid", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "nfddc.deployciauditvo.jobname.name", type = ApiParamType.STRING)
     private String jobName;

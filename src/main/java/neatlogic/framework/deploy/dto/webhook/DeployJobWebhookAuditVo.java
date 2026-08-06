@@ -26,13 +26,13 @@ import java.util.Date;
 
 public class DeployJobWebhookAuditVo extends BasePageVo {
     private static final long serialVersionUID = -8243357692436223665L;
-    @EntityField(name = "nfddw.deployjobwebhookauditvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "nfddw.deployjobwebhookauditvo.webhookid.name", type = ApiParamType.LONG)
     private Long webhookId;
     @EntityField(name = "nfddw.deployjobwebhookauditvo.name.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "nfddw.deployjobwebhookauditvo.status.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.status", type = ApiParamType.STRING)
     private String status;
     @EntityField(name = "nfddw.deployjobwebhookauditvo.statusname.name", type = ApiParamType.STRING)
     private String statusName;

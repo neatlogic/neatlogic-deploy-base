@@ -7,17 +7,17 @@ import neatlogic.framework.restful.annotation.EntityField;
 import java.util.Date;
 
 public class DeployEnvVersionVo extends BaseEditorVo {
-    @EntityField(name = "nfdde.deployenvversionvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdde.deployenvversionvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfdde.deployenvversionvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfdde.deployenvversionvo.envname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.envname", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "nfdde.deployenvversionvo.versionid.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "nfdde.deployenvversionvo.version.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.version", type = ApiParamType.STRING)
     private String version;
     @EntityField(name = "nfdde.deployenvversionvo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;

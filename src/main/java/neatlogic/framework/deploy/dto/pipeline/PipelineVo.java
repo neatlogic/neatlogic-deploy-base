@@ -23,21 +23,21 @@ import java.util.Date;
 import java.util.List;
 
 public class PipelineVo {
-    @EntityField(name = "nfddp.pipelinevo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfddp.pipelinevo.name.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "nfddp.pipelinevo.isactive.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "common.isactive", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "nfddp.pipelinevo.type.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.type", type = ApiParamType.STRING)
     private String type;
     @EntityField(name = "nfddp.pipelinevo.typename.name", type = ApiParamType.STRING)
     private String typeName;
-    @EntityField(name = "nfddp.pipelinevo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfddp.pipelinevo.appsystemname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemname", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "nfddp.pipelinevo.appsystemabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemabbrname", type = ApiParamType.STRING)
     private String appSystemAbbrName;
     @EntityField(name = "nfddp.pipelinevo.fcd.name", type = ApiParamType.LONG)
     private Date fcd;
@@ -47,7 +47,7 @@ public class PipelineVo {
     private Date lcd;
     @EntityField(name = "nfddp.pipelinevo.lcu.name", type = ApiParamType.STRING)
     private String lcu;
-    @EntityField(name = "nfddp.pipelinevo.lanelist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.deploy.lanelist", type = ApiParamType.JSONARRAY)
     private List<PipelineLaneVo> laneList;
     @EntityField(name = "nfddp.pipelinevo.authlist.name", type = ApiParamType.JSONARRAY)
     private List<PipelineAuthVo> authList;

@@ -9,20 +9,20 @@ import java.util.Date;
 
 public class DeployVersionEnvInstanceVo {
 
-    @EntityField(name = "nfddv.deployversionenvinstancevo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfddv.deployversionenvinstancevo.resourceid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.resourceid", type = ApiParamType.LONG)
     private Long resourceId;
-    @EntityField(name = "nfddv.deployversionenvinstancevo.versionid.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "nfddv.deployversionenvinstancevo.version.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.version", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "nfddv.deployversionenvinstancevo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
 
-    @EntityField(name = "nfddv.deployversionenvinstancevo.resourcename.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.resourcename", type = ApiParamType.STRING)
     private String resourceName;
-    @EntityField(name = "nfddv.deployversionenvinstancevo.ip.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.ip", type = ApiParamType.STRING)
     private String ip;
 
     @EntityField(name = "nfddv.deployversionenvinstancevo.deployuser.name", type = ApiParamType.STRING)

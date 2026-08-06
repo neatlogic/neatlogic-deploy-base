@@ -37,7 +37,7 @@ public class DeployScheduleVo extends BaseEditorVo {
     private String name;
     @EntityField(name = "nfdds.deployschedulevo.begintime.name", type = ApiParamType.LONG)
     private Date beginTime;
-    @EntityField(name = "nfdds.deployschedulevo.endtime.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.endtime", type = ApiParamType.LONG)
     private Date endTime;
     @EntityField(name = "nfdds.deployschedulevo.cron.name", type = ApiParamType.STRING)
     private String cron;
@@ -54,17 +54,17 @@ public class DeployScheduleVo extends BaseEditorVo {
     private String type;
     @EntityField(name = "nfdds.deployschedulevo.typename.name", type = ApiParamType.STRING)
     private String typeName;
-    @EntityField(name = "nfdds.deployschedulevo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdds.deployschedulevo.appsystemname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemname", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "nfdds.deployschedulevo.appsystemabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemabbrname", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "nfdds.deployschedulevo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfdds.deployschedulevo.appmodulename.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmodulename", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "nfdds.deployschedulevo.appmoduleabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmoduleabbrname", type = ApiParamType.STRING)
     private String appModuleAbbrName;
     @EntityField(name = "nfdds.deployschedulevo.pipelineid.name", type = ApiParamType.LONG)
     private Long pipelineId;
@@ -72,7 +72,7 @@ public class DeployScheduleVo extends BaseEditorVo {
     private String pipelineName;
     @EntityField(name = "nfdds.deployschedulevo.pipelinetype.name", type = ApiParamType.STRING)
     private String pipelineType;
-    @EntityField(name = "nfdds.deployschedulevo.editable.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "common.editable", type = ApiParamType.INTEGER)
     private Integer editable = 0;
     @EntityField(name = "nfdds.deployschedulevo.deletable.name", type = ApiParamType.INTEGER)
     private Integer deletable = 0;

@@ -67,7 +67,7 @@ public class DeployVersionVo extends BaseEditorVo {
     private List<DeployVersionBuildNoVo> buildNoList;
     @JSONField(serialize = false)
     private JSONObject startTimeRange;
-    @EntityField(name = "nfddv.deployversionvo.runnermapid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.runnermappingid", type = ApiParamType.LONG)
     private Long runnerMapId;
     @EntityField(name = "nfddv.deployversionvo.runnergroup.name", type = ApiParamType.JSONOBJECT)
     private JSONObject runnerGroup;
@@ -115,7 +115,7 @@ public class DeployVersionVo extends BaseEditorVo {
     @EntityField(name = "term.deploy.criticalstarcvecount", type = ApiParamType.LONG)
     private Long criticalStarCveCount;
 
-    @EntityField(name = "nfddv.deployversionvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
 
     @EntityField(name = "nfddv.deployversionvo.currentenvbuildno.name", type = ApiParamType.INTEGER)

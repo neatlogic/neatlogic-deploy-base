@@ -25,7 +25,7 @@ public class DeployPipelineExecuteConfigVo implements Serializable {
 
     @EntityField(name = "nfdda.deploypipelineexecuteconfigvo.protocolid.name", type = ApiParamType.LONG)
     private Long protocolId;
-    @EntityField(name = "nfdda.deploypipelineexecuteconfigvo.executeuser.name", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "term.autoexec.executeuser", type = ApiParamType.JSONOBJECT)
     private ParamMappingVo executeUser;
     @EntityField(name = "nfdda.deploypipelineexecuteconfigvo.inherit.name", type = ApiParamType.INTEGER)
     private Integer inherit;

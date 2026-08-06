@@ -34,13 +34,13 @@ import java.util.stream.Collectors;
  */
 public class DeployAppSystemVo extends BaseEditorVo {
     private static final long serialVersionUID = 3794860793337591800L;
-    @EntityField(name = "nfdda.deployappsystemvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfdda.deployappsystemvo.name.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.name", type = ApiParamType.STRING)
     private String name;
     @EntityField(name = "nfdda.deployappsystemvo.abbrname.name", type = ApiParamType.STRING)
     private String abbrName;
-    @EntityField(name = "nfdda.deployappsystemvo.maintenancewindow.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.maintenancewindow", type = ApiParamType.STRING)
     private List<String> maintenanceWindow;
     @EntityField(name = "nfdda.deployappsystemvo.description.name", type = ApiParamType.STRING)
     private String description;

@@ -22,11 +22,11 @@ public class DeploySqlNodeDetailVo extends BaseEditorVo implements ISqlNodeDetai
 
     private static final long serialVersionUID = -3906325036032471623L;
 
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.resourceid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.resourceid", type = ApiParamType.LONG)
     private Long resourceId;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.runnerid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.deploy.runnerid", type = ApiParamType.LONG)
     private Long runnerId;
     @EntityField(name = "nfdds.deploysqlnodedetailvo.runnerhost.name", type = ApiParamType.STRING)
     private String runnerHost;
@@ -34,13 +34,13 @@ public class DeploySqlNodeDetailVo extends BaseEditorVo implements ISqlNodeDetai
     private Integer runnerPort;
     @EntityField(name = "nfdds.deploysqlnodedetailvo.runnerurl.name", type = ApiParamType.STRING)
     private String runnerUrl;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.sysid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long sysId;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.moduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long moduleId;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.version.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.version", type = ApiParamType.STRING)
     private String version;
     @EntityField(name = "nfdds.deploysqlnodedetailvo.sqlfile.name", type = ApiParamType.STRING)
     private String sqlFile;
@@ -50,29 +50,29 @@ public class DeploySqlNodeDetailVo extends BaseEditorVo implements ISqlNodeDetai
     private String host;
     @EntityField(name = "nfdds.deploysqlnodedetailvo.port.name", type = ApiParamType.INTEGER)
     private Integer port;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.username.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.username", type = ApiParamType.STRING)
     private String username;
     @EntityField(name = "nfdds.deploysqlnodedetailvo.serviceaddr.name", type = ApiParamType.STRING)
     private String serviceAddr;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.nodetype.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.autoexec.nodetype", type = ApiParamType.STRING)
     private String nodeType;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.status.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.status", type = ApiParamType.STRING)
     private String status;
     @EntityField(name = "nfdds.deploysqlnodedetailvo.statusname.name", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.completionrate.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.autoexec.completionrate", type = ApiParamType.INTEGER)
     private Integer completionRate = 0;
     @EntityField(name = "nfdds.deploysqlnodedetailvo.md5.name", type = ApiParamType.STRING)
     private String md5;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.jobid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.jobid", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.phasename.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.autoexec.phasename", type = ApiParamType.STRING)
     private String phaseName;
     @EntityField(name = "nfdds.deploysqlnodedetailvo.isdelete.name", type = ApiParamType.INTEGER)
     private Integer isDelete = 0;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.starttime.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.starttime", type = ApiParamType.LONG)
     private Date startTime;
-    @EntityField(name = "nfdds.deploysqlnodedetailvo.endtime.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.endtime", type = ApiParamType.LONG)
     private Date endTime;
     @EntityField(name = "nfdds.deploysqlnodedetailvo.costtime.name", type = ApiParamType.STRING)
     private String costTime;

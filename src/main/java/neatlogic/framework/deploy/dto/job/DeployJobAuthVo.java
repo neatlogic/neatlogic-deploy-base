@@ -16,7 +16,7 @@ import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployJobAuthVo {
-    @EntityField(name = "nfddj.deployjobauthvo.jobid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.jobid", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "nfddj.deployjobauthvo.type.name", type = ApiParamType.STRING)
     private String type;

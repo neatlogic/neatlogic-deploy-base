@@ -8,17 +8,17 @@ import java.util.List;
 
 public class DeployActiveVersionVo {
 
-    @EntityField(name = "nfddv.deployactiveversionvo.versionid.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "nfddv.deployactiveversionvo.version.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.versionnum", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "nfddv.deployactiveversionvo.compilecount.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.deploy.compilecount", type = ApiParamType.INTEGER)
     private Integer compileCount = 0;
-    @EntityField(name = "nfddv.deployactiveversionvo.compilesuccesscount.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.deploy.compilesuccesscount", type = ApiParamType.INTEGER)
     private Integer compileSuccessCount = 0;
-    @EntityField(name = "nfddv.deployactiveversionvo.compilefailcount.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.deploy.compilefailcount", type = ApiParamType.INTEGER)
     private Integer compileFailCount = 0;
-    @EntityField(name = "nfddv.deployactiveversionvo.envlist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.cmdb.envlist", type = ApiParamType.JSONARRAY)
     List<DeployEnvVersionVo> envList;
 
     public DeployActiveVersionVo() {

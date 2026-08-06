@@ -21,19 +21,19 @@ import neatlogic.framework.restful.annotation.EntityField;
 import java.util.List;
 
 public class DeployScheduleConfigVo {
-    @EntityField(name = "nfdds.deployscheduleconfigvo.scenarioid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.scenarioid", type = ApiParamType.LONG)
     private Long scenarioId;
-    @EntityField(name = "nfdds.deployscheduleconfigvo.scenarioname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.autoexec.scenarioname", type = ApiParamType.STRING)
     private String scenarioName;
-    @EntityField(name = "nfdds.deployscheduleconfigvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfdds.deployscheduleconfigvo.envname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.envname", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "nfdds.deployscheduleconfigvo.roundcount.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.autoexec.roundcount", type = ApiParamType.INTEGER)
     private Integer roundCount;
-    @EntityField(name = "nfdds.deployscheduleconfigvo.parallelcount.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.autoexec.parallelcount", type = ApiParamType.INTEGER)
     private Integer parallelCount;
-    @EntityField(name = "nfdds.deployscheduleconfigvo.parallelpolicy.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.autoexec.parallelpolicy", type = ApiParamType.STRING)
     private String parallelPolicy;
 
     @EntityField(name = "nfdds.deployscheduleconfigvo.param.name", type = ApiParamType.JSONOBJECT)

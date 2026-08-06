@@ -12,19 +12,19 @@ import org.apache.commons.lang3.StringUtils;
 
 public class DeployCiVo extends BaseEditorVo {
 
-    @EntityField(name = "nfddc.deploycivo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfddc.deploycivo.name.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.name", type = ApiParamType.STRING)
     private String name;
-    @EntityField(name = "nfddc.deploycivo.isactive.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "common.isactive", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "nfddc.deploycivo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfddc.deploycivo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfddc.deploycivo.appmodulename.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmodulename", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "nfddc.deploycivo.appmoduleabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmoduleabbrname", type = ApiParamType.STRING)
     private String appModuleAbbrName;
     @EntityField(name = "nfddc.deploycivo.repotype.name", type = ApiParamType.STRING)
     private String repoType;
@@ -34,7 +34,7 @@ public class DeployCiVo extends BaseEditorVo {
     private String repoName;
     @EntityField(name = "nfddc.deploycivo.branchfilter.name", type = ApiParamType.STRING)
     private String branchFilter;
-    @EntityField(name = "nfddc.deploycivo.event.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.event", type = ApiParamType.STRING)
     private String event;
     @EntityField(name = "nfddc.deploycivo.action.name", type = ApiParamType.STRING)
     private String action;
@@ -42,13 +42,13 @@ public class DeployCiVo extends BaseEditorVo {
     private String actionName;
     @EntityField(name = "nfddc.deploycivo.triggertype.name", type = ApiParamType.STRING)
     private String triggerType;
-    @EntityField(name = "nfddc.deploycivo.triggertime.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.triggertime", type = ApiParamType.STRING)
     private String triggerTime;
-    @EntityField(name = "nfddc.deploycivo.delaytime.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "common.delaytime", type = ApiParamType.INTEGER)
     private Integer delayTime;
     @EntityField(name = "nfddc.deploycivo.versionrule.name", type = ApiParamType.JSONOBJECT)
     private JSONObject versionRule;
-    @EntityField(name = "nfddc.deploycivo.config.name", type = ApiParamType.JSONOBJECT)
+    @EntityField(name = "common.config", type = ApiParamType.JSONOBJECT)
     private JSONObject config;
     @EntityField(name = "nfddc.deploycivo.hookid.name", type = ApiParamType.STRING)
     private String hookId;

@@ -17,9 +17,9 @@ import neatlogic.framework.common.dto.BaseEditorVo;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class DeployJobResourceBlueGreenVo extends BaseEditorVo {
-    @EntityField(name = "nfdda.deployjobresourcebluegreenvo.jobid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.jobid", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "nfdda.deployjobresourcebluegreenvo.resourceid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.resourceid", type = ApiParamType.LONG)
     private Long resourceId;
     @EntityField(name = "nfdda.deployjobresourcebluegreenvo.bluegreenid.name", type = ApiParamType.LONG)
     private Long blueGreenId;

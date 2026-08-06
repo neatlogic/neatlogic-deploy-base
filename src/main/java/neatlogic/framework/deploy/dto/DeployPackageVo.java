@@ -6,7 +6,7 @@ import neatlogic.framework.util.SnowflakeUtil;
 import org.apache.commons.lang3.StringUtils;
 
 public class DeployPackageVo {
-    @EntityField(name = "nfdd.deploypackagevo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "nfdd.deploypackagevo.groupid.name", type = ApiParamType.STRING)
     private String groupId;

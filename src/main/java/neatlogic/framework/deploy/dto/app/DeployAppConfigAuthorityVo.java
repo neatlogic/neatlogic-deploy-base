@@ -27,9 +27,9 @@ import java.util.List;
 
 public class DeployAppConfigAuthorityVo extends BaseEditorVo {
     private static final long serialVersionUID = -8106352774339841203L;
-    @EntityField(name = "nfdda.deployappconfigauthorityvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdda.deployappconfigauthorityvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
     @EntityField(name = "nfdda.deployappconfigauthorityvo.authtype.name", type = ApiParamType.STRING)
     private String authType;

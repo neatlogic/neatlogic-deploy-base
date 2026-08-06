@@ -37,13 +37,13 @@ public class DeployPipelineConfigVo implements Serializable {
     @EntityField(name = "nfdda.deploypipelineconfigvo.executeconfig.name", type = ApiParamType.JSONOBJECT)
     private DeployPipelineExecuteConfigVo executeConfig;
 
-    @EntityField(name = "nfdda.deploypipelineconfigvo.scenariolist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.autoexec.scenariolist", type = ApiParamType.JSONARRAY)
     private List<AutoexecCombopScenarioVo> scenarioList;
 
-    @EntityField(name = "nfdda.deploypipelineconfigvo.defaultscenarioid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.defaultscenarioid", type = ApiParamType.LONG)
     private Long defaultScenarioId;
 
-    @EntityField(name = "nfdda.deploypipelineconfigvo.runtimeparamlist.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "term.autoexec.runtimeparamlist", type = ApiParamType.INTEGER)
     private List<AutoexecParamVo> runtimeParamList;
 
     @EntityField(name = "nfdda.deploypipelineconfigvo.overrideprofilelist.name", type = ApiParamType.JSONARRAY)

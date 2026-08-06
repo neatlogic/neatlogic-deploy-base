@@ -23,7 +23,7 @@ public class DeployJobWebhookConfigVo implements Serializable {
     private static final long serialVersionUID = 9213556846712167853L;
     @EntityField(name = "nfddw.deployjobwebhookconfigvo.envnamelist.name", type = ApiParamType.JSONARRAY)
     private List<String> envNameList;
-    @EntityField(name = "nfddw.deployjobwebhookconfigvo.jobstatuslist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.autoexec.jobstatuslist", type = ApiParamType.JSONARRAY)
     private List<String> jobStatusList;
     @EntityField(name = "nfddw.deployjobwebhookconfigvo.integrationinputparam.name", type = ApiParamType.JSONOBJECT)
     private JSONObject integrationInputParam;

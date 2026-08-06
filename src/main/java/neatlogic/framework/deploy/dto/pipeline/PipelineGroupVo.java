@@ -21,11 +21,11 @@ import java.util.List;
 public class PipelineGroupVo {
     @EntityField(name = "nfddp.pipelinegroupvo.laneid.name", type = ApiParamType.LONG)
     private Long laneId;
-    @EntityField(name = "nfddp.pipelinegroupvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "nfddp.pipelinegroupvo.needwait.name", type = ApiParamType.INTEGER)
     private Integer needWait;
-    @EntityField(name = "nfddp.pipelinegroupvo.sort.name", type = ApiParamType.INTEGER)
+    @EntityField(name = "common.sort", type = ApiParamType.INTEGER)
     private int sort;
 
     @EntityField(name = "nfddp.pipelinegroupvo.jobtemplatelist.name", type = ApiParamType.JSONARRAY)

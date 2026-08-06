@@ -17,19 +17,19 @@ public class DeployVersionEnvVo extends BaseEditorVo {
 
     private static final long serialVersionUID = -5292013432947748975L;
 
-    @EntityField(name = "nfddv.deployversionenvvo.versionid.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "nfddv.deployversionenvvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfddv.deployversionenvvo.envname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.envname", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "nfddv.deployversionenvvo.jobid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.jobid", type = ApiParamType.LONG)
     private Long jobId;
-    @EntityField(name = "nfddv.deployversionenvvo.status.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.status", type = ApiParamType.STRING)
     private String status = "pending";
-    @EntityField(name = "nfddv.deployversionenvvo.statusname.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.statusname", type = ApiParamType.STRING)
     private String statusName;
-    @EntityField(name = "nfddv.deployversionenvvo.runnermapid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.runnermappingid", type = ApiParamType.LONG)
     private Long runnerMapId;
     @EntityField(name = "nfddv.deployversionenvvo.runnergroup.name", type = ApiParamType.JSONOBJECT)
     private JSONObject runnerGroup;

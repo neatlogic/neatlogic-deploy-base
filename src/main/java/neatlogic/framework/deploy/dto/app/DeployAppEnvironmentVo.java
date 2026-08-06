@@ -13,9 +13,9 @@ import java.util.List;
  */
 public class DeployAppEnvironmentVo {
 
-    @EntityField(name = "nfdda.deployappenvironmentvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfdda.deployappenvironmentvo.name.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.name", type = ApiParamType.STRING)
     private String name;
     @EntityField(name = "nfdda.deployappenvironmentvo.appmodulelist.name", type = ApiParamType.JSONARRAY)
     private List<AppModuleVo> appModuleList;

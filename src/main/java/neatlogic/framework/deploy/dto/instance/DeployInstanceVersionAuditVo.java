@@ -7,15 +7,15 @@ import neatlogic.framework.restful.annotation.EntityField;
 import neatlogic.framework.util.SnowflakeUtil;
 
 public class DeployInstanceVersionAuditVo extends BaseEditorVo {
-    @EntityField(name = "nfddi.deployinstanceversionauditvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfddi.deployinstanceversionauditvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfddi.deployinstanceversionauditvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfddi.deployinstanceversionauditvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfddi.deployinstanceversionauditvo.resourceid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.resourceid", type = ApiParamType.LONG)
     private Long resourceId;
     @EntityField(name = "nfddi.deployinstanceversionauditvo.newversionid.name", type = ApiParamType.LONG)
     private Long newVersionId;

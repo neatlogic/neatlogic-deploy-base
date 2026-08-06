@@ -8,11 +8,11 @@ import java.util.List;
 
 public class DeploySystemActiveVersionVo extends BasePageVo {
 
-    @EntityField(name = "nfddv.deploysystemactiveversionvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfddv.deploysystemactiveversionvo.appsystemabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemabbrname", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "nfddv.deploysystemactiveversionvo.appsystemname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemname", type = ApiParamType.STRING)
     private String appSystemName;
     @EntityField(name = "nfddv.deploysystemactiveversionvo.modulelist.name", type = ApiParamType.JSONARRAY)
     private List<DeployModuleActiveVersionVo> moduleList;

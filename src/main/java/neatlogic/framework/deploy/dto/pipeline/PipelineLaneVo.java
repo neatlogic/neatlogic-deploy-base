@@ -19,7 +19,7 @@ import neatlogic.framework.util.SnowflakeUtil;
 import java.util.List;
 
 public class PipelineLaneVo {
-    @EntityField(name = "nfddp.pipelinelanevo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
     @EntityField(name = "nfddp.pipelinelanevo.pipelineid.name", type = ApiParamType.LONG)
     private Long pipelineId;

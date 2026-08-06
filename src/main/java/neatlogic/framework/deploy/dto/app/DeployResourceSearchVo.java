@@ -18,11 +18,11 @@ import java.util.List;
 public class DeployResourceSearchVo extends ResourceSearchVo {
     @EntityField(name = "nfdda.deployresourcesearchvo.isconfig.name", type = ApiParamType.INTEGER)
     private Integer isConfig;
-    @EntityField(name = "nfdda.deployresourcesearchvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdda.deployresourcesearchvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfdda.deployresourcesearchvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
 
     @JSONField(serialize = false)

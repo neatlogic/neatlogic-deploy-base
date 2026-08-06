@@ -18,13 +18,13 @@ import neatlogic.framework.restful.annotation.EntityField;
 public class DeployJobWebhookAppModuleVo {
     @EntityField(name = "nfddw.deployjobwebhookappmodulevo.webhookid.name", type = ApiParamType.LONG)
     private Long webhookId;
-    @EntityField(name = "nfddw.deployjobwebhookappmodulevo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfddw.deployjobwebhookappmodulevo.appsystemabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemabbrname", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "nfddw.deployjobwebhookappmodulevo.appmoduleabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmoduleabbrname", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "nfddw.deployjobwebhookappmodulevo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
 
     public Long getWebhookId() {

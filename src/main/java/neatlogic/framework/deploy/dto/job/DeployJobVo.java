@@ -33,25 +33,25 @@ public class DeployJobVo extends AutoexecJobVo {
 
     private static final long serialVersionUID = 7515358153391228987L;
 
-    @EntityField(name = "nfddj.deployjobvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfddj.deployjobvo.appsystemname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemname", type = ApiParamType.STRING)
     private String appSystemName;
-    @EntityField(name = "nfddj.deployjobvo.appsystemabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appsystemabbrname", type = ApiParamType.STRING)
     private String appSystemAbbrName;
-    @EntityField(name = "nfddj.deployjobvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfddj.deployjobvo.appmodulename.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmodulename", type = ApiParamType.STRING)
     private String appModuleName;
-    @EntityField(name = "nfddj.deployjobvo.appmoduleabbrname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.appmoduleabbrname", type = ApiParamType.STRING)
     private String appModuleAbbrName;
-    @EntityField(name = "nfddj.deployjobvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfddj.deployjobvo.envname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.envname", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "nfddj.deployjobvo.version.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.version", type = ApiParamType.STRING)
     private String version;
-    @EntityField(name = "nfddj.deployjobvo.versionid.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
     @EntityField(name = "nfddj.deployjobvo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;
@@ -62,7 +62,7 @@ public class DeployJobVo extends AutoexecJobVo {
     @EntityField(name = "nfddj.deployjobvo.iscangroupexecute.name", type = ApiParamType.INTEGER)
     private Integer isCanGroupExecute = 0;
     private Integer isCanAbort = 0;
-    @EntityField(name = "nfddj.deployjobvo.lanelist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.deploy.lanelist", type = ApiParamType.JSONARRAY)
     private List<LaneVo> laneList;
     @EntityField(name = "nfddj.deployjobvo.authlist.name", type = ApiParamType.JSONARRAY)
     private List<DeployJobAuthVo> authList;

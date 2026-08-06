@@ -13,7 +13,7 @@ public class DeployInstanceVersionVo extends BaseEditorVo {
     private Long appModuleId;
     @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfddi.deployinstanceversionvo.resourceid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.resourceid", type = ApiParamType.LONG)
     private Long resourceId;
     @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;

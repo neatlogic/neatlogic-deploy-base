@@ -31,7 +31,7 @@ public class DeployJobModuleVo implements Serializable {
     private String name;
     @EntityField(name = "nfddj.deployjobmodulevo.abbrname.name", type = ApiParamType.STRING)
     private String abbrName;
-    @EntityField(name = "nfddj.deployjobmodulevo.version.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.version", type = ApiParamType.STRING)
     private String version;
     @EntityField(name = "nfddj.deployjobmodulevo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;

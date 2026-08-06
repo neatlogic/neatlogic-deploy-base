@@ -29,11 +29,11 @@ public class DeployAppEnvAutoConfigAuditVo extends BaseEditorVo {
     private static final long serialVersionUID = -1948079785908118588L;
     @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfdda.deployappenvautoconfigauditvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdda.deployappenvautoconfigauditvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
-    @EntityField(name = "nfdda.deployappenvautoconfigauditvo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
     @EntityField(name = "nfdda.deployappenvautoconfigauditvo.instanceid.name", type = ApiParamType.LONG)
     private Long instanceId = 0L;

@@ -21,15 +21,15 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
 
     private static final long serialVersionUID = -1948071236425118588L;
 
-    @EntityField(name = "nfddv.deployversionbuildnovo.versionid.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
-    @EntityField(name = "nfddv.deployversionbuildnovo.version.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.version", type = ApiParamType.STRING)
     private String version;
     @EntityField(name = "nfddv.deployversionbuildnovo.versionisfreeze.name", type = ApiParamType.INTEGER)
     private Integer versionIsFreeze;
     @EntityField(name = "nfddv.deployversionbuildnovo.buildno.name", type = ApiParamType.INTEGER)
     private Integer buildNo;
-    @EntityField(name = "nfddv.deployversionbuildnovo.jobid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.jobid", type = ApiParamType.LONG)
     private Long jobId;
     @EntityField(name = "nfddv.deployversionbuildnovo.status.name", type = ApiParamType.STRING)
     private String status;
@@ -41,18 +41,18 @@ public class DeployVersionBuildNoVo extends BaseEditorVo {
     private Date compileStartTime;
     @EntityField(name = "nfddv.deployversionbuildnovo.compileendtime.name", type = ApiParamType.STRING)
     private Date compileEndTime;
-    @EntityField(name = "nfddv.deployversionbuildnovo.runnermapid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.runnermappingid", type = ApiParamType.LONG)
     private Long runnerMapId;
     @EntityField(name = "nfddv.deployversionbuildnovo.runnergroup.name", type = ApiParamType.JSONOBJECT)
     private JSONObject runnerGroup;
     @JSONField(serialize = false)
     private String runnerGroupStr;
-    @EntityField(name = "nfddv.deployversionbuildnovo.endrev.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.deploy.endrev", type = ApiParamType.STRING)
     private String endRev;
 
-    @EntityField(name = "nfddv.deployversionbuildnovo.appsystemidlist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.appsystemidlist", type = ApiParamType.JSONARRAY)
     private List<Long> appSystemIdList;
-    @EntityField(name = "nfddv.deployversionbuildnovo.appmoduleidlist.name", type = ApiParamType.JSONARRAY)
+    @EntityField(name = "term.cmdb.appmoduleidlist", type = ApiParamType.JSONARRAY)
     private List<Long> appModuleIdList;
 
     public DeployVersionBuildNoVo() {

@@ -10,9 +10,9 @@ import java.util.Date;
 import java.util.Objects;
 
 public class DeployVersionDependencyVo {
-    @EntityField(name = "nfddv.deployversiondependencyvo.id.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.id", type = ApiParamType.LONG)
     private Long id;
-    @EntityField(name = "nfddv.deployversiondependencyvo.versionid.name", type = ApiParamType.LONG)
+    @EntityField(name = "common.versionid", type = ApiParamType.LONG)
     private Long versionId;
     @EntityField(name = "nfddv.deployversiondependencyvo.packageid.name", type = ApiParamType.LONG)
     private Long packageId;

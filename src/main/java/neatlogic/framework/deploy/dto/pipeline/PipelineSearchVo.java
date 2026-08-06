@@ -17,9 +17,9 @@ import neatlogic.framework.common.dto.BasePageVo;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class PipelineSearchVo extends BasePageVo {
-    @EntityField(name = "nfddp.pipelinesearchvo.type.name", type = ApiParamType.STRING)
+    @EntityField(name = "common.type", type = ApiParamType.STRING)
     private String type;
-    @EntityField(name = "nfddp.pipelinesearchvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
     @EntityField(name = "nfddp.pipelinesearchvo.needverifyauth.name", type = ApiParamType.INTEGER)
     private Integer needVerifyAuth;

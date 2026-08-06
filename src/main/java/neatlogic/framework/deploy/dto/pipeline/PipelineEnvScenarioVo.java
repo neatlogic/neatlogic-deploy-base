@@ -16,13 +16,13 @@ import neatlogic.framework.common.constvalue.ApiParamType;
 import neatlogic.framework.restful.annotation.EntityField;
 
 public class PipelineEnvScenarioVo {
-    @EntityField(name = "nfddp.pipelineenvscenariovo.envid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.envid", type = ApiParamType.LONG)
     private Long envId;
-    @EntityField(name = "nfddp.pipelineenvscenariovo.envname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.cmdb.envname", type = ApiParamType.STRING)
     private String envName;
-    @EntityField(name = "nfddp.pipelineenvscenariovo.scenarioid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.autoexec.scenarioid", type = ApiParamType.LONG)
     private Long scenarioId;
-    @EntityField(name = "nfddp.pipelineenvscenariovo.scenarioname.name", type = ApiParamType.STRING)
+    @EntityField(name = "term.autoexec.scenarioname", type = ApiParamType.STRING)
     private String scenarioName;
 
     public Long getEnvId() {

@@ -21,9 +21,9 @@ import java.util.List;
 public class DeployScheduleSearchVo extends BasePageVo {
     @EntityField(name = "nfdds.deployschedulesearchvo.isactive.name", type = ApiParamType.INTEGER)
     private Integer isActive;
-    @EntityField(name = "nfdds.deployschedulesearchvo.appsystemid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appsystemid", type = ApiParamType.LONG)
     private Long appSystemId;
-    @EntityField(name = "nfdds.deployschedulesearchvo.appmoduleid.name", type = ApiParamType.LONG)
+    @EntityField(name = "term.cmdb.appmoduleid", type = ApiParamType.LONG)
     private Long appModuleId;
     @EntityField(name = "nfdds.deployschedulesearchvo.ishasallauthority.name", type = ApiParamType.INTEGER)
     private Integer isHasAllAuthority;
